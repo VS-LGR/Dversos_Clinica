@@ -8,7 +8,7 @@ const CHILD_CLOUD_WHITE = "https://i.imgur.com/hC4SDkI.png";
 export default function NeurodiversityHighlight() {
   return (
     <section
-      className="py-16 sm:py-20 px-4 sm:px-6 bg-primary-pale/50 relative overflow-hidden"
+      className="py-16 sm:py-20 px-4 sm:px-6 bg-gradient-to-b from-white to-[#f8f6ff] relative overflow-hidden"
       aria-labelledby="neuro-highlight-title"
     >
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
@@ -23,7 +23,7 @@ export default function NeurodiversityHighlight() {
           </p>
           <Link
             href="/areas/neurodiversity"
-            className="inline-flex items-center rounded-lg font-semibold bg-primary text-white px-5 py-3 hover:bg-primary-light transition-colors"
+            className="inline-flex items-center rounded-xl font-semibold bg-primary text-white px-5 py-3 hover:bg-primary-light transition-all duration-200 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5 active:translate-y-0"
           >
             Conhecer a área
           </Link>

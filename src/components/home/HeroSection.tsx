@@ -6,7 +6,7 @@ import { DEFAULT_WHATSAPP_NUMBER } from "@/lib/constants/clinicAreas";
 export default function HeroSection() {
   return (
     <section
-      className="relative bg-gradient-to-b from-primary-pale/30 to-white py-16 sm:py-24 px-4 sm:px-6"
+      className="relative bg-gradient-to-b from-[#f8f6ff] via-[#fdfbf9] to-white py-16 sm:py-24 px-4 sm:px-6"
       aria-labelledby="hero-title"
     >
       <div className="max-w-4xl mx-auto text-center">

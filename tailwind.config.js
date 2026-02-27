@@ -21,6 +21,8 @@ module.exports = {
       animation: {
         "fade-in": "fadeIn 0.6s ease-out forwards",
         "slide-up": "slideUp 0.5s ease-out forwards",
+        "paw-bounce": "pawBounce 1.2s ease-in-out infinite",
+        "paw-float": "pawFloat 2.5s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
@@ -30,6 +32,14 @@ module.exports = {
         slideUp: {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        pawBounce: {
+          "0%, 100%": { transform: "translateY(0) scale(1)" },
+          "50%": { transform: "translateY(-6px) scale(1.08)" },
+        },
+        pawFloat: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-8px)" },
         },
       },
     },

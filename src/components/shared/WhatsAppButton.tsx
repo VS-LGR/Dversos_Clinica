@@ -22,10 +22,10 @@ export default function WhatsAppButton({
   const href = `${WHATSAPP_BASE}/${cleanPhone}?text=${encodedMessage}`;
 
   const baseClass =
-    "inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 px-5 py-3";
+    "inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 px-5 py-3 hover:scale-[1.02] active:scale-[0.98]";
   const variants =
     variant === "primary"
-      ? "bg-[#25D366] text-white hover:bg-[#20bd5a]"
+      ? "bg-[#25D366] text-white hover:bg-[#20bd5a] shadow-sm hover:shadow-md"
       : "border-2 border-primary text-primary bg-white hover:bg-primary-pale";
 
   return (

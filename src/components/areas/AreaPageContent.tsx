@@ -1,16 +1,14 @@
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import AreaHero from "@/components/areas/AreaHero";
 import ProfessionalsList from "@/components/areas/ProfessionalsList";
 import LocationGallery from "@/components/areas/LocationGallery";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
+import PawDeco from "@/components/shared/PawDeco";
 import {
   getAreaBySlug,
   DEFAULT_WHATSAPP_NUMBER,
 } from "@/lib/constants/clinicAreas";
 import { PROFESSIONALS_BY_AREA } from "@/lib/constants/professionals";
-
-const DOG_PAW_SRC = "https://i.imgur.com/dqEtbXK.png";
 
 interface AreaPageContentProps {
   slug: string;
@@ -27,10 +25,8 @@ export default function AreaPageContent({ slug }: AreaPageContentProps) {
     <div className="min-h-screen">
       <AreaHero area={area} />
       {isDogTherapy && (
-        <div className="flex justify-center gap-2 py-6 bg-primary-pale/30" aria-hidden>
-          <Image src={DOG_PAW_SRC} alt="" width={28} height={28} />
-          <Image src={DOG_PAW_SRC} alt="" width={28} height={28} />
-          <Image src={DOG_PAW_SRC} alt="" width={28} height={28} />
+        <div className="py-6 bg-primary-pale/40" aria-hidden>
+          <PawDeco count={5} size={28} />
         </div>
       )}
       <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
@@ -42,7 +38,7 @@ export default function AreaPageContent({ slug }: AreaPageContentProps) {
         title="Profissionais desta área"
       />
       <LocationGallery images={[]} title="Nosso espaço de atendimento" />
-      <section className="py-12 px-4 sm:px-6 bg-primary-pale/30">
+      <section className="py-12 px-4 sm:px-6 bg-gradient-to-b from-[#fdfbf9] to-primary-pale/30">
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-primary font-medium mb-4">
             Quer agendar ou tirar dúvidas sobre {area.shortName}?

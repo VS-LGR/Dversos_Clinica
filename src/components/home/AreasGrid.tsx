@@ -19,7 +19,7 @@ export default function AreasGrid() {
             <Link
               key={area.slug}
               href={`/areas/${area.slug}`}
-              className="group block p-6 rounded-xl border-2 border-primary-pale bg-white hover:border-primary hover:shadow-lg transition-all duration-200 text-left"
+              className="group block p-6 rounded-2xl border border-primary/10 bg-white hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 text-left hover:-translate-y-0.5"
               style={{ animationDelay: `${index * 50}ms` }}
             >
               <h3 className="text-lg font-semibold text-primary group-hover:text-primary-light transition-colors mb-2">
