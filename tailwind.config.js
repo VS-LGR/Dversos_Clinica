@@ -23,6 +23,9 @@ module.exports = {
         "slide-up": "slideUp 0.5s ease-out forwards",
         "paw-bounce": "pawBounce 1.2s ease-in-out infinite",
         "paw-float": "pawFloat 2.5s ease-in-out infinite",
+        "intro-logo": "introLogo 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+        "intro-tagline": "introTagline 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.25s forwards",
+        "intro-out": "introOut 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards",
       },
       keyframes: {
         fadeIn: {
@@ -40,6 +43,18 @@ module.exports = {
         pawFloat: {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-8px)" },
+        },
+        introLogo: {
+          "0%": { opacity: "0", transform: "translateY(12px) scale(0.96)" },
+          "100%": { opacity: "1", transform: "translateY(0) scale(1)" },
+        },
+        introTagline: {
+          "0%": { opacity: "0", transform: "translateY(8px)" },
+          "100%": { opacity: "0.85", transform: "translateY(0)" },
+        },
+        introOut: {
+          "0%": { opacity: "1", transform: "scale(1)" },
+          "100%": { opacity: "0", transform: "scale(1.02)" },
         },
       },
     },
