@@ -32,9 +32,9 @@ export default function NeurodiversityHighlight() {
           <Image
             src={CHILD_CLOUD_WHITE}
             alt=""
-            width={180}
-            height={180}
-            className="max-w-[160px] sm:max-w-[180px] opacity-95"
+            width={320}
+            height={320}
+            className="w-[220px] h-auto sm:w-[280px] md:w-[300px] opacity-95 drop-shadow-xl"
           />
         </div>
       </div>
