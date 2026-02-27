@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #1a2b56;
+  --color-primary-light: #24386f;
+  --color-primary-pale: #f3f4ff;
+  --color-surface: #f9fafb;
+  --color-accent: #f2b8c6;
+  --color-accent-warm: #ffd7aa;
+}
+
+body {
+  @apply bg-white text-primary antialiased;
+}
+
+@layer utilities {
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+}
