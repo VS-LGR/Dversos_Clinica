@@ -19,7 +19,7 @@ export default function AreasGrid() {
           Conheça cada especialidade e escolha o atendimento mais adequado ao momento de vida.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {CLINIC_AREAS.map((area, index) => (
+          {CLINIC_AREAS.map((area) => (
             <Link
               key={area.slug}
               href={`/areas/${area.slug}`}
