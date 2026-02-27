@@ -5,29 +5,20 @@ import Image from "next/image";
 
 const PAW_SRC = "https://i.imgur.com/dqEtbXK.png";
 
-const PAWS = [
-  { size: 10, opacity: 0.22 },
-  { size: 14, opacity: 0.18 },
-  { size: 12, opacity: 0.26 },
-  { size: 16, opacity: 0.15 },
-  { size: 11, opacity: 0.2 },
-  { size: 13, opacity: 0.19 },
-  { size: 9, opacity: 0.24 },
-  { size: 15, opacity: 0.17 },
-  { size: 10, opacity: 0.21 },
-  { size: 12, opacity: 0.2 },
-  { size: 14, opacity: 0.18 },
-  { size: 11, opacity: 0.23 },
-  { size: 13, opacity: 0.19 },
-  { size: 10, opacity: 0.22 },
-  { size: 15, opacity: 0.16 },
-  { size: 12, opacity: 0.2 },
-  { size: 14, opacity: 0.17 },
-  { size: 11, opacity: 0.21 },
-  { size: 10, opacity: 0.23 },
-  { size: 13, opacity: 0.18 },
-];
+function makePaws(count: number, sizeRange: [number, number], opacityRange: [number, number]) {
+  return Array.from({ length: count }, (_, i) => {
+    const t = count > 1 ? i / (count - 1) : 0.5;
+    const size = Math.round(sizeRange[0] + t * (sizeRange[1] - sizeRange[0]));
+    const opacity = opacityRange[0] + t * (opacityRange[1] - opacityRange[0]);
+    return { size, opacity, delay: (i * 180) % 2000 };
+  });
+}
 
+const COLUMN_1 = makePaws(8, [9, 14], [0.2, 0.26]);
+const COLUMN_2 = makePaws(10, [10, 16], [0.15, 0.22]);
+const COLUMN_3 = makePaws(7, [8, 13], [0.18, 0.24]);
+
+const COLUMNS = [COLUMN_1, COLUMN_2, COLUMN_3];
 const SMOOTHING = 0.09;
 
 export default function ScrollBar() {
@@ -73,15 +64,13 @@ export default function ScrollBar() {
 
   return (
     <div
-      className="fixed top-0 left-0 bottom-0 w-20 sm:w-24 z-30 pointer-events-none overflow-hidden"
+      className="fixed top-0 left-0 bottom-0 w-20 sm:w-24 z-30 pointer-events-none overflow-hidden hidden sm:block"
       aria-hidden
     >
-      {/* Sombra para fora (profundidade para a direita) */}
       <div
         className="absolute inset-0 shadow-[ 8px_0_32px_rgba(26,43,86,0.4) ]"
         aria-hidden
       />
-      {/* Faixa com gradiente de profundidade no eixo X (para dentro da página) */}
       <div
         className="absolute inset-0"
         style={{
@@ -89,25 +78,35 @@ export default function ScrollBar() {
           boxShadow: "inset -14px 0 28px -8px rgba(0,0,0,0.25)",
         }}
       />
-      {/* Patinhas distribuídas por toda a faixa, acompanhando o scroll */}
+      {/* 3 colunas de patinhas com movimento, acompanhando o scroll */}
       <div
         ref={groupRef}
-        className="absolute left-0 right-0 top-0 bottom-0 flex flex-col items-center justify-between will-change-transform py-6"
+        className="absolute inset-0 flex flex-row items-stretch justify-between will-change-transform px-1 py-6 gap-0.5"
       >
-        {PAWS.map((paw, i) => (
-          <span
-            key={i}
-            className="inline-block flex-shrink-0"
-            style={{ opacity: paw.opacity }}
+        {COLUMNS.map((paws, colIndex) => (
+          <div
+            key={colIndex}
+            className="flex-1 flex flex-col items-center justify-between min-h-0"
           >
-            <Image
-              src={PAW_SRC}
-              alt=""
-              width={paw.size}
-              height={paw.size}
-              className="object-contain"
-            />
-          </span>
+            {paws.map((paw, i) => (
+              <span
+                key={`${colIndex}-${i}`}
+                className="inline-block flex-shrink-0 animate-paw-float"
+                style={{
+                  opacity: paw.opacity,
+                  animationDelay: `${paw.delay}ms`,
+                }}
+              >
+                <Image
+                  src={PAW_SRC}
+                  alt=""
+                  width={paw.size}
+                  height={paw.size}
+                  className="object-contain"
+                />
+              </span>
+            ))}
+          </div>
         ))}
       </div>
     </div>

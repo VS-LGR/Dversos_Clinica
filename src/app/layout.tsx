@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.variable} font-sans min-h-screen flex flex-col relative pl-20 sm:pl-24`}>
+      <body className={`${inter.variable} font-sans min-h-screen flex flex-col relative pl-0 sm:pl-20 md:pl-24`}>
         {/* Faixa vertical azul com animação ao scroll */}
         <ScrollBar />
         <a
