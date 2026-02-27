@@ -6,7 +6,7 @@ import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import PawDeco from "@/components/shared/PawDeco";
 import { DEFAULT_WHATSAPP_NUMBER } from "@/lib/constants/clinicAreas";
 
-const DOG_PLAYFUL_SRC = "https://i.imgur.com/4GbjPCG.png";
+const DOG_IMAGE_SRC = "https://i.imgur.com/U0vHYze.png";
 
 export default function DogTherapyBand() {
   return (
@@ -14,8 +14,13 @@ export default function DogTherapyBand() {
       className="py-20 sm:py-24 px-4 sm:px-6 bg-gradient-to-br from-primary to-primary-light text-white relative overflow-hidden"
       aria-labelledby="dog-therapy-title"
     >
+      {/* Faixa vertical azul à direita */}
+      <div
+        className="absolute top-0 right-0 bottom-0 w-2 sm:w-3 bg-primary"
+        aria-hidden
+      />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,215,170,0.1)_0%,transparent_50%)]" aria-hidden />
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10 pr-1">
         <div className="flex-1 text-center md:text-left">
           <PawDeco count={4} size={36} className="justify-center md:justify-start mb-4" />
           <p className="text-white/80 text-xs font-medium uppercase tracking-widest mb-2">
@@ -39,13 +44,13 @@ export default function DogTherapyBand() {
               message="Olá! Gostaria de informações sobre Terapia Assistida por Cão na Clínica Dverso."
               label="Falar no WhatsApp"
               variant="outline"
-              className="!border-white !text-white hover:!bg-white hover:!text-primary"
+              className="!border-2 !border-white !text-white !bg-white/15 hover:!bg-white hover:!text-primary focus:!ring-white/50"
             />
           </div>
         </div>
         <div className="flex-shrink-0 flex justify-center" aria-hidden>
           <Image
-            src={DOG_PLAYFUL_SRC}
+            src={DOG_IMAGE_SRC}
             alt=""
             width={200}
             height={200}
