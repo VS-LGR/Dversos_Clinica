@@ -11,15 +11,35 @@ const DOG_IMAGE_SRC = "https://i.imgur.com/U0vHYze.png";
 export default function DogTherapyBand() {
   return (
     <section
-      className="py-20 sm:py-24 px-4 sm:px-6 bg-gradient-to-br from-primary to-primary-light text-white relative overflow-hidden"
+      className="py-20 sm:py-24 px-4 sm:px-6 text-white relative overflow-hidden"
       aria-labelledby="dog-therapy-title"
     >
-      {/* Faixa vertical azul à direita */}
+      {/* Base em gradiente */}
       <div
-        className="absolute top-0 right-0 bottom-0 w-2 sm:w-3 bg-primary"
+        className="absolute inset-0 bg-gradient-to-br from-primary to-primary-light"
         aria-hidden
       />
+      {/* Profundidade: gradiente + sombra interna e externa (continuidade com a faixa vertical) */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "linear-gradient(to bottom, rgba(15,28,55,0.97) 0%, rgba(26,43,86,1) 45%, rgb(26,43,86) 100%)",
+          boxShadow: "inset 0 14px 28px -8px rgba(0,0,0,0.25), 0 8px 32px rgba(26,43,86,0.35)",
+        }}
+        aria-hidden
+      />
+      {/* Destaque radial */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,215,170,0.1)_0%,transparent_50%)]" aria-hidden />
+      {/* Faixa vertical azul à direita com mesmo efeito de profundidade */}
+      <div className="absolute top-0 right-0 bottom-0 w-2 sm:w-3 overflow-hidden" aria-hidden>
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(to left, rgba(15,28,55,0.97) 0%, rgba(26,43,86,1) 100%)",
+            boxShadow: "inset -8px 0 16px -4px rgba(0,0,0,0.25)",
+          }}
+        />
+      </div>
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10 pr-1">
         <div className="flex-1 text-center md:text-left">
           <PawDeco count={4} size={36} className="justify-center md:justify-start mb-4" />
