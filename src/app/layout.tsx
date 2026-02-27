@@ -22,10 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.variable} font-sans min-h-screen flex flex-col relative`}>
+      <body className={`${inter.variable} font-sans min-h-screen flex flex-col relative pr-20 sm:pr-24`}>
         {/* Faixa vertical azul em toda a extensão da página */}
         <div
-          className="fixed top-0 right-0 bottom-0 w-3 sm:w-4 bg-primary z-30 pointer-events-none"
+          className="fixed top-0 right-0 bottom-0 w-20 sm:w-24 bg-primary z-30 pointer-events-none shadow-[ -8px_0_32px_rgba(26,43,86,0.4) ]"
           aria-hidden
         />
         <a
