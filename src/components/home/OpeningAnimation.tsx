@@ -55,7 +55,14 @@ export default function OpeningAnimation({ children, onComplete }: OpeningAnimat
           }`}
           aria-hidden
         >
-          <div className="text-center px-4">
+          <div className="flex flex-col items-center gap-5 sm:gap-6 text-center px-4">
+            <div className="w-[140px] sm:w-[180px] max-w-[200px]">
+              <DotLottieReact
+                src="https://lottie.host/8b7c9249-b443-49ee-98dc-2dd395955e94/7KIj6H4gpL.lottie"
+                loop
+                autoplay
+              />
+            </div>
             <h1
               className="text-3xl sm:text-4xl font-bold text-primary tracking-tight animate-intro-logo opacity-0"
               style={{ animationFillMode: "forwards" }}
