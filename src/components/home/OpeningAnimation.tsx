@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const INTRO_DURATION_MS = 1600;
 const INTRO_OUT_START_MS = 1150;
@@ -33,8 +34,14 @@ export default function OpeningAnimation({ children, onComplete }: OpeningAnimat
 
   if (!mounted) {
     return (
-      <div className="min-h-[60vh] flex items-center justify-center bg-[#fdfbf9]">
-        <div className="w-10 h-10 border-2 border-primary border-t-transparent rounded-full animate-spin opacity-60" />
+      <div className="min-h-[60vh] flex items-center justify-center bg-[#fdfbf9]" aria-hidden>
+        <div className="w-[160px] sm:w-[200px] max-w-[220px]">
+          <DotLottieReact
+            src="https://lottie.host/8b7c9249-b443-49ee-98dc-2dd395955e94/7KIj6H4gpL.lottie"
+            loop
+            autoplay
+          />
+        </div>
       </div>
     );
   }
