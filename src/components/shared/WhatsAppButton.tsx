@@ -10,6 +10,12 @@ interface WhatsAppButtonProps {
   variant?: "primary" | "outline";
 }
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 export default function WhatsAppButton({
   phoneNumber,
   message = "Olá! Gostaria de mais informações sobre a Clínica DVERSO.",
@@ -28,6 +34,15 @@ export default function WhatsAppButton({
       ? "bg-[#25D366] text-white hover:bg-[#20bd5a] shadow-sm hover:shadow-md"
       : "border-2 border-primary text-primary bg-white hover:bg-primary-pale";
 
+  const handleClick = () => {
+    if (typeof window === "undefined" || !window.gtag) return;
+    window.gtag("event", "generate_lead", {
+      method: "whatsapp",
+      content_type: "contact_button",
+      content_name: label,
+    });
+  };
+
   return (
     <a
       href={href}
@@ -35,6 +50,7 @@ export default function WhatsAppButton({
       rel="noopener noreferrer"
       className={`${baseClass} ${variants} ${className}`}
       aria-label={label}
+      onClick={handleClick}
     >
       <svg
         className="w-5 h-5 shrink-0"

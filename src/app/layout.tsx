@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ScrollBar from "@/components/layout/ScrollBar";
+import GoogleTags from "@/components/analytics/GoogleTags";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -11,9 +12,39 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.clinicadverso.com.br"),
   title: "Clínica DVERSO | Saúde Integrada em Sorocaba",
   description:
     "Clínica de psicologia, terapias integradas, avaliação neuropsicológica, nutrição e atendimentos especializados. Sorocaba e região.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Clínica DVERSO | Saúde Integrada em Sorocaba",
+    description:
+      "Psicologia, terapias integradas, avaliação neuropsicológica, nutrição e acolhimento familiar em Sorocaba e região.",
+    url: "/",
+    siteName: "Clínica DVERSO",
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Clínica DVERSO | Saúde Integrada em Sorocaba",
+    description:
+      "Acolhimento familiar e cuidado interdisciplinar com equipe especializada.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -24,6 +55,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${inter.variable} font-sans min-h-screen flex flex-col relative pl-0 sm:pl-20 md:pl-24`}>
+        <GoogleTags />
         {/* Faixa vertical azul com animação ao scroll */}
         <ScrollBar />
         <a

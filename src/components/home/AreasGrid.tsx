@@ -57,7 +57,7 @@ export default function AreasGrid() {
         <p className="text-center text-primary/75 text-sm sm:text-base mb-14 max-w-2xl mx-auto">
           Conheça cada especialidade e escolha o atendimento mais adequado ao momento de vida.
         </p>
-        <div className="max-w-3xl mx-auto mb-8">
+        <div className="max-w-3xl mx-auto mb-8 md:hidden">
           <label htmlFor="areas-branch-select" className="block text-sm font-medium text-primary/80 mb-2">
             Filtrar por galho de atendimento
           </label>
@@ -75,12 +75,41 @@ export default function AreasGrid() {
             ))}
           </select>
         </div>
+        <div className="hidden md:flex md:flex-wrap md:justify-center gap-2 mb-10" role="tablist" aria-label="Filtro de áreas de atuação">
+          <button
+            type="button"
+            onClick={() => setSelectedBranch("all")}
+            className={`px-4 py-2 rounded-full border text-sm font-medium transition-all ${
+              selectedBranch === "all"
+                ? "bg-primary text-white border-primary shadow-sm"
+                : "bg-white text-primary/80 border-primary/20 hover:border-primary/40 hover:bg-primary-pale/40"
+            }`}
+            aria-pressed={selectedBranch === "all"}
+          >
+            Todos os galhos
+          </button>
+          {BRANCHES.map((branch) => (
+            <button
+              key={branch.title}
+              type="button"
+              onClick={() => setSelectedBranch(branch.title)}
+              className={`px-4 py-2 rounded-full border text-sm font-medium transition-all ${
+                selectedBranch === branch.title
+                  ? "bg-primary text-white border-primary shadow-sm"
+                  : "bg-white text-primary/80 border-primary/20 hover:border-primary/40 hover:bg-primary-pale/40"
+              }`}
+              aria-pressed={selectedBranch === branch.title}
+            >
+              {branch.title}
+            </button>
+          ))}
+        </div>
         <div className="space-y-4">
           {visibleBranches.map((branch, index) => (
             <details
               key={branch.title}
               className="group rounded-2xl border border-primary/[0.1] bg-white shadow-sm open:shadow-md transition-shadow"
-              open={index === 0}
+              open={selectedBranch !== "all" || index === 0}
             >
               <summary className="list-none cursor-pointer select-none px-5 sm:px-6 py-4 flex items-center justify-between gap-4">
                 <h3 className="text-base sm:text-lg font-semibold text-primary">{branch.title}</h3>
