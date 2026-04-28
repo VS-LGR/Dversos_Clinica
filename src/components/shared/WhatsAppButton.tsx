@@ -12,7 +12,7 @@ interface WhatsAppButtonProps {
 
 export default function WhatsAppButton({
   phoneNumber,
-  message = "Olá! Gostaria de mais informações sobre a Clínica Dverso.",
+  message = "Olá! Gostaria de mais informações sobre a Clínica DVERSO.",
   label = "Fale conosco no WhatsApp",
   className = "",
   variant = "primary",

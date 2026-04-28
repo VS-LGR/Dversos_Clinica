@@ -3,7 +3,6 @@ import AreaHero from "@/components/areas/AreaHero";
 import ProfessionalsList from "@/components/areas/ProfessionalsList";
 import LocationGallery from "@/components/areas/LocationGallery";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
-import PawDeco from "@/components/shared/PawDeco";
 import {
   getAreaBySlug,
   DEFAULT_WHATSAPP_NUMBER,
@@ -19,16 +18,10 @@ export default function AreaPageContent({ slug }: AreaPageContentProps) {
   if (!area) notFound();
 
   const professionals = PROFESSIONALS_BY_AREA[slug] ?? [];
-  const isDogTherapy = slug === "dog-therapy";
 
   return (
     <div className="min-h-screen">
       <AreaHero area={area} />
-      {isDogTherapy && (
-        <div className="py-6 bg-primary-pale/40" aria-hidden>
-          <PawDeco count={5} size={28} />
-        </div>
-      )}
       <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
         <h2 className="text-xl font-bold text-primary mb-4">Como funciona o atendimento</h2>
         <p className="text-primary/90 leading-relaxed">{area.howItWorks}</p>

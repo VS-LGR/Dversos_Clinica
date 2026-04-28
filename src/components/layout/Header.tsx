@@ -6,10 +6,10 @@ import { useState } from "react";
 const navLinks = [
   { href: "/", label: "Início" },
   { href: "/areas/psychology", label: "Psicologia" },
-  { href: "/areas/neurodiversity", label: "Neurodivergência" },
-  { href: "/areas/music-therapy", label: "Psicoterapia Musical" },
+  { href: "/areas/neuropsychological-assessment", label: "Avaliação Neuropsicológica" },
+  { href: "/areas/music-therapy", label: "Musicoterapia" },
   { href: "/areas/nutrition", label: "Nutrição" },
-  { href: "/areas/dog-therapy", label: "Terapia com Cão" },
+  { href: "/areas", label: "Todas as áreas" },
 ];
 
 export default function Header() {
@@ -22,7 +22,7 @@ export default function Header() {
           href="/"
           className="text-xl font-semibold text-primary hover:text-primary-light transition-colors"
         >
-          Clínica Dverso
+          Clínica DVERSO
         </Link>
 
         <nav className="hidden md:flex items-center gap-6" aria-label="Navegação principal">

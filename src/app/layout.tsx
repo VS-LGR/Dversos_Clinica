@@ -11,9 +11,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Clínica Dverso | Saúde Integrada em Sorocaba",
+  title: "Clínica DVERSO | Saúde Integrada em Sorocaba",
   description:
-    "Clínica de psicologia, neurodivergência, psicoterapia musical, nutrição e terapia assistida por cão. Sorocaba e região.",
+    "Clínica de psicologia, terapias integradas, avaliação neuropsicológica, nutrição e atendimentos especializados. Sorocaba e região.",
 };
 
 export default function RootLayout({

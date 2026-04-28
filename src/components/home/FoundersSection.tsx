@@ -11,7 +11,7 @@ export default function FoundersSection() {
         <SectionTitle
           id="founders-title"
           className="mb-3"
-          subtitle="Conheça as fundadoras e a trajetória de cada uma."
+          subtitle="Conheça os fundadores e a trajetória de cada profissional."
         >
           Quem somos
         </SectionTitle>

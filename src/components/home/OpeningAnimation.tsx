@@ -67,7 +67,7 @@ export default function OpeningAnimation({ children, onComplete }: OpeningAnimat
               className="text-3xl sm:text-4xl font-bold text-primary tracking-tight animate-intro-logo opacity-0"
               style={{ animationFillMode: "forwards" }}
             >
-              Clínica Dverso
+              Clínica DVERSO
             </h1>
             <span
               className="mt-3 block h-0.5 w-12 mx-auto rounded-full bg-accent/70 animate-intro-tagline opacity-0"

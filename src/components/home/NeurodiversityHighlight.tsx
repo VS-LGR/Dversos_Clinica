@@ -19,18 +19,17 @@ export default function NeurodiversityHighlight() {
             Saúde e bem-estar familiar
           </p>
           <h2 id="neuro-highlight-title" className="text-2xl sm:text-3xl font-bold text-primary mb-4 tracking-tight">
-            Atenção à neurodivergência
+            Cuidado neuroafirmativo e acolhimento familiar
           </h2>
           <p className="text-primary/85 leading-relaxed mb-7 max-w-xl">
-            Acompanhamento especializado para crianças e famílias neurodivergentes,
-            com equipe preparada para TEA, TDAH e outras condições do neurodesenvolvimento,
-            em ambiente acolhedor e previsível.
+            Atuamos com correntes atuais e abordagem interdisciplinar para crianças, adolescentes e famílias,
+            promovendo regulação emocional, desenvolvimento funcional e qualidade de vida em ambiente previsível.
           </p>
           <Link
-            href="/areas/neurodiversity"
+            href="/areas/sensory-integration"
             className="inline-flex items-center rounded-xl font-semibold bg-primary text-white px-5 py-3 hover:bg-primary-light transition-all duration-200 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5 active:translate-y-0"
           >
-            Conhecer a área
+            Conhecer atendimentos
           </Link>
         </div>
         <div

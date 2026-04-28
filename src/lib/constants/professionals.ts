@@ -16,12 +16,12 @@ export const PROFESSIONALS_BY_AREA: Record<string, Professional[]> = {
       imageUrl: null,
     },
   ],
-  neurodiversity: [
+  "neuropsychological-assessment": [
     {
       id: "n1",
-      name: "Profissional de Neurodivergência (exemplo)",
-      specialty: "Neurodivergência e desenvolvimento",
-      bio: "Acompanhamento de crianças e famílias. (Texto para revisão.)",
+      name: "Profissional de Avaliação Neuropsicológica (exemplo)",
+      specialty: "Neuropsicologia",
+      bio: "Avaliação clínica e devolutiva para famílias. (Texto para revisão.)",
       imageUrl: null,
     },
   ],
@@ -43,12 +43,75 @@ export const PROFESSIONALS_BY_AREA: Record<string, Professional[]> = {
       imageUrl: null,
     },
   ],
-  "dog-therapy": [
+  "art-therapy": [
     {
-      id: "d1",
-      name: "Profissional de Terapia Assistida por Cão (exemplo)",
+      id: "a1",
+      name: "Profissional de Arteterapia (exemplo)",
+      specialty: "Arteterapia",
+      bio: "Intervenção com recursos artísticos. (Texto para revisão.)",
+      imageUrl: null,
+    },
+  ],
+  "occupational-therapy": [
+    {
+      id: "o1",
+      name: "Profissional de Terapia Ocupacional (exemplo)",
+      specialty: "Terapia Ocupacional",
+      bio: "Acompanhamento funcional e autonomia. (Texto para revisão.)",
+      imageUrl: null,
+    },
+  ],
+  "sensory-integration": [
+    {
+      id: "s1",
+      name: "Profissional de Integração Sensorial (exemplo)",
+      specialty: "Integração Sensorial",
+      bio: "Plano sensorial individualizado. (Texto para revisão.)",
+      imageUrl: null,
+    },
+  ],
+  physiotherapy: [
+    {
+      id: "f1",
+      name: "Profissional de Fisioterapia (exemplo)",
+      specialty: "Fisioterapia",
+      bio: "Intervenção motora e funcional. (Texto para revisão.)",
+      imageUrl: null,
+    },
+  ],
+  psychomotricity: [
+    {
+      id: "pm1",
+      name: "Profissional de Psicomotricidade (exemplo)",
+      specialty: "Psicomotricidade",
+      bio: "Integração corpo, emoção e cognição. (Texto para revisão.)",
+      imageUrl: null,
+    },
+  ],
+  "therapeutic-companion": [
+    {
+      id: "at1",
+      name: "Acompanhante Terapêutico (exemplo)",
+      specialty: "Acompanhamento terapêutico",
+      bio: "Suporte em contextos de vida real. (Texto para revisão.)",
+      imageUrl: null,
+    },
+  ],
+  "feeding-therapy": [
+    {
+      id: "ta1",
+      name: "Profissional de Terapia Alimentar (exemplo)",
+      specialty: "Terapia Alimentar",
+      bio: "Manejo de seletividade alimentar. (Texto para revisão.)",
+      imageUrl: null,
+    },
+  ],
+  "animal-assisted-therapy": [
+    {
+      id: "taa1",
+      name: "Profissional de TAA (exemplo)",
       specialty: "Terapia Assistida por Animais",
-      bio: "Sessões com cão terapeuta. (Texto para revisão.)",
+      bio: "Intervenções mediadas por animais. (Texto para revisão.)",
       imageUrl: null,
     },
   ],

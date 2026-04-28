@@ -9,18 +9,34 @@ export interface Founder {
 export const FOUNDERS: Founder[] = [
   {
     id: "1",
-    name: "Nome da Fundadora 1",
-    role: "Co-fundadora · Psicologia",
+    name: "Selma Maria Carvalho Silva",
+    role: "Fundadora · Psicologia",
     bio:
-      "Breve trajetória sugerida: formação em Psicologia, atuação em clínica infantil e neurodivergência. Especialização em abordagens que priorizam o acolhimento e o desenvolvimento emocional. (Texto para revisão pela clínica.)",
+      "Atuação clínica com foco em acolhimento familiar, regulação emocional e cuidado interdisciplinar. Participa da construção de protocolos de segurança e cuidado protegido.",
     imageUrl: null,
   },
   {
     id: "2",
-    name: "Nome da Fundadora 2",
-    role: "Co-fundadora · Área de atuação",
+    name: "Debora Cristina Carvalho Silva",
+    role: "Fundadora · Desenvolvimento Terapêutico",
     bio:
-      "Breve trajetória sugerida: experiência em [área], com foco em [público/objetivo]. Comprometida com práticas baseadas em evidências e em um atendimento humanizado. (Texto para revisão pela clínica.)",
+      "Contribui para o desenho de planos terapêuticos individualizados e integração entre especialidades, priorizando previsibilidade e evolução funcional.",
+    imageUrl: null,
+  },
+  {
+    id: "3",
+    name: "Ana Laura Carvalho Silva",
+    role: "Fundadora · Integração Clínica",
+    bio:
+      "Atuação voltada para comunicação entre equipe e família, com ênfase em acompanhamento humanizado e organização de condutas baseadas em evidências.",
+    imageUrl: null,
+  },
+  {
+    id: "4",
+    name: "Selso Fernando Munhoz",
+    role: "Fundador · Gestão Clínica",
+    bio:
+      "Apoia a estrutura técnica e operacional da clínica para manutenção de ambiente seguro, acolhedor e preparado para diferentes perfis de atendimento.",
     imageUrl: null,
   },
 ];

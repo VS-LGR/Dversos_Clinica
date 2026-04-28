@@ -16,35 +16,35 @@ export const CLINIC_AREAS: ClinicArea[] = [
     name: "Psicologia",
     shortName: "Psicologia",
     description:
-      "Atendimento psicológico humanizado para crianças, adolescentes e adultos, com foco em acolhimento e desenvolvimento emocional em Sorocaba e região.",
+      "Atendimento psicológico humanizado para crianças, adolescentes e adultos, com foco em acolhimento, vínculo terapêutico e saúde emocional em Sorocaba e região.",
     howItWorks:
-      "As sessões são realizadas em ambiente acolhedor, com duração de 50 minutos. O trabalho pode ser individual ou em grupo, conforme a necessidade. Utilizamos abordagens reconhecidas e adaptadas a cada perfil, sempre em sintonia com a demanda trazida pelo paciente ou pela família.",
+      "As sessões acontecem em ambiente acolhedor, com plano terapêutico individualizado. O acompanhamento pode incluir orientação familiar e integração com outras áreas da clínica para cuidado mais completo.",
     whatsAppMessage:
-      "Olá! Gostaria de saber mais sobre atendimento em Psicologia na Clínica Dverso.",
+      "Olá! Gostaria de saber mais sobre atendimento em Psicologia na Clínica DVERSO.",
     accentClass: "text-primary",
   },
   {
-    slug: "neurodiversity",
-    name: "Neurodivergência",
-    shortName: "Neurodivergência",
+    slug: "neuropsychological-assessment",
+    name: "Avaliação Neuropsicológica",
+    shortName: "Avaliação Neuropsicológica",
     description:
-      "Acompanhamento especializado para crianças e famílias neurodivergentes, com equipe preparada para TEA, TDAH e outras condições do neurodesenvolvimento.",
+      "Processo avaliativo para mapear funções cognitivas, emocionais e comportamentais, auxiliando diagnóstico e planejamento terapêutico.",
     howItWorks:
-      "O atendimento é planejado de forma interdisciplinar, envolvendo avaliação, intervenção e orientação às famílias. Trabalhamos com estratégias que respeitam o ritmo e o perfil de cada criança, em ambiente seguro e previsível, favorecendo desenvolvimento e qualidade de vida.",
+      "A avaliação inclui entrevistas, aplicação de instrumentos técnicos e devolutiva estruturada para família e equipe, com direcionamentos claros para os próximos passos do cuidado.",
     whatsAppMessage:
-      "Olá! Gostaria de informações sobre atendimento em Neurodivergência na Clínica Dverso.",
+      "Olá! Gostaria de informações sobre Avaliação Neuropsicológica na Clínica DVERSO.",
     accentClass: "text-primary",
   },
   {
     slug: "music-therapy",
-    name: "Psicoterapia Musical",
-    shortName: "Psicoterapia Musical",
+    name: "Musicoterapia",
+    shortName: "Musicoterapia",
     description:
-      "Uso da música como ferramenta terapêutica no processo de autoconhecimento, regulação emocional e expressão, em sessões individuais ou em grupo.",
+      "Uso terapêutico da música para favorecer comunicação, expressão emocional, regulação e desenvolvimento global.",
     howItWorks:
-      "As sessões combinam escuta musical, improvisação, canto e movimento, sempre alinhadas aos objetivos terapêuticos. Não é necessário saber tocar instrumentos; o foco está no processo criativo e na relação terapêutica mediada pela música.",
+      "As sessões utilizam escuta, ritmo, canto e instrumentos de forma planejada para cada objetivo clínico. Nao e necessario conhecimento musical previo.",
     whatsAppMessage:
-      "Olá! Gostaria de saber mais sobre Psicoterapia Musical na Clínica Dverso.",
+      "Olá! Gostaria de saber mais sobre Musicoterapia na Clínica DVERSO.",
     accentClass: "text-primary",
   },
   {
@@ -52,23 +52,107 @@ export const CLINIC_AREAS: ClinicArea[] = [
     name: "Nutrição",
     shortName: "Nutrição",
     description:
-      "Atendimento nutricional para todas as idades, com atenção especial à alimentação na infância, neurodivergência e objetivos de saúde e bem-estar.",
+      "Atendimento nutricional para diferentes fases da vida, com foco em saúde, rotina alimentar e qualidade de vida.",
     howItWorks:
-      "A partir da anamnese e de objetivos definidos em conjunto, elaboramos um plano alimentar personalizado. O acompanhamento inclui suporte para mudança de hábitos, seletividade alimentar quando aplicável e educação nutricional para a família.",
+      "Acompanhamento com avaliação individual, plano alimentar personalizado e orientacao para a familia, considerando necessidades clinicas e rotina real.",
     whatsAppMessage:
-      "Olá! Gostaria de agendar ou tirar dúvidas sobre Nutrição na Clínica Dverso.",
+      "Olá! Gostaria de agendar ou tirar dúvidas sobre Nutrição na Clínica DVERSO.",
     accentClass: "text-primary",
   },
   {
-    slug: "dog-therapy",
-    name: "Terapia Assistida por Cão",
-    shortName: "Terapia com Cão",
+    slug: "art-therapy",
+    name: "Arteterapia",
+    shortName: "Arteterapia",
     description:
-      "Intervenções terapêuticas com o auxílio de cão treinado, potencializando vínculo, motivação e ganhos emocionais e sociais em crianças e adultos.",
+      "Intervenção terapêutica por meio de recursos artisticos para promover expressão, criatividade e elaboração emocional.",
     howItWorks:
-      "As sessões são conduzidas por profissional capacitado junto com o cão terapeuta. As atividades são planejadas conforme o objetivo do tratamento (ex.: regulação emocional, interação social, motivação) e realizadas em ambiente controlado e seguro.",
+      "A proposta e conduzida por profissional habilitado, com atividades adaptadas ao perfil de cada paciente e integradas ao plano terapeutico.",
     whatsAppMessage:
-      "Olá! Gostaria de informações sobre Terapia Assistida por Cão na Clínica Dverso.",
+      "Olá! Gostaria de informações sobre Arteterapia na Clínica DVERSO.",
+    accentClass: "text-primary",
+  },
+  {
+    slug: "occupational-therapy",
+    name: "Terapia Ocupacional",
+    shortName: "Terapia Ocupacional",
+    description:
+      "Atendimento voltado para autonomia, funcionalidade e participação nas atividades do dia a dia.",
+    howItWorks:
+      "As sessões trabalham habilidades motoras, cognitivas, sensoriais e de rotina, com metas definidas junto a familia e equipe interdisciplinar.",
+    whatsAppMessage:
+      "Olá! Gostaria de saber mais sobre Terapia Ocupacional na Clínica DVERSO.",
+    accentClass: "text-primary",
+  },
+  {
+    slug: "sensory-integration",
+    name: "Integração Sensorial",
+    shortName: "Integração Sensorial",
+    description:
+      "Intervenção para organizar respostas aos estimulos sensoriais, favorecendo autorregulação e funcionalidade.",
+    howItWorks:
+      "O plano terapeutico e estruturado a partir de avaliacao especifica e atividades graduadas para ampliar adaptacao sensorial no cotidiano.",
+    whatsAppMessage:
+      "Olá! Gostaria de saber mais sobre Integração Sensorial na Clínica DVERSO.",
+    accentClass: "text-primary",
+  },
+  {
+    slug: "physiotherapy",
+    name: "Fisioterapia",
+    shortName: "Fisioterapia",
+    description:
+      "Atendimento fisioterapeutico com foco em desenvolvimento motor, funcionalidade e qualidade de movimento.",
+    howItWorks:
+      "As condutas sao definidas conforme avaliacao funcional e objetivos clinicos, com acompanhamento continuo e orientacao familiar.",
+    whatsAppMessage:
+      "Olá! Gostaria de informações sobre Fisioterapia na Clínica DVERSO.",
+    accentClass: "text-primary",
+  },
+  {
+    slug: "psychomotricity",
+    name: "Psicomotricidade",
+    shortName: "Psicomotricidade",
+    description:
+      "Intervenção que integra corpo, emoção e cognição para favorecer desenvolvimento global e aprendizagem.",
+    howItWorks:
+      "As sessões utilizam atividades corporais e ludicas para ampliar organizacao motora, atencao, interacao e regulacao comportamental.",
+    whatsAppMessage:
+      "Olá! Gostaria de informações sobre Psicomotricidade na Clínica DVERSO.",
+    accentClass: "text-primary",
+  },
+  {
+    slug: "therapeutic-companion",
+    name: "Acompanhante Terapêutico (AT)",
+    shortName: "Acompanhante Terapêutico",
+    description:
+      "Suporte terapeutico em contextos de vida real, promovendo generalizacao de habilidades e maior autonomia.",
+    howItWorks:
+      "O acompanhamento ocorre em ambientes como casa, escola e comunidade, com plano alinhado ao cuidado clinico e orientacao continua da equipe.",
+    whatsAppMessage:
+      "Olá! Gostaria de informações sobre Acompanhante Terapêutico na Clínica DVERSO.",
+    accentClass: "text-primary",
+  },
+  {
+    slug: "feeding-therapy",
+    name: "Terapia Alimentar",
+    shortName: "Terapia Alimentar",
+    description:
+      "Atendimento para seletividade e dificuldades alimentares, com abordagem gradual, segura e acolhedora.",
+    howItWorks:
+      "A intervenção considera aspectos sensoriais, comportamentais e nutricionais para ampliar repertorio alimentar e reduzir estresse nas refeicoes.",
+    whatsAppMessage:
+      "Olá! Gostaria de informações sobre Terapia Alimentar na Clínica DVERSO.",
+    accentClass: "text-primary",
+  },
+  {
+    slug: "animal-assisted-therapy",
+    name: "Terapia Assistida por Animais (TAA)",
+    shortName: "Terapia Assistida por Animais",
+    description:
+      "Intervenções terapeuticas mediadas por animais para fortalecer vínculo, engajamento e desenvolvimento socioemocional.",
+    howItWorks:
+      "As atividades sao planejadas conforme objetivos clinicos e conduzidas por profissionais capacitados em ambiente protegido e supervisionado.",
+    whatsAppMessage:
+      "Olá! Gostaria de informações sobre Terapia Assistida por Animais na Clínica DVERSO.",
     accentClass: "text-primary",
   },
 ];

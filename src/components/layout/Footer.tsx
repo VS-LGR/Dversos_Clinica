@@ -2,10 +2,10 @@ import Link from "next/link";
 
 const footerLinks = [
   { href: "/areas/psychology", label: "Psicologia" },
-  { href: "/areas/neurodiversity", label: "Neurodivergência" },
-  { href: "/areas/music-therapy", label: "Psicoterapia Musical" },
+  { href: "/areas/neuropsychological-assessment", label: "Avaliação Neuropsicológica" },
+  { href: "/areas/music-therapy", label: "Musicoterapia" },
   { href: "/areas/nutrition", label: "Nutrição" },
-  { href: "/areas/dog-therapy", label: "Terapia com Cão" },
+  { href: "/areas/animal-assisted-therapy", label: "TAA" },
 ];
 
 export default function Footer() {
@@ -23,9 +23,9 @@ export default function Footer() {
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-10">
         <div className="flex flex-col md:flex-row justify-between gap-8">
           <div>
-            <h3 className="text-lg font-semibold mb-2">Clínica Dverso</h3>
+            <h3 className="text-lg font-semibold mb-2">Clínica DVERSO</h3>
             <p className="text-white/90 text-sm max-w-xs">
-              Saúde integrada em Sorocaba e região: psicologia, neurodivergência, música, nutrição e terapia assistida por cão.
+              Saúde integrada em Sorocaba e região: psicologia, terapias integradas, nutrição e intervenções especializadas.
             </p>
           </div>
           <nav aria-label="Links do rodapé">
@@ -42,7 +42,7 @@ export default function Footer() {
           </nav>
         </div>
         <div className="mt-8 pt-6 border-t border-white/20 text-center text-white/80 text-sm">
-          © {new Date().getFullYear()} Clínica Dverso. Todos os direitos reservados.
+          © {new Date().getFullYear()} Clínica DVERSO. Todos os direitos reservados.
         </div>
       </div>
     </footer>

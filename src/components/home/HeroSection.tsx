@@ -39,16 +39,16 @@ export default function HeroSection() {
             Cuidado com sua família em primeiro lugar
           </h1>
           <p className="text-lg sm:text-xl text-primary/90 mb-5 max-w-xl mx-auto lg:mx-0 animate-slide-up animate-delay-200 leading-relaxed">
-            Psicologia, neurodivergência, psicoterapia musical, nutrição e terapia assistida por cão:
-            um espaço pensado para o bem-estar de crianças, jovens e adultos.
+            Psicologia, terapias integradas, nutrição e intervenções especializadas:
+            um espaço pensado para acolher famílias e ampliar qualidade de vida.
           </p>
           <p className="text-base text-primary/75 mb-8 max-w-xl mx-auto lg:mx-0 animate-slide-up animate-delay-300">
-            Profissionais preparados para cada etapa do desenvolvimento e da saúde emocional.
+            Profissionais preparados para cada etapa do desenvolvimento, com cuidado neuroafirmativo e atuação interdisciplinar.
           </p>
           <div className="animate-slide-up animate-delay-400">
             <WhatsAppButton
               phoneNumber={DEFAULT_WHATSAPP_NUMBER}
-              message="Olá! Gostaria de agendar ou saber mais sobre os atendimentos da Clínica Dverso."
+              message="Olá! Gostaria de agendar ou saber mais sobre os atendimentos da Clínica DVERSO."
               label="Agendar ou tirar dúvidas pelo WhatsApp"
             />
           </div>
