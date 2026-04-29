@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import SectionTitle from "@/components/shared/SectionTitle";
 import { CLINIC_AREAS } from "@/lib/constants/clinicAreas";
+import { AREAS_FILTER_COPY, AREAS_INTRO_COPY } from "@/lib/constants/homeAreasContent";
 
 const BRANCHES = [
   {
@@ -50,16 +51,16 @@ export default function AreasGrid() {
         <SectionTitle
           id="areas-title"
           className="mb-3"
-          subtitle="Cuidado especializado para você e sua família, em um único espaço."
+          subtitle={AREAS_INTRO_COPY.subtitle}
         >
           Nossas áreas de atuação
         </SectionTitle>
         <p className="text-center text-primary/75 text-sm sm:text-base mb-14 max-w-2xl mx-auto">
-          Conheça cada especialidade e escolha o atendimento mais adequado ao momento de vida.
+          {AREAS_INTRO_COPY.description}
         </p>
         <div className="max-w-3xl mx-auto mb-8 md:hidden">
           <label htmlFor="areas-branch-select" className="block text-sm font-medium text-primary/80 mb-2">
-            Filtrar por galho de atendimento
+            {AREAS_FILTER_COPY.mobileLabel}
           </label>
           <select
             id="areas-branch-select"
@@ -67,7 +68,7 @@ export default function AreasGrid() {
             onChange={(event) => setSelectedBranch(event.target.value)}
             className="w-full rounded-xl border border-primary/20 bg-white px-4 py-3 text-primary text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
           >
-            <option value="all">Todos os galhos</option>
+            <option value="all">{AREAS_FILTER_COPY.allOption}</option>
             {BRANCHES.map((branch) => (
               <option key={branch.title} value={branch.title}>
                 {branch.title}
@@ -75,7 +76,7 @@ export default function AreasGrid() {
             ))}
           </select>
         </div>
-        <div className="hidden md:flex md:flex-wrap md:justify-center gap-2 mb-10" role="tablist" aria-label="Filtro de áreas de atuação">
+        <div className="hidden md:flex md:flex-wrap md:justify-center gap-2 mb-10" role="tablist" aria-label={AREAS_FILTER_COPY.tabAriaLabel}>
           <button
             type="button"
             onClick={() => setSelectedBranch("all")}
@@ -86,7 +87,7 @@ export default function AreasGrid() {
             }`}
             aria-pressed={selectedBranch === "all"}
           >
-            Todos os galhos
+            {AREAS_FILTER_COPY.allOption}
           </button>
           {BRANCHES.map((branch) => (
             <button

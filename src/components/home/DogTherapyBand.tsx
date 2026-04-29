@@ -3,6 +3,7 @@
 import Link from "next/link";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import { DEFAULT_WHATSAPP_NUMBER } from "@/lib/constants/clinicAreas";
+import { PROTECTED_CARE_COPY } from "@/lib/constants/homeAreasContent";
 
 export default function DogTherapyBand() {
   return (
@@ -35,21 +36,20 @@ export default function DogTherapyBand() {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-12 relative z-10 pr-1">
         <div className="flex-1 text-center md:text-left">
           <p className="text-white/80 text-xs font-medium uppercase tracking-widest mb-2">
-            Diferenciais DVERSO
+            {PROTECTED_CARE_COPY.eyebrow}
           </p>
           <h2 id="differentials-title" className="text-2xl sm:text-3xl font-bold tracking-tight mb-4">
-            Cuidado protegido com manejo especializado
+            {PROTECTED_CARE_COPY.title}
           </h2>
           <p className="text-white/90 leading-relaxed mb-6 max-w-2xl">
-            A Clínica DVERSO conta com estrutura para acolhimento de casos de risco com contenção antecipada,
-            sala de regulação emocional e atendimento protegido. Nossa equipe atua com manejo comportamental,
-            supervisão ABA e vigilância 24h para garantir segurança e previsibilidade.
+            {PROTECTED_CARE_COPY.description}
           </p>
           <ul className="grid sm:grid-cols-2 gap-3 mb-7 text-sm text-white/95 max-w-3xl">
-            <li className="rounded-lg border border-white/20 bg-white/10 px-4 py-3">Espaço de regulação emocional para controle de crise e risco.</li>
-            <li className="rounded-lg border border-white/20 bg-white/10 px-4 py-3">Acolhimento com regulação emocional e manejo comportamental.</li>
-            <li className="rounded-lg border border-white/20 bg-white/10 px-4 py-3">Supervisão ABA contínua e plano terapêutico integrado.</li>
-            <li className="rounded-lg border border-white/20 bg-white/10 px-4 py-3">Atendimentos protegidos com vigilância 24h.</li>
+            {PROTECTED_CARE_COPY.bullets.map((item) => (
+              <li key={item} className="rounded-lg border border-white/20 bg-white/10 px-4 py-3">
+                {item}
+              </li>
+            ))}
           </ul>
           <div className="flex flex-wrap gap-4 justify-center md:justify-start">
             <Link href="/areas/animal-assisted-therapy" className="inline-flex items-center rounded-xl font-semibold border-2 border-white px-5 py-3 hover:bg-white hover:text-primary transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]">
@@ -65,10 +65,10 @@ export default function DogTherapyBand() {
           </div>
         </div>
         <div className="w-full md:w-[360px] rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm p-6 text-left">
-          <p className="text-xs uppercase tracking-widest text-white/80 mb-2">Diferencial clínico</p>
-          <h3 className="text-xl font-semibold mb-3">Protocolo Anakin</h3>
+          <p className="text-xs uppercase tracking-widest text-white/80 mb-2">{PROTECTED_CARE_COPY.highlightEyebrow}</p>
+          <h3 className="text-xl font-semibold mb-3">{PROTECTED_CARE_COPY.highlightTitle}</h3>
           <p className="text-white/90 text-sm leading-relaxed">
-            Fluxo de acolhimento para situações de maior sensibilidade, com equipe treinada para antecipação de risco, organização de ambiente e suporte familiar.
+            {PROTECTED_CARE_COPY.highlightDescription}
           </p>
         </div>
       </div>

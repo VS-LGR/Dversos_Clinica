@@ -1,6 +1,7 @@
 import Link from "next/link";
 import SectionTitle from "@/components/shared/SectionTitle";
 import { CLINIC_AREAS } from "@/lib/constants/clinicAreas";
+import { AREAS_PAGE_COPY } from "@/lib/constants/homeAreasContent";
 
 const GROUPS = [
   {
@@ -40,7 +41,7 @@ export default function AreasOverviewPage() {
       <div className="max-w-6xl mx-auto">
         <SectionTitle className="mb-4">Nossas áreas de atuação</SectionTitle>
         <p className="text-center text-primary/80 mb-12 max-w-2xl mx-auto">
-          Escolha uma área para conhecer os profissionais, o espaço e como funciona o atendimento.
+          {AREAS_PAGE_COPY.description}
         </p>
         <div className="space-y-10">
           {GROUPS.map((group) => (
