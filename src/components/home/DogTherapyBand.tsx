@@ -64,10 +64,11 @@ export default function DogTherapyBand() {
             />
           </div>
         </div>
-        <div className="w-full md:w-[360px] rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm p-6 text-left">
-          <p className="text-xs uppercase tracking-widest text-white/80 mb-2">{PROTECTED_CARE_COPY.highlightEyebrow}</p>
-          <h3 className="text-xl font-semibold mb-3">{PROTECTED_CARE_COPY.highlightTitle}</h3>
-          <p className="text-white/90 text-sm leading-relaxed">
+        <div className="w-full md:w-[360px] rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm p-6 text-left relative overflow-hidden">
+          <div className="absolute inset-0 detail-surface-subtle detail-overlay-soft opacity-[0.18]" aria-hidden />
+          <p className="text-xs uppercase tracking-widest text-white/80 mb-2 relative z-[1]">{PROTECTED_CARE_COPY.highlightEyebrow}</p>
+          <h3 className="text-xl font-semibold mb-3 relative z-[1]">{PROTECTED_CARE_COPY.highlightTitle}</h3>
+          <p className="text-white/90 text-sm leading-relaxed relative z-[1]">
             {PROTECTED_CARE_COPY.highlightDescription}
           </p>
         </div>

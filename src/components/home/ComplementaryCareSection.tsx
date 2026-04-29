@@ -13,9 +13,10 @@ export default function ComplementaryCareSection() {
         <p className="text-primary/80 leading-relaxed text-center max-w-3xl mx-auto mb-10">
           {COMPLEMENTARY_CARE_COPY.description}
         </p>
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-3 gap-5 relative">
+          <div className="absolute -inset-2 rounded-2xl detail-surface-subtle detail-overlay-soft opacity-[0.06] pointer-events-none" aria-hidden />
           {COMPLEMENTARY_CARE_COPY.cards.map((card) => (
-            <article key={card.title} className="rounded-xl border border-primary/[0.08] bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+            <article key={card.title} className="rounded-xl border border-primary/[0.08] bg-white p-6 shadow-sm hover:shadow-md transition-shadow relative z-[1]">
               <h3 className="font-semibold text-primary mb-2">{card.title}</h3>
               <p className="text-sm text-primary/80">{card.description}</p>
             </article>
