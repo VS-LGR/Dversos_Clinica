@@ -8,9 +8,6 @@ import { DEFAULT_WHATSAPP_NUMBER } from "@/lib/constants/clinicAreas";
 const navLinks = [
   { href: "/", label: "Início" },
   { href: "/areas", label: "Especialidades" },
-  { href: "/areas/neuropsychological-assessment", label: "Avaliação Neuropsicológica" },
-  { href: "/areas/psychology", label: "Psicologia" },
-  { href: "/areas/nutrition", label: "Nutrição" },
 ];
 
 export default function Header() {
