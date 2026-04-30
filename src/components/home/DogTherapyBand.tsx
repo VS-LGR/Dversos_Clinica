@@ -23,6 +23,13 @@ export default function DogTherapyBand() {
         }}
         aria-hidden
       />
+      <div
+        className="absolute inset-y-0 left-0 w-8 sm:w-10 pointer-events-none"
+        style={{
+          background: "linear-gradient(to right, rgba(15,28,55,0.5) 0%, rgba(26,43,86,0.24) 55%, rgba(26,43,86,0) 100%)",
+        }}
+        aria-hidden
+      />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,215,170,0.1)_0%,transparent_50%)]" aria-hidden />
       <div className="absolute top-0 right-0 bottom-0 w-2 sm:w-3 overflow-hidden" aria-hidden>
         <div
@@ -65,10 +72,10 @@ export default function DogTherapyBand() {
           </div>
         </div>
         <div className="w-full md:w-[360px] rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm p-6 text-left relative overflow-hidden">
-          <div className="absolute inset-0 detail-surface-subtle detail-overlay-soft opacity-[0.18]" aria-hidden />
-          <p className="text-xs uppercase tracking-widest text-white/80 mb-2 relative z-[1]">{PROTECTED_CARE_COPY.highlightEyebrow}</p>
-          <h3 className="text-xl font-semibold mb-3 relative z-[1]">{PROTECTED_CARE_COPY.highlightTitle}</h3>
-          <p className="text-white/90 text-sm leading-relaxed relative z-[1]">
+          <div className="absolute inset-0 z-0 detail-surface-subtle detail-overlay-soft opacity-[0.26]" aria-hidden />
+          <p className="text-xs uppercase tracking-widest text-white/80 mb-2 relative z-10">{PROTECTED_CARE_COPY.highlightEyebrow}</p>
+          <h3 className="text-xl font-semibold mb-3 relative z-10">{PROTECTED_CARE_COPY.highlightTitle}</h3>
+          <p className="text-white/90 text-sm leading-relaxed relative z-10">
             {PROTECTED_CARE_COPY.highlightDescription}
           </p>
         </div>

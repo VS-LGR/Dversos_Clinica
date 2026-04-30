@@ -52,15 +52,19 @@ export default function ScrollBar() {
       aria-hidden
     >
       <div
-        className="absolute inset-0 shadow-[ 8px_0_32px_rgba(26,43,86,0.4) ]"
+        className="absolute inset-0 shadow-[6px_0_18px_rgba(26,43,86,0.24)]"
         aria-hidden
       />
       <div
         className="absolute inset-0"
         style={{
           background: "linear-gradient(to left, rgba(15,28,55,0.97) 0%, rgba(26,43,86,1) 45%, rgb(26,43,86) 100%)",
-          boxShadow: "inset -14px 0 28px -8px rgba(0,0,0,0.25)",
+          boxShadow: "inset -8px 0 16px -8px rgba(0,0,0,0.18)",
         }}
+      />
+      <div
+        className="absolute top-0 right-0 bottom-0 w-4 bg-gradient-to-r from-transparent to-primary/25"
+        aria-hidden
       />
       <div
         className="absolute inset-0 opacity-50 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.16)_0%,rgba(255,255,255,0)_35%,rgba(0,0,0,0.08)_100%)]"
