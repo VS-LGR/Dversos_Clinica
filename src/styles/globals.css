@@ -75,30 +75,30 @@ body {
     background-image:
       linear-gradient(
         45deg,
-        rgba(26, 43, 86, 0.06) 25%,
+        rgba(26, 43, 86, 0.04) 25%,
         transparent 25%,
         transparent 75%,
-        rgba(26, 43, 86, 0.06) 75%
+        rgba(26, 43, 86, 0.04) 75%
       ),
       linear-gradient(
         -45deg,
-        rgba(26, 43, 86, 0.06) 25%,
+        rgba(26, 43, 86, 0.04) 25%,
         transparent 25%,
         transparent 75%,
-        rgba(26, 43, 86, 0.06) 75%
+        rgba(26, 43, 86, 0.04) 75%
       ),
       linear-gradient(
         45deg,
         transparent 42%,
-        rgba(59, 130, 246, 0.05) 42%,
-        rgba(59, 130, 246, 0.05) 58%,
+        rgba(59, 130, 246, 0.03) 42%,
+        rgba(59, 130, 246, 0.03) 58%,
         transparent 58%
       ),
       linear-gradient(
         -45deg,
         transparent 42%,
-        rgba(59, 130, 246, 0.05) 42%,
-        rgba(59, 130, 246, 0.05) 58%,
+        rgba(59, 130, 246, 0.03) 42%,
+        rgba(59, 130, 246, 0.03) 58%,
         transparent 58%
       );
     background-size:
