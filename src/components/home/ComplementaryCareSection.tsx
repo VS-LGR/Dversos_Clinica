@@ -6,7 +6,7 @@ export default function ComplementaryCareSection() {
   return (
     <section className="py-20 sm:py-24 px-4 sm:px-6 bg-[#fafbfc] border-t border-primary/[0.06] relative overflow-hidden" aria-labelledby="complementary-title">
       <div className="absolute inset-0 pointer-events-none" aria-hidden>
-        <div className="absolute inset-x-4 sm:inset-x-8 top-8 bottom-8 rounded-3xl detail-surface-subtle detail-overlay-soft mix-blend-soft-light opacity-[0.16]" />
+        <div className="absolute inset-x-4 sm:inset-x-8 top-8 bottom-8 rounded-3xl detail-surface-light opacity-100" />
       </div>
       <div className="max-w-6xl mx-auto relative z-[1]">
         <p className="text-primary/60 text-xs font-medium uppercase tracking-widest mb-2 text-center">{COMPLEMENTARY_CARE_COPY.eyebrow}</p>
