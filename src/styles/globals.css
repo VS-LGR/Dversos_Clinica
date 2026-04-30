@@ -29,26 +29,44 @@ body {
     background-image:
       linear-gradient(
         45deg,
-        rgba(59, 130, 246, 0.12) 25%,
+        rgba(59, 130, 246, 0.09) 25%,
         transparent 25%,
         transparent 75%,
-        rgba(59, 130, 246, 0.12) 75%
+        rgba(59, 130, 246, 0.09) 75%
       ),
       linear-gradient(
         -45deg,
-        rgba(59, 130, 246, 0.12) 25%,
+        rgba(59, 130, 246, 0.09) 25%,
         transparent 25%,
         transparent 75%,
-        rgba(59, 130, 246, 0.12) 75%
+        rgba(59, 130, 246, 0.09) 75%
+      ),
+      linear-gradient(
+        45deg,
+        transparent 42%,
+        rgba(99, 102, 241, 0.085) 42%,
+        rgba(99, 102, 241, 0.085) 58%,
+        transparent 58%
+      ),
+      linear-gradient(
+        -45deg,
+        transparent 42%,
+        rgba(99, 102, 241, 0.085) 42%,
+        rgba(99, 102, 241, 0.085) 58%,
+        transparent 58%
       ),
       radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%);
     background-size:
-      44px 44px,
-      44px 44px,
+      56px 56px,
+      56px 56px,
+      112px 112px,
+      112px 112px,
       100% 100%;
     background-position:
       0 0,
-      22px 22px,
+      28px 28px,
+      0 0,
+      56px 56px,
       0 0;
   }
 
@@ -63,20 +81,21 @@ body {
     background:
       repeating-linear-gradient(
         45deg,
-        rgba(255, 255, 255, 0.05) 0px,
-        rgba(255, 255, 255, 0.05) 1px,
+        rgba(255, 255, 255, 0.03) 0px,
+        rgba(255, 255, 255, 0.03) 1px,
         transparent 1px,
         transparent 10px
       ),
       repeating-linear-gradient(
         -45deg,
-        rgba(255, 255, 255, 0.05) 0px,
-        rgba(255, 255, 255, 0.05) 1px,
+        rgba(255, 255, 255, 0.03) 0px,
+        rgba(255, 255, 255, 0.03) 1px,
         transparent 1px,
         transparent 10px
       );
     background-size: 20px 20px;
-    opacity: 0.24;
+    opacity: 0.2;
+    filter: blur(0.4px);
     pointer-events: none;
   }
 }
