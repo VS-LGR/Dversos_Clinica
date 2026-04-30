@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import { DEFAULT_WHATSAPP_NUMBER } from "@/lib/constants/clinicAreas";
 
 const navLinks = [
@@ -44,14 +45,11 @@ export default function Header() {
               {label}
             </Link>
           ))}
-          <a
-            href={`https://wa.me/${DEFAULT_WHATSAPP_NUMBER}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ml-1 inline-flex items-center rounded-full bg-primary text-white px-4 py-2 text-sm font-semibold hover:bg-primary-light transition-colors"
-          >
-            Falar no WhatsApp
-          </a>
+          <WhatsAppButton
+            phoneNumber={DEFAULT_WHATSAPP_NUMBER}
+            label="Falar no WhatsApp"
+            className="ml-1 rounded-full px-4 py-2 text-sm !bg-primary hover:!bg-primary-light !text-white shadow-none hover:shadow-none"
+          />
         </nav>
 
         <button
@@ -91,14 +89,11 @@ export default function Header() {
               </Link>
             ))}
             <div className="pt-2 grid grid-cols-1 gap-2">
-              <a
-                href={`https://wa.me/${DEFAULT_WHATSAPP_NUMBER}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex justify-center rounded-xl bg-primary text-white px-4 py-3 text-sm font-semibold hover:bg-primary-light transition-colors"
-              >
-                Falar no WhatsApp
-              </a>
+              <WhatsAppButton
+                phoneNumber={DEFAULT_WHATSAPP_NUMBER}
+                label="Falar no WhatsApp"
+                className="w-full text-sm !bg-primary hover:!bg-primary-light !text-white shadow-none hover:shadow-none"
+              />
             </div>
           </nav>
         </div>

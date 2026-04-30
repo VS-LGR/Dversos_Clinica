@@ -34,6 +34,7 @@ export default function AbaInterventionSection() {
           phoneNumber={DEFAULT_WHATSAPP_NUMBER}
           message="Olá! Gostaria de saber mais sobre a intervenção ABA da Clínica DVERSO."
           label="Quero saber sobre ABA"
+          className="w-full sm:w-auto"
         />
       </div>
     </section>

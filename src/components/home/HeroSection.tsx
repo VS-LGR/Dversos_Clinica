@@ -50,6 +50,7 @@ export default function HeroSection() {
               phoneNumber={DEFAULT_WHATSAPP_NUMBER}
               message="Olá! Gostaria de agendar ou saber mais sobre os atendimentos da Clínica DVERSO."
               label="Agendar ou tirar dúvidas pelo WhatsApp"
+              className="w-full sm:w-auto max-w-[420px] mx-auto lg:mx-0"
             />
           </div>
         </div>

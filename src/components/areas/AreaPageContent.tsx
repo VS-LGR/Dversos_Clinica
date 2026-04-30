@@ -40,6 +40,7 @@ export default function AreaPageContent({ slug }: AreaPageContentProps) {
             phoneNumber={DEFAULT_WHATSAPP_NUMBER}
             message={area.whatsAppMessage}
             label={`Falar no WhatsApp sobre ${area.shortName}`}
+            className="w-full sm:w-auto max-w-[420px]"
           />
         </div>
       </section>

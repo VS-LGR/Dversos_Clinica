@@ -42,7 +42,7 @@ export const CLINIC_AREAS: ClinicArea[] = [
     description:
       "Uso terapêutico da música para favorecer comunicação, expressão emocional, regulação e desenvolvimento global.",
     howItWorks:
-      "As sessões utilizam escuta, ritmo, canto e instrumentos de forma planejada para cada objetivo clínico. Nao e necessario conhecimento musical previo.",
+      "As sessões utilizam escuta, ritmo, canto e instrumentos de forma planejada para cada objetivo clínico. Não é necessário conhecimento musical prévio.",
     whatsAppMessage:
       "Olá! Gostaria de saber mais sobre Musicoterapia na Clínica DVERSO.",
     accentClass: "text-primary",
@@ -54,7 +54,7 @@ export const CLINIC_AREAS: ClinicArea[] = [
     description:
       "Atendimento nutricional para diferentes fases da vida, com foco em saúde, rotina alimentar e qualidade de vida.",
     howItWorks:
-      "Acompanhamento com avaliação individual, plano alimentar personalizado e orientacao para a familia, considerando necessidades clinicas e rotina real.",
+      "Acompanhamento com avaliação individual, plano alimentar personalizado e orientação para a família, considerando necessidades clínicas e rotina real.",
     whatsAppMessage:
       "Olá! Gostaria de agendar ou tirar dúvidas sobre Nutrição na Clínica DVERSO.",
     accentClass: "text-primary",
@@ -64,9 +64,9 @@ export const CLINIC_AREAS: ClinicArea[] = [
     name: "Arteterapia",
     shortName: "Arteterapia",
     description:
-      "Intervenção terapêutica por meio de recursos artisticos para promover expressão, criatividade e elaboração emocional.",
+      "Intervenção terapêutica por meio de recursos artísticos para promover expressão, criatividade e elaboração emocional.",
     howItWorks:
-      "A proposta e conduzida por profissional habilitado, com atividades adaptadas ao perfil de cada paciente e integradas ao plano terapeutico.",
+      "A proposta é conduzida por profissional habilitado, com atividades adaptadas ao perfil de cada paciente e integradas ao plano terapêutico.",
     whatsAppMessage:
       "Olá! Gostaria de informações sobre Arteterapia na Clínica DVERSO.",
     accentClass: "text-primary",
@@ -78,7 +78,7 @@ export const CLINIC_AREAS: ClinicArea[] = [
     description:
       "Atendimento voltado para autonomia, funcionalidade e participação nas atividades do dia a dia.",
     howItWorks:
-      "As sessões trabalham habilidades motoras, cognitivas, sensoriais e de rotina, com metas definidas junto a familia e equipe interdisciplinar.",
+      "As sessões trabalham habilidades motoras, cognitivas, sensoriais e de rotina, com metas definidas junto à família e à equipe interdisciplinar.",
     whatsAppMessage:
       "Olá! Gostaria de saber mais sobre Terapia Ocupacional na Clínica DVERSO.",
     accentClass: "text-primary",
@@ -88,9 +88,9 @@ export const CLINIC_AREAS: ClinicArea[] = [
     name: "Integração Sensorial",
     shortName: "Integração Sensorial",
     description:
-      "Intervenção para organizar respostas aos estimulos sensoriais, favorecendo autorregulação e funcionalidade.",
+      "Intervenção para organizar respostas aos estímulos sensoriais, favorecendo autorregulação e funcionalidade.",
     howItWorks:
-      "O plano terapeutico e estruturado a partir de avaliacao especifica e atividades graduadas para ampliar adaptacao sensorial no cotidiano.",
+      "O plano terapêutico é estruturado a partir de avaliação específica e atividades graduadas para ampliar adaptação sensorial no cotidiano.",
     whatsAppMessage:
       "Olá! Gostaria de saber mais sobre Integração Sensorial na Clínica DVERSO.",
     accentClass: "text-primary",
@@ -100,9 +100,9 @@ export const CLINIC_AREAS: ClinicArea[] = [
     name: "Fisioterapia",
     shortName: "Fisioterapia",
     description:
-      "Atendimento fisioterapeutico com foco em desenvolvimento motor, funcionalidade e qualidade de movimento.",
+      "Atendimento fisioterapêutico com foco em desenvolvimento motor, funcionalidade e qualidade de movimento.",
     howItWorks:
-      "As condutas sao definidas conforme avaliacao funcional e objetivos clinicos, com acompanhamento continuo e orientacao familiar.",
+      "As condutas são definidas conforme avaliação funcional e objetivos clínicos, com acompanhamento contínuo e orientação familiar.",
     whatsAppMessage:
       "Olá! Gostaria de informações sobre Fisioterapia na Clínica DVERSO.",
     accentClass: "text-primary",
@@ -114,7 +114,7 @@ export const CLINIC_AREAS: ClinicArea[] = [
     description:
       "Intervenção que integra corpo, emoção e cognição para favorecer desenvolvimento global e aprendizagem.",
     howItWorks:
-      "As sessões utilizam atividades corporais e ludicas para ampliar organizacao motora, atencao, interacao e regulacao comportamental.",
+      "As sessões utilizam atividades corporais e lúdicas para ampliar organização motora, atenção, interação e regulação comportamental.",
     whatsAppMessage:
       "Olá! Gostaria de informações sobre Psicomotricidade na Clínica DVERSO.",
     accentClass: "text-primary",
@@ -124,9 +124,9 @@ export const CLINIC_AREAS: ClinicArea[] = [
     name: "Acompanhante Terapêutico (AT)",
     shortName: "Acompanhante Terapêutico",
     description:
-      "Suporte terapeutico em contextos de vida real, promovendo generalizacao de habilidades e maior autonomia.",
+      "Suporte terapêutico em contextos de vida real, promovendo generalização de habilidades e maior autonomia.",
     howItWorks:
-      "O acompanhamento ocorre em ambientes como casa, escola e comunidade, com plano alinhado ao cuidado clinico e orientacao continua da equipe.",
+      "O acompanhamento ocorre em ambientes como casa, escola e comunidade, com plano alinhado ao cuidado clínico e orientação contínua da equipe.",
     whatsAppMessage:
       "Olá! Gostaria de informações sobre Acompanhante Terapêutico na Clínica DVERSO.",
     accentClass: "text-primary",
@@ -138,7 +138,7 @@ export const CLINIC_AREAS: ClinicArea[] = [
     description:
       "Atendimento para seletividade e dificuldades alimentares, com abordagem gradual, segura e acolhedora.",
     howItWorks:
-      "A intervenção considera aspectos sensoriais, comportamentais e nutricionais para ampliar repertorio alimentar e reduzir estresse nas refeicoes.",
+      "A intervenção considera aspectos sensoriais, comportamentais e nutricionais para ampliar repertório alimentar e reduzir estresse nas refeições.",
     whatsAppMessage:
       "Olá! Gostaria de informações sobre Terapia Alimentar na Clínica DVERSO.",
     accentClass: "text-primary",
@@ -148,9 +148,9 @@ export const CLINIC_AREAS: ClinicArea[] = [
     name: "Terapia Assistida por Animais (TAA)",
     shortName: "Terapia Assistida por Animais",
     description:
-      "Intervenções terapeuticas mediadas por animais para fortalecer vínculo, engajamento e desenvolvimento socioemocional.",
+      "Intervenções terapêuticas mediadas por animais para fortalecer vínculo, engajamento e desenvolvimento socioemocional.",
     howItWorks:
-      "As atividades sao planejadas conforme objetivos clinicos e conduzidas por profissionais capacitados em ambiente protegido e supervisionado.",
+      "As atividades são planejadas conforme objetivos clínicos e conduzidas por profissionais capacitados em ambiente protegido e supervisionado.",
     whatsAppMessage:
       "Olá! Gostaria de informações sobre Terapia Assistida por Animais na Clínica DVERSO.",
     accentClass: "text-primary",

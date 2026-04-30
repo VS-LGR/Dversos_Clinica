@@ -16,7 +16,7 @@ export default function FoundersSection() {
           Quem somos
         </SectionTitle>
         <p className="text-center text-primary/75 text-sm sm:text-base mb-14 max-w-2xl mx-auto">
-          Profissionais dedicadas à saúde integrada e ao acolhimento familiar.
+          Profissionais dedicados à saúde integrada e ao acolhimento familiar.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {FOUNDERS.map((founder) => (

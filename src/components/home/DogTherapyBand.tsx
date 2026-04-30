@@ -51,7 +51,7 @@ export default function DogTherapyBand() {
               </li>
             ))}
           </ul>
-          <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+          <div className="flex w-full flex-wrap gap-4 justify-center md:justify-start">
             <Link href="/areas/animal-assisted-therapy" className="inline-flex items-center rounded-xl font-semibold border-2 border-white px-5 py-3 hover:bg-white hover:text-primary transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]">
               Conhecer TAA
             </Link>
@@ -60,7 +60,7 @@ export default function DogTherapyBand() {
               message="Olá! Gostaria de saber mais sobre os diferenciais de acolhimento e segurança da Clínica DVERSO."
               label="Falar no WhatsApp"
               variant="outline"
-              className="!border-2 !border-white !text-white !bg-white/15 hover:!bg-white hover:!text-primary focus:!ring-white/50"
+              className="w-full sm:w-auto !border-2 !border-white !text-white !bg-white/15 hover:!bg-white hover:!text-primary focus:!ring-white/50"
             />
           </div>
         </div>
