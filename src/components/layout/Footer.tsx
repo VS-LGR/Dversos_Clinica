@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FOOTER_EXTRA_LINKS } from "@/lib/constants/navigation";
 
 const footerLinks = [
   { href: "/areas/psychology", label: "Psicologia" },
@@ -28,7 +29,19 @@ export default function Footer() {
               Saúde integrada em Sorocaba e região: psicologia, terapias integradas, nutrição e intervenções especializadas.
             </p>
           </div>
-          <nav aria-label="Links do rodapé">
+          <nav aria-label="Institucional">
+            <h3 className="text-lg font-semibold mb-2">Institucional</h3>
+            <ul className="flex flex-col gap-1">
+              {FOOTER_EXTRA_LINKS.map(({ href, label }) => (
+                <li key={href}>
+                  <Link href={href} className="text-white/90 hover:text-white text-sm transition-colors">
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <nav aria-label="Áreas de atuação">
             <h3 className="text-lg font-semibold mb-2">Áreas</h3>
             <ul className="flex flex-col gap-1">
               {footerLinks.map(({ href, label }) => (

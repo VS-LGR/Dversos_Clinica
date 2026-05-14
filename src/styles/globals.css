@@ -142,3 +142,42 @@ body {
     pointer-events: none;
   }
 }
+
+@layer components {
+  .markdown-body {
+    @apply text-primary/90 leading-relaxed max-w-none;
+  }
+  .markdown-body h1 {
+    @apply text-2xl sm:text-3xl font-bold text-primary mt-10 mb-4;
+  }
+  .markdown-body h2 {
+    @apply text-xl sm:text-2xl font-semibold text-primary mt-8 mb-3;
+  }
+  .markdown-body h3 {
+    @apply text-lg font-semibold text-primary mt-6 mb-2;
+  }
+  .markdown-body p {
+    @apply mb-4;
+  }
+  .markdown-body ul {
+    @apply list-disc pl-6 mb-4 space-y-1;
+  }
+  .markdown-body ol {
+    @apply list-decimal pl-6 mb-4 space-y-1;
+  }
+  .markdown-body a {
+    @apply text-primary-light underline underline-offset-2 hover:text-primary;
+  }
+  .markdown-body blockquote {
+    @apply border-l-4 border-primary/20 pl-4 italic text-primary/80 my-4;
+  }
+  .markdown-body pre {
+    @apply rounded-lg bg-primary-pale/80 p-4 overflow-x-auto text-sm my-4;
+  }
+  .markdown-body code {
+    @apply rounded bg-primary-pale/90 px-1.5 py-0.5 text-sm font-mono text-primary;
+  }
+  .markdown-body pre code {
+    @apply bg-transparent p-0;
+  }
+}

@@ -5,11 +5,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import { DEFAULT_WHATSAPP_NUMBER } from "@/lib/constants/clinicAreas";
-
-const navLinks = [
-  { href: "/", label: "Início" },
-  { href: "/areas", label: "Especialidades" },
-];
+import { SITE_NAV_LINKS } from "@/lib/constants/navigation";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,6 +14,7 @@ export default function Header() {
   const isActiveLink = (href: string) => {
     if (href === "/") return pathname === "/";
     if (href === "/areas") return pathname.startsWith("/areas");
+    if (href === "/blog") return pathname.startsWith("/blog");
     return pathname === href;
   };
 
@@ -32,7 +29,7 @@ export default function Header() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-2" aria-label="Navegação principal">
-          {navLinks.map(({ href, label }) => (
+          {SITE_NAV_LINKS.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
@@ -74,7 +71,7 @@ export default function Header() {
       {menuOpen && (
         <div id="mobile-main-menu" className="md:hidden border-t border-primary-pale bg-white shadow-sm">
           <nav className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-2" aria-label="Navegação mobile">
-            {navLinks.map(({ href, label }) => (
+            {SITE_NAV_LINKS.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
