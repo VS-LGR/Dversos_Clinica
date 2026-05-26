@@ -26,6 +26,11 @@ export default function RevealOnScroll({
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
+  // Ajuste de UX: o elemento ainda pode estar entrando parcialmente fora da tela
+  // no momento em que o IntersectionObserver dispara. Mantemos o stagger existente,
+  // mas somamos um atraso base para tornar o "slide-in" mais visível.
+  const BASE_DELAY_MS = 500;
+
   const resolvedDirection =
     direction ?? (index !== undefined ? alternateRevealDirection(index) : "right");
 
@@ -33,7 +38,7 @@ export default function RevealOnScroll({
   const style: RevealStyle | undefined = {
     "--reveal-x": resolvedDirection === "left" ? "-24%" : "24%",
     "--reveal-x-mobile": resolvedDirection === "left" ? "-18%" : "18%",
-    ...(delayMs !== undefined ? { "--reveal-delay": `${delayMs}ms` } : {}),
+    "--reveal-delay": `${(delayMs ?? 0) + BASE_DELAY_MS}ms`,
   };
 
   useEffect(() => {
