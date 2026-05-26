@@ -16,7 +16,7 @@ export default function HeroSection() {
     >
       {/* Background */}
       <div
-        className="absolute inset-0 bg-gradient-to-br from-pastel-aqua/70 via-pastel-mint/50 to-pastel-lime/60"
+        className="absolute inset-0 bg-gradient-to-br from-[#f8f6ff] via-white to-white"
         aria-hidden
       />
       <div
@@ -30,7 +30,7 @@ export default function HeroSection() {
 
       <div className="relative z-10 max-w-6xl mx-auto w-full flex flex-col lg:flex-row lg:gap-12 xl:gap-16 items-center">
         <RevealOnScroll index={0}>
-          <div className="flex-1 text-center lg:text-left mb-12 lg:mb-0 rounded-3xl bg-pastel-peach/50 border border-primary/[0.08] shadow-md shadow-primary/5 p-8 sm:p-10">
+          <div className="flex-1 text-center lg:text-left mb-12 lg:mb-0 rounded-3xl bg-white/95 border border-primary/[0.08] shadow-md shadow-primary/5 p-8 sm:p-10">
             <p className="text-primary/70 text-sm font-medium uppercase tracking-widest mb-3">
             Saúde integrada · Sorocaba e região
             </p>

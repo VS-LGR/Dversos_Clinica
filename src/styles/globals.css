@@ -21,13 +21,7 @@
 }
 
 body {
-  @apply text-primary antialiased;
-  background: linear-gradient(
-    165deg,
-    color-mix(in srgb, var(--color-pastel-lime) 35%, white) 0%,
-    color-mix(in srgb, var(--color-pastel-mint) 25%, white) 40%,
-    color-mix(in srgb, var(--color-pastel-aqua) 20%, white) 100%
-  );
+  @apply bg-white text-primary antialiased;
 }
 
 /* VLibras Widget (https://vlibras.gov.br/doc/widget/installation/webpageintegration.html) */

@@ -4,7 +4,7 @@ import { BLOG_COPY } from "@/lib/constants/blogCopy";
 export default function BlogHero() {
   return (
     <section
-      className="relative rounded-3xl border border-primary/[0.08] bg-gradient-to-br from-pastel-peach via-pastel-mint to-pastel-aqua shadow-sm overflow-hidden mb-12 sm:mb-14"
+      className="relative rounded-3xl border border-primary/[0.08] bg-white shadow-sm overflow-hidden mb-12 sm:mb-14"
       aria-labelledby="blog-hero-title"
     >
       <div

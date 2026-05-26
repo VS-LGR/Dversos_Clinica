@@ -5,7 +5,7 @@ import { DEFAULT_WHATSAPP_NUMBER } from "@/lib/constants/clinicAreas";
 
 export default function AbaInterventionSection() {
   return (
-    <section className="py-20 sm:py-24 px-4 sm:px-6 bg-pastel-coral/80 border-t border-primary/[0.06]" aria-labelledby="aba-title">
+    <section className="py-20 sm:py-24 px-4 sm:px-6 bg-white border-t border-primary/[0.06]" aria-labelledby="aba-title">
       <div className="max-w-6xl mx-auto">
         <div className="max-w-3xl">
           <p className="text-primary/60 text-xs font-medium uppercase tracking-widest mb-2">Intervenção especializada</p>

@@ -22,12 +22,16 @@ export default function BlogPostCard({ post, formatDate, index = 0 }: BlogPostCa
       href={`/blog/${post.slug}`}
       className={`group flex h-full flex-col overflow-hidden rounded-2xl border border-primary/[0.08] ${cardBg} shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300`}
     >
-      <div className="relative aspect-[16/10] overflow-hidden bg-pastel-aqua/40">
+      <div className="relative aspect-[16/10] overflow-hidden">
+        <div
+          className="absolute inset-0 bg-gradient-to-br from-pastel-aqua/50 to-pastel-mint/40"
+          aria-hidden
+        />
         <Image
           src={imageSrc}
           alt=""
           fill
-          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+          className="relative z-10 object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           unoptimized={imageSrc.includes("supabase")}
         />

@@ -10,7 +10,7 @@ const CHILD_CLOUD_BLACK = "https://i.imgur.com/hC4SDkI.png";
 export default function NeurodiversityHighlight() {
   return (
     <section
-      className="py-20 sm:py-24 px-4 sm:px-6 bg-pastel-aqua relative overflow-hidden border-t border-primary/[0.06]"
+      className="py-20 sm:py-24 px-4 sm:px-6 bg-white relative overflow-hidden border-t border-primary/[0.06]"
       aria-labelledby="neuro-highlight-title"
     >
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-16">
@@ -33,10 +33,14 @@ export default function NeurodiversityHighlight() {
           </Link>
         </div>
         <div
-          className="flex-shrink-0 order-1 md:order-2 flex justify-center w-[220px] sm:w-[280px] md:w-[300px] cursor-default"
+          className="relative flex-shrink-0 order-1 md:order-2 flex justify-center w-[220px] sm:w-[280px] md:w-[300px] cursor-default"
           aria-hidden
         >
-          <div className="relative w-full aspect-square max-w-[300px] group">
+          <div
+            className="absolute inset-0 m-auto w-[110%] h-[110%] max-w-[320px] rounded-full bg-gradient-to-br from-pastel-aqua/80 via-pastel-mint/60 to-pastel-peach/50 blur-md"
+            aria-hidden
+          />
+          <div className="relative w-full aspect-square max-w-[300px] group z-10">
             <Image
               src={CHILD_CLOUD_BLACK}
               alt=""

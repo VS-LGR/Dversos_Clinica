@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function BeDversoSection() {
   return (
-    <section className="py-20 sm:py-24 px-4 sm:px-6 bg-pastel-lime border-t border-primary/[0.06]" aria-labelledby="be-dverso-title">
+    <section className="py-20 sm:py-24 px-4 sm:px-6 bg-white border-t border-primary/[0.06]" aria-labelledby="be-dverso-title">
       <div className="max-w-6xl mx-auto">
         <p className="text-primary/60 text-xs font-medium uppercase tracking-widest mb-2 text-center">Seja DVERSO</p>
         <h2 id="be-dverso-title" className="text-2xl sm:text-3xl font-bold text-primary tracking-tight mb-4 text-center">

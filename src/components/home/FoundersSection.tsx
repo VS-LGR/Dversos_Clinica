@@ -7,7 +7,7 @@ import RevealOnScroll from "@/components/shared/RevealOnScroll";
 
 export default function FoundersSection() {
   return (
-    <section className="py-20 sm:py-24 px-4 sm:px-6 bg-pastel-aqua/90 border-t border-primary/[0.06]" aria-labelledby="founders-title">
+    <section className="py-20 sm:py-24 px-4 sm:px-6 bg-white border-t border-primary/[0.06]" aria-labelledby="founders-title">
       <div className="max-w-6xl mx-auto">
         <SectionTitle
           id="founders-title"

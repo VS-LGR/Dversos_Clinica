@@ -83,16 +83,22 @@ export default async function BlogPostPage({ params }: Props) {
 
         <div className="grid gap-10 lg:grid-cols-[1fr_300px] lg:gap-12">
           <div className="min-w-0">
-            <div className="relative aspect-[16/9] sm:aspect-[2/1] rounded-2xl overflow-hidden mb-8 bg-pastel-aqua shadow-sm">
+            <div className="relative mb-8">
+              <div
+                className="absolute -inset-3 bg-gradient-to-br from-pastel-coral/70 via-pastel-peach/60 to-pastel-aqua/50 rounded-3xl blur-lg pointer-events-none"
+                aria-hidden
+              />
+              <div className="relative aspect-[16/9] sm:aspect-[2/1] rounded-2xl overflow-hidden shadow-sm ring-1 ring-primary/[0.06]">
               <Image
                 src={coverSrc}
                 alt=""
                 fill
-                className="object-cover"
+                className="object-cover relative z-10"
                 priority
                 sizes="(max-width: 1024px) 100vw, 720px"
                 unoptimized={coverSrc.includes("supabase")}
               />
+              </div>
             </div>
 
             <div className="flex flex-wrap items-center gap-3 mb-4">

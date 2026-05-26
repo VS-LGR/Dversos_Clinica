@@ -49,7 +49,7 @@ export default function AreasGrid() {
   }, [selectedBranch]);
 
   return (
-    <section className="py-20 sm:py-24 px-4 sm:px-6 bg-pastel-lime border-t border-primary/[0.06]" aria-labelledby="areas-title">
+    <section className="py-20 sm:py-24 px-4 sm:px-6 bg-white border-t border-primary/[0.06]" aria-labelledby="areas-title">
       <div className="max-w-6xl mx-auto">
         <SectionTitle
           id="areas-title"
@@ -114,7 +114,7 @@ export default function AreasGrid() {
             return visibleBranches.map((branch, index) => (
             <details
               key={branch.title}
-              className="group rounded-2xl border border-primary/[0.1] bg-pastel-mint/40 shadow-sm open:shadow-md transition-shadow"
+              className="group rounded-2xl border border-primary/[0.1] bg-white shadow-sm open:shadow-md transition-shadow"
               open={selectedBranch !== "all" || index === 0}
             >
               <summary className="list-none cursor-pointer select-none px-5 sm:px-6 py-4 flex items-center justify-between gap-4">
