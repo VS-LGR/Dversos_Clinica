@@ -10,10 +10,12 @@ module.exports = {
       colors: {
         primary: "#1a2b56",
         "primary-light": "#24386f",
-        "primary-pale": "#f3f4ff",
+        "primary-pale": "#f7f5ff",
         surface: "#f9fafb",
         accent: "#f2b8c6",
         "accent-warm": "#ffd7aa",
+        "accent-mint": "#e8f5f0",
+        "accent-lavender": "#f0eef8",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
@@ -26,6 +28,7 @@ module.exports = {
         "intro-logo": "introLogo 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards",
         "intro-tagline": "introTagline 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.25s forwards",
         "intro-out": "introOut 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+        "reveal-in": "revealIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards",
       },
       keyframes: {
         fadeIn: {
@@ -55,6 +58,10 @@ module.exports = {
         introOut: {
           "0%": { opacity: "1", transform: "scale(1)" },
           "100%": { opacity: "0", transform: "scale(1.02)" },
+        },
+        revealIn: {
+          "0%": { opacity: "0", transform: "translateY(24px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
     },

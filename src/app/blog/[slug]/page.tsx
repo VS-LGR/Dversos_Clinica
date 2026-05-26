@@ -4,8 +4,6 @@ import { notFound } from "next/navigation";
 import MarkdownBody from "@/components/blog/MarkdownBody";
 import { fetchPublishedPostBySlug } from "@/lib/blog/queries";
 
-export const revalidate = 60;
-
 type Props = { params: { slug: string } };
 
 function formatDate(iso: string | null) {

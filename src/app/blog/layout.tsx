@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
-export const revalidate = 60;
+/** Lista/detalhe sempre alinhados ao Supabase após publicar (evita cache ISR vazio). */
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Blog | Clínica DVERSO",

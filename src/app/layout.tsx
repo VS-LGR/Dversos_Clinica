@@ -4,6 +4,8 @@ import "@/styles/globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ScrollBar from "@/components/layout/ScrollBar";
+import ContactStrip from "@/components/layout/ContactStrip";
+import LocalBusinessJsonLd from "@/components/seo/LocalBusinessJsonLd";
 import GoogleTags from "@/components/analytics/GoogleTags";
 
 const inter = Inter({
@@ -56,7 +58,7 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className={`${inter.variable} font-sans min-h-screen flex flex-col relative pl-0 sm:pl-20 md:pl-24`}>
         <GoogleTags />
-        {/* Faixa vertical azul com animação ao scroll */}
+        <LocalBusinessJsonLd />
         <ScrollBar />
         <a
           href="#main-content"
@@ -66,6 +68,7 @@ export default function RootLayout({
         </a>
         <Header />
         <main id="main-content" className="flex-1">{children}</main>
+        <ContactStrip />
         <Footer />
       </body>
     </html>

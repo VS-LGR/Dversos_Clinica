@@ -5,10 +5,12 @@
 :root {
   --color-primary: #1a2b56;
   --color-primary-light: #24386f;
-  --color-primary-pale: #f3f4ff;
+  --color-primary-pale: #f7f5ff;
   --color-surface: #f9fafb;
   --color-accent: #f2b8c6;
   --color-accent-warm: #ffd7aa;
+  --color-accent-mint: #e8f5f0;
+  --color-accent-lavender: #f0eef8;
 }
 
 body {
@@ -22,6 +24,48 @@ body {
   .animate-delay-400 { animation-delay: 400ms; }
   .animate-delay-500 { animation-delay: 500ms; }
   .animate-delay-600 { animation-delay: 600ms; }
+
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  .reveal-on-scroll--visible {
+    animation: revealOnScrollIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  @keyframes revealOnScrollIn {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-on-scroll {
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal-on-scroll--visible {
+      animation: none;
+    }
+
+    .animate-slide-up,
+    .animate-fade-in,
+    .animate-intro-logo,
+    .animate-intro-tagline,
+    .animate-paw-float,
+    .animate-paw-bounce {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
 
   /* Subtle geometric texture for small accent areas (80/20). */
   .detail-surface-subtle {

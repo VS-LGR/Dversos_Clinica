@@ -46,7 +46,7 @@ export default function AreasGrid() {
   }, [selectedBranch]);
 
   return (
-    <section className="py-20 sm:py-24 px-4 sm:px-6 bg-[#fafbfc]" aria-labelledby="areas-title">
+    <section className="py-20 sm:py-24 px-4 sm:px-6 bg-accent-mint/30" aria-labelledby="areas-title">
       <div className="max-w-6xl mx-auto">
         <SectionTitle
           id="areas-title"

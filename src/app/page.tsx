@@ -7,6 +7,7 @@ import AbaInterventionSection from "@/components/home/AbaInterventionSection";
 import ComplementaryCareSection from "@/components/home/ComplementaryCareSection";
 import BeDversoSection from "@/components/home/BeDversoSection";
 import FoundersSection from "@/components/home/FoundersSection";
+import RevealOnScroll from "@/components/shared/RevealOnScroll";
 
 export default function HomePage() {
   return (
@@ -14,13 +15,27 @@ export default function HomePage() {
       <OpeningAnimation>
         <HeroSection />
       </OpeningAnimation>
-      <AreasGrid />
-      <NeurodiversityHighlight />
-      <DogTherapyBand />
-      <AbaInterventionSection />
-      <ComplementaryCareSection />
-      <BeDversoSection />
-      <FoundersSection />
+      <RevealOnScroll>
+        <AreasGrid />
+      </RevealOnScroll>
+      <RevealOnScroll>
+        <NeurodiversityHighlight />
+      </RevealOnScroll>
+      <RevealOnScroll>
+        <DogTherapyBand />
+      </RevealOnScroll>
+      <RevealOnScroll>
+        <AbaInterventionSection />
+      </RevealOnScroll>
+      <RevealOnScroll>
+        <ComplementaryCareSection />
+      </RevealOnScroll>
+      <RevealOnScroll>
+        <BeDversoSection />
+      </RevealOnScroll>
+      <RevealOnScroll>
+        <FoundersSection />
+      </RevealOnScroll>
     </div>
   );
 }

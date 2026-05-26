@@ -1,5 +1,10 @@
 import Link from "next/link";
 import { FOOTER_EXTRA_LINKS } from "@/lib/constants/navigation";
+import {
+  SITE_CONTACT,
+  formatFullAddress,
+  formatTelHref,
+} from "@/lib/constants/siteContact";
 
 const footerLinks = [
   { href: "/areas/psychology", label: "Psicologia" },
@@ -10,9 +15,10 @@ const footerLinks = [
 ];
 
 export default function Footer() {
+  const fullAddress = formatFullAddress();
+
   return (
     <footer className="relative bg-primary text-white overflow-hidden">
-      {/* Profundidade: gradiente e sombras (continuidade com as faixas) */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -22,12 +28,53 @@ export default function Footer() {
         aria-hidden
       />
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-10">
-        <div className="flex flex-col md:flex-row justify-between gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-semibold mb-2">Clínica DVERSO</h3>
+            <h3 className="text-lg font-semibold mb-2">{SITE_CONTACT.name}</h3>
             <p className="text-white/90 text-sm max-w-xs">
               Saúde integrada em Sorocaba e região: psicologia, terapias integradas, nutrição e intervenções especializadas.
             </p>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold mb-2">Contato</h3>
+            <address className="not-italic text-sm text-white/90 space-y-2">
+              <p>
+                <a
+                  href={SITE_CONTACT.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors underline-offset-2 hover:underline"
+                >
+                  {fullAddress}
+                </a>
+              </p>
+              <p>
+                <a
+                  href={formatTelHref(SITE_CONTACT.phoneE164)}
+                  className="hover:text-white transition-colors"
+                >
+                  {SITE_CONTACT.phoneDisplay}
+                </a>
+              </p>
+              <p className="flex flex-wrap gap-3 pt-1">
+                <a
+                  href={SITE_CONTACT.social.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors underline-offset-2 hover:underline"
+                >
+                  Instagram
+                </a>
+                <a
+                  href={SITE_CONTACT.social.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors underline-offset-2 hover:underline"
+                >
+                  Facebook
+                </a>
+              </p>
+            </address>
           </div>
           <nav aria-label="Institucional">
             <h3 className="text-lg font-semibold mb-2">Institucional</h3>
@@ -55,7 +102,7 @@ export default function Footer() {
           </nav>
         </div>
         <div className="mt-8 pt-6 border-t border-white/20 text-center text-white/80 text-sm">
-          © {new Date().getFullYear()} Clínica DVERSO. Todos os direitos reservados.
+          © {new Date().getFullYear()} {SITE_CONTACT.name}. Todos os direitos reservados.
         </div>
       </div>
     </footer>

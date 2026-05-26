@@ -21,7 +21,7 @@ export default async function BlogPage() {
   return (
     <div className="min-h-screen py-16 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
-        <SectionTitle className="mb-4" subtitle="Conteúdo da equipe para famílias e profissionais.">
+        <SectionTitle as="h1" className="mb-4" subtitle="Conteúdo da equipe para famílias e profissionais.">
           Blog
         </SectionTitle>
 

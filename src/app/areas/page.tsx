@@ -39,7 +39,7 @@ export default function AreasOverviewPage() {
   return (
     <div className="min-h-screen py-16 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
-        <SectionTitle className="mb-4">Nossas áreas de atuação</SectionTitle>
+        <SectionTitle as="h1" className="mb-4">Nossas áreas de atuação</SectionTitle>
         <p className="text-center text-primary/80 mb-12 max-w-2xl mx-auto">
           {AREAS_PAGE_COPY.description}
         </p>

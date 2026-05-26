@@ -1,6 +1,7 @@
 -- Blog + painel: tabelas e RLS (rodar no SQL Editor do Supabase ou via CLI).
 -- Após criar o usuário em Authentication, inserir uma linha em blog_admins:
 --   insert into public.blog_admins (user_id) values ('<uuid do auth.users>');
+-- Depois rode também: supabase/migrations/002_blog_grants.sql (senão o blog público fica vazio com a anon key).
 
 create extension if not exists "pgcrypto";
 

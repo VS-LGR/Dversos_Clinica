@@ -8,7 +8,7 @@ export interface ClinicArea {
   accentClass: string;
 }
 
-export const DEFAULT_WHATSAPP_NUMBER = "5515999999999";
+export { DEFAULT_WHATSAPP_NUMBER } from "@/lib/constants/siteContact";
 
 export const CLINIC_AREAS: ClinicArea[] = [
   {
