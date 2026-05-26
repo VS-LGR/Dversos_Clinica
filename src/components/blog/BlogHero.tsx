@@ -4,15 +4,15 @@ import { BLOG_COPY } from "@/lib/constants/blogCopy";
 export default function BlogHero() {
   return (
     <section
-      className="relative rounded-3xl border border-primary/[0.08] bg-white/90 shadow-sm overflow-hidden mb-12 sm:mb-14"
+      className="relative rounded-3xl border border-primary/[0.08] bg-gradient-to-br from-pastel-peach via-pastel-mint to-pastel-aqua shadow-sm overflow-hidden mb-12 sm:mb-14"
       aria-labelledby="blog-hero-title"
     >
       <div
-        className="absolute -top-16 -right-16 w-56 h-56 rounded-full bg-accent-lavender/40 blur-2xl pointer-events-none"
+        className="absolute -top-16 -right-16 w-56 h-56 rounded-full bg-pastel-coral/70 blur-2xl pointer-events-none"
         aria-hidden
       />
       <div
-        className="absolute -bottom-20 -left-12 w-48 h-48 rounded-full bg-accent-mint/35 blur-2xl pointer-events-none"
+        className="absolute -bottom-20 -left-12 w-48 h-48 rounded-full bg-pastel-lime/70 blur-2xl pointer-events-none"
         aria-hidden
       />
       <div className="relative z-10 flex flex-col lg:flex-row lg:items-center gap-8 p-8 sm:p-10 lg:p-12">
@@ -36,7 +36,7 @@ export default function BlogHero() {
         </div>
         <div className="flex-shrink-0 flex justify-center lg:justify-end" aria-hidden>
           <div className="relative w-40 h-40 sm:w-48 sm:h-48">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent-mint/50 to-accent-lavender/40" />
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-pastel-aqua to-pastel-peach" />
             <svg
               viewBox="0 0 120 120"
               className="relative w-full h-full text-primary/25"

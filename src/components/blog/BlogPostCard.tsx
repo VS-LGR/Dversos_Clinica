@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { BlogPostRow } from "@/lib/blog/types";
 import { BLOG_COPY } from "@/lib/constants/blogCopy";
+import { PASTEL_CARD_BG, pastelByIndex } from "@/lib/constants/pastelPalette";
 
 const PLACEHOLDER =
   "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80";
@@ -9,17 +10,19 @@ const PLACEHOLDER =
 interface BlogPostCardProps {
   post: BlogPostRow;
   formatDate: (iso: string | null) => string;
+  index?: number;
 }
 
-export default function BlogPostCard({ post, formatDate }: BlogPostCardProps) {
+export default function BlogPostCard({ post, formatDate, index = 0 }: BlogPostCardProps) {
   const imageSrc = post.cover_image_url || PLACEHOLDER;
+  const cardBg = pastelByIndex(PASTEL_CARD_BG, index);
 
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-primary/[0.08] bg-white shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300"
+      className={`group flex h-full flex-col overflow-hidden rounded-2xl border border-primary/[0.08] ${cardBg} shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300`}
     >
-      <div className="relative aspect-[16/10] overflow-hidden bg-accent-lavender/20">
+      <div className="relative aspect-[16/10] overflow-hidden bg-pastel-aqua/40">
         <Image
           src={imageSrc}
           alt=""

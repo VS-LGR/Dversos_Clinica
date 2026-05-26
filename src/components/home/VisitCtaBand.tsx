@@ -8,7 +8,7 @@ export default function VisitCtaBand() {
       aria-labelledby="visit-cta-title"
     >
       <div className="max-w-6xl mx-auto">
-        <div className="rounded-3xl bg-gradient-to-br from-accent-mint/45 via-accent-mint/25 to-accent-lavender/20 border border-primary/[0.08] px-6 sm:px-10 py-10 sm:py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8 shadow-sm">
+        <div className="rounded-3xl bg-gradient-to-br from-pastel-peach via-pastel-coral to-pastel-mint border border-primary/[0.08] px-6 sm:px-10 py-10 sm:py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8 shadow-sm">
           <div className="max-w-xl">
             <h2
               id="visit-cta-title"

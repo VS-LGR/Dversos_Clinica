@@ -5,16 +5,29 @@
 :root {
   --color-primary: #1a2b56;
   --color-primary-light: #24386f;
-  --color-primary-pale: #f7f5ff;
+  --color-primary-pale: #fff8f2;
   --color-surface: #f9fafb;
   --color-accent: #f2b8c6;
-  --color-accent-warm: #ffd7aa;
-  --color-accent-mint: #e8f5f0;
-  --color-accent-lavender: #f0eef8;
+  --color-pastel-mint: #cff5d2;
+  --color-pastel-aqua: #c9f0f0;
+  --color-pastel-peach: #ffe1c2;
+  --color-pastel-lime: #e5f9c9;
+  --color-pastel-coral: #ffd5c8;
+  --color-accent-warm: #ffe1c2;
+  --color-accent-mint: #cff5d2;
+  --color-accent-lavender: #c9f0f0;
+  --color-accent-lime: #e5f9c9;
+  --color-accent-coral: #ffd5c8;
 }
 
 body {
-  @apply bg-white text-primary antialiased;
+  @apply text-primary antialiased;
+  background: linear-gradient(
+    165deg,
+    color-mix(in srgb, var(--color-pastel-lime) 35%, white) 0%,
+    color-mix(in srgb, var(--color-pastel-mint) 25%, white) 40%,
+    color-mix(in srgb, var(--color-pastel-aqua) 20%, white) 100%
+  );
 }
 
 /* VLibras Widget (https://vlibras.gov.br/doc/widget/installation/webpageintegration.html) */

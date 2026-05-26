@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function BeDversoSection() {
   return (
-    <section className="py-20 sm:py-24 px-4 sm:px-6 bg-accent-mint/25 border-t border-primary/[0.06]" aria-labelledby="be-dverso-title">
+    <section className="py-20 sm:py-24 px-4 sm:px-6 bg-pastel-lime border-t border-primary/[0.06]" aria-labelledby="be-dverso-title">
       <div className="max-w-6xl mx-auto">
         <p className="text-primary/60 text-xs font-medium uppercase tracking-widest mb-2 text-center">Seja DVERSO</p>
         <h2 id="be-dverso-title" className="text-2xl sm:text-3xl font-bold text-primary tracking-tight mb-4 text-center">
@@ -14,7 +14,7 @@ export default function BeDversoSection() {
           A DVERSO conecta acolhimento clínico e desenvolvimento profissional. Atendemos pacientes e famílias com cuidado objetivo e amigável, e também oferecemos formação para profissionais.
         </p>
         <div className="grid md:grid-cols-2 gap-6">
-          <article className="rounded-xl border border-primary/[0.1] bg-[#fdfbf9] p-6">
+          <article className="rounded-xl border border-primary/[0.1] bg-pastel-aqua/80 p-6">
             <h3 className="text-lg font-semibold text-primary mb-2">Para clientes e famílias</h3>
             <p className="text-sm text-primary/80 mb-4">
               Atendimento integrado, equipe multiprofissional e orientação clara em cada etapa do acompanhamento.
@@ -23,7 +23,7 @@ export default function BeDversoSection() {
               Ver áreas de atendimento
             </Link>
           </article>
-          <article className="rounded-xl border border-primary/[0.1] bg-[#fdfbf9] p-6">
+          <article className="rounded-xl border border-primary/[0.1] bg-pastel-peach/80 p-6">
             <h3 className="text-lg font-semibold text-primary mb-2">Para profissionais</h3>
             <p className="text-sm text-primary/80 mb-4">
               Cursos, formação e palestras com foco em prática clínica atual, manejo de casos e atuação interdisciplinar.

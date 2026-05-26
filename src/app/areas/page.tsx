@@ -4,6 +4,7 @@ import RevealOnScroll from "@/components/shared/RevealOnScroll";
 import { CLINIC_AREAS } from "@/lib/constants/clinicAreas";
 import { AREAS_PAGE_COPY } from "@/lib/constants/homeAreasContent";
 import PastelPageDecor from "@/components/shared/PastelPageDecor";
+import { PASTEL_CARD_GRADIENTS, pastelByIndex } from "@/lib/constants/pastelPalette";
 
 const GROUPS = [
   {
@@ -66,7 +67,7 @@ export default function AreasOverviewPage() {
                         >
                           <Link
                             href={`/areas/${area.slug}`}
-                            className="block p-6 rounded-xl border-2 border-primary-pale bg-gradient-to-br from-accent-lavender/25 via-white to-accent-mint/20 hover:border-primary hover:shadow-lg transition-all"
+                            className={`block p-6 rounded-xl border-2 border-primary/10 bg-gradient-to-br ${pastelByIndex(PASTEL_CARD_GRADIENTS, cardIndex)} hover:border-primary hover:shadow-lg transition-all`}
                           >
                             <h3 className="text-lg font-semibold text-primary mb-2">
                               {area.name}

@@ -7,12 +7,7 @@ import { CLINIC_AREAS } from "@/lib/constants/clinicAreas";
 import { AREAS_FILTER_COPY, AREAS_INTRO_COPY } from "@/lib/constants/homeAreasContent";
 import RevealOnScroll from "@/components/shared/RevealOnScroll";
 
-const CARD_PASTELS = [
-  "from-accent-mint/30 via-white to-accent-lavender/15",
-  "from-accent-lavender/30 via-white to-accent-mint/15",
-  "from-accent-warm/25 via-white to-accent-lavender/15",
-  "from-accent-mint/20 via-white to-accent-warm/20",
-] as const;
+import { PASTEL_CARD_GRADIENTS, pastelByIndex } from "@/lib/constants/pastelPalette";
 
 const BRANCHES = [
   {
@@ -54,7 +49,7 @@ export default function AreasGrid() {
   }, [selectedBranch]);
 
   return (
-    <section className="py-20 sm:py-24 px-4 sm:px-6 bg-accent-mint/30" aria-labelledby="areas-title">
+    <section className="py-20 sm:py-24 px-4 sm:px-6 bg-pastel-lime border-t border-primary/[0.06]" aria-labelledby="areas-title">
       <div className="max-w-6xl mx-auto">
         <SectionTitle
           id="areas-title"
@@ -119,7 +114,7 @@ export default function AreasGrid() {
             return visibleBranches.map((branch, index) => (
             <details
               key={branch.title}
-              className="group rounded-2xl border border-primary/[0.1] bg-white shadow-sm open:shadow-md transition-shadow"
+              className="group rounded-2xl border border-primary/[0.1] bg-pastel-mint/40 shadow-sm open:shadow-md transition-shadow"
               open={selectedBranch !== "all" || index === 0}
             >
               <summary className="list-none cursor-pointer select-none px-5 sm:px-6 py-4 flex items-center justify-between gap-4">
@@ -140,7 +135,7 @@ export default function AreasGrid() {
                       >
                         <Link
                           href={`/areas/${area.slug}`}
-                          className={`group block p-5 rounded-2xl border border-primary/[0.08] bg-gradient-to-br ${CARD_PASTELS[cardIndex % CARD_PASTELS.length]} hover:border-primary/25 hover:shadow-md transition-all duration-300 text-left`}
+                          className={`group block p-5 rounded-2xl border border-primary/[0.08] bg-gradient-to-br ${pastelByIndex(PASTEL_CARD_GRADIENTS, cardIndex)} hover:border-primary/25 hover:shadow-md transition-all duration-300 text-left`}
                         >
                           <h4 className="text-base font-semibold text-primary group-hover:text-primary-light transition-colors mb-2">
                             {area.name}

@@ -34,7 +34,7 @@ export default function OpeningAnimation({ children, onComplete }: OpeningAnimat
 
   if (!mounted) {
     return (
-      <div className="min-h-[60vh] flex items-center justify-center bg-[#fdfbf9]" aria-hidden>
+      <div className="min-h-[60vh] flex items-center justify-center bg-pastel-lime" aria-hidden>
         <div className="w-[160px] sm:w-[200px] max-w-[220px]">
           <DotLottieReact
             src="https://lottie.host/8b7c9249-b443-49ee-98dc-2dd395955e94/7KIj6H4gpL.lottie"
@@ -50,7 +50,7 @@ export default function OpeningAnimation({ children, onComplete }: OpeningAnimat
     <>
       {phase !== "done" && (
         <div
-          className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-gradient-to-b from-[#fdfbf9] to-white pointer-events-none ${
+          className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-gradient-to-b from-pastel-lime via-pastel-mint to-pastel-aqua pointer-events-none ${
             phase === "out" ? "animate-intro-out" : ""
           }`}
           aria-hidden

@@ -7,7 +7,7 @@ import RevealOnScroll from "@/components/shared/RevealOnScroll";
 
 export default function FoundersSection() {
   return (
-    <section className="py-20 sm:py-24 px-4 sm:px-6 bg-accent-lavender/35 border-t border-primary/[0.06]" aria-labelledby="founders-title">
+    <section className="py-20 sm:py-24 px-4 sm:px-6 bg-pastel-aqua/90 border-t border-primary/[0.06]" aria-labelledby="founders-title">
       <div className="max-w-6xl mx-auto">
         <SectionTitle
           id="founders-title"
@@ -27,10 +27,10 @@ export default function FoundersSection() {
               index={index}
             >
               <article
-                className="flex flex-col sm:flex-row gap-6 p-6 sm:p-8 rounded-xl bg-white border border-primary/[0.08] shadow-sm hover:shadow-md hover:border-primary/15 transition-all duration-300"
+                className="flex flex-col sm:flex-row gap-6 p-6 sm:p-8 rounded-xl bg-pastel-mint/50 border border-primary/[0.08] shadow-sm hover:shadow-md hover:border-primary/15 transition-all duration-300"
               >
                 {founder.imageUrl ? (
-                  <div className="flex-shrink-0 w-20 h-20 rounded-full overflow-hidden bg-gradient-to-br from-accent-lavender/50 to-accent-warm/25 ring-2 ring-primary/5">
+                  <div className="flex-shrink-0 w-20 h-20 rounded-full overflow-hidden bg-gradient-to-br from-pastel-coral to-pastel-peach ring-2 ring-primary/5">
                     <Image
                       src={founder.imageUrl}
                       alt=""
@@ -41,7 +41,7 @@ export default function FoundersSection() {
                   </div>
                 ) : (
                   <div
-                    className="flex-shrink-0 w-20 h-20 rounded-full bg-accent-warm/30 flex items-center justify-center text-primary font-bold text-xl ring-2 ring-primary/5"
+                    className="flex-shrink-0 w-20 h-20 rounded-full bg-pastel-peach flex items-center justify-center text-primary font-bold text-xl ring-2 ring-primary/5"
                     aria-hidden
                   >
                     {founder.name.charAt(0)}

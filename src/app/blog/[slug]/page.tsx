@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import BlogSidebar from "@/components/blog/BlogSidebar";
 import PostBody from "@/components/blog/PostBody";
+import PastelPageDecor from "@/components/shared/PastelPageDecor";
 import { fetchPublishedPostBySlug } from "@/lib/blog/queries";
 import { BLOG_COPY } from "@/lib/constants/blogCopy";
 import { SITE_URL } from "@/lib/constants/siteContact";
@@ -66,7 +67,8 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <article className="relative min-h-screen py-12 sm:py-16 px-4 sm:px-6">
-      <div className="max-w-6xl mx-auto">
+      <PastelPageDecor />
+      <div className="relative z-10 max-w-6xl mx-auto">
         <nav className="text-sm text-primary/55 mb-6" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-primary transition-colors">
             {BLOG_COPY.hero.breadcrumbHome}
@@ -81,7 +83,7 @@ export default async function BlogPostPage({ params }: Props) {
 
         <div className="grid gap-10 lg:grid-cols-[1fr_300px] lg:gap-12">
           <div className="min-w-0">
-            <div className="relative aspect-[16/9] sm:aspect-[2/1] rounded-2xl overflow-hidden mb-8 bg-accent-lavender/20 shadow-sm">
+            <div className="relative aspect-[16/9] sm:aspect-[2/1] rounded-2xl overflow-hidden mb-8 bg-pastel-aqua shadow-sm">
               <Image
                 src={coverSrc}
                 alt=""
@@ -95,7 +97,7 @@ export default async function BlogPostPage({ params }: Props) {
 
             <div className="flex flex-wrap items-center gap-3 mb-4">
               {post.category && (
-                <span className="rounded-full bg-accent-mint/40 border border-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
+                <span className="rounded-full bg-pastel-lime border border-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
                   {post.category}
                 </span>
               )}
@@ -109,7 +111,7 @@ export default async function BlogPostPage({ params }: Props) {
             </h1>
             <p className="text-sm text-primary/65 mb-6">{BLOG_COPY.post.byline}</p>
             {post.excerpt && (
-              <p className="text-lg text-primary/85 mb-10 leading-relaxed border-l-4 border-accent-lavender/60 pl-4">
+              <p className="text-lg text-primary/85 mb-10 leading-relaxed border-l-4 border-pastel-coral pl-4 bg-pastel-peach/30 py-3 pr-3 rounded-r-lg">
                 {post.excerpt}
               </p>
             )}

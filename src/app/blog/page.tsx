@@ -43,7 +43,7 @@ export default async function BlogPage() {
                     delayMs={Math.min(300, (index % 6) * 60)}
                     index={index}
                   >
-                    <BlogPostCard post={post} formatDate={formatDate} />
+                    <BlogPostCard post={post} formatDate={formatDate} index={index} />
                   </RevealOnScroll>
                 </li>
               ))}

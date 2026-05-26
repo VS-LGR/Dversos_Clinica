@@ -10,7 +10,7 @@ const CHILD_CLOUD_BLACK = "https://i.imgur.com/hC4SDkI.png";
 export default function NeurodiversityHighlight() {
   return (
     <section
-      className="py-20 sm:py-24 px-4 sm:px-6 bg-accent-lavender/40 relative overflow-hidden border-t border-primary/[0.06]"
+      className="py-20 sm:py-24 px-4 sm:px-6 bg-pastel-aqua relative overflow-hidden border-t border-primary/[0.06]"
       aria-labelledby="neuro-highlight-title"
     >
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-16">

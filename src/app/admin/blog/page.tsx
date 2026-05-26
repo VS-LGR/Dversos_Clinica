@@ -39,7 +39,7 @@ export default async function AdminBlogListPage() {
 
   return (
     <div>
-      <div className="rounded-2xl bg-gradient-to-br from-accent-mint/25 to-accent-lavender/15 border border-primary/[0.08] p-6 sm:p-8 mb-8">
+      <div className="rounded-2xl bg-gradient-to-br from-pastel-mint via-pastel-aqua to-pastel-peach border border-primary/[0.08] p-6 sm:p-8 mb-8">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <h1 className="text-2xl font-bold text-primary">{BLOG_COPY.admin.listTitle}</h1>

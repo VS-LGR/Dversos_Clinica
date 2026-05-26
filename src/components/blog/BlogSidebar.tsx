@@ -6,7 +6,7 @@ import { BLOG_COPY } from "@/lib/constants/blogCopy";
 export default function BlogSidebar() {
   return (
     <aside className="space-y-5 lg:sticky lg:top-24" aria-label="Informações e contato">
-      <div className="rounded-2xl bg-gradient-to-br from-accent-mint/40 to-accent-mint/15 border border-primary/[0.08] p-6 shadow-sm">
+      <div className="rounded-2xl bg-pastel-mint border border-primary/[0.08] p-6 shadow-sm">
         <h2 className="text-lg font-semibold text-primary mb-2">
           {BLOG_COPY.sidebar.visitTitle}
         </h2>
@@ -20,7 +20,7 @@ export default function BlogSidebar() {
           className="w-full"
         />
       </div>
-      <div className="rounded-2xl bg-gradient-to-br from-accent-lavender/35 to-white border border-primary/[0.08] p-6 shadow-sm">
+      <div className="rounded-2xl bg-pastel-coral border border-primary/[0.08] p-6 shadow-sm">
         <h2 className="text-lg font-semibold text-primary mb-2">
           {BLOG_COPY.sidebar.areasTitle}
         </h2>
@@ -29,7 +29,7 @@ export default function BlogSidebar() {
         </p>
         <Link
           href="/areas"
-          className="inline-flex rounded-xl border-2 border-primary/20 bg-white px-4 py-2.5 text-sm font-semibold text-primary hover:border-primary hover:bg-primary-pale/30 transition-colors"
+          className="inline-flex rounded-xl border-2 border-primary/20 bg-pastel-peach/60 px-4 py-2.5 text-sm font-semibold text-primary hover:border-primary hover:bg-pastel-peach transition-colors"
         >
           {BLOG_COPY.sidebar.areasCta}
         </Link>
