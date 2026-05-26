@@ -45,9 +45,15 @@ export default function ScrollBar() {
           rel="noopener noreferrer"
           aria-label="Ver no mapa"
           title="Ver no mapa"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full text-white/85 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-primary cursor-pointer transition-transform duration-200 hover:scale-110 [filter:drop-shadow(0_8px_16px_rgba(0,0,0,0.28))]"
+          className="group inline-flex h-12 w-12 items-center justify-center rounded-full text-white/85 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-primary cursor-pointer transition-transform duration-200 hover:scale-110 [filter:drop-shadow(0_8px_16px_rgba(0,0,0,0.28))]"
         >
-          <DecorativeIcon type="pin" size={16} />
+          <DecorativeIcon type="pin" size={18} />
+          <span
+            className="pointer-events-none absolute left-full ml-3 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-lg bg-white/90 px-2 py-1 text-[10px] font-semibold text-primary shadow-sm opacity-0 translate-x-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0 group-focus-visible:opacity-100 group-focus-visible:translate-x-0"
+            aria-hidden
+          >
+            Ver no mapa
+          </span>
         </a>
         <a
           href={SITE_CONTACT.social.instagram}
@@ -55,9 +61,15 @@ export default function ScrollBar() {
           rel="noopener noreferrer"
           aria-label="Instagram"
           title="Instagram"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full text-white/85 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-primary cursor-pointer transition-transform duration-200 hover:scale-110 [filter:drop-shadow(0_8px_16px_rgba(0,0,0,0.28))]"
+          className="group inline-flex h-12 w-12 items-center justify-center rounded-full text-white/85 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-primary cursor-pointer transition-transform duration-200 hover:scale-110 [filter:drop-shadow(0_8px_16px_rgba(0,0,0,0.28))]"
         >
-          <DecorativeIcon type="instagram" size={16} />
+          <DecorativeIcon type="instagram" size={18} />
+          <span
+            className="pointer-events-none absolute left-full ml-3 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-lg bg-white/90 px-2 py-1 text-[10px] font-semibold text-primary shadow-sm opacity-0 translate-x-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0 group-focus-visible:opacity-100 group-focus-visible:translate-x-0"
+            aria-hidden
+          >
+            Instagram
+          </span>
         </a>
         <a
           href={SITE_CONTACT.social.facebook}
@@ -65,17 +77,29 @@ export default function ScrollBar() {
           rel="noopener noreferrer"
           aria-label="Facebook"
           title="Facebook"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full text-white/85 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-primary cursor-pointer transition-transform duration-200 hover:scale-110 [filter:drop-shadow(0_8px_16px_rgba(0,0,0,0.28))]"
+          className="group inline-flex h-12 w-12 items-center justify-center rounded-full text-white/85 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-primary cursor-pointer transition-transform duration-200 hover:scale-110 [filter:drop-shadow(0_8px_16px_rgba(0,0,0,0.28))]"
         >
-          <DecorativeIcon type="facebook" size={16} />
+          <DecorativeIcon type="facebook" size={18} />
+          <span
+            className="pointer-events-none absolute left-full ml-3 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-lg bg-white/90 px-2 py-1 text-[10px] font-semibold text-primary shadow-sm opacity-0 translate-x-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0 group-focus-visible:opacity-100 group-focus-visible:translate-x-0"
+            aria-hidden
+          >
+            Facebook
+          </span>
         </a>
         <a
           href={formatTelHref(SITE_CONTACT.phoneE164)}
           aria-label="Ligar"
           title="Ligar"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full text-white/85 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-primary cursor-pointer transition-transform duration-200 hover:scale-110 [filter:drop-shadow(0_8px_16px_rgba(0,0,0,0.28))]"
+          className="group inline-flex h-12 w-12 items-center justify-center rounded-full text-white/85 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-primary cursor-pointer transition-transform duration-200 hover:scale-110 [filter:drop-shadow(0_8px_16px_rgba(0,0,0,0.28))]"
         >
-          <DecorativeIcon type="phone" size={16} />
+          <DecorativeIcon type="phone" size={18} />
+          <span
+            className="pointer-events-none absolute left-full ml-3 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-lg bg-white/90 px-2 py-1 text-[10px] font-semibold text-primary shadow-sm opacity-0 translate-x-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0 group-focus-visible:opacity-100 group-focus-visible:translate-x-0"
+            aria-hidden
+          >
+            Ligar
+          </span>
         </a>
       </div>
     </div>

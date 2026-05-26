@@ -6,17 +6,35 @@ interface RevealOnScrollProps {
   children: ReactNode;
   className?: string;
   delayMs?: number;
+  direction?: "left" | "right";
+  /** Índice para alternância automática esquerda/direita (0 = direita, 1 = esquerda, …). */
+  index?: number;
+}
+
+/** Direção alternada no estilo Formare: par = direita, ímpar = esquerda. */
+export function alternateRevealDirection(index: number): "left" | "right" {
+  return index % 2 === 0 ? "right" : "left";
 }
 
 export default function RevealOnScroll({
   children,
   className = "",
   delayMs,
+  direction,
+  index,
 }: RevealOnScrollProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
-  const style: CSSProperties | undefined =
-    delayMs !== undefined ? ({ "--reveal-delay": `${delayMs}ms` } as CSSProperties) : undefined;
+
+  const resolvedDirection =
+    direction ?? (index !== undefined ? alternateRevealDirection(index) : "right");
+
+  type RevealStyle = CSSProperties & { [key: `--${string}`]: string };
+  const style: RevealStyle | undefined = {
+    "--reveal-x": resolvedDirection === "left" ? "-24%" : "24%",
+    "--reveal-x-mobile": resolvedDirection === "left" ? "-18%" : "18%",
+    ...(delayMs !== undefined ? { "--reveal-delay": `${delayMs}ms` } : {}),
+  };
 
   useEffect(() => {
     const el = ref.current;
@@ -37,7 +55,7 @@ export default function RevealOnScroll({
       },
       // Trigger slightly before the block is fully in view,
       // so the user actually sees the entrance animation.
-      { threshold: 0.1, rootMargin: "0px 0px 12% 0px" }
+      { threshold: 0.08, rootMargin: "0px 0px 22% 0px" }
     );
 
     observer.observe(el);

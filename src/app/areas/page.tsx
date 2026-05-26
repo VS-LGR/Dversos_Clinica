@@ -36,6 +36,7 @@ const GROUPS = [
 
 export default function AreasOverviewPage() {
   const areaBySlug = new Map(CLINIC_AREAS.map((area) => [area.slug, area]));
+  let revealIndex = 0;
 
   return (
     <div className="min-h-screen py-16 px-4 sm:px-6">
@@ -44,20 +45,23 @@ export default function AreasOverviewPage() {
         <p className="text-center text-primary/80 mb-12 max-w-2xl mx-auto">
           {AREAS_PAGE_COPY.description}
         </p>
-        <RevealOnScroll>
-          <div className="space-y-10">
+        <div className="space-y-10">
             {GROUPS.map((group) => (
               <section key={group.title} aria-label={group.title}>
                 <h2 className="text-lg sm:text-xl font-semibold text-primary mb-4">
                   {group.title}
                 </h2>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {group.slugs.map((slug, index) => {
+                  {group.slugs.map((slug) => {
                     const area = areaBySlug.get(slug);
                     if (!area) return null;
+                    const cardIndex = revealIndex++;
                     return (
                       <li key={area.slug}>
-                        <RevealOnScroll delayMs={Math.min(240, (index % 6) * 40)}>
+                        <RevealOnScroll
+                          delayMs={Math.min(300, (cardIndex % 6) * 60)}
+                          index={cardIndex}
+                        >
                           <Link
                             href={`/areas/${area.slug}`}
                             className="block p-6 rounded-xl border-2 border-primary-pale bg-white hover:border-primary hover:shadow-lg transition-all"
@@ -80,7 +84,6 @@ export default function AreasOverviewPage() {
               </section>
             ))}
           </div>
-        </RevealOnScroll>
       </div>
     </div>
   );

@@ -31,11 +31,13 @@ export default async function BlogPage() {
             Em breve publicações. Configure o Supabase e adicione artigos pelo painel administrativo.
           </p>
         ) : (
-          <RevealOnScroll>
-            <ul className="grid gap-6 sm:grid-cols-2 mt-12">
+          <ul className="grid gap-6 sm:grid-cols-2 mt-12">
               {posts.map((post, index) => (
                 <li key={post.id}>
-                  <RevealOnScroll delayMs={Math.min(240, (index % 6) * 40)}>
+                <RevealOnScroll
+                  delayMs={Math.min(300, (index % 6) * 60)}
+                  index={index}
+                >
                     <Link
                       href={`/blog/${post.slug}`}
                       className="block h-full p-6 rounded-xl border border-primary/[0.08] bg-white shadow-sm hover:shadow-md hover:border-primary/20 transition-all"
@@ -58,8 +60,7 @@ export default async function BlogPage() {
                   </RevealOnScroll>
                 </li>
               ))}
-            </ul>
-          </RevealOnScroll>
+          </ul>
         )}
       </div>
     </div>

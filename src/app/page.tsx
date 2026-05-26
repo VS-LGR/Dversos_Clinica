@@ -9,33 +9,27 @@ import BeDversoSection from "@/components/home/BeDversoSection";
 import FoundersSection from "@/components/home/FoundersSection";
 import RevealOnScroll from "@/components/shared/RevealOnScroll";
 
+const HOME_SECTIONS = [
+  AreasGrid,
+  NeurodiversityHighlight,
+  DogTherapyBand,
+  AbaInterventionSection,
+  ComplementaryCareSection,
+  BeDversoSection,
+  FoundersSection,
+] as const;
+
 export default function HomePage() {
   return (
     <div className="min-h-screen">
       <OpeningAnimation>
         <HeroSection />
       </OpeningAnimation>
-      <RevealOnScroll>
-        <AreasGrid />
-      </RevealOnScroll>
-      <RevealOnScroll>
-        <NeurodiversityHighlight />
-      </RevealOnScroll>
-      <RevealOnScroll>
-        <DogTherapyBand />
-      </RevealOnScroll>
-      <RevealOnScroll>
-        <AbaInterventionSection />
-      </RevealOnScroll>
-      <RevealOnScroll>
-        <ComplementaryCareSection />
-      </RevealOnScroll>
-      <RevealOnScroll>
-        <BeDversoSection />
-      </RevealOnScroll>
-      <RevealOnScroll>
-        <FoundersSection />
-      </RevealOnScroll>
+      {HOME_SECTIONS.map((Section, index) => (
+        <RevealOnScroll key={Section.name} index={index}>
+          <Section />
+        </RevealOnScroll>
+      ))}
     </div>
   );
 }

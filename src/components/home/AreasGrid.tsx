@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import SectionTitle from "@/components/shared/SectionTitle";
 import { CLINIC_AREAS } from "@/lib/constants/clinicAreas";
 import { AREAS_FILTER_COPY, AREAS_INTRO_COPY } from "@/lib/constants/homeAreasContent";
+import RevealOnScroll from "@/components/shared/RevealOnScroll";
 
 const BRANCHES = [
   {
@@ -106,7 +107,9 @@ export default function AreasGrid() {
           ))}
         </div>
         <div className="space-y-4">
-          {visibleBranches.map((branch, index) => (
+          {(() => {
+            let revealIndex = 0;
+            return visibleBranches.map((branch, index) => (
             <details
               key={branch.title}
               className="group rounded-2xl border border-primary/[0.1] bg-white shadow-sm open:shadow-md transition-shadow"
@@ -121,28 +124,35 @@ export default function AreasGrid() {
                   {branch.slugs.map((slug) => {
                     const area = areaBySlug.get(slug);
                     if (!area) return null;
+                    const cardIndex = revealIndex++;
                     return (
-                      <Link
+                      <RevealOnScroll
                         key={area.slug}
-                        href={`/areas/${area.slug}`}
-                        className="group block p-5 rounded-xl border border-primary/[0.08] bg-[#fdfbf9] hover:border-primary/25 hover:shadow-sm transition-all duration-300 text-left"
+                        delayMs={Math.min(300, (cardIndex % 6) * 60)}
+                        index={cardIndex}
                       >
-                        <h4 className="text-base font-semibold text-primary group-hover:text-primary-light transition-colors mb-2">
-                          {area.name}
-                        </h4>
-                        <p className="text-sm text-primary/80 leading-relaxed line-clamp-2">
-                          {area.description}
-                        </p>
-                        <span className="inline-block mt-4 text-primary font-medium text-sm group-hover:underline underline-offset-2">
-                          Saiba mais →
-                        </span>
-                      </Link>
+                        <Link
+                          href={`/areas/${area.slug}`}
+                          className="group block p-5 rounded-xl border border-primary/[0.08] bg-[#fdfbf9] hover:border-primary/25 hover:shadow-sm transition-all duration-300 text-left"
+                        >
+                          <h4 className="text-base font-semibold text-primary group-hover:text-primary-light transition-colors mb-2">
+                            {area.name}
+                          </h4>
+                          <p className="text-sm text-primary/80 leading-relaxed line-clamp-2">
+                            {area.description}
+                          </p>
+                          <span className="inline-block mt-4 text-primary font-medium text-sm group-hover:underline underline-offset-2">
+                            Saiba mais →
+                          </span>
+                        </Link>
+                      </RevealOnScroll>
                     );
                   })}
                 </div>
               </div>
             </details>
-          ))}
+            ));
+          })()}
         </div>
       </div>
     </section>
