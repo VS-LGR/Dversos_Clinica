@@ -3,6 +3,7 @@ import SectionTitle from "@/components/shared/SectionTitle";
 import RevealOnScroll from "@/components/shared/RevealOnScroll";
 import { CLINIC_AREAS } from "@/lib/constants/clinicAreas";
 import { AREAS_PAGE_COPY } from "@/lib/constants/homeAreasContent";
+import PastelPageDecor from "@/components/shared/PastelPageDecor";
 
 const GROUPS = [
   {
@@ -39,8 +40,9 @@ export default function AreasOverviewPage() {
   let revealIndex = 0;
 
   return (
-    <div className="min-h-screen py-16 px-4 sm:px-6">
-      <div className="max-w-6xl mx-auto">
+    <div className="relative min-h-screen py-16 px-4 sm:px-6">
+      <PastelPageDecor />
+      <div className="relative z-10 max-w-6xl mx-auto">
         <SectionTitle as="h1" className="mb-4">Nossas áreas de atuação</SectionTitle>
         <p className="text-center text-primary/80 mb-12 max-w-2xl mx-auto">
           {AREAS_PAGE_COPY.description}
@@ -64,7 +66,7 @@ export default function AreasOverviewPage() {
                         >
                           <Link
                             href={`/areas/${area.slug}`}
-                            className="block p-6 rounded-xl border-2 border-primary-pale bg-white hover:border-primary hover:shadow-lg transition-all"
+                            className="block p-6 rounded-xl border-2 border-primary-pale bg-gradient-to-br from-accent-lavender/25 via-white to-accent-mint/20 hover:border-primary hover:shadow-lg transition-all"
                           >
                             <h3 className="text-lg font-semibold text-primary mb-2">
                               {area.name}

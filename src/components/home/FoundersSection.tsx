@@ -30,7 +30,7 @@ export default function FoundersSection() {
                 className="flex flex-col sm:flex-row gap-6 p-6 sm:p-8 rounded-xl bg-white border border-primary/[0.08] shadow-sm hover:shadow-md hover:border-primary/15 transition-all duration-300"
               >
                 {founder.imageUrl ? (
-                  <div className="flex-shrink-0 w-20 h-20 rounded-full overflow-hidden bg-primary-pale ring-2 ring-primary/5">
+                  <div className="flex-shrink-0 w-20 h-20 rounded-full overflow-hidden bg-gradient-to-br from-accent-lavender/50 to-accent-warm/25 ring-2 ring-primary/5">
                     <Image
                       src={founder.imageUrl}
                       alt=""

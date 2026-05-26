@@ -2,6 +2,7 @@ import Link from "next/link";
 import SectionTitle from "@/components/shared/SectionTitle";
 import RevealOnScroll from "@/components/shared/RevealOnScroll";
 import { fetchPublishedPosts } from "@/lib/blog/queries";
+import PastelPageDecor from "@/components/shared/PastelPageDecor";
 
 function formatDate(iso: string | null) {
   if (!iso) return "";
@@ -20,8 +21,9 @@ export default async function BlogPage() {
   const posts = await fetchPublishedPosts();
 
   return (
-    <div className="min-h-screen py-16 px-4 sm:px-6">
-      <div className="max-w-6xl mx-auto">
+    <div className="relative min-h-screen py-16 px-4 sm:px-6">
+      <PastelPageDecor />
+      <div className="relative z-10 max-w-6xl mx-auto">
         <SectionTitle as="h1" className="mb-4" subtitle="Conteúdo da equipe para famílias e profissionais.">
           Blog
         </SectionTitle>
@@ -40,7 +42,7 @@ export default async function BlogPage() {
                 >
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="block h-full p-6 rounded-xl border border-primary/[0.08] bg-white shadow-sm hover:shadow-md hover:border-primary/20 transition-all"
+                      className="block h-full p-6 rounded-xl border border-primary/[0.08] bg-gradient-to-br from-accent-mint/20 via-white to-accent-lavender/20 shadow-sm hover:shadow-md hover:border-primary/20 transition-all"
                     >
                       <p className="text-xs font-medium uppercase tracking-widest text-primary/50 mb-2">
                         {formatDate(post.published_at)}

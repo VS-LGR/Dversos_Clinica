@@ -133,7 +133,7 @@ export default function AreasGrid() {
                       >
                         <Link
                           href={`/areas/${area.slug}`}
-                          className="group block p-5 rounded-xl border border-primary/[0.08] bg-[#fdfbf9] hover:border-primary/25 hover:shadow-sm transition-all duration-300 text-left"
+                          className="group block p-5 rounded-xl border border-primary/[0.08] bg-gradient-to-br from-accent-mint/25 via-white to-accent-lavender/20 hover:border-primary/25 hover:shadow-sm transition-all duration-300 text-left"
                         >
                           <h4 className="text-base font-semibold text-primary group-hover:text-primary-light transition-colors mb-2">
                             {area.name}

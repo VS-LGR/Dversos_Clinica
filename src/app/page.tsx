@@ -8,6 +8,7 @@ import ComplementaryCareSection from "@/components/home/ComplementaryCareSection
 import BeDversoSection from "@/components/home/BeDversoSection";
 import FoundersSection from "@/components/home/FoundersSection";
 import RevealOnScroll from "@/components/shared/RevealOnScroll";
+import PastelPageDecor from "@/components/shared/PastelPageDecor";
 
 const HOME_SECTIONS = [
   AreasGrid,
@@ -21,15 +22,18 @@ const HOME_SECTIONS = [
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen">
-      <OpeningAnimation>
-        <HeroSection />
-      </OpeningAnimation>
-      {HOME_SECTIONS.map((Section, index) => (
-        <RevealOnScroll key={Section.name} index={index}>
-          <Section />
-        </RevealOnScroll>
-      ))}
+    <div className="relative min-h-screen">
+      <PastelPageDecor />
+      <div className="relative z-10">
+        <OpeningAnimation>
+          <HeroSection />
+        </OpeningAnimation>
+        {HOME_SECTIONS.map((Section, index) => (
+          <RevealOnScroll key={Section.name} index={index}>
+            <Section />
+          </RevealOnScroll>
+        ))}
+      </div>
     </div>
   );
 }
