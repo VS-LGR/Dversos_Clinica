@@ -1,8 +1,9 @@
-import Link from "next/link";
-import SectionTitle from "@/components/shared/SectionTitle";
 import RevealOnScroll from "@/components/shared/RevealOnScroll";
-import { fetchPublishedPosts } from "@/lib/blog/queries";
 import PastelPageDecor from "@/components/shared/PastelPageDecor";
+import BlogHero from "@/components/blog/BlogHero";
+import BlogPostCard from "@/components/blog/BlogPostCard";
+import { fetchPublishedPosts } from "@/lib/blog/queries";
+import { BLOG_COPY } from "@/lib/constants/blogCopy";
 
 function formatDate(iso: string | null) {
   if (!iso) return "";
@@ -21,48 +22,33 @@ export default async function BlogPage() {
   const posts = await fetchPublishedPosts();
 
   return (
-    <div className="relative min-h-screen py-16 px-4 sm:px-6">
+    <div className="relative min-h-screen py-12 sm:py-16 px-4 sm:px-6">
       <PastelPageDecor />
       <div className="relative z-10 max-w-6xl mx-auto">
-        <SectionTitle as="h1" className="mb-4" subtitle="Conteúdo da equipe para famílias e profissionais.">
-          Blog
-        </SectionTitle>
+        <BlogHero />
 
         {posts.length === 0 ? (
           <p className="text-center text-primary/75 max-w-xl mx-auto">
-            Em breve publicações. Configure o Supabase e adicione artigos pelo painel administrativo.
+            {BLOG_COPY.listing.empty}
           </p>
         ) : (
-          <ul className="grid gap-6 sm:grid-cols-2 mt-12">
+          <>
+            <h2 className="text-sm font-semibold uppercase tracking-widest text-primary/60 mb-6">
+              {BLOG_COPY.listing.sectionTitle}
+            </h2>
+            <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {posts.map((post, index) => (
                 <li key={post.id}>
-                <RevealOnScroll
-                  delayMs={Math.min(300, (index % 6) * 60)}
-                  index={index}
-                >
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      className="block h-full p-6 rounded-xl border border-primary/[0.08] bg-gradient-to-br from-accent-mint/20 via-white to-accent-lavender/20 shadow-sm hover:shadow-md hover:border-primary/20 transition-all"
-                    >
-                      <p className="text-xs font-medium uppercase tracking-widest text-primary/50 mb-2">
-                        {formatDate(post.published_at)}
-                      </p>
-                      <h2 className="text-lg font-semibold text-primary mb-2">
-                        {post.title}
-                      </h2>
-                      {post.excerpt && (
-                        <p className="text-sm text-primary/80 line-clamp-3">
-                          {post.excerpt}
-                        </p>
-                      )}
-                      <span className="mt-4 inline-block text-sm font-medium text-primary-light">
-                        Ler artigo
-                      </span>
-                    </Link>
+                  <RevealOnScroll
+                    delayMs={Math.min(300, (index % 6) * 60)}
+                    index={index}
+                  >
+                    <BlogPostCard post={post} formatDate={formatDate} />
                   </RevealOnScroll>
                 </li>
               ))}
-          </ul>
+            </ul>
+          </>
         )}
       </div>
     </div>

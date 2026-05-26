@@ -255,4 +255,60 @@ body {
   .markdown-body pre code {
     @apply bg-transparent p-0;
   }
+
+  .markdown-body img,
+  .html-body img,
+  .prose-blog img {
+    @apply rounded-xl max-w-full h-auto my-6;
+  }
+
+  .html-body,
+  .prose-blog {
+    @apply text-primary/90 leading-relaxed max-w-none;
+  }
+
+  .html-body h1,
+  .prose-blog h1 {
+    @apply text-2xl sm:text-3xl font-bold text-primary mt-10 mb-4;
+  }
+
+  .html-body h2,
+  .prose-blog h2 {
+    @apply text-xl sm:text-2xl font-semibold text-primary mt-8 mb-3;
+  }
+
+  .html-body h3,
+  .prose-blog h3 {
+    @apply text-lg font-semibold text-primary mt-6 mb-2;
+  }
+
+  .html-body p,
+  .prose-blog p {
+    @apply mb-4;
+  }
+
+  .html-body ul,
+  .prose-blog ul {
+    @apply list-disc pl-6 mb-4 space-y-1;
+  }
+
+  .html-body ol,
+  .prose-blog ol {
+    @apply list-decimal pl-6 mb-4 space-y-1;
+  }
+
+  .html-body a,
+  .prose-blog a {
+    @apply text-primary-light underline underline-offset-2 hover:text-primary;
+  }
+
+  .html-body blockquote,
+  .prose-blog blockquote {
+    @apply border-l-4 border-accent-lavender/50 pl-4 italic text-primary/80 my-4;
+  }
+
+  .html-body strong,
+  .prose-blog strong {
+    @apply font-semibold text-primary;
+  }
 }

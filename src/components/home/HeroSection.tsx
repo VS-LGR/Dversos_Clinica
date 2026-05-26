@@ -30,7 +30,7 @@ export default function HeroSection() {
 
       <div className="relative z-10 max-w-6xl mx-auto w-full flex flex-col lg:flex-row lg:gap-12 xl:gap-16 items-center">
         <RevealOnScroll index={0}>
-          <div className="flex-1 text-center lg:text-left mb-12 lg:mb-0">
+          <div className="flex-1 text-center lg:text-left mb-12 lg:mb-0 rounded-3xl bg-white/90 border border-primary/[0.06] shadow-md shadow-primary/5 p-8 sm:p-10">
             <p className="text-primary/70 text-sm font-medium uppercase tracking-widest mb-3">
             Saúde integrada · Sorocaba e região
             </p>
@@ -62,10 +62,14 @@ export default function HeroSection() {
           <div className="flex-shrink-0 w-full max-w-md lg:max-w-lg xl:max-w-xl">
             <div className="relative group">
               <div
-                className="absolute -inset-1 bg-gradient-to-r from-primary/15 to-accent-warm/25 rounded-2xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity duration-300"
+                className="absolute -inset-2 bg-gradient-to-br from-accent-mint/30 via-accent-lavender/25 to-accent-warm/20 rounded-3xl blur-2xl opacity-70"
                 aria-hidden
               />
-              <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-primary/10 ring-1 ring-black/5">
+              <div
+                className="absolute -inset-1 bg-gradient-to-r from-primary/15 to-accent-warm/25 rounded-3xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity duration-300"
+                aria-hidden
+              />
+              <div className="relative rounded-3xl overflow-hidden shadow-xl shadow-primary/10 ring-1 ring-black/5">
                 <Image
                   src={HERO_PLACEHOLDER_SRC}
                   alt=""

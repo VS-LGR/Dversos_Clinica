@@ -7,6 +7,13 @@ import { CLINIC_AREAS } from "@/lib/constants/clinicAreas";
 import { AREAS_FILTER_COPY, AREAS_INTRO_COPY } from "@/lib/constants/homeAreasContent";
 import RevealOnScroll from "@/components/shared/RevealOnScroll";
 
+const CARD_PASTELS = [
+  "from-accent-mint/30 via-white to-accent-lavender/15",
+  "from-accent-lavender/30 via-white to-accent-mint/15",
+  "from-accent-warm/25 via-white to-accent-lavender/15",
+  "from-accent-mint/20 via-white to-accent-warm/20",
+] as const;
+
 const BRANCHES = [
   {
     title: "Psicologia e Desenvolvimento",
@@ -133,7 +140,7 @@ export default function AreasGrid() {
                       >
                         <Link
                           href={`/areas/${area.slug}`}
-                          className="group block p-5 rounded-xl border border-primary/[0.08] bg-gradient-to-br from-accent-mint/25 via-white to-accent-lavender/20 hover:border-primary/25 hover:shadow-sm transition-all duration-300 text-left"
+                          className={`group block p-5 rounded-2xl border border-primary/[0.08] bg-gradient-to-br ${CARD_PASTELS[cardIndex % CARD_PASTELS.length]} hover:border-primary/25 hover:shadow-md transition-all duration-300 text-left`}
                         >
                           <h4 className="text-base font-semibold text-primary group-hover:text-primary-light transition-colors mb-2">
                             {area.name}

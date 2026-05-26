@@ -7,11 +7,13 @@ import AbaInterventionSection from "@/components/home/AbaInterventionSection";
 import ComplementaryCareSection from "@/components/home/ComplementaryCareSection";
 import BeDversoSection from "@/components/home/BeDversoSection";
 import FoundersSection from "@/components/home/FoundersSection";
+import VisitCtaBand from "@/components/home/VisitCtaBand";
 import RevealOnScroll from "@/components/shared/RevealOnScroll";
 import PastelPageDecor from "@/components/shared/PastelPageDecor";
 
 const HOME_SECTIONS = [
   AreasGrid,
+  VisitCtaBand,
   NeurodiversityHighlight,
   DogTherapyBand,
   AbaInterventionSection,

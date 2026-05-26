@@ -1,17 +1,22 @@
 import type { BlogPostRow } from "@/lib/blog/types";
+import { BLOG_POST_SELECT } from "@/lib/blog/types";
 import { createSupabaseAnonServerClient } from "@/lib/supabase/anon";
 
-export async function fetchPublishedPosts(): Promise<BlogPostRow[]> {
+export async function fetchPublishedPosts(limit?: number): Promise<BlogPostRow[]> {
   const supabase = createSupabaseAnonServerClient();
   if (!supabase) return [];
-  const { data, error } = await supabase
+
+  let query = supabase
     .from("blog_posts")
-    .select(
-      "id, slug, title, excerpt, body_markdown, body_format, status, published_at, created_at, updated_at"
-    )
+    .select(BLOG_POST_SELECT)
     .eq("status", "published")
     .order("published_at", { ascending: false });
 
+  if (limit !== undefined) {
+    query = query.limit(limit);
+  }
+
+  const { data, error } = await query;
   if (error || !data) return [];
   return data as BlogPostRow[];
 }
@@ -21,9 +26,7 @@ export async function fetchPublishedPostBySlug(slug: string): Promise<BlogPostRo
   if (!supabase) return null;
   const { data, error } = await supabase
     .from("blog_posts")
-    .select(
-      "id, slug, title, excerpt, body_markdown, body_format, status, published_at, created_at, updated_at"
-    )
+    .select(BLOG_POST_SELECT)
     .eq("slug", slug)
     .eq("status", "published")
     .maybeSingle();

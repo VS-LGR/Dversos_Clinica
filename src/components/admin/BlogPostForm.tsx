@@ -3,8 +3,12 @@
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 import type { BlogPostRow } from "@/lib/blog/types";
+import { getInitialEditorHtml } from "@/lib/blog/body";
 import { slugifyTitle } from "@/lib/blog/slug";
 import { createSupabaseBrowserClient } from "@/lib/supabase/browser";
+import { BLOG_CATEGORIES } from "@/lib/constants/blogCategories";
+import CoverImageField from "@/components/admin/CoverImageField";
+import RichTextEditor from "@/components/admin/RichTextEditor";
 
 type Mode = "new" | "edit";
 
@@ -21,7 +25,11 @@ export default function BlogPostForm({ mode, initial }: BlogPostFormProps) {
   const [slug, setSlug] = useState(initial?.slug ?? "");
   const [slugTouched, setSlugTouched] = useState(!!initial?.slug);
   const [excerpt, setExcerpt] = useState(initial?.excerpt ?? "");
-  const [body, setBody] = useState(initial?.body_markdown ?? "");
+  const [category, setCategory] = useState(initial?.category ?? BLOG_CATEGORIES[0]);
+  const [coverImageUrl, setCoverImageUrl] = useState<string | null>(
+    initial?.cover_image_url ?? null
+  );
+  const [bodyHtml, setBodyHtml] = useState(() => getInitialEditorHtml(initial));
   const [status, setStatus] = useState<"draft" | "published">(initial?.status ?? "draft");
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
@@ -44,8 +52,11 @@ export default function BlogPostForm({ mode, initial }: BlogPostFormProps) {
       slug: finalSlug,
       title: title.trim() || "Sem título",
       excerpt: excerpt.trim() || null,
-      body_markdown: body,
-      body_format: "markdown",
+      category: category.trim() || null,
+      cover_image_url: coverImageUrl,
+      body_html: bodyHtml,
+      body_markdown: "",
+      body_format: "html" as const,
     };
   };
 
@@ -138,6 +149,31 @@ export default function BlogPostForm({ mode, initial }: BlogPostFormProps) {
       </div>
 
       <div>
+        <label htmlFor="post-category" className="block text-sm font-medium text-primary mb-1">
+          Categoria
+        </label>
+        <select
+          id="post-category"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          className="w-full rounded-xl border border-primary/15 px-4 py-2.5 text-primary bg-white focus:outline-none focus:ring-2 focus:ring-primary/30"
+        >
+          {BLOG_CATEGORIES.map((cat) => (
+            <option key={cat} value={cat}>
+              {cat}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <CoverImageField
+        value={coverImageUrl}
+        onChange={setCoverImageUrl}
+        postId={initial?.id}
+        disabled={saving}
+      />
+
+      <div>
         <label htmlFor="post-excerpt" className="block text-sm font-medium text-primary mb-1">
           Resumo (opcional)
         </label>
@@ -151,15 +187,12 @@ export default function BlogPostForm({ mode, initial }: BlogPostFormProps) {
       </div>
 
       <div>
-        <label htmlFor="post-body" className="block text-sm font-medium text-primary mb-1">
-          Conteúdo (Markdown)
-        </label>
-        <textarea
-          id="post-body"
-          rows={16}
-          value={body}
-          onChange={(e) => setBody(e.target.value)}
-          className="w-full rounded-xl border border-primary/15 px-4 py-2.5 text-primary font-mono text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+        <span className="block text-sm font-medium text-primary mb-2">Conteúdo</span>
+        <RichTextEditor
+          value={bodyHtml}
+          onChange={setBodyHtml}
+          postId={initial?.id}
+          disabled={saving}
         />
       </div>
 

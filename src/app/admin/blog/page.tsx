@@ -1,7 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import type { BlogPostRow } from "@/lib/blog/types";
+import { BLOG_POST_SELECT } from "@/lib/blog/types";
+import { BLOG_COPY } from "@/lib/constants/blogCopy";
 
 export const metadata: Metadata = {
   title: "Artigos",
@@ -14,8 +17,6 @@ function formatDate(iso: string | null) {
       day: "2-digit",
       month: "short",
       year: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
     }).format(new Date(iso));
   } catch {
     return "—";
@@ -28,9 +29,7 @@ export default async function AdminBlogListPage() {
     const supabase = createSupabaseServerClient();
     const { data, error } = await supabase
       .from("blog_posts")
-      .select(
-        "id, slug, title, excerpt, body_markdown, body_format, status, published_at, created_at, updated_at"
-      )
+      .select(BLOG_POST_SELECT)
       .order("updated_at", { ascending: false });
 
     if (!error && data) posts = data as BlogPostRow[];
@@ -40,17 +39,19 @@ export default async function AdminBlogListPage() {
 
   return (
     <div>
-      <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
-        <div>
-          <h1 className="text-2xl font-bold text-primary">Artigos do blog</h1>
-          <p className="text-sm text-primary/70 mt-1">Rascunhos e publicações.</p>
+      <div className="rounded-2xl bg-gradient-to-br from-accent-mint/25 to-accent-lavender/15 border border-primary/[0.08] p-6 sm:p-8 mb-8">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h1 className="text-2xl font-bold text-primary">{BLOG_COPY.admin.listTitle}</h1>
+            <p className="text-sm text-primary/70 mt-1">{BLOG_COPY.admin.listSubtitle}</p>
+          </div>
+          <Link
+            href="/admin/blog/new"
+            className="inline-flex rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-light shadow-sm"
+          >
+            {BLOG_COPY.admin.newPost}
+          </Link>
         </div>
-        <Link
-          href="/admin/blog/new"
-          className="inline-flex rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-light"
-        >
-          Novo artigo
-        </Link>
       </div>
 
       {posts.length === 0 ? (
@@ -58,27 +59,47 @@ export default async function AdminBlogListPage() {
           Nenhum artigo encontrado. Crie o primeiro ou verifique a conexão com o Supabase.
         </p>
       ) : (
-        <ul className="space-y-3">
+        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
-            <li
-              key={post.id}
-              className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-primary/10 bg-white px-4 py-3"
-            >
-              <div className="min-w-0">
-                <p className="font-medium text-primary truncate">{post.title}</p>
-                <p className="text-xs text-primary/60 mt-0.5">
-                  <span className="font-mono">{post.slug}</span>
-                  {" · "}
-                  <span>{post.status === "published" ? "Publicado" : "Rascunho"}</span>
-                  {" · "}
-                  <span>Atualizado {formatDate(post.updated_at)}</span>
-                </p>
-              </div>
+            <li key={post.id}>
               <Link
                 href={`/admin/blog/${post.id}/edit`}
-                className="shrink-0 text-sm font-semibold text-primary-light hover:text-primary"
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-primary/10 bg-white shadow-sm hover:shadow-md hover:border-primary/20 transition-all"
               >
-                Editar
+                <div className="relative aspect-[16/10] bg-accent-lavender/20">
+                  {post.cover_image_url ? (
+                    <Image
+                      src={post.cover_image_url}
+                      alt=""
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 50vw, 33vw"
+                      unoptimized={post.cover_image_url.includes("supabase")}
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center text-primary/35 text-sm">
+                      Sem capa
+                    </div>
+                  )}
+                  <span
+                    className={`absolute top-2 left-2 rounded-full px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${
+                      post.status === "published"
+                        ? "bg-primary text-white"
+                        : "bg-white/95 text-primary border border-primary/15"
+                    }`}
+                  >
+                    {post.status === "published" ? "Publicado" : "Rascunho"}
+                  </span>
+                </div>
+                <div className="p-4 flex-1 flex flex-col">
+                  <p className="font-semibold text-primary line-clamp-2 group-hover:text-primary-light transition-colors">
+                    {post.title}
+                  </p>
+                  <p className="text-xs text-primary/55 mt-2 font-mono truncate">{post.slug}</p>
+                  <p className="text-xs text-primary/60 mt-1">
+                    Atualizado {formatDate(post.updated_at)}
+                  </p>
+                </div>
               </Link>
             </li>
           ))}

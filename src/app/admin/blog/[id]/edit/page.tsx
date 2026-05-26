@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import BlogPostForm from "@/components/admin/BlogPostForm";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import type { BlogPostRow } from "@/lib/blog/types";
+import { BLOG_POST_SELECT } from "@/lib/blog/types";
 
 type Props = { params: { id: string } };
 
@@ -16,9 +17,7 @@ export default async function AdminBlogEditPage({ params }: Props) {
     const supabase = createSupabaseServerClient();
     const { data, error } = await supabase
       .from("blog_posts")
-      .select(
-        "id, slug, title, excerpt, body_markdown, body_format, status, published_at, created_at, updated_at"
-      )
+      .select(BLOG_POST_SELECT)
       .eq("id", params.id)
       .maybeSingle();
 
