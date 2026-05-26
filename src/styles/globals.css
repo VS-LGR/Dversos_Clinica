@@ -17,6 +17,29 @@ body {
   @apply bg-white text-primary antialiased;
 }
 
+/* VLibras Widget (https://vlibras.gov.br/doc/widget/installation/webpageintegration.html) */
+[vw] {
+  position: fixed;
+  inset: auto;
+  right: 0;
+  bottom: 0;
+  z-index: 60;
+}
+
+[vw-access-button] {
+  position: fixed !important;
+  right: 16px !important;
+  bottom: calc(16px + env(safe-area-inset-bottom)) !important;
+  z-index: 61 !important;
+}
+
+/* Mobile: keep clear of ContactStrip at bottom */
+@media (max-width: 639px) {
+  [vw-access-button] {
+    bottom: calc(88px + env(safe-area-inset-bottom)) !important;
+  }
+}
+
 @layer utilities {
   .animate-delay-100 { animation-delay: 100ms; }
   .animate-delay-200 { animation-delay: 200ms; }

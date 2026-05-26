@@ -7,6 +7,7 @@ import ScrollBar from "@/components/layout/ScrollBar";
 import ContactStrip from "@/components/layout/ContactStrip";
 import LocalBusinessJsonLd from "@/components/seo/LocalBusinessJsonLd";
 import GoogleTags from "@/components/analytics/GoogleTags";
+import VlibrasWidget from "@/components/accessibility/VlibrasWidget";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -60,6 +61,7 @@ export default function RootLayout({
         <GoogleTags />
         <LocalBusinessJsonLd />
         <ScrollBar />
+        <VlibrasWidget />
         <a
           href="#main-content"
           className="sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-lg focus:w-auto focus:h-auto focus:m-0 focus:overflow-visible focus:[clip:auto]"
