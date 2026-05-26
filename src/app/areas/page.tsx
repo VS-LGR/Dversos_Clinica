@@ -52,25 +52,27 @@ export default function AreasOverviewPage() {
                   {group.title}
                 </h2>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {group.slugs.map((slug) => {
+                  {group.slugs.map((slug, index) => {
                     const area = areaBySlug.get(slug);
                     if (!area) return null;
                     return (
                       <li key={area.slug}>
-                        <Link
-                          href={`/areas/${area.slug}`}
-                          className="block p-6 rounded-xl border-2 border-primary-pale bg-white hover:border-primary hover:shadow-lg transition-all"
-                        >
-                          <h3 className="text-lg font-semibold text-primary mb-2">
-                            {area.name}
-                          </h3>
-                          <p className="text-sm text-primary/80 line-clamp-2">
-                            {area.description}
-                          </p>
-                          <span className="inline-block mt-3 text-primary font-medium text-sm">
-                            Ver detalhes →
-                          </span>
-                        </Link>
+                        <RevealOnScroll delayMs={Math.min(240, (index % 6) * 40)}>
+                          <Link
+                            href={`/areas/${area.slug}`}
+                            className="block p-6 rounded-xl border-2 border-primary-pale bg-white hover:border-primary hover:shadow-lg transition-all"
+                          >
+                            <h3 className="text-lg font-semibold text-primary mb-2">
+                              {area.name}
+                            </h3>
+                            <p className="text-sm text-primary/80 line-clamp-2">
+                              {area.description}
+                            </p>
+                            <span className="inline-block mt-3 text-primary font-medium text-sm">
+                              Ver detalhes →
+                            </span>
+                          </Link>
+                        </RevealOnScroll>
                       </li>
                     );
                   })}

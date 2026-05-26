@@ -1,15 +1,22 @@
 "use client";
 
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 
 interface RevealOnScrollProps {
   children: ReactNode;
   className?: string;
+  delayMs?: number;
 }
 
-export default function RevealOnScroll({ children, className = "" }: RevealOnScrollProps) {
+export default function RevealOnScroll({
+  children,
+  className = "",
+  delayMs,
+}: RevealOnScrollProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const style: CSSProperties | undefined =
+    delayMs !== undefined ? ({ "--reveal-delay": `${delayMs}ms` } as CSSProperties) : undefined;
 
   useEffect(() => {
     const el = ref.current;
@@ -39,6 +46,7 @@ export default function RevealOnScroll({ children, className = "" }: RevealOnScr
     <div
       ref={ref}
       className={`reveal-on-scroll ${visible ? "reveal-on-scroll--visible" : ""} ${className}`.trim()}
+      style={style}
     >
       {children}
     </div>

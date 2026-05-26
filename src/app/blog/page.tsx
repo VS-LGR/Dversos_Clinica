@@ -33,27 +33,29 @@ export default async function BlogPage() {
         ) : (
           <RevealOnScroll>
             <ul className="grid gap-6 sm:grid-cols-2 mt-12">
-              {posts.map((post) => (
+              {posts.map((post, index) => (
                 <li key={post.id}>
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="block h-full p-6 rounded-xl border border-primary/[0.08] bg-white shadow-sm hover:shadow-md hover:border-primary/20 transition-all"
-                  >
-                    <p className="text-xs font-medium uppercase tracking-widest text-primary/50 mb-2">
-                      {formatDate(post.published_at)}
-                    </p>
-                    <h2 className="text-lg font-semibold text-primary mb-2">
-                      {post.title}
-                    </h2>
-                    {post.excerpt && (
-                      <p className="text-sm text-primary/80 line-clamp-3">
-                        {post.excerpt}
+                  <RevealOnScroll delayMs={Math.min(240, (index % 6) * 40)}>
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="block h-full p-6 rounded-xl border border-primary/[0.08] bg-white shadow-sm hover:shadow-md hover:border-primary/20 transition-all"
+                    >
+                      <p className="text-xs font-medium uppercase tracking-widest text-primary/50 mb-2">
+                        {formatDate(post.published_at)}
                       </p>
-                    )}
-                    <span className="mt-4 inline-block text-sm font-medium text-primary-light">
-                      Ler artigo
-                    </span>
-                  </Link>
+                      <h2 className="text-lg font-semibold text-primary mb-2">
+                        {post.title}
+                      </h2>
+                      {post.excerpt && (
+                        <p className="text-sm text-primary/80 line-clamp-3">
+                          {post.excerpt}
+                        </p>
+                      )}
+                      <span className="mt-4 inline-block text-sm font-medium text-primary-light">
+                        Ler artigo
+                      </span>
+                    </Link>
+                  </RevealOnScroll>
                 </li>
               ))}
             </ul>
