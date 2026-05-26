@@ -35,7 +35,9 @@ export default function RevealOnScroll({
           observer.disconnect();
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      // Trigger slightly before the block is fully in view,
+      // so the user actually sees the entrance animation.
+      { threshold: 0.1, rootMargin: "0px 0px 12% 0px" }
     );
 
     observer.observe(el);
