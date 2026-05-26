@@ -27,24 +27,29 @@ body {
 
   .reveal-on-scroll {
     opacity: 0;
-    transform: translateY(42px);
-    filter: blur(2px);
+    transform: translateX(78px);
+    filter: blur(3px);
   }
 
   .reveal-on-scroll--visible {
-    animation: revealOnScrollIn 0.72s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: revealOnScrollIn 0.86s cubic-bezier(0.12, 0.9, 0.2, 1) forwards;
     animation-delay: var(--reveal-delay, 0ms);
   }
 
   @keyframes revealOnScrollIn {
-    from {
+    0% {
       opacity: 0;
-      transform: translateY(42px);
-      filter: blur(2px);
+      transform: translateX(78px);
+      filter: blur(3px);
     }
-    to {
+    70% {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateX(-6px);
+      filter: blur(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
       filter: blur(0);
     }
   }
