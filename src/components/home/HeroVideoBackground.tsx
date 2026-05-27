@@ -40,7 +40,7 @@ export default function HeroVideoBackground() {
     <div className="absolute inset-0 overflow-hidden" aria-hidden>
       <video
         ref={videoRef}
-        className="absolute inset-0 h-full w-full object-cover opacity-[0.15]"
+        className="absolute inset-0 h-full w-full object-cover opacity-[0.18]"
         muted
         loop
         playsInline
@@ -50,6 +50,7 @@ export default function HeroVideoBackground() {
         <source src={HERO_VIDEO_SRC} type="video/webm" />
       </video>
 
+      <div className="absolute inset-0 bg-black/[0.06]" />
       <div className="absolute inset-0 bg-gradient-to-br from-white/92 via-white/88 to-primary-pale/95" />
     </div>
   );

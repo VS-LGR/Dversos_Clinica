@@ -9,7 +9,7 @@ import HeroVideoBackground from "@/components/home/HeroVideoBackground";
 export default function HeroSection() {
   return (
     <section
-      className="relative min-h-[85vh] flex items-center py-20 sm:py-24 px-4 sm:px-6 overflow-hidden"
+      className="relative min-h-[85vh] flex items-center pt-20 pb-24 sm:pt-24 sm:pb-28 px-4 sm:px-6 overflow-hidden"
       aria-labelledby="hero-title"
     >
       <HeroVideoBackground />
@@ -41,6 +41,18 @@ export default function HeroSection() {
           </div>
         </RevealOnScroll>
       </div>
+
+      <svg
+        className="absolute bottom-0 left-0 w-full h-10 sm:h-12 md:h-14 pointer-events-none"
+        viewBox="0 0 1440 120"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <path
+          d="M0,96L80,90.7C160,85,320,75,480,74.7C640,75,800,85,960,85.3C1120,85,1280,75,1360,69.3L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
+          fill="rgb(255 248 242 / 0.40)"
+        />
+      </svg>
     </section>
   );
 }
