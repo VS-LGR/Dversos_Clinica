@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { PASTEL_SURFACE_SOFT, pastelByIndex } from "@/lib/constants/pastelPalette";
 
 export default function BeDversoSection() {
   return (
@@ -14,7 +15,7 @@ export default function BeDversoSection() {
           Mais do que uma clínica, construímos uma cultura de cuidado, aprendizado e pertencimento — para famílias, aprendizes e profissionais que acreditam em evidências e respeito à neurodiversidade.
         </p>
         <div className="grid md:grid-cols-2 gap-6">
-          <article className="rounded-xl border border-primary/[0.1] bg-pastel-aqua/80 p-6">
+          <article className={`rounded-xl border p-6 ${pastelByIndex(PASTEL_SURFACE_SOFT, 0)}`}>
             <h3 className="text-lg font-semibold text-primary mb-2">Para famílias e aprendizes</h3>
             <p className="text-sm text-primary/80 mb-4">
               Conheça nossa história, metodologia de atendimento, espaços terapêuticos e áreas de atuação integradas.
@@ -28,7 +29,7 @@ export default function BeDversoSection() {
               </Link>
             </div>
           </article>
-          <article className="rounded-xl border border-primary/[0.1] bg-pastel-peach/80 p-6">
+          <article className={`rounded-xl border p-6 ${pastelByIndex(PASTEL_SURFACE_SOFT, 1)}`}>
             <h3 className="text-lg font-semibold text-primary mb-2">Para profissionais — #SEJADVERSO</h3>
             <p className="text-sm text-primary/80 mb-4">
               Supervisão clínica contínua, formação baseada em evidências e equipe colaborativa. Faça parte da DVERSO.

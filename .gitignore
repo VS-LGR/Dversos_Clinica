@@ -18,6 +18,10 @@ out/
 .DS_Store
 *.pem
 
+# vídeo fonte 4K (usar npm run optimize:hero-video)
+8556939-uhd_4096_2160_25fps.webm
+scripts/assets/
+
 # debug
 npm-debug.log*
 yarn-debug.log*

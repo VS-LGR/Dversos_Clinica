@@ -42,7 +42,7 @@ export default function SobrePage() {
         <p className="text-primary/80 mb-8 max-w-3xl">
           {CARE_SESSION_INFO.intro}
         </p>
-        <CareProcessTimeline />
+        <CareProcessTimeline variant="vertical" />
       </section>
 
       <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto border-t border-primary/[0.06]">

@@ -13,12 +13,12 @@ import RevealOnScroll from "@/components/shared/RevealOnScroll";
 import PastelPageDecor from "@/components/shared/PastelPageDecor";
 
 const HOME_SECTIONS = [
-  AreasGrid,
   HomeCareProcessSection,
+  AreasGrid,
+  AbaInterventionSection,
   VisitCtaBand,
   NeurodiversityHighlight,
   DogTherapyBand,
-  AbaInterventionSection,
   ComplementaryCareSection,
   BeDversoSection,
   FoundersSection,

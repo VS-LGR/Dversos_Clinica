@@ -5,6 +5,7 @@ import Image from "next/image";
 import SectionTitle from "@/components/shared/SectionTitle";
 import { TEAM_LEADERS } from "@/lib/constants/teamLeaders";
 import RevealOnScroll from "@/components/shared/RevealOnScroll";
+import { PASTEL_SURFACE_SOFT, pastelByIndex } from "@/lib/constants/pastelPalette";
 
 export default function FoundersSection() {
   return (
@@ -28,7 +29,7 @@ export default function FoundersSection() {
               index={index}
             >
               <article
-                className="flex flex-col sm:flex-row gap-6 p-6 sm:p-8 rounded-xl bg-pastel-mint/50 border border-primary/[0.08] shadow-sm hover:shadow-md hover:border-primary/15 transition-all duration-300"
+                className={`flex flex-col sm:flex-row gap-6 p-6 sm:p-8 rounded-xl border shadow-sm hover:shadow-md hover:border-primary/15 transition-all duration-300 ${pastelByIndex(PASTEL_SURFACE_SOFT, index)}`}
               >
                 {founder.imageUrl ? (
                   <div className="flex-shrink-0 w-20 h-20 rounded-full overflow-hidden bg-gradient-to-br from-pastel-coral to-pastel-peach ring-2 ring-primary/5">

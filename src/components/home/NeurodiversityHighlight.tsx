@@ -37,7 +37,7 @@ export default function NeurodiversityHighlight() {
           aria-hidden
         >
           <div
-            className="absolute inset-0 m-auto w-[110%] h-[110%] max-w-[320px] rounded-full bg-gradient-to-br from-pastel-aqua/80 via-pastel-mint/60 to-pastel-peach/50 blur-md"
+            className="absolute inset-0 m-auto w-[110%] h-[110%] max-w-[320px] rounded-full bg-gradient-to-br from-pastel-aqua/50 via-pastel-mint/40 to-pastel-peach/40 blur-md"
             aria-hidden
           />
           <div className="relative w-full aspect-square max-w-[300px] group z-10">

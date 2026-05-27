@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import InstitutionalPageHero from "@/components/shared/InstitutionalPageHero";
 import { CLINIC_SPACES, SPACES_PAGE } from "@/lib/constants/spacesContent";
+import { PASTEL_SURFACE_SOFT, pastelByIndex } from "@/lib/constants/pastelPalette";
 
 export const metadata: Metadata = {
   title: SPACES_PAGE.metaTitle,
@@ -28,9 +29,7 @@ export default function EspacosPage() {
         {CLINIC_SPACES.map((space, index) => (
           <article
             key={space.slug}
-            className={`rounded-2xl border border-primary/[0.1] p-6 sm:p-8 ${
-              index % 2 === 0 ? "bg-pastel-mint/30" : "bg-pastel-peach/30"
-            }`}
+            className={`rounded-2xl border p-6 sm:p-8 ${pastelByIndex(PASTEL_SURFACE_SOFT, index)}`}
           >
             <h2 className="text-xl font-bold text-primary mb-4">{space.title}</h2>
             <div className="space-y-3 text-primary/85 leading-relaxed text-sm sm:text-base">

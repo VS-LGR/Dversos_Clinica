@@ -1,7 +1,7 @@
 "use client";
 
 import { COMPLEMENTARY_CARE_COPY } from "@/lib/constants/homeAreasContent";
-import { PASTEL_CARD_BG, pastelByIndex } from "@/lib/constants/pastelPalette";
+import { PASTEL_SURFACE_SOFT, pastelByIndex } from "@/lib/constants/pastelPalette";
 
 export default function ComplementaryCareSection() {
   return (
@@ -19,7 +19,7 @@ export default function ComplementaryCareSection() {
         </p>
         <div className="grid md:grid-cols-3 gap-5">
           {COMPLEMENTARY_CARE_COPY.cards.map((card, index) => (
-            <article key={card.title} className={`rounded-xl border border-primary/[0.08] ${pastelByIndex(PASTEL_CARD_BG, index)} p-6 shadow-sm hover:shadow-md transition-shadow`}>
+            <article key={card.title} className={`rounded-xl border ${pastelByIndex(PASTEL_SURFACE_SOFT, index)} p-6 shadow-sm hover:shadow-md transition-shadow`}>
               <h3 className="font-semibold text-primary mb-2">{card.title}</h3>
               <p className="text-sm text-primary/80">{card.description}</p>
             </article>

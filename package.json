@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "optimize:hero-video": "node scripts/optimize-hero-video.mjs"
   },
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.18.3",

@@ -3,6 +3,7 @@
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import { DEFAULT_WHATSAPP_NUMBER } from "@/lib/constants/clinicAreas";
 import { HOME_HERO } from "@/lib/constants/siteContent";
+import { PASTEL_SURFACE_SOFT, pastelByIndex } from "@/lib/constants/pastelPalette";
 
 export default function AbaInterventionSection() {
   return (
@@ -21,18 +22,28 @@ export default function AbaInterventionSection() {
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-4 mb-8">
-          <article className="rounded-xl border border-primary/[0.1] bg-pastel-peach/70 p-5">
-            <h3 className="font-semibold text-primary mb-2">Plano individualizado (PIC)</h3>
-            <p className="text-sm text-primary/80">Metas definidas por avaliação, contexto familiar e necessidades de cada aprendiz.</p>
-          </article>
-          <article className="rounded-xl border border-primary/[0.1] bg-pastel-mint/60 p-5">
-            <h3 className="font-semibold text-primary mb-2">Supervisão e evidências</h3>
-            <p className="text-sm text-primary/80">Ajustes baseados em dados, supervisão ABA e tomada de decisão clínica segura.</p>
-          </article>
-          <article className="rounded-xl border border-primary/[0.1] bg-pastel-aqua/60 p-5">
-            <h3 className="font-semibold text-primary mb-2">Família e escola</h3>
-            <p className="text-sm text-primary/80">Participação ativa da rede de apoio para generalizar habilidades fora da clínica.</p>
-          </article>
+          {[
+            {
+              title: "Plano individualizado (PIC)",
+              text: "Metas definidas por avaliação, contexto familiar e necessidades de cada aprendiz.",
+            },
+            {
+              title: "Supervisão e evidências",
+              text: "Ajustes baseados em dados, supervisão ABA e tomada de decisão clínica segura.",
+            },
+            {
+              title: "Família e escola",
+              text: "Participação ativa da rede de apoio para generalizar habilidades fora da clínica.",
+            },
+          ].map((card, index) => (
+            <article
+              key={card.title}
+              className={`rounded-xl border p-5 ${pastelByIndex(PASTEL_SURFACE_SOFT, index)}`}
+            >
+              <h3 className="font-semibold text-primary mb-2">{card.title}</h3>
+              <p className="text-sm text-primary/80">{card.text}</p>
+            </article>
+          ))}
         </div>
         <WhatsAppButton
           phoneNumber={DEFAULT_WHATSAPP_NUMBER}
