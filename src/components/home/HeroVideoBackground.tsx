@@ -50,8 +50,11 @@ export default function HeroVideoBackground() {
         <source src={HERO_VIDEO_SRC} type="video/webm" />
       </video>
 
-      <div className="absolute inset-0 bg-black/[0.06]" />
-      <div className="absolute inset-0 bg-gradient-to-br from-white/92 via-white/88 to-primary-pale/95" />
+      {/* Camada base quase imperceptivel para profundidade. */}
+      <div className="absolute inset-0 bg-black/[0.045]" />
+      {/* Gradiente escuro sutil para tirar aspecto chapado sem pesar. */}
+      <div className="absolute inset-0 bg-[radial-gradient(120%_75%_at_50%_0%,rgba(0,0,0,0.10)_0%,rgba(0,0,0,0.02)_58%,rgba(0,0,0,0)_100%)]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/84 to-primary-pale/92" />
     </div>
   );
 }
