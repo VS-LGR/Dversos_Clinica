@@ -29,7 +29,7 @@ export default function RevealOnScroll({
   // Ajuste de UX: o elemento ainda pode estar entrando parcialmente fora da tela
   // no momento em que o IntersectionObserver dispara. Mantemos o stagger existente,
   // mas somamos um atraso base para tornar o "slide-in" mais visível.
-  const BASE_DELAY_MS = 300;
+  const BASE_DELAY_MS = 100;
 
   const resolvedDirection =
     direction ?? (index !== undefined ? alternateRevealDirection(index) : "right");

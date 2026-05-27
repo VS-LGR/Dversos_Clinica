@@ -15,6 +15,8 @@ export default function Header() {
     if (href === "/") return pathname === "/";
     if (href === "/areas") return pathname.startsWith("/areas");
     if (href === "/blog") return pathname.startsWith("/blog");
+    if (href === "/sobre") return pathname.startsWith("/sobre");
+    if (href === "/espacos") return pathname.startsWith("/espacos");
     return pathname === href;
   };
 

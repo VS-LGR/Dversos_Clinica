@@ -59,7 +59,10 @@ export default function DogTherapyBand() {
             ))}
           </ul>
           <div className="flex w-full flex-wrap gap-4 justify-center md:justify-start">
-            <Link href="/areas/animal-assisted-therapy" className="inline-flex items-center rounded-xl font-semibold border-2 border-white px-5 py-3 hover:bg-white hover:text-primary transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]">
+            <Link href="/espacos" className="inline-flex items-center rounded-xl font-semibold border-2 border-white px-5 py-3 hover:bg-white hover:text-primary transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]">
+              Nossos espaços
+            </Link>
+            <Link href="/areas/animal-assisted-therapy" className="inline-flex items-center rounded-xl font-semibold border-2 border-white/80 px-5 py-3 hover:bg-white hover:text-primary transition-all duration-200">
               Conhecer TAA
             </Link>
             <WhatsAppButton

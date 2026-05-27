@@ -11,24 +11,31 @@ export default function BeDversoSection() {
           Por que ser DVERSO
         </h2>
         <p className="text-primary/80 leading-relaxed text-center max-w-3xl mx-auto mb-10">
-          A DVERSO conecta acolhimento clínico e desenvolvimento profissional. Atendemos pacientes e famílias com cuidado objetivo e amigável, e também oferecemos formação para profissionais.
+          Mais do que uma clínica, construímos uma cultura de cuidado, aprendizado e pertencimento — para famílias, aprendizes e profissionais que acreditam em evidências e respeito à neurodiversidade.
         </p>
         <div className="grid md:grid-cols-2 gap-6">
           <article className="rounded-xl border border-primary/[0.1] bg-pastel-aqua/80 p-6">
-            <h3 className="text-lg font-semibold text-primary mb-2">Para clientes e famílias</h3>
+            <h3 className="text-lg font-semibold text-primary mb-2">Para famílias e aprendizes</h3>
             <p className="text-sm text-primary/80 mb-4">
-              Atendimento integrado, equipe multiprofissional e orientação clara em cada etapa do acompanhamento.
+              Conheça nossa história, metodologia de atendimento, espaços terapêuticos e áreas de atuação integradas.
             </p>
-            <Link href="/areas" className="text-sm font-medium text-primary hover:underline underline-offset-2">
-              Ver áreas de atendimento
-            </Link>
+            <div className="flex flex-wrap gap-4">
+              <Link href="/sobre" className="text-sm font-medium text-primary hover:underline underline-offset-2">
+                Sobre a clínica
+              </Link>
+              <Link href="/espacos" className="text-sm font-medium text-primary hover:underline underline-offset-2">
+                Nossos espaços
+              </Link>
+            </div>
           </article>
           <article className="rounded-xl border border-primary/[0.1] bg-pastel-peach/80 p-6">
-            <h3 className="text-lg font-semibold text-primary mb-2">Para profissionais</h3>
+            <h3 className="text-lg font-semibold text-primary mb-2">Para profissionais — #SEJADVERSO</h3>
             <p className="text-sm text-primary/80 mb-4">
-              Cursos, formação e palestras com foco em prática clínica atual, manejo de casos e atuação interdisciplinar.
+              Supervisão clínica contínua, formação baseada em evidências e equipe colaborativa. Faça parte da DVERSO.
             </p>
-            <span className="text-sm font-medium text-primary/75">Programação em breve</span>
+            <Link href="/seja-colaborador" className="text-sm font-medium text-primary hover:underline underline-offset-2">
+              Seja colaborador
+            </Link>
           </article>
         </div>
       </div>

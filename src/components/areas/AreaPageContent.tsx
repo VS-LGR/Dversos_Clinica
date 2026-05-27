@@ -1,7 +1,7 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import AreaHero from "@/components/areas/AreaHero";
 import ProfessionalsList from "@/components/areas/ProfessionalsList";
-import LocationGallery from "@/components/areas/LocationGallery";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import {
   getAreaBySlug,
@@ -22,15 +22,32 @@ export default function AreaPageContent({ slug }: AreaPageContentProps) {
   return (
     <div className="min-h-screen">
       <AreaHero area={area} />
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
-        <h2 className="text-xl font-bold text-primary mb-4">Como funciona o atendimento</h2>
-        <p className="text-primary/90 leading-relaxed">{area.howItWorks}</p>
+      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto space-y-6">
+        <div>
+          <h2 className="text-xl font-bold text-primary mb-4">Sobre o atendimento</h2>
+          <p className="text-primary/90 leading-relaxed">{area.howItWorks}</p>
+        </div>
+        {area.detailParagraphs?.map((paragraph) => (
+          <p key={paragraph.slice(0, 40)} className="text-primary/85 leading-relaxed">
+            {paragraph}
+          </p>
+        ))}
       </section>
       <ProfessionalsList
         professionals={professionals}
         title="Profissionais desta área"
       />
-      <LocationGallery images={[]} title="Nosso espaço de atendimento" />
+      <section className="py-8 px-4 sm:px-6 max-w-4xl mx-auto text-center">
+        <p className="text-primary/80 text-sm mb-3">
+          Conheça os ambientes terapêuticos da clínica.
+        </p>
+        <Link
+          href="/espacos"
+          className="text-sm font-medium text-primary hover:underline underline-offset-2"
+        >
+          Ver nossos espaços →
+        </Link>
+      </section>
       <section className="py-12 px-4 sm:px-6 bg-gradient-to-b from-[#fdfbf9] to-primary-pale/30">
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-primary font-medium mb-4">

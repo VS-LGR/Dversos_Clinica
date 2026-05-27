@@ -1,8 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import SectionTitle from "@/components/shared/SectionTitle";
-import { FOUNDERS } from "@/lib/constants/founders";
+import { TEAM_LEADERS } from "@/lib/constants/teamLeaders";
 import RevealOnScroll from "@/components/shared/RevealOnScroll";
 
 export default function FoundersSection() {
@@ -12,15 +13,15 @@ export default function FoundersSection() {
         <SectionTitle
           id="founders-title"
           className="mb-3"
-          subtitle="Conheça os fundadores e a trajetória de cada profissional."
+          subtitle="Um histórico de transformação nos cuidados."
         >
-          Quem somos
+          Lideranças DVERSO
         </SectionTitle>
         <p className="text-center text-primary/75 text-sm sm:text-base mb-14 max-w-2xl mx-auto">
-          Profissionais dedicados à saúde integrada e ao acolhimento familiar.
+          Gestão, direção clínica e compromisso com cuidado de excelência para neuroatípicos.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {FOUNDERS.map((founder, index) => (
+          {TEAM_LEADERS.map((founder, index) => (
             <RevealOnScroll
               key={founder.id}
               delayMs={Math.min(300, (index % 6) * 60)}
@@ -62,6 +63,14 @@ export default function FoundersSection() {
             </RevealOnScroll>
           ))}
         </div>
+        <p className="text-center mt-10">
+          <Link
+            href="/liderancas"
+            className="text-sm font-medium text-primary hover:underline underline-offset-2"
+          >
+            Ver todas as lideranças →
+          </Link>
+        </p>
       </div>
     </section>
   );

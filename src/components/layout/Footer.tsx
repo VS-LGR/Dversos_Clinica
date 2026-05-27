@@ -32,7 +32,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-2">{SITE_CONTACT.name}</h3>
             <p className="text-white/90 text-sm max-w-xs">
-              Saúde integrada em Sorocaba e região: psicologia, terapias integradas, nutrição e intervenções especializadas.
+              Clínica para neuroatípicos em Sorocaba: ABA, terapias integradas, TAA e cuidado interdisciplinar com evidências.
             </p>
           </div>
           <div>

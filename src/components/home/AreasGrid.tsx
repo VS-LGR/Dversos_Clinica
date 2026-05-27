@@ -15,6 +15,7 @@ const BRANCHES = [
     slugs: [
       "psychology",
       "neuropsychological-assessment",
+      "psychopedagogy",
       "therapeutic-companion",
       "psychomotricity",
     ],
@@ -22,6 +23,7 @@ const BRANCHES = [
   {
     title: "Terapias Integradas",
     slugs: [
+      "speech-therapy",
       "occupational-therapy",
       "sensory-integration",
       "music-therapy",
@@ -35,7 +37,7 @@ const BRANCHES = [
   },
   {
     title: "Intervenções Assistidas",
-    slugs: ["animal-assisted-therapy"],
+    slugs: ["animal-assisted-therapy", "dog-therapy"],
   },
 ];
 

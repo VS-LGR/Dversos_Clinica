@@ -5,53 +5,53 @@ export const AREAS_FILTER_COPY = {
 };
 
 export const AREAS_INTRO_COPY = {
-  subtitle: "Cuidado especializado para você e sua família, em um único espaço.",
+  subtitle: "Cuidado integrado para neuroatípicos em Sorocaba",
   description:
-    "Conheça cada especialidade, entenda como atuamos em conjunto e escolha o atendimento mais adequado para o seu momento.",
+    "Conheça cada especialidade da DVERSO — Psicologia com ABA e ACT, terapias integradas, nutrição, TAA e avaliação — e como atuamos em conjunto no plano individualizado.",
 };
 
 export const PROTECTED_CARE_COPY = {
-  eyebrow: "Diferenciais DVERSO",
-  title: "Cuidado protegido com manejo especializado",
+  eyebrow: "Terapia Assistida por Animais",
+  title: "TAA e cão de terapia na rotina de atendimento",
   description:
-    "A Clínica DVERSO conta com estrutura para acolhimento de casos de risco com contenção antecipada, sala de regulação emocional e atendimento protegido. Nossa equipe atua com manejo comportamental, supervisão ABA e vigilância 24h para garantir segurança, previsibilidade e suporte familiar contínuo.",
+    "Quando indicado clinicamente, nosso cão de terapia participa das sessões de 1 hora, favorecendo vínculo, engajamento e regulação. A Terapia Assistida por Animais é conduzida com ética, supervisão e integração ao plano ABA.",
   bullets: [
-    "Espaço de regulação emocional para prevenção e manejo de crise com segurança.",
-    "Fluxo de acolhimento com organização de ambiente e intervenção comportamental estruturada.",
-    "Supervisão ABA contínua com plano terapêutico integrado entre especialidades.",
-    "Atendimento protegido com monitoramento 24h e comunicação ativa com a família.",
+    "Ambiente protegido e atividades planejadas conforme objetivos clínicos.",
+    "Integração com Psicologia, AT e demais especialidades da clínica.",
+    "Sala de regulação emocional para manejo seguro de comportamentos interferentes.",
+    "Estrutura pensada para conforto sensorial, previsibilidade e acolhimento familiar.",
   ],
-  highlightEyebrow: "Diferencial clínico",
-  highlightTitle: "Protocolo Anakin",
+  highlightEyebrow: "Nossos espaços",
+  highlightTitle: "Ambiente que também ensina",
   highlightDescription:
-    "Fluxo de acolhimento para situações de maior sensibilidade, com equipe treinada para antecipação de risco, organização de ambiente e suporte familiar em cada etapa.",
+    "Salas individualizadas, brinquedoteca, cozinha terapêutica, horta e espaços de convivência — pensados para neurodiversidade. Conheça em Nossos espaços.",
 };
 
 export const COMPLEMENTARY_CARE_COPY = {
-  eyebrow: "Atendimentos complementares",
-  title: "Abordagem neuroafirmativa e cuidado interdisciplinar",
+  eyebrow: "Cuidado neuroafirmativo",
+  title: "Atendimento para crianças, adolescentes e famílias",
   description:
-    "O atendimento neuroafirmativo da Clínica DVERSO respeita singularidades e integra diferentes áreas para promover desenvolvimento com acolhimento, previsibilidade e autonomia.",
+    "Atuamos com correntes atuais e abordagem interdisciplinar, promovendo regulação emocional, desenvolvimento funcional e qualidade de vida em ambiente previsível e acolhedor — incluindo comportamentos interferentes e de risco.",
   cards: [
     {
-      title: "Escuta ativa da família",
+      title: "Participação da família",
       description:
-        "A rede de apoio participa do planejamento e recebe orientações objetivas para sustentar os avanços também fora da clínica.",
+        "Orientação, acolhimento e estratégias práticas para generalizar habilidades na rotina, na escola e em toda a rede de apoio.",
     },
     {
-      title: "Integração entre áreas",
+      title: "Equipe integrada",
       description:
-        "Comunicação clínica contínua entre especialidades para decisões coerentes, metas compartilhadas e evolução mais consistente.",
+        "Supervisão clínica, comunicação entre especialidades e plano terapêutico coerente com mensuração contínua de evolução.",
     },
     {
-      title: "Foco em funcionalidade",
+      title: "Objetivo funcional",
       description:
-        "Intervenções direcionadas a ganhos aplicáveis na rotina da criança, adolescente, adulto e família, com acompanhamento de progresso.",
+        "Avanços reais em autonomia, comunicação, participação social e qualidade de vida nos diferentes contextos de vida.",
     },
   ],
 };
 
 export const AREAS_PAGE_COPY = {
   description:
-    "Escolha uma especialidade para conhecer o atendimento, os diferenciais clínicos e como cada área contribui para o cuidado integrado.",
+    "Escolha uma especialidade para entender como cada área contribui para o plano individualizado da DVERSO — com ABA, evidências e cuidado integrado em Sorocaba.",
 };

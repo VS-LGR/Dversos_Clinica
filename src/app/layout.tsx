@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.clinicadverso.com.br"),
   title: "Clínica DVERSO | Saúde Integrada em Sorocaba",
   description:
-    "Clínica de psicologia, terapias integradas, avaliação neuropsicológica, nutrição e atendimentos especializados. Sorocaba e região.",
+    "Clínica DVERSO em Sorocaba: atendimento neuroatípico com ABA, terapias integradas, TAA, avaliação neuropsicológica e plano individualizado.",
   alternates: {
     canonical: "/",
   },

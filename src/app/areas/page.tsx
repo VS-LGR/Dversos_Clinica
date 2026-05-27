@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import SectionTitle from "@/components/shared/SectionTitle";
+import { AREAS_PAGE_COPY } from "@/lib/constants/homeAreasContent";
+
+export const metadata: Metadata = {
+  title: "Áreas de atuação | Clínica DVERSO Sorocaba",
+  description: AREAS_PAGE_COPY.description,
+  alternates: { canonical: "/areas" },
+};
 import RevealOnScroll from "@/components/shared/RevealOnScroll";
 import { CLINIC_AREAS } from "@/lib/constants/clinicAreas";
-import { AREAS_PAGE_COPY } from "@/lib/constants/homeAreasContent";
 import PastelPageDecor from "@/components/shared/PastelPageDecor";
 import { PASTEL_CARD_GRADIENTS, pastelByIndex } from "@/lib/constants/pastelPalette";
 
@@ -12,13 +19,16 @@ const GROUPS = [
     slugs: [
       "psychology",
       "neuropsychological-assessment",
+      "psychopedagogy",
       "therapeutic-companion",
       "psychomotricity",
+      "neurodiversity",
     ],
   },
   {
     title: "Terapias Integradas",
     slugs: [
+      "speech-therapy",
       "occupational-therapy",
       "sensory-integration",
       "music-therapy",
@@ -32,7 +42,7 @@ const GROUPS = [
   },
   {
     title: "Intervenções Assistidas",
-    slugs: ["animal-assisted-therapy"],
+    slugs: ["animal-assisted-therapy", "dog-therapy"],
   },
 ];
 

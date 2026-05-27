@@ -26,7 +26,7 @@ export default function NeurodiversityHighlight() {
             promovendo regulação emocional, desenvolvimento funcional e qualidade de vida em ambiente previsível.
           </p>
           <Link
-            href="/areas/sensory-integration"
+            href="/areas/neurodiversity"
             className="inline-flex items-center rounded-xl font-semibold bg-primary text-white px-5 py-3 hover:bg-primary-light transition-all duration-200 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5 active:translate-y-0"
           >
             Conhecer atendimentos

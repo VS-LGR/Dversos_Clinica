@@ -3,6 +3,7 @@
 import Image from "next/image";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import { DEFAULT_WHATSAPP_NUMBER } from "@/lib/constants/clinicAreas";
+import { HOME_HERO } from "@/lib/constants/siteContent";
 import RevealOnScroll from "@/components/shared/RevealOnScroll";
 
 const HERO_PLACEHOLDER_SRC =
@@ -32,25 +33,24 @@ export default function HeroSection() {
         <RevealOnScroll index={0}>
           <div className="flex-1 text-center lg:text-left mb-12 lg:mb-0 rounded-3xl bg-white/95 border border-primary/[0.08] shadow-md shadow-primary/5 p-8 sm:p-10">
             <p className="text-primary/70 text-sm font-medium uppercase tracking-widest mb-3">
-            Saúde integrada · Sorocaba e região
+              {HOME_HERO.eyebrow}
             </p>
             <h1
               id="hero-title"
               className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.75rem] font-bold text-primary tracking-tight mb-5 leading-tight"
             >
-              Cuidado com sua família em primeiro lugar
+              {HOME_HERO.title}
             </h1>
             <p className="text-lg sm:text-xl text-primary/90 mb-5 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-            Psicologia, terapias integradas, nutrição e intervenções especializadas:
-            um espaço pensado para acolher famílias e ampliar qualidade de vida.
+              {HOME_HERO.lead}
             </p>
             <p className="text-base text-primary/75 mb-8 max-w-xl mx-auto lg:mx-0">
-            Profissionais preparados para cada etapa do desenvolvimento, com cuidado neuroafirmativo e atuação interdisciplinar.
+              {HOME_HERO.paragraph}
             </p>
             <div>
               <WhatsAppButton
                 phoneNumber={DEFAULT_WHATSAPP_NUMBER}
-                message="Olá! Gostaria de agendar ou saber mais sobre os atendimentos da Clínica DVERSO."
+                message={HOME_HERO.ctaMessage}
                 label="Agendar pelo WhatsApp"
                 className="w-full sm:w-auto max-w-[420px] mx-auto lg:mx-0"
               />
