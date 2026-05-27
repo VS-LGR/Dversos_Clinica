@@ -38,11 +38,6 @@ export default function HeroVideoBackground() {
 
   return (
     <div className="absolute inset-0 overflow-hidden" aria-hidden>
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${HERO_POSTER_SRC})` }}
-      />
-
       <video
         ref={videoRef}
         className="absolute inset-0 h-full w-full object-cover opacity-[0.15]"
