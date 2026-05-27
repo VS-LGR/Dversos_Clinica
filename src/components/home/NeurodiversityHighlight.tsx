@@ -13,12 +13,12 @@ export default function NeurodiversityHighlight() {
       className="py-20 sm:py-24 px-4 sm:px-6 bg-white relative overflow-hidden border-t border-primary/[0.06]"
       aria-labelledby="neuro-highlight-title"
     >
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-16">
-        <div className="flex-1 order-2 md:order-1 text-center md:text-left">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-16 min-w-0">
+        <div className="flex-1 min-w-0 order-2 md:order-1 text-center md:text-left">
           <p className="text-primary/60 text-xs font-medium uppercase tracking-widest mb-2">
             Saúde e bem-estar familiar
           </p>
-          <h2 id="neuro-highlight-title" className="text-2xl sm:text-3xl font-bold text-primary mb-4 tracking-tight">
+          <h2 id="neuro-highlight-title" className="text-2xl sm:text-3xl font-bold text-primary mb-4 tracking-tight text-balance break-words">
             Cuidado neuroafirmativo e acolhimento familiar
           </h2>
           <p className="text-primary/85 leading-relaxed mb-7 max-w-xl">
@@ -33,14 +33,14 @@ export default function NeurodiversityHighlight() {
           </Link>
         </div>
         <div
-          className="relative flex-shrink-0 order-1 md:order-2 flex justify-center w-[220px] sm:w-[280px] md:w-[300px] cursor-default"
+          className="relative flex-shrink-0 order-1 md:order-2 flex justify-center w-full max-w-[280px] sm:max-w-[300px] mx-auto cursor-default overflow-hidden"
           aria-hidden
         >
           <div
-            className="absolute inset-0 m-auto w-[110%] h-[110%] max-w-[320px] rounded-full bg-gradient-to-br from-pastel-aqua/50 via-pastel-mint/40 to-pastel-peach/40 blur-md"
+            className="absolute inset-0 m-auto w-full h-full max-w-[300px] rounded-full bg-gradient-to-br from-pastel-aqua/50 via-pastel-mint/40 to-pastel-peach/40 blur-md"
             aria-hidden
           />
-          <div className="relative w-full aspect-square max-w-[300px] group z-10">
+          <div className="relative w-full aspect-square max-w-[280px] sm:max-w-[300px] group z-10 mx-auto">
             <Image
               src={CHILD_CLOUD_BLACK}
               alt=""

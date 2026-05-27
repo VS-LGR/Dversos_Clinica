@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function LiderancasPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-clip safe-x">
       <InstitutionalPageHero
         title={LEADERS_PAGE.title}
         subtitle="Clínica DVERSO"
@@ -27,7 +27,7 @@ export default function LiderancasPage() {
                   index % 2 === 0 ? "bg-pastel-mint/40" : "bg-pastel-peach/40"
                 }`}
               >
-                <h2 className="text-lg font-bold text-primary mb-1">
+                <h2 className="text-lg font-bold text-primary mb-1 break-words">
                   {leader.name}
                 </h2>
                 <p className="text-sm font-medium text-primary/65 mb-3">

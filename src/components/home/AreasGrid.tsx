@@ -51,8 +51,8 @@ export default function AreasGrid() {
   }, [selectedBranch]);
 
   return (
-    <section className="py-20 sm:py-24 px-4 sm:px-6 bg-white border-t border-primary/[0.06]" aria-labelledby="areas-title">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 sm:py-24 px-4 sm:px-6 bg-white border-t border-primary/[0.06] overflow-hidden safe-x" aria-labelledby="areas-title">
+      <div className="max-w-6xl mx-auto min-w-0">
         <SectionTitle
           id="areas-title"
           className="mb-3"
@@ -120,7 +120,7 @@ export default function AreasGrid() {
               open={selectedBranch !== "all" || index === 0}
             >
               <summary className="list-none cursor-pointer select-none px-5 sm:px-6 py-4 flex items-center justify-between gap-4">
-                <h3 className="text-base sm:text-lg font-semibold text-primary">{branch.title}</h3>
+                <h3 className="text-base sm:text-lg font-semibold text-primary break-words min-w-0">{branch.title}</h3>
                 <span className="text-primary/60 text-sm group-open:rotate-180 transition-transform">v</span>
               </summary>
               <div className="px-5 sm:px-6 pb-6">
@@ -137,9 +137,9 @@ export default function AreasGrid() {
                       >
                         <Link
                           href={`/areas/${area.slug}`}
-                          className={`group block p-5 rounded-2xl border border-primary/[0.08] bg-gradient-to-br ${pastelByIndex(PASTEL_CARD_GRADIENTS, cardIndex)} hover:border-primary/25 hover:shadow-md transition-all duration-300 text-left`}
+                          className={`group block p-5 rounded-2xl border border-primary/[0.08] bg-gradient-to-br ${pastelByIndex(PASTEL_CARD_GRADIENTS, cardIndex)} hover:border-primary/25 hover:shadow-md transition-all duration-300 text-left min-w-0`}
                         >
-                          <h4 className="text-base font-semibold text-primary group-hover:text-primary-light transition-colors mb-2">
+                          <h4 className="text-base font-semibold text-primary group-hover:text-primary-light transition-colors mb-2 break-words">
                             {area.name}
                           </h4>
                           <p className="text-sm text-primary/80 leading-relaxed line-clamp-2">

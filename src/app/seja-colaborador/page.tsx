@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function SejaColaboradorPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-clip safe-x">
       <InstitutionalPageHero
         title={CAREERS_COPY.title}
         subtitle="#SEJADVERSO"

@@ -26,7 +26,7 @@ const HOME_SECTIONS = [
 
 export default function HomePage() {
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen overflow-x-clip safe-x">
       <PastelPageDecor />
       <div className="relative z-10">
         <OpeningAnimation>

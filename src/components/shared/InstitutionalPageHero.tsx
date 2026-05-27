@@ -17,7 +17,7 @@ export default function InstitutionalPageHero({
             {subtitle}
           </p>
         ) : null}
-        <h1 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight mb-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary tracking-tight mb-4 text-balance break-words px-2">
           {title}
         </h1>
         {lead ? (

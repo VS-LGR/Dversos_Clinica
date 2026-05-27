@@ -7,8 +7,8 @@ import { PASTEL_SURFACE_SOFT, pastelByIndex } from "@/lib/constants/pastelPalett
 
 export default function AbaInterventionSection() {
   return (
-    <section className="py-20 sm:py-24 px-4 sm:px-6 bg-white border-t border-primary/[0.06]" aria-labelledby="aba-title">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 sm:py-24 px-4 sm:px-6 bg-white border-t border-primary/[0.06] overflow-hidden safe-x" aria-labelledby="aba-title">
+      <div className="max-w-6xl mx-auto min-w-0">
         <div className="max-w-3xl">
           <p className="text-primary/60 text-xs font-medium uppercase tracking-widest mb-2">Intervenção especializada</p>
           <h2 id="aba-title" className="text-2xl sm:text-3xl font-bold text-primary tracking-tight mb-4">
@@ -38,9 +38,9 @@ export default function AbaInterventionSection() {
           ].map((card, index) => (
             <article
               key={card.title}
-              className={`rounded-xl border p-5 ${pastelByIndex(PASTEL_SURFACE_SOFT, index)}`}
+              className={`rounded-xl border p-5 min-w-0 ${pastelByIndex(PASTEL_SURFACE_SOFT, index)}`}
             >
-              <h3 className="font-semibold text-primary mb-2">{card.title}</h3>
+              <h3 className="font-semibold text-primary mb-2 break-words">{card.title}</h3>
               <p className="text-sm text-primary/80">{card.text}</p>
             </article>
           ))}

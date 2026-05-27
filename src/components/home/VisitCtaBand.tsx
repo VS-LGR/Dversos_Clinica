@@ -5,15 +5,15 @@ import { PASTEL_CTA_GRADIENT } from "@/lib/constants/pastelPalette";
 export default function VisitCtaBand() {
   return (
     <section
-      className="py-16 sm:py-20 px-4 sm:px-6"
+      className="py-16 sm:py-20 px-4 sm:px-6 safe-x overflow-hidden"
       aria-labelledby="visit-cta-title"
     >
-      <div className="max-w-6xl mx-auto">
-        <div className={`rounded-3xl bg-gradient-to-br ${PASTEL_CTA_GRADIENT} border border-primary/[0.08] px-6 sm:px-10 py-10 sm:py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8 shadow-sm`}>
-          <div className="max-w-xl">
+      <div className="max-w-6xl mx-auto min-w-0">
+        <div className={`rounded-3xl bg-gradient-to-br ${PASTEL_CTA_GRADIENT} border border-primary/[0.08] px-6 sm:px-10 py-10 sm:py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8 shadow-sm min-w-0`}>
+          <div className="max-w-xl min-w-0">
             <h2
               id="visit-cta-title"
-              className="text-2xl sm:text-3xl font-bold text-primary tracking-tight mb-3"
+              className="text-2xl sm:text-3xl font-bold text-primary tracking-tight mb-3 text-balance break-words"
             >
               Agende sua visita
             </h2>

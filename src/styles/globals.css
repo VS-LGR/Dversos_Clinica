@@ -21,7 +21,11 @@
 }
 
 body {
-  @apply bg-white text-primary antialiased;
+  @apply bg-white text-primary antialiased overflow-x-clip;
+}
+
+html {
+  overflow-x: clip;
 }
 
 /* VLibras Widget (https://vlibras.gov.br/doc/widget/installation/webpageintegration.html) */
@@ -48,6 +52,15 @@ body {
 }
 
 @layer utilities {
+  .safe-x {
+    overflow-x: clip;
+    max-width: 100%;
+  }
+
+  .min-w-0-flex {
+    min-width: 0;
+  }
+
   .animate-delay-100 { animation-delay: 100ms; }
   .animate-delay-200 { animation-delay: 200ms; }
   .animate-delay-300 { animation-delay: 300ms; }

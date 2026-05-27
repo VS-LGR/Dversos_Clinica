@@ -51,7 +51,7 @@ export default function AreasOverviewPage() {
   let revealIndex = 0;
 
   return (
-    <div className="relative min-h-screen py-16 px-4 sm:px-6">
+    <div className="relative min-h-screen py-16 px-4 sm:px-6 overflow-x-clip safe-x">
       <PastelPageDecor />
       <div className="relative z-10 max-w-6xl mx-auto">
         <SectionTitle as="h1" className="mb-4">Nossas áreas de atuação</SectionTitle>

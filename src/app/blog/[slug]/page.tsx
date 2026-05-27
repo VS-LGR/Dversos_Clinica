@@ -69,16 +69,16 @@ export default async function BlogPostPage({ params }: Props) {
     <article className="relative min-h-screen py-12 sm:py-16 px-4 sm:px-6">
       <PastelPageDecor />
       <div className="relative z-10 max-w-6xl mx-auto">
-        <nav className="text-sm text-primary/55 mb-6" aria-label="Breadcrumb">
-          <Link href="/" className="hover:text-primary transition-colors">
+        <nav className="text-sm text-primary/55 mb-6 flex flex-wrap items-center gap-x-2 gap-y-1 min-w-0" aria-label="Breadcrumb">
+          <Link href="/" className="hover:text-primary transition-colors shrink-0">
             {BLOG_COPY.hero.breadcrumbHome}
           </Link>
-          <span className="mx-2 text-primary/35">›</span>
-          <Link href="/blog" className="hover:text-primary transition-colors">
+          <span className="text-primary/35 shrink-0">›</span>
+          <Link href="/blog" className="hover:text-primary transition-colors shrink-0">
             {BLOG_COPY.hero.breadcrumbCurrent}
           </Link>
-          <span className="mx-2 text-primary/35">›</span>
-          <span className="text-primary/75 line-clamp-1">{post.title}</span>
+          <span className="text-primary/35 shrink-0">›</span>
+          <span className="text-primary/75 line-clamp-2 sm:line-clamp-1 min-w-0 break-words">{post.title}</span>
         </nav>
 
         <div className="grid gap-10 lg:grid-cols-[1fr_300px] lg:gap-12">
@@ -112,7 +112,7 @@ export default async function BlogPostPage({ params }: Props) {
               </p>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight mb-3">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary tracking-tight mb-3 text-balance break-words">
               {post.title}
             </h1>
             <p className="text-sm text-primary/65 mb-6">{BLOG_COPY.post.byline}</p>

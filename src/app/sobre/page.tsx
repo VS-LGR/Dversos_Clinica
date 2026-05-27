@@ -14,14 +14,14 @@ export const metadata: Metadata = {
 
 export default function SobrePage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-clip">
       <InstitutionalPageHero
         title={ABOUT_CLINIC.title}
         subtitle="Clínica para neuroatípicos em Sorocaba"
         lead={ABOUT_CLINIC.originParagraphs[0]}
       />
 
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto min-w-0">
         <h2 className="text-2xl font-bold text-primary mb-6">
           {ABOUT_CLINIC.originTitle}
         </h2>

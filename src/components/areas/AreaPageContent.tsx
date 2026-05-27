@@ -20,9 +20,9 @@ export default function AreaPageContent({ slug }: AreaPageContentProps) {
   const professionals = PROFESSIONALS_BY_AREA[slug] ?? [];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-clip">
       <AreaHero area={area} />
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto space-y-6">
+      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto space-y-6 min-w-0">
         <div>
           <h2 className="text-xl font-bold text-primary mb-4">Sobre o atendimento</h2>
           <p className="text-primary/90 leading-relaxed">{area.howItWorks}</p>

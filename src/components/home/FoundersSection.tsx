@@ -9,8 +9,8 @@ import { PASTEL_SURFACE_SOFT, pastelByIndex } from "@/lib/constants/pastelPalett
 
 export default function FoundersSection() {
   return (
-    <section className="py-20 sm:py-24 px-4 sm:px-6 bg-white border-t border-primary/[0.06]" aria-labelledby="founders-title">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 sm:py-24 px-4 sm:px-6 bg-white border-t border-primary/[0.06] overflow-hidden safe-x" aria-labelledby="founders-title">
+      <div className="max-w-6xl mx-auto min-w-0">
         <SectionTitle
           id="founders-title"
           className="mb-3"
@@ -29,7 +29,7 @@ export default function FoundersSection() {
               index={index}
             >
               <article
-                className={`flex flex-col sm:flex-row gap-6 p-6 sm:p-8 rounded-xl border shadow-sm hover:shadow-md hover:border-primary/15 transition-all duration-300 ${pastelByIndex(PASTEL_SURFACE_SOFT, index)}`}
+                className={`flex flex-col sm:flex-row gap-6 p-6 sm:p-8 rounded-xl border shadow-sm hover:shadow-md hover:border-primary/15 transition-all duration-300 min-w-0 ${pastelByIndex(PASTEL_SURFACE_SOFT, index)}`}
               >
                 {founder.imageUrl ? (
                   <div className="flex-shrink-0 w-20 h-20 rounded-full overflow-hidden bg-gradient-to-br from-pastel-coral to-pastel-peach ring-2 ring-primary/5">

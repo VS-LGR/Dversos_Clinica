@@ -6,12 +6,12 @@ import CareProcessTimeline, {
 export default function HomeCareProcessSection() {
   return (
     <section
-      className="py-20 sm:py-24 px-4 sm:px-6 bg-primary-pale/40 border-t border-primary/[0.06]"
+      className="py-20 sm:py-24 px-4 sm:px-6 bg-primary-pale/40 border-t border-primary/[0.06] overflow-hidden safe-x"
       aria-labelledby="care-process-title"
     >
-      <div className="max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] gap-10 lg:gap-14 items-start">
-          <div>
+      <div className="max-w-6xl mx-auto min-w-0">
+        <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] gap-8 lg:gap-14 items-start">
+          <div className="min-w-0">
             <p className="text-primary/60 text-xs font-medium uppercase tracking-widest mb-2">
               Metodologia
             </p>
@@ -28,7 +28,7 @@ export default function HomeCareProcessSection() {
             <CareSessionCard />
           </div>
 
-          <div>
+          <div className="min-w-0">
             <h3 className="text-sm font-semibold uppercase tracking-widest text-primary/60 mb-4">
               Etapas do atendimento
             </h3>

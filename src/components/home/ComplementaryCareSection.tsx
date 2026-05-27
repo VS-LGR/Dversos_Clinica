@@ -5,7 +5,7 @@ import { PASTEL_SURFACE_SOFT, pastelByIndex } from "@/lib/constants/pastelPalett
 
 export default function ComplementaryCareSection() {
   return (
-    <section className="py-20 sm:py-24 px-4 sm:px-6 bg-white border-t border-primary/[0.06] relative overflow-hidden" aria-labelledby="complementary-title">
+    <section className="py-20 sm:py-24 px-4 sm:px-6 bg-white border-t border-primary/[0.06] relative overflow-hidden safe-x" aria-labelledby="complementary-title">
       <div className="absolute inset-0 pointer-events-none" aria-hidden>
         <div className="absolute inset-x-4 sm:inset-x-8 top-8 bottom-8 rounded-3xl detail-surface-light opacity-100" />
       </div>

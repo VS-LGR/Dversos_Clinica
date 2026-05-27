@@ -25,7 +25,7 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
         <Link
           href="/"
-          className="text-xl font-semibold text-primary hover:text-primary-light transition-colors"
+          className="text-lg sm:text-xl font-semibold text-primary hover:text-primary-light transition-colors truncate max-w-[55vw] sm:max-w-none"
         >
           Clínica DVERSO
         </Link>

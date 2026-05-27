@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function EspacosPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-clip">
       <InstitutionalPageHero
         title={SPACES_PAGE.title}
         subtitle="Ambiente terapêutico para neurodiversidade"
@@ -25,7 +25,7 @@ export default function EspacosPage() {
         </p>
       </section>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 pb-16 space-y-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 pb-16 space-y-10 min-w-0">
         {CLINIC_SPACES.map((space, index) => (
           <article
             key={space.slug}

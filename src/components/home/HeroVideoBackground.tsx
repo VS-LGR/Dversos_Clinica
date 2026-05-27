@@ -40,7 +40,7 @@ export default function HeroVideoBackground() {
     <div className="absolute inset-0 overflow-hidden" aria-hidden>
       <video
         ref={videoRef}
-        className="absolute inset-0 h-full w-full object-cover opacity-[0.18]"
+        className="absolute inset-0 h-full w-full object-cover object-[center_35%] opacity-[0.16] sm:opacity-[0.18]"
         muted
         loop
         playsInline
@@ -50,11 +50,9 @@ export default function HeroVideoBackground() {
         <source src={HERO_VIDEO_SRC} type="video/webm" />
       </video>
 
-      {/* Camada base quase imperceptivel para profundidade. */}
       <div className="absolute inset-0 bg-black/[0.045]" />
-      {/* Gradiente escuro sutil para tirar aspecto chapado sem pesar. */}
       <div className="absolute inset-0 bg-[radial-gradient(120%_75%_at_50%_0%,rgba(0,0,0,0.10)_0%,rgba(0,0,0,0.02)_58%,rgba(0,0,0,0)_100%)]" />
-      <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/84 to-primary-pale/92" />
+      <div className="absolute inset-0 bg-gradient-to-br from-white/94 via-white/86 to-primary-pale/92 sm:from-white/90 sm:via-white/84 sm:to-primary-pale/92" />
     </div>
   );
 }

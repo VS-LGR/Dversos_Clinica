@@ -9,27 +9,27 @@ import HeroVideoBackground from "@/components/home/HeroVideoBackground";
 export default function HeroSection() {
   return (
     <section
-      className="relative min-h-[85vh] flex items-center pt-20 pb-24 sm:pt-24 sm:pb-28 md:pb-32 px-4 sm:px-6 overflow-hidden"
+      className="relative min-h-[78vh] sm:min-h-[85vh] flex items-center pt-20 pb-20 sm:pt-24 sm:pb-28 md:pb-32 px-4 sm:px-6 overflow-hidden safe-x"
       aria-labelledby="hero-title"
     >
       <HeroVideoBackground />
 
-      <div className="relative z-10 max-w-3xl mx-auto w-full">
+      <div className="relative z-10 max-w-3xl mx-auto w-full min-w-0">
         <RevealOnScroll index={0}>
-          <div className="text-center rounded-3xl bg-white/90 backdrop-blur-sm border border-primary/[0.08] shadow-lg shadow-primary/5 p-8 sm:p-10 md:p-12">
-            <p className="text-primary/70 text-sm font-medium uppercase tracking-widest mb-3">
+          <div className="text-center rounded-3xl bg-white/90 backdrop-blur-sm border border-primary/[0.08] shadow-lg shadow-primary/5 p-6 sm:p-8 md:p-12 min-w-0 max-w-full">
+            <p className="text-primary/70 text-xs font-medium uppercase tracking-wide sm:tracking-widest mb-3">
               {HOME_HERO.eyebrow}
             </p>
             <h1
               id="hero-title"
-              className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary tracking-tight mb-5 leading-tight"
+              className="text-2xl min-[375px]:text-3xl sm:text-4xl md:text-5xl font-bold text-primary tracking-tight mb-5 leading-tight text-balance break-words"
             >
               {HOME_HERO.title}
             </h1>
-            <p className="text-lg sm:text-xl text-primary/90 mb-5 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-primary/90 mb-5 max-w-2xl mx-auto leading-relaxed">
               {HOME_HERO.lead}
             </p>
-            <p className="text-base text-primary/75 mb-8 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base text-primary/75 mb-8 max-w-2xl mx-auto leading-relaxed">
               {HOME_HERO.paragraph}
             </p>
             <WhatsAppButton
@@ -42,7 +42,10 @@ export default function HeroSection() {
         </RevealOnScroll>
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full h-10 sm:h-12 md:h-14 pointer-events-none" aria-hidden="true">
+      <div
+        className="absolute bottom-0 left-0 w-full h-8 sm:h-10 md:h-12 pointer-events-none"
+        aria-hidden="true"
+      >
         <svg
           className="absolute inset-0 h-full w-full"
           viewBox="0 0 1440 120"

@@ -22,9 +22,9 @@ export default async function BlogPage() {
   const posts = await fetchPublishedPosts();
 
   return (
-    <div className="relative min-h-screen py-12 sm:py-16 px-4 sm:px-6">
+    <div className="relative min-h-screen py-12 sm:py-16 px-4 sm:px-6 overflow-x-clip safe-x">
       <PastelPageDecor />
-      <div className="relative z-10 max-w-6xl mx-auto">
+      <div className="relative z-10 max-w-6xl mx-auto min-w-0">
         <BlogHero />
 
         {posts.length === 0 ? (

@@ -24,14 +24,14 @@ export default function DogTherapyBand() {
         aria-hidden
       />
       <div
-        className="absolute inset-y-0 left-0 w-8 sm:w-10 pointer-events-none"
+        className="absolute inset-y-0 left-0 w-8 sm:w-10 pointer-events-none hidden sm:block"
         style={{
           background: "linear-gradient(to right, rgba(15,28,55,0.5) 0%, rgba(26,43,86,0.24) 55%, rgba(26,43,86,0) 100%)",
         }}
         aria-hidden
       />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,215,170,0.1)_0%,transparent_50%)]" aria-hidden />
-      <div className="absolute top-0 right-0 bottom-0 w-2 sm:w-3 overflow-hidden" aria-hidden>
+      <div className="absolute top-0 right-0 bottom-0 w-2 sm:w-3 overflow-hidden hidden sm:block" aria-hidden>
         <div
           className="absolute inset-0"
           style={{
@@ -40,8 +40,8 @@ export default function DogTherapyBand() {
           }}
         />
       </div>
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-12 relative z-10 pr-1">
-        <div className="flex-1 text-center md:text-left">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-12 relative z-10 min-w-0">
+        <div className="flex-1 min-w-0 text-center md:text-left">
           <p className="text-white/80 text-xs font-medium uppercase tracking-widest mb-2">
             {PROTECTED_CARE_COPY.eyebrow}
           </p>
@@ -58,11 +58,11 @@ export default function DogTherapyBand() {
               </li>
             ))}
           </ul>
-          <div className="flex w-full flex-wrap gap-4 justify-center md:justify-start">
-            <Link href="/espacos" className="inline-flex items-center rounded-xl font-semibold border-2 border-white px-5 py-3 hover:bg-white hover:text-primary transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]">
+          <div className="flex w-full flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center md:justify-start">
+            <Link href="/espacos" className="inline-flex items-center justify-center rounded-xl font-semibold border-2 border-white px-5 py-3 hover:bg-white hover:text-primary transition-all duration-200 w-full sm:w-auto">
               Nossos espaços
             </Link>
-            <Link href="/areas/animal-assisted-therapy" className="inline-flex items-center rounded-xl font-semibold border-2 border-white/80 px-5 py-3 hover:bg-white hover:text-primary transition-all duration-200">
+            <Link href="/areas/animal-assisted-therapy" className="inline-flex items-center justify-center rounded-xl font-semibold border-2 border-white/80 px-5 py-3 hover:bg-white hover:text-primary transition-all duration-200 w-full sm:w-auto">
               Conhecer TAA
             </Link>
             <WhatsAppButton
@@ -74,7 +74,7 @@ export default function DogTherapyBand() {
             />
           </div>
         </div>
-        <div className="w-full md:w-[360px] rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm p-6 text-left relative overflow-hidden">
+        <div className="w-full md:w-[360px] md:max-w-[360px] shrink-0 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm p-6 text-left relative overflow-hidden min-w-0">
           <div className="absolute inset-0 z-0 detail-surface-subtle detail-overlay-soft opacity-[0.26]" aria-hidden />
           <p className="text-xs uppercase tracking-widest text-white/80 mb-2 relative z-10">{PROTECTED_CARE_COPY.highlightEyebrow}</p>
           <h3 className="text-xl font-semibold mb-3 relative z-10">{PROTECTED_CARE_COPY.highlightTitle}</h3>

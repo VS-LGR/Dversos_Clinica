@@ -71,25 +71,27 @@ export default function CareProcessTimeline({
 
   if (variant === "compact") {
     return (
-      <div>
-        <ol className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-thin md:grid md:grid-cols-2 md:overflow-visible md:pb-0">
-          {CARE_PROCESS_STEPS.map((item, index) => (
-            <li
-              key={item.step}
-              className={`min-w-[260px] snap-start rounded-xl border p-4 md:min-w-0 ${pastelByIndex(PASTEL_SURFACE_SOFT, index)}`}
-            >
-              <div className="flex items-center gap-3 mb-2">
-                <StepMarker index={index} className="h-8 w-8 text-xs" />
-                <h3 className="font-semibold text-primary text-sm leading-snug">
-                  {item.title}
-                </h3>
-              </div>
-              <p className="text-xs text-primary/75 leading-relaxed pl-11">
-                {item.shortDescription}
-              </p>
-            </li>
-          ))}
-        </ol>
+      <div className="min-w-0">
+        <div className="-mx-4 px-4 sm:mx-0 sm:px-0 md:contents">
+          <ol className="flex gap-4 overflow-x-auto overscroll-x-contain pb-2 snap-x snap-mandatory scrollbar-thin md:grid md:grid-cols-2 md:overflow-visible md:pb-0 md:overscroll-auto">
+            {CARE_PROCESS_STEPS.map((item, index) => (
+              <li
+                key={item.step}
+                className={`w-[85vw] max-w-[280px] shrink-0 snap-start rounded-xl border p-4 md:w-auto md:max-w-none md:min-w-0 ${pastelByIndex(PASTEL_SURFACE_SOFT, index)}`}
+              >
+                <div className="flex items-start gap-3 mb-2 min-w-0">
+                  <StepMarker index={index} className="h-8 w-8 text-xs shrink-0" />
+                  <h3 className="font-semibold text-primary text-sm leading-snug break-words min-w-0">
+                    {item.title}
+                  </h3>
+                </div>
+                <p className="text-xs text-primary/75 leading-relaxed break-words">
+                  {item.shortDescription}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
         {linkToFull ? (
           <p className="mt-4">
             <Link
@@ -122,8 +124,8 @@ export default function CareProcessTimeline({
               ) : null}
               <StepMarker index={index} className="relative z-10" />
               <div className="min-w-0 flex-1 pt-0.5">
-                <h3 className="font-semibold text-primary mb-1">{item.title}</h3>
-                <p className="text-sm text-primary/80 leading-relaxed">
+                <h3 className="font-semibold text-primary mb-1 break-words">{item.title}</h3>
+                <p className="text-sm text-primary/80 leading-relaxed break-words">
                   {item.description}
                 </p>
               </div>
