@@ -6,7 +6,7 @@ import CareProcessTimeline, {
 export default function HomeCareProcessSection() {
   return (
     <section
-      className="py-20 sm:py-24 px-4 sm:px-6 bg-primary-pale/40 border-t border-primary/[0.06] overflow-hidden safe-x"
+      className="py-20 sm:py-24 px-4 sm:px-6 bg-primary-pale/40 overflow-hidden safe-x"
       aria-labelledby="care-process-title"
     >
       <div className="max-w-6xl mx-auto min-w-0">

@@ -16,7 +16,7 @@ export default function HeroSection() {
 
       <div className="relative z-10 max-w-3xl mx-auto w-full min-w-0">
         <RevealOnScroll index={0}>
-          <div className="text-center rounded-3xl bg-white/90 backdrop-blur-sm border border-primary/[0.08] shadow-lg shadow-primary/5 p-6 sm:p-8 md:p-12 min-w-0 max-w-full">
+          <div className="text-center rounded-3xl bg-white/90 backdrop-blur-sm border border-primary/[0.08] shadow-[0_8px_32px_-12px_rgba(26,43,86,0.1)] p-6 sm:p-8 md:p-12 min-w-0 max-w-full">
             <p className="text-primary/70 text-xs font-medium uppercase tracking-wide sm:tracking-widest mb-3">
               {HOME_HERO.eyebrow}
             </p>
@@ -43,7 +43,7 @@ export default function HeroSection() {
       </div>
 
       <div
-        className="absolute bottom-0 left-0 w-full h-8 sm:h-10 md:h-12 pointer-events-none"
+        className="absolute bottom-0 left-0 z-[5] w-full h-10 sm:h-12 md:h-14 pointer-events-none"
         aria-hidden="true"
       >
         <svg
@@ -53,17 +53,17 @@ export default function HeroSection() {
         >
           <path
             d="M0,74C60,88,120,102,180,100C240,98,300,80,360,74C420,68,480,74,540,88C600,102,660,120,720,114C780,108,840,78,900,72C960,66,1020,84,1080,96C1140,108,1200,114,1260,106C1320,98,1380,76,1440,64L1440,120L0,120Z"
-            fill="rgb(255 248 242 / 0.40)"
+            fill="#ffffff"
           />
         </svg>
         <svg
-          className="absolute inset-x-0 bottom-0 h-[72%] w-full opacity-55"
+          className="absolute inset-x-0 bottom-0 h-[72%] w-full"
           viewBox="0 0 1440 120"
           preserveAspectRatio="none"
         >
           <path
             d="M0,84C48,94,96,104,144,104C192,104,240,94,288,84C336,74,384,64,432,66C480,68,528,82,576,94C624,106,672,116,720,114C768,112,816,98,864,88C912,78,960,72,1008,76C1056,80,1104,94,1152,102C1200,110,1248,112,1296,106C1344,100,1392,86,1440,74L1440,120L0,120Z"
-            fill="rgb(255 248 242 / 0.25)"
+            fill="#ffffff"
           />
         </svg>
       </div>
