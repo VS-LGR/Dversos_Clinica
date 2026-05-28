@@ -4,7 +4,7 @@ import { CONTACT_NAV_ITEMS } from "@/lib/constants/contactNav";
 export default function ContactStrip() {
   return (
     <nav
-      className="sm:hidden border-t border-primary/[0.08] bg-white/95 backdrop-blur-md pb-[max(0.5rem,env(safe-area-inset-bottom))]"
+      className="sm:hidden border-b border-primary/[0.08] bg-white/95 backdrop-blur-md shadow-[0_1px_0_rgba(26,43,86,0.04)]"
       aria-label="Contato rápido"
     >
       <ul className="flex items-center justify-around gap-1 px-2 py-2.5 max-w-lg mx-auto">

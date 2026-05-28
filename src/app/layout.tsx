@@ -69,10 +69,10 @@ export default function RootLayout({
           Pular para o conteúdo
         </a>
         <Header />
+        <ContactStrip />
         <main id="main-content" className="flex-1 overflow-x-clip">
           {children}
         </main>
-        <ContactStrip />
         <Footer />
       </body>
     </html>
