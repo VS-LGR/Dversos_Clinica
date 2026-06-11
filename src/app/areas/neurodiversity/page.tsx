@@ -1,5 +1,0 @@
-import AreaPageContent from "@/components/areas/AreaPageContent";
-
-export default function NeurodiversityPage() {
-  return <AreaPageContent slug="sensory-integration" />;
-}

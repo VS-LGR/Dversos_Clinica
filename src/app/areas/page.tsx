@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import SectionTitle from "@/components/shared/SectionTitle";
 import { AREAS_PAGE_COPY } from "@/lib/constants/homeAreasContent";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "Áreas de atuação | Clínica DVERSO Sorocaba",
+export const metadata = buildPageMetadata({
+  title: "Áreas de atuação",
   description: AREAS_PAGE_COPY.description,
-  alternates: { canonical: "/areas" },
-};
+  path: "/areas",
+});
 import RevealOnScroll from "@/components/shared/RevealOnScroll";
 import { CLINIC_AREAS } from "@/lib/constants/clinicAreas";
 import PastelPageDecor from "@/components/shared/PastelPageDecor";

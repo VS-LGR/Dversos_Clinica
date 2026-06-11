@@ -1,3 +1,7 @@
+import {
+  BRAND_LOGO_PRIMARY,
+  ESPACOS_HERO_IMAGE,
+} from "@/lib/constants/clinicMedia";
 import { SITE_CONTACT, SITE_URL, formatFullAddress } from "@/lib/constants/siteContact";
 
 export default function LocalBusinessJsonLd() {
@@ -8,7 +12,8 @@ export default function LocalBusinessJsonLd() {
     alternateName: SITE_CONTACT.legalName,
     url: SITE_URL,
     telephone: `+${SITE_CONTACT.phoneE164}`,
-    image: SITE_URL,
+    image: `${SITE_URL}${ESPACOS_HERO_IMAGE}`,
+    logo: `${SITE_URL}${BRAND_LOGO_PRIMARY}`,
     address: {
       "@type": "PostalAddress",
       streetAddress: SITE_CONTACT.streetAddress,

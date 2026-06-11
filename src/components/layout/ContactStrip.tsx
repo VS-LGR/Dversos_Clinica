@@ -1,5 +1,30 @@
+"use client";
+
 import ContactNavIcon from "@/components/shared/ContactNavIcon";
+import { trackContactClick } from "@/lib/analytics/gtag";
 import { CONTACT_NAV_ITEMS } from "@/lib/constants/contactNav";
+
+function trackItemClick(icon: string, label: string) {
+  switch (icon) {
+    case "whatsapp":
+      trackContactClick("whatsapp", label);
+      break;
+    case "phone":
+      trackContactClick("phone", label);
+      break;
+    case "map":
+      trackContactClick("map", label);
+      break;
+    case "instagram":
+      trackContactClick("instagram", label);
+      break;
+    case "facebook":
+      trackContactClick("facebook", label);
+      break;
+    default:
+      break;
+  }
+}
 
 export default function ContactStrip() {
   return (
@@ -16,6 +41,7 @@ export default function ContactStrip() {
                 ? { target: "_blank", rel: "noopener noreferrer" }
                 : {})}
               aria-label={item.label}
+              onClick={() => trackItemClick(item.icon, item.label)}
               className="flex flex-col items-center gap-0.5 min-w-[3.25rem] rounded-lg px-2 py-1.5 text-primary transition-colors hover:bg-primary-pale/80 hover:text-primary-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1"
             >
               <ContactNavIcon type={item.icon} className="w-5 h-5" />

@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import InstitutionalPageHero from "@/components/shared/InstitutionalPageHero";
 import CareProcessTimeline from "@/components/shared/CareProcessTimeline";
@@ -8,12 +7,13 @@ import WaveDivider from "@/components/shared/WaveDivider";
 import { SOBRE_GALLERY } from "@/lib/constants/clinicMedia";
 import { ABOUT_CLINIC, CARE_SESSION_INFO } from "@/lib/constants/siteContent";
 import { DEFAULT_WHATSAPP_NUMBER } from "@/lib/constants/clinicAreas";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: ABOUT_CLINIC.metaTitle,
   description: ABOUT_CLINIC.metaDescription,
-  alternates: { canonical: "/sobre" },
-};
+  path: "/sobre",
+});
 
 const sobreAlts = [
   "Ambiente acolhedor da Clínica DVERSO",

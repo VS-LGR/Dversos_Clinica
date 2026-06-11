@@ -10,11 +10,7 @@ interface WhatsAppButtonProps {
   variant?: "primary" | "outline";
 }
 
-declare global {
-  interface Window {
-    gtag?: (...args: unknown[]) => void;
-  }
-}
+import { trackLead } from "@/lib/analytics/gtag";
 
 export default function WhatsAppButton({
   phoneNumber,
@@ -35,8 +31,7 @@ export default function WhatsAppButton({
       : "border-2 border-primary text-primary bg-white hover:bg-primary-pale";
 
   const handleClick = () => {
-    if (typeof window === "undefined" || !window.gtag) return;
-    window.gtag("event", "generate_lead", {
+    trackLead({
       method: "whatsapp",
       content_type: "contact_button",
       content_name: label,

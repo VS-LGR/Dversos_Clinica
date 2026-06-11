@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import InstitutionalPageHero from "@/components/shared/InstitutionalPageHero";
@@ -13,12 +12,13 @@ import {
   TAA_GALLERY,
 } from "@/lib/constants/clinicMedia";
 import { PASTEL_SURFACE_SOFT, pastelByIndex } from "@/lib/constants/pastelPalette";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: SPACES_PAGE.metaTitle,
   description: SPACES_PAGE.metaDescription,
-  alternates: { canonical: "/espacos" },
-};
+  path: "/espacos",
+});
 
 export default function EspacosPage() {
   return (

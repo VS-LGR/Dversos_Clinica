@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
 import InstitutionalPageHero from "@/components/shared/InstitutionalPageHero";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import { CAREERS_COPY } from "@/lib/constants/siteContent";
 import { DEFAULT_WHATSAPP_NUMBER } from "@/lib/constants/clinicAreas";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: CAREERS_COPY.metaTitle,
   description: CAREERS_COPY.metaDescription,
-  alternates: { canonical: "/seja-colaborador" },
-};
+  path: "/seja-colaborador",
+});
 
 export default function SejaColaboradorPage() {
   return (

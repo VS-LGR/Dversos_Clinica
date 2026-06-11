@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import InstitutionalPageHero from "@/components/shared/InstitutionalPageHero";
 import LeadersGroupSection from "@/components/shared/LeadersGroupSection";
 import WaveDivider from "@/components/shared/WaveDivider";
 import { LEADERS_PAGE } from "@/lib/constants/teamLeaders";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: LEADERS_PAGE.metaTitle,
   description: LEADERS_PAGE.metaDescription,
-  alternates: { canonical: "/liderancas" },
-};
+  path: "/liderancas",
+});
 
 export default function LiderancasPage() {
   return (

@@ -1,4 +1,4 @@
-export const SITE_URL = "https://www.clinicadverso.com.br";
+export const SITE_URL = "https://dverso.com.br";
 
 export const SITE_CONTACT = {
   name: "Clínica DVERSO",

@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
 import { CLINIC_AREAS } from "@/lib/constants/clinicAreas";
 import { fetchPublishedPosts } from "@/lib/blog/queries";
-
-const SITE_URL = "https://www.clinicadverso.com.br";
+import { SITE_URL } from "@/lib/constants/siteContact";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [

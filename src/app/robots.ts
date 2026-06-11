@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
-
-const SITE_URL = "https://www.clinicadverso.com.br";
+import { SITE_URL } from "@/lib/constants/siteContact";
 
 export default function robots(): MetadataRoute.Robots {
   return {

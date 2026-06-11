@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import Header from "@/components/layout/Header";
@@ -8,47 +7,14 @@ import ContactStrip from "@/components/layout/ContactStrip";
 import LocalBusinessJsonLd from "@/components/seo/LocalBusinessJsonLd";
 import GoogleTags from "@/components/analytics/GoogleTags";
 import VlibrasWidget from "@/components/accessibility/VlibrasWidget";
+import { DEFAULT_METADATA } from "@/lib/seo/metadata";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.clinicadverso.com.br"),
-  title: "Clínica DVERSO | Saúde Integrada em Sorocaba",
-  description:
-    "Clínica DVERSO em Sorocaba: atendimento neuroatípico com ABA, terapias integradas, TAA, avaliação neuropsicológica e plano individualizado.",
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    title: "Clínica DVERSO | Saúde Integrada em Sorocaba",
-    description:
-      "Psicologia, terapias integradas, avaliação neuropsicológica, nutrição e acolhimento familiar em Sorocaba e região.",
-    url: "/",
-    siteName: "Clínica DVERSO",
-    locale: "pt_BR",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Clínica DVERSO | Saúde Integrada em Sorocaba",
-    description:
-      "Acolhimento familiar e cuidado interdisciplinar com equipe especializada.",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
-};
+export const metadata = DEFAULT_METADATA;
 
 export default function RootLayout({
   children,
