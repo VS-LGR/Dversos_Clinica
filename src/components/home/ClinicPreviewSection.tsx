@@ -58,7 +58,7 @@ export default function ClinicPreviewSection() {
           </Link>
         </p>
       </div>
-      <WaveDivider className="absolute bottom-0 left-0 z-[1]" fill="#ffffff" />
+      <WaveDivider overlay className="absolute bottom-0 inset-x-0 z-[1]" fill="#ffffff" />
     </section>
   );
 }

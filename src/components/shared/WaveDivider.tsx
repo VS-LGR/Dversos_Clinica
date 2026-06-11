@@ -2,18 +2,21 @@ interface WaveDividerProps {
   position?: "top" | "bottom";
   className?: string;
   fill?: string;
+  /** Fixa no topo/rodapé do pai com position:absolute — não usa relative */
+  overlay?: boolean;
 }
 
 export default function WaveDivider({
   position = "bottom",
   className = "",
   fill = "#ffffff",
+  overlay = false,
 }: WaveDividerProps) {
   return (
     <div
-      className={`relative pointer-events-none w-full h-10 sm:h-12 md:h-14 overflow-hidden ${
-        position === "top" ? "rotate-180" : ""
-      } ${className}`}
+      className={`pointer-events-none w-full h-8 sm:h-12 md:h-14 overflow-hidden ${
+        overlay ? "" : "relative"
+      } ${position === "top" ? "rotate-180" : ""} ${className}`}
       aria-hidden
     >
       <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1440 120" preserveAspectRatio="none">

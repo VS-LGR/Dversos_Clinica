@@ -32,8 +32,8 @@ export default function BrandLogo({
       alt="Clínica DVERSO"
       width={maxH * 4}
       height={maxH}
-      className={`w-auto object-contain ${className}`}
-      style={{ maxHeight: maxH, height: maxH }}
+      className={`w-auto max-w-[min(100%,12rem)] object-contain ${className}`}
+      style={{ maxHeight: maxH, height: "auto" }}
       priority={priority}
     />
   );

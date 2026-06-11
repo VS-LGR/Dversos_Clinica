@@ -11,7 +11,7 @@ export default function BeDversoSection() {
       className="relative py-20 sm:py-24 px-4 sm:px-6 bg-white border-t border-primary/[0.06] overflow-hidden safe-x"
       aria-labelledby="be-dverso-title"
     >
-      <WaveDivider position="top" className="absolute top-0 left-0" fill="#ffffff" />
+      <WaveDivider overlay position="top" className="absolute top-0 inset-x-0" fill="#ffffff" />
       <div className="relative z-10 max-w-6xl mx-auto min-w-0 pt-4">
         <div className="flex justify-center mb-4">
           <BrandLogo variant="alt" size="lg" />

@@ -44,7 +44,7 @@ export default function EspacosPage() {
       </section>
 
       <section className="relative py-16 sm:py-20 px-4 sm:px-6 bg-primary-pale/25 overflow-hidden">
-        <WaveDivider position="top" className="absolute top-0 left-0" fill="#ffffff" />
+        <WaveDivider overlay position="top" className="absolute top-0 inset-x-0" fill="#ffffff" />
         <div className="relative z-10 max-w-4xl mx-auto min-w-0 pt-4">
           <h2 className="text-2xl sm:text-3xl font-bold text-primary text-center mb-3">
             Tour pela clínica
@@ -54,7 +54,7 @@ export default function EspacosPage() {
           </p>
           <ClinicTourPlayer />
         </div>
-        <WaveDivider className="absolute bottom-0 left-0" fill="#ffffff" />
+        <WaveDivider overlay className="absolute bottom-0 inset-x-0" fill="#ffffff" />
       </section>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20 space-y-12 min-w-0">
@@ -69,7 +69,7 @@ export default function EspacosPage() {
       </div>
 
       <section className="relative py-16 sm:py-20 px-4 sm:px-6 bg-primary-pale/20 overflow-hidden">
-        <WaveDivider position="top" className="absolute top-0 left-0" fill="#ffffff" />
+        <WaveDivider overlay position="top" className="absolute top-0 inset-x-0" fill="#ffffff" />
         <div className="relative z-10 max-w-6xl mx-auto min-w-0 pt-4">
           <h2 className="text-2xl font-bold text-primary mb-2 text-center">Consultórios</h2>
           <p className="text-primary/75 text-center mb-10 max-w-2xl mx-auto text-sm sm:text-base">

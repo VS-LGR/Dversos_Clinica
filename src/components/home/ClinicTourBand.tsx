@@ -7,7 +7,7 @@ export default function ClinicTourBand() {
       className="relative py-16 sm:py-20 px-4 sm:px-6 bg-primary-pale/30 overflow-hidden safe-x"
       aria-labelledby="clinic-tour-title"
     >
-      <WaveDivider position="top" className="absolute top-0 left-0" fill="#ffffff" />
+      <WaveDivider overlay position="top" className="absolute top-0 inset-x-0" fill="#ffffff" />
       <div className="relative z-10 max-w-4xl mx-auto min-w-0 pt-6">
         <p className="text-primary/60 text-xs font-medium uppercase tracking-widest mb-2 text-center">
           Tour virtual
@@ -23,7 +23,7 @@ export default function ClinicTourBand() {
         </p>
         <ClinicTourPlayer />
       </div>
-      <WaveDivider className="absolute bottom-0 left-0" fill="#ffffff" />
+      <WaveDivider overlay className="absolute bottom-0 inset-x-0" fill="#ffffff" />
     </section>
   );
 }

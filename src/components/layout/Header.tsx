@@ -29,7 +29,7 @@ export default function Header() {
           className="flex items-center shrink-0 max-w-[55vw] sm:max-w-none hover:opacity-90 transition-opacity"
           aria-label="Clínica DVERSO — início"
         >
-          <BrandLogo variant="primary" size="sm" priority />
+          <BrandLogo variant="primary" size="sm" priority className="!max-h-8 sm:!max-h-9" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-2" aria-label="Navegação principal">

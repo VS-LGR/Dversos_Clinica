@@ -40,7 +40,7 @@ export default function HeroVideoBackground() {
     <div className="absolute inset-0 overflow-hidden" aria-hidden>
       <video
         ref={videoRef}
-        className="absolute inset-0 h-full w-full object-cover object-[center_35%] opacity-20"
+        className="absolute inset-0 h-full w-full object-cover object-[center_28%] sm:object-[center_35%] opacity-20"
         muted
         loop
         playsInline
