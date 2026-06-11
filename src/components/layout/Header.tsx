@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import BrandLogo from "@/components/shared/BrandLogo";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import { DEFAULT_WHATSAPP_NUMBER } from "@/lib/constants/clinicAreas";
 import { SITE_NAV_LINKS } from "@/lib/constants/navigation";
@@ -25,9 +26,10 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
         <Link
           href="/"
-          className="text-lg sm:text-xl font-semibold text-primary hover:text-primary-light transition-colors truncate max-w-[55vw] sm:max-w-none"
+          className="flex items-center shrink-0 max-w-[55vw] sm:max-w-none hover:opacity-90 transition-opacity"
+          aria-label="Clínica DVERSO — início"
         >
-          Clínica DVERSO
+          <BrandLogo variant="primary" size="sm" priority />
         </Link>
 
         <nav className="hidden md:flex items-center gap-2" aria-label="Navegação principal">

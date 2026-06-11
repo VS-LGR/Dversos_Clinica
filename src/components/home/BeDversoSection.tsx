@@ -1,14 +1,28 @@
 "use client";
 
 import Link from "next/link";
+import BrandLogo from "@/components/shared/BrandLogo";
+import WaveDivider from "@/components/shared/WaveDivider";
 import { PASTEL_SURFACE_SOFT, pastelByIndex } from "@/lib/constants/pastelPalette";
 
 export default function BeDversoSection() {
   return (
-    <section className="py-20 sm:py-24 px-4 sm:px-6 bg-white border-t border-primary/[0.06] overflow-hidden safe-x" aria-labelledby="be-dverso-title">
-      <div className="max-w-6xl mx-auto min-w-0">
-        <p className="text-primary/60 text-xs font-medium uppercase tracking-widest mb-2 text-center">Seja DVERSO</p>
-        <h2 id="be-dverso-title" className="text-2xl sm:text-3xl font-bold text-primary tracking-tight mb-4 text-center">
+    <section
+      className="relative py-20 sm:py-24 px-4 sm:px-6 bg-white border-t border-primary/[0.06] overflow-hidden safe-x"
+      aria-labelledby="be-dverso-title"
+    >
+      <WaveDivider position="top" className="absolute top-0 left-0" fill="#ffffff" />
+      <div className="relative z-10 max-w-6xl mx-auto min-w-0 pt-4">
+        <div className="flex justify-center mb-4">
+          <BrandLogo variant="alt" size="lg" />
+        </div>
+        <p className="text-primary/60 text-xs font-medium uppercase tracking-widest mb-2 text-center">
+          Seja DVERSO
+        </p>
+        <h2
+          id="be-dverso-title"
+          className="text-2xl sm:text-3xl font-bold text-primary tracking-tight mb-4 text-center"
+        >
           Por que ser DVERSO
         </h2>
         <p className="text-primary/80 leading-relaxed text-center max-w-3xl mx-auto mb-10">

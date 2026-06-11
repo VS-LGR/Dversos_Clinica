@@ -22,6 +22,9 @@ out/
 8556939-uhd_4096_2160_25fps.webm
 scripts/assets/
 
+# Tour da clínica — arquivo muito grande para o GitHub (>100 MB); manter local no deploy
+public/video/*.mp4
+
 # debug
 npm-debug.log*
 yarn-debug.log*

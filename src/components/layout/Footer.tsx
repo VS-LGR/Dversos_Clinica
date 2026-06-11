@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BrandLogo from "@/components/shared/BrandLogo";
 import { FOOTER_EXTRA_LINKS } from "@/lib/constants/navigation";
 import {
   SITE_CONTACT,
@@ -30,7 +31,10 @@ export default function Footer() {
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-semibold mb-2">{SITE_CONTACT.name}</h3>
+            <div className="mb-3 brightness-0 invert opacity-95">
+              <BrandLogo variant="primary" size="sm" />
+            </div>
+            <h3 className="sr-only">{SITE_CONTACT.name}</h3>
             <p className="text-white/90 text-sm max-w-xs">
               Clínica para neuroatípicos em Sorocaba: ABA, terapias integradas, TAA e cuidado interdisciplinar com evidências.
             </p>

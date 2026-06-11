@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import BrandLogo from "@/components/shared/BrandLogo";
 
 const INTRO_DURATION_MS = 1600;
 const INTRO_OUT_START_MS = 1150;
@@ -63,12 +64,12 @@ export default function OpeningAnimation({ children, onComplete }: OpeningAnimat
                 autoplay
               />
             </div>
-            <h1
-              className="text-3xl sm:text-4xl font-bold text-primary tracking-tight animate-intro-logo opacity-0"
+            <div
+              className="animate-intro-logo opacity-0 flex justify-center"
               style={{ animationFillMode: "forwards" }}
             >
-              Clínica DVERSO
-            </h1>
+              <BrandLogo variant="alt" size="lg" priority />
+            </div>
             <span
               className="mt-3 block h-0.5 w-12 mx-auto rounded-full bg-accent/70 animate-intro-tagline opacity-0"
               style={{ animationFillMode: "forwards", animationDelay: "0.15s" }}

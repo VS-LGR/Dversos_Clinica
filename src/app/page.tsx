@@ -9,11 +9,15 @@ import ComplementaryCareSection from "@/components/home/ComplementaryCareSection
 import BeDversoSection from "@/components/home/BeDversoSection";
 import FoundersSection from "@/components/home/FoundersSection";
 import VisitCtaBand from "@/components/home/VisitCtaBand";
+import ClinicPreviewSection from "@/components/home/ClinicPreviewSection";
+import ClinicTourBand from "@/components/home/ClinicTourBand";
 import RevealOnScroll from "@/components/shared/RevealOnScroll";
 import PastelPageDecor from "@/components/shared/PastelPageDecor";
 
 const HOME_SECTIONS = [
   HomeCareProcessSection,
+  ClinicPreviewSection,
+  ClinicTourBand,
   AreasGrid,
   AbaInterventionSection,
   VisitCtaBand,
