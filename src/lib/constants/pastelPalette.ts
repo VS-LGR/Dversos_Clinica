@@ -28,7 +28,7 @@ export const PASTEL_SURFACE_SOFT = [
 export const PASTEL_STEP_MARKER = [
   "bg-pastel-mint text-primary",
   "bg-pastel-aqua text-primary",
-  "bg-pastel-peach text-primary",
+  "bg-pastel-coral text-primary",
 ] as const;
 
 export const PASTEL_CTA_GRADIENT =

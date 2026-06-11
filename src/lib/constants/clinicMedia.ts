@@ -9,8 +9,9 @@ export const BRAND_LOGO_ALT = publicMediaPath("images", "Ativo 2LogoDverso.webp"
 export const TEAM_GROUP_PHOTO = publicMediaPath("images", "Socios", "DSC09904.jpg");
 export const TEAM_GROUP_PHOTO_ALT =
   "Sócios da Clínica DVERSO — equipe de liderança em ambiente acolhedor";
-export const CLINIC_TOUR_VIDEO = publicMediaPath("video", "clinica-tour.mp4");
-export const CLINIC_TOUR_POSTER = publicMediaPath("images", "hero-poster.webp");
+export const CLINIC_TOUR_YOUTUBE_ID = "FKTPL8IMRQ4";
+export const CLINIC_TOUR_YOUTUBE_URL = "https://youtu.be/FKTPL8IMRQ4";
+export const CLINIC_TOUR_EMBED_URL = `https://www.youtube-nocookie.com/embed/${CLINIC_TOUR_YOUTUBE_ID}`;
 
 export type SpaceSlug = (typeof CLINIC_SPACES)[number]["slug"];
 

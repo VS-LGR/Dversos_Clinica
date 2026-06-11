@@ -1,6 +1,7 @@
-"use client";
-
-import { CLINIC_TOUR_POSTER, CLINIC_TOUR_VIDEO } from "@/lib/constants/clinicMedia";
+import {
+  CLINIC_TOUR_EMBED_URL,
+  CLINIC_TOUR_YOUTUBE_URL,
+} from "@/lib/constants/clinicMedia";
 import { PASTEL_SURFACE_SOFT, pastelByIndex } from "@/lib/constants/pastelPalette";
 
 interface ClinicTourPlayerProps {
@@ -19,18 +20,27 @@ export default function ClinicTourPlayer({
         aria-hidden
       />
       <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-primary/[0.08] bg-white shadow-[0_12px_40px_-16px_rgba(26,43,86,0.15)]">
-        <p className="sr-only">{title}</p>
-        <video
-          className="w-full aspect-video object-cover bg-primary/5"
-          controls
-          playsInline
-          preload="metadata"
-          poster={CLINIC_TOUR_POSTER}
-          aria-label={title}
-        >
-          <source src={CLINIC_TOUR_VIDEO} type="video/mp4" />
-          Seu navegador não suporta reprodução de vídeo.
-        </video>
+        <div className="relative w-full aspect-video bg-primary/5">
+          <iframe
+            className="absolute inset-0 h-full w-full"
+            src={CLINIC_TOUR_EMBED_URL}
+            title={title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            loading="lazy"
+          />
+        </div>
+        <p className="text-center py-3 px-4 text-xs sm:text-sm text-primary/65 bg-white border-t border-primary/[0.06]">
+          <a
+            href={CLINIC_TOUR_YOUTUBE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-primary hover:underline underline-offset-2"
+          >
+            Assistir no YouTube
+          </a>
+        </p>
       </div>
     </div>
   );
