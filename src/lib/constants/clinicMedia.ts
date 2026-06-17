@@ -165,6 +165,14 @@ export const EDITORIAL_KID_PAINTING = img("Kid_Painting.jpg");
 export const EDITORIAL_THERAPY_ABA = img("Therapy_ABA.png");
 export const ABA_PROCESS_INFOGRAPHIC = img("AtendimentoABA.png");
 
+/** Colagem da mini-seção "Sobre" na home */
+export const HOME_ABOUT_COLLAGE = {
+  hero: { src: img("Brinquedoteca", "DSC00280.jpg"), alt: "Brinquedoteca da Clínica DVERSO em Sorocaba" },
+  aba: { src: EDITORIAL_THERAPY_ABA, alt: "Sessão de terapia ABA na Clínica DVERSO" },
+  dog: { src: img("TAA", "DSC09850.jpg"), alt: "Terapia assistida por animais na Clínica DVERSO" },
+  family: { src: img("Espaço Conforto", "DSC09453.jpg"), alt: "Espaço de acolhimento para famílias" },
+} as const;
+
 export const EDITORIAL_IMAGES = {
   kidPainting: EDITORIAL_KID_PAINTING,
   therapyAba: EDITORIAL_THERAPY_ABA,

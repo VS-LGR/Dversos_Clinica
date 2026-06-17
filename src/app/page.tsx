@@ -1,5 +1,6 @@
 import OpeningAnimation from "@/components/home/OpeningAnimation";
 import HeroSection from "@/components/home/HeroSection";
+import HomeAboutPreviewSection from "@/components/home/HomeAboutPreviewSection";
 import AreasGrid from "@/components/home/AreasGrid";
 import NeurodiversityHighlight from "@/components/home/NeurodiversityHighlight";
 import DogTherapyBand from "@/components/home/DogTherapyBand";
@@ -16,6 +17,7 @@ import RevealOnScroll from "@/components/shared/RevealOnScroll";
 import PageShell from "@/components/shared/PageShell";
 
 const HOME_SECTIONS = [
+  HomeAboutPreviewSection,
   ClinicPreviewSection,
   HomeValuesSection,
   HomeCareProcessSection,

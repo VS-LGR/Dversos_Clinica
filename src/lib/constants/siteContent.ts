@@ -60,3 +60,50 @@ export const NEURODIVERSITY_PAGE = {
   description:
     "Atuamos com correntes atuais e abordagem interdisciplinar para crianças, adolescentes e famílias, promovendo regulação emocional, desenvolvimento funcional e qualidade de vida em ambiente previsível e acolhedor.",
 };
+
+export const HOME_ABOUT_PREVIEW = {
+  eyebrow: "Sobre a clínica",
+  title: "Cuidado integrado que respeita a neurodiversidade e produz avanços reais",
+  intro:
+    "A Clínica DVERSO em Sorocaba acolhe crianças, adolescentes e adultos neuroatípicos — com olhar neuroafirmativo, ABA de alta qualidade, equipe multidisciplinar, espaços pensados para o conforto sensorial e participação ativa da família e da escola.",
+  linkLabel: "Conheça nossa história",
+  linkHref: "/sobre",
+  highlights: [
+    {
+      title: "Quem atendemos",
+      description:
+        "Crianças, adolescentes e adultos neuroatípicos, em diferentes níveis de suporte — sempre com plano individualizado.",
+      icon: "people" as const,
+    },
+    {
+      title: "Olhar neuroafirmativo",
+      description:
+        "Respeitamos a singularidade de cada pessoa: acolhemos, escutamos e construímos caminhos sem apagar quem ela é.",
+      icon: "heart" as const,
+    },
+    {
+      title: "ABA de alta qualidade",
+      description:
+        "Intervenção baseada em evidências, com análise contínua de dados, supervisão clínica e ajustes permanentes do plano.",
+      icon: "aba" as const,
+    },
+    {
+      title: "Terapia com o cão",
+      description:
+        "Terapia Assistida por Animais (TAA) integrada ao cuidado, quando indicado, para engajamento, vínculo e regulação.",
+      icon: "dog" as const,
+    },
+    {
+      title: "Espaços acolhedores",
+      description:
+        "Ambientes amplos e previsíveis — brinquedoteca, integração sensorial, horta e salas pensadas para aprender com segurança.",
+      icon: "space" as const,
+    },
+    {
+      title: "Família e escola",
+      description:
+        "A rede de apoio participa do processo para que os avanços cheguem à rotina, à escola e à comunidade.",
+      icon: "network" as const,
+    },
+  ],
+};
