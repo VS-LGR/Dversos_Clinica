@@ -34,7 +34,7 @@ export default function ComplementaryCareSection() {
           {COMPLEMENTARY_CARE_COPY.cards.map((card) => (
             <article
               key={card.title}
-              className="rounded-2xl border border-primary/[0.08] bg-white p-6 sm:p-7 min-w-0 hover:border-primary/15 transition-colors"
+              className="rounded-[1.75rem] border border-primary/[0.08] bg-white p-6 sm:p-7 min-w-0 hover:border-primary/15 transition-colors"
             >
               <h3 className="font-semibold text-primary mb-2.5 text-balance">{card.title}</h3>
               <p className="text-sm sm:text-base text-primary/80 leading-relaxed">{card.description}</p>

@@ -1,12 +1,14 @@
 import { CARE_SESSION_INFO } from "@/lib/constants/siteContent";
+import { EDITORIAL_KID_PAINTING } from "@/lib/constants/clinicMedia";
 import CareProcessTimeline, {
   CareSessionCard,
 } from "@/components/shared/CareProcessTimeline";
+import CozyImageFrame from "@/components/shared/CozyImageFrame";
 
 export default function HomeCareProcessSection() {
   return (
     <section
-      className="py-20 sm:py-24 px-4 sm:px-6 bg-primary-pale/40 overflow-hidden safe-x"
+      className="py-20 sm:py-24 px-4 sm:px-6 bg-primary-pale/50 overflow-hidden safe-x"
       aria-labelledby="care-process-title"
     >
       <div className="max-w-6xl mx-auto min-w-0">
@@ -26,13 +28,31 @@ export default function HomeCareProcessSection() {
               clínicas seguras e plano individualizado.
             </p>
             <CareSessionCard />
+            <div className="mt-8 lg:hidden max-w-sm mx-auto">
+              <CozyImageFrame
+                src={EDITORIAL_KID_PAINTING}
+                alt="Criança em atividade criativa — cuidado humanizado na Clínica DVERSO"
+                variant="organic"
+                index={1}
+              />
+            </div>
           </div>
 
-          <div className="min-w-0">
-            <h3 className="text-sm font-semibold uppercase tracking-widest text-primary/60 mb-4">
-              Etapas do atendimento
-            </h3>
-            <CareProcessTimeline variant="compact" linkToFull />
+          <div className="min-w-0 space-y-8">
+            <div className="hidden lg:block max-w-xs ml-auto">
+              <CozyImageFrame
+                src={EDITORIAL_KID_PAINTING}
+                alt="Criança em atividade criativa — cuidado humanizado na Clínica DVERSO"
+                variant="organic"
+                index={1}
+              />
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-widest text-primary/60 mb-4">
+                Etapas do atendimento
+              </h3>
+              <CareProcessTimeline variant="compact" linkToFull />
+            </div>
           </div>
         </div>
       </div>

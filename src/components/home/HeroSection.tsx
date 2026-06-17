@@ -1,6 +1,7 @@
 "use client";
 
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
+import SoftTextLink from "@/components/shared/SoftTextLink";
 import { DEFAULT_WHATSAPP_NUMBER } from "@/lib/constants/clinicAreas";
 import { HOME_HERO } from "@/lib/constants/siteContent";
 import RevealOnScroll from "@/components/shared/RevealOnScroll";
@@ -17,7 +18,7 @@ export default function HeroSection() {
 
       <div className="relative z-10 max-w-3xl mx-auto w-full min-w-0">
         <RevealOnScroll index={0}>
-          <div className="text-center rounded-2xl sm:rounded-3xl bg-white/[0.92] sm:bg-white/90 backdrop-blur-sm border border-primary/[0.08] shadow-[0_8px_32px_-12px_rgba(26,43,86,0.1)] p-5 sm:p-8 md:p-12 min-w-0 max-w-full">
+          <div className="text-center rounded-[2rem] sm:rounded-[2.5rem] bg-white/85 backdrop-blur-sm border border-primary/[0.06] shadow-[0_8px_32px_-12px_rgba(26,43,86,0.08)] p-5 sm:p-8 md:p-12 min-w-0 max-w-full">
             <p className="text-primary/70 text-[10px] min-[360px]:text-xs font-medium uppercase tracking-wide sm:tracking-widest mb-2.5 sm:mb-3 leading-snug text-balance">
               {HOME_HERO.eyebrow}
             </p>
@@ -33,17 +34,23 @@ export default function HeroSection() {
             <p className="text-xs sm:text-base text-primary/75 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed">
               {HOME_HERO.paragraph}
             </p>
-            <WhatsAppButton
-              phoneNumber={DEFAULT_WHATSAPP_NUMBER}
-              message={HOME_HERO.ctaMessage}
-              label="Agendar pelo WhatsApp"
-              className="w-full sm:w-auto max-w-[420px] mx-auto text-sm sm:text-base px-4 py-3"
-            />
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+              <SoftTextLink href="/espacos" className="text-sm sm:text-base">
+                Conheça nossos ambientes
+              </SoftTextLink>
+              <WhatsAppButton
+                phoneNumber={DEFAULT_WHATSAPP_NUMBER}
+                message={HOME_HERO.ctaMessage}
+                label="Fale conosco quando quiser"
+                variant="soft"
+                className="w-full sm:w-auto max-w-[420px] text-sm sm:text-base px-4 py-3 rounded-2xl"
+              />
+            </div>
           </div>
         </RevealOnScroll>
       </div>
 
-      <WaveDivider overlay className="absolute bottom-0 inset-x-0 z-[5]" fill="#ffffff" />
+      <WaveDivider overlay className="absolute bottom-0 inset-x-0 z-[5]" fill="#fff8f2" variant="soft" />
     </section>
   );
 }

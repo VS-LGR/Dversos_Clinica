@@ -51,7 +51,6 @@ public/
 ## Domínio canônico
 
 Fonte única: `src/lib/constants/siteContact.ts`
-
 ```ts
 export const SITE_URL = "https://dverso.com.br";
 ```

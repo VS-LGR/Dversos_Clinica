@@ -21,7 +21,7 @@
 }
 
 body {
-  @apply bg-white text-primary antialiased overflow-x-clip;
+  @apply bg-primary-pale text-primary antialiased overflow-x-clip;
 }
 
 html {
@@ -55,6 +55,16 @@ html {
   .safe-x {
     overflow-x: clip;
     max-width: 100%;
+  }
+
+  .rounded-organic {
+    border-radius: 2rem;
+  }
+
+  .blob-soft {
+    filter: blur(48px);
+    opacity: 0.45;
+    pointer-events: none;
   }
 
   .min-w-0-flex {

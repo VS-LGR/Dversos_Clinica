@@ -159,6 +159,23 @@ export const SOBRE_GALLERY = [
 
 export const ESPACOS_HERO_IMAGE = img("Extras", "DSC00441.jpg");
 
+export const EDITORIAL_KID_PAINTING = img("Kid_Painting.jpg");
+export const EDITORIAL_THERAPY_ABA = img("Therapy_ABA.png");
+
+export const EDITORIAL_IMAGES = {
+  kidPainting: EDITORIAL_KID_PAINTING,
+  therapyAba: EDITORIAL_THERAPY_ABA,
+} as const;
+
+/** Slugs de área que exibem imagem editorial de apoio */
+export const AREA_EDITORIAL_IMAGE: Record<string, string> = {
+  psychology: EDITORIAL_THERAPY_ABA,
+  "neuropsychological-assessment": EDITORIAL_THERAPY_ABA,
+  psychopedagogy: EDITORIAL_THERAPY_ABA,
+  "art-therapy": EDITORIAL_KID_PAINTING,
+  neurodiversity: EDITORIAL_KID_PAINTING,
+};
+
 export function spaceMediaFor(space: ClinicSpace): SpaceMedia {
   return SPACE_MEDIA[space.slug as SpaceSlug];
 }

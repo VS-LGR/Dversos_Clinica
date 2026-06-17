@@ -1,5 +1,6 @@
 import Link from "next/link";
 import BrandLogo from "@/components/shared/BrandLogo";
+import WaveDivider from "@/components/shared/WaveDivider";
 import { FOOTER_EXTRA_LINKS } from "@/lib/constants/navigation";
 import {
   SITE_CONTACT,
@@ -20,6 +21,13 @@ export default function Footer() {
 
   return (
     <footer className="relative bg-primary text-white overflow-hidden">
+      <WaveDivider
+        overlay
+        position="top"
+        className="absolute top-0 inset-x-0 z-20"
+        fill="#fff8f2"
+        variant="soft"
+      />
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -28,7 +36,7 @@ export default function Footer() {
         }}
         aria-hidden
       />
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-10">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-16 pb-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="mb-3 brightness-0 invert opacity-95">

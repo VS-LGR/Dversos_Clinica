@@ -4,6 +4,7 @@ import AreasGrid from "@/components/home/AreasGrid";
 import NeurodiversityHighlight from "@/components/home/NeurodiversityHighlight";
 import DogTherapyBand from "@/components/home/DogTherapyBand";
 import HomeCareProcessSection from "@/components/home/HomeCareProcessSection";
+import HomeValuesSection from "@/components/home/HomeValuesSection";
 import AbaInterventionSection from "@/components/home/AbaInterventionSection";
 import ComplementaryCareSection from "@/components/home/ComplementaryCareSection";
 import BeDversoSection from "@/components/home/BeDversoSection";
@@ -12,36 +13,34 @@ import VisitCtaBand from "@/components/home/VisitCtaBand";
 import ClinicPreviewSection from "@/components/home/ClinicPreviewSection";
 import ClinicTourBand from "@/components/home/ClinicTourBand";
 import RevealOnScroll from "@/components/shared/RevealOnScroll";
-import PastelPageDecor from "@/components/shared/PastelPageDecor";
+import PageShell from "@/components/shared/PageShell";
 
 const HOME_SECTIONS = [
-  HomeCareProcessSection,
   ClinicPreviewSection,
-  ClinicTourBand,
+  HomeValuesSection,
+  HomeCareProcessSection,
   AreasGrid,
   AbaInterventionSection,
-  VisitCtaBand,
+  ComplementaryCareSection,
+  ClinicTourBand,
   NeurodiversityHighlight,
   DogTherapyBand,
-  ComplementaryCareSection,
-  BeDversoSection,
   FoundersSection,
+  BeDversoSection,
+  VisitCtaBand,
 ] as const;
 
 export default function HomePage() {
   return (
-    <div className="relative min-h-screen overflow-x-clip safe-x">
-      <PastelPageDecor />
-      <div className="relative z-10">
-        <OpeningAnimation>
-          <HeroSection />
-        </OpeningAnimation>
-        {HOME_SECTIONS.map((Section, index) => (
-          <RevealOnScroll key={Section.name} index={index}>
-            <Section />
-          </RevealOnScroll>
-        ))}
-      </div>
-    </div>
+    <PageShell>
+      <OpeningAnimation>
+        <HeroSection />
+      </OpeningAnimation>
+      {HOME_SECTIONS.map((Section, index) => (
+        <RevealOnScroll key={Section.name} index={index}>
+          <Section />
+        </RevealOnScroll>
+      ))}
+    </PageShell>
   );
 }

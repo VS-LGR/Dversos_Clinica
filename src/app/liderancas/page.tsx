@@ -1,7 +1,8 @@
-import Link from "next/link";
+import SoftTextLink from "@/components/shared/SoftTextLink";
 import InstitutionalPageHero from "@/components/shared/InstitutionalPageHero";
 import LeadersGroupSection from "@/components/shared/LeadersGroupSection";
 import WaveDivider from "@/components/shared/WaveDivider";
+import PageShell from "@/components/shared/PageShell";
 import { LEADERS_PAGE } from "@/lib/constants/teamLeaders";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
@@ -13,7 +14,7 @@ export const metadata = buildPageMetadata({
 
 export default function LiderancasPage() {
   return (
-    <div className="min-h-screen bg-white overflow-x-clip safe-x">
+    <PageShell>
       <InstitutionalPageHero
         title={LEADERS_PAGE.title}
         subtitle="Clínica DVERSO"
@@ -21,19 +22,14 @@ export default function LiderancasPage() {
         showBrandLogo
       />
 
-      <section className="relative py-12 sm:py-16 px-4 sm:px-6 max-w-5xl mx-auto min-w-0">
+      <section className="relative py-12 sm:py-16 px-4 sm:px-6 max-w-5xl mx-auto min-w-0 bg-pastel-mint/20">
         <LeadersGroupSection showLogo expandedCards />
         <p className="text-center mt-10">
-          <Link
-            href="/sobre"
-            className="text-sm font-medium text-primary hover:underline underline-offset-2"
-          >
-            Conheça a clínica →
-          </Link>
+          <SoftTextLink href="/sobre">Conheça a clínica</SoftTextLink>
         </p>
       </section>
 
-      <WaveDivider fill="#fff8f2" />
-    </div>
+      <WaveDivider fill="#fff8f2" variant="soft" />
+    </PageShell>
   );
 }

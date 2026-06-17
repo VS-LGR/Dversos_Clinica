@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import BlogSidebar from "@/components/blog/BlogSidebar";
 import PostBody from "@/components/blog/PostBody";
-import PastelPageDecor from "@/components/shared/PastelPageDecor";
+import PageShell from "@/components/shared/PageShell";
 import { fetchPublishedPostBySlug } from "@/lib/blog/queries";
 import { BLOG_COPY } from "@/lib/constants/blogCopy";
 import { SITE_URL } from "@/lib/constants/siteContact";
@@ -66,9 +66,8 @@ export default async function BlogPostPage({ params }: Props) {
   const coverSrc = post.cover_image_url || PLACEHOLDER;
 
   return (
-    <article className="relative min-h-screen py-12 sm:py-16 px-4 sm:px-6">
-      <PastelPageDecor />
-      <div className="relative z-10 max-w-6xl mx-auto">
+    <PageShell className="py-12 sm:py-16 px-4 sm:px-6">
+      <article className="max-w-6xl mx-auto">
         <nav className="text-sm text-primary/55 mb-6 flex flex-wrap items-center gap-x-2 gap-y-1 min-w-0" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-primary transition-colors shrink-0">
             {BLOG_COPY.hero.breadcrumbHome}
@@ -88,7 +87,7 @@ export default async function BlogPostPage({ params }: Props) {
                 className="absolute -inset-3 bg-gradient-to-br from-pastel-coral/70 via-pastel-peach/60 to-pastel-aqua/50 rounded-3xl blur-lg pointer-events-none"
                 aria-hidden
               />
-              <div className="relative aspect-[16/9] sm:aspect-[2/1] rounded-2xl overflow-hidden shadow-sm ring-1 ring-primary/[0.06]">
+              <div className="relative aspect-[16/9] sm:aspect-[2/1] rounded-[1.75rem] overflow-hidden shadow-sm ring-1 ring-primary/[0.06]">
               <Image
                 src={coverSrc}
                 alt=""
@@ -136,7 +135,7 @@ export default async function BlogPostPage({ params }: Props) {
 
           <BlogSidebar />
         </div>
-      </div>
+      </article>
 
       {post.cover_image_url && (
         <script
@@ -155,6 +154,6 @@ export default async function BlogPostPage({ params }: Props) {
           }}
         />
       )}
-    </article>
+    </PageShell>
   );
 }

@@ -15,7 +15,7 @@ export default function SpaceShowcaseBlock({ space, index }: SpaceShowcaseBlockP
 
   return (
     <article
-      className={`rounded-2xl border border-primary/[0.08] overflow-hidden min-w-0 ${pastelByIndex(PASTEL_SURFACE_SOFT, index)}`}
+      className={`rounded-[2rem] border border-primary/[0.08] overflow-hidden min-w-0 ${pastelByIndex(PASTEL_SURFACE_SOFT, index)}`}
     >
       <div
         className={`grid md:grid-cols-2 gap-6 md:gap-8 p-6 sm:p-8 items-center ${

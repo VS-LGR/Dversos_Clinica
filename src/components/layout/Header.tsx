@@ -22,7 +22,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-primary-pale shadow-sm">
+    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-pastel-peach/40 shadow-[0_1px_0_rgba(26,43,86,0.04)]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
         <Link
           href="/"
@@ -39,8 +39,8 @@ export default function Header() {
               href={href}
               className={`px-3 py-2 rounded-full text-sm font-medium transition-colors border ${
                 isActiveLink(href)
-                  ? "text-primary border-primary/30 bg-primary-pale/70"
-                  : "text-primary/90 border-transparent hover:text-primary hover:bg-primary-pale/50"
+                  ? "text-primary border-primary/25 bg-pastel-mint/40"
+                  : "text-primary/90 border-transparent hover:text-primary hover:bg-pastel-aqua/30"
               }`}
             >
               {label}
@@ -49,13 +49,14 @@ export default function Header() {
           <WhatsAppButton
             phoneNumber={DEFAULT_WHATSAPP_NUMBER}
             label="Falar no WhatsApp"
-            className="ml-1 rounded-full px-4 py-2 text-sm !bg-primary hover:!bg-primary-light !text-white shadow-none hover:shadow-none"
+            variant="soft"
+            className="ml-1 rounded-full px-4 py-2 text-sm"
           />
         </nav>
 
         <button
           type="button"
-          className="md:hidden p-2 rounded-lg text-primary hover:bg-primary-pale"
+          className="md:hidden p-2 rounded-full text-primary hover:bg-pastel-mint/40"
           aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
           aria-expanded={menuOpen}
           aria-controls="mobile-main-menu"
@@ -73,16 +74,16 @@ export default function Header() {
       </div>
 
       {menuOpen && (
-        <div id="mobile-main-menu" className="md:hidden border-t border-primary-pale bg-white shadow-sm">
+        <div id="mobile-main-menu" className="md:hidden border-t border-pastel-peach/40 bg-white/95 backdrop-blur-md shadow-sm">
           <nav className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-2" aria-label="Navegação mobile">
             {SITE_NAV_LINKS.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
-                className={`py-3 text-primary rounded-xl px-4 font-medium border transition-colors ${
+                className={`py-3 text-primary rounded-2xl px-4 font-medium border transition-colors ${
                   isActiveLink(href)
-                    ? "bg-primary-pale/70 border-primary/25"
-                    : "border-primary/10 hover:bg-primary-pale/50"
+                    ? "bg-pastel-mint/40 border-primary/20"
+                    : "border-primary/8 hover:bg-pastel-aqua/25"
                 }`}
                 onClick={() => setMenuOpen(false)}
               >
@@ -93,7 +94,8 @@ export default function Header() {
               <WhatsAppButton
                 phoneNumber={DEFAULT_WHATSAPP_NUMBER}
                 label="Falar no WhatsApp"
-                className="w-full text-sm !bg-primary hover:!bg-primary-light !text-white shadow-none hover:shadow-none"
+                variant="soft"
+                className="w-full text-sm rounded-2xl"
               />
             </div>
           </nav>

@@ -1,5 +1,5 @@
 import RevealOnScroll from "@/components/shared/RevealOnScroll";
-import PastelPageDecor from "@/components/shared/PastelPageDecor";
+import PageShell from "@/components/shared/PageShell";
 import BlogHero from "@/components/blog/BlogHero";
 import BlogPostCard from "@/components/blog/BlogPostCard";
 import { fetchPublishedPosts } from "@/lib/blog/queries";
@@ -22,9 +22,8 @@ export default async function BlogPage() {
   const posts = await fetchPublishedPosts();
 
   return (
-    <div className="relative min-h-screen py-12 sm:py-16 px-4 sm:px-6 overflow-x-clip safe-x">
-      <PastelPageDecor />
-      <div className="relative z-10 max-w-6xl mx-auto min-w-0">
+    <PageShell className="py-12 sm:py-16 px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto min-w-0">
         <BlogHero />
 
         {posts.length === 0 ? (
@@ -51,6 +50,6 @@ export default async function BlogPage() {
           </>
         )}
       </div>
-    </div>
+    </PageShell>
   );
 }

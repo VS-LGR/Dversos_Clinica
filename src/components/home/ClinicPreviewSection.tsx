@@ -17,7 +17,7 @@ const mosaicAlts = [
 export default function ClinicPreviewSection() {
   return (
     <section
-      className="relative py-20 sm:py-24 px-4 sm:px-6 bg-white overflow-hidden safe-x"
+      className="relative py-20 sm:py-24 px-4 sm:px-6 bg-white/70 overflow-hidden safe-x"
       aria-labelledby="clinic-preview-title"
     >
       <div className="max-w-6xl mx-auto min-w-0">
@@ -52,13 +52,13 @@ export default function ClinicPreviewSection() {
         <p className="text-center">
           <Link
             href="/espacos"
-            className="inline-flex items-center justify-center rounded-xl border-2 border-primary text-primary font-semibold px-6 py-3 hover:bg-primary-pale transition-colors"
+            className="inline-flex items-center justify-center rounded-2xl border border-primary/25 text-primary font-semibold px-6 py-3 bg-white/80 hover:bg-white transition-colors"
           >
             Ver todos os espaços
           </Link>
         </p>
       </div>
-      <WaveDivider overlay className="absolute bottom-0 inset-x-0 z-[1]" fill="#ffffff" />
+      <WaveDivider overlay className="absolute bottom-0 inset-x-0 z-[1]" fill="#fff8f2" variant="soft" />
     </section>
   );
 }

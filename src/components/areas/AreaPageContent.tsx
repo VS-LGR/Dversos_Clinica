@@ -1,12 +1,15 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import AreaHero from "@/components/areas/AreaHero";
 import ProfessionalsList from "@/components/areas/ProfessionalsList";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
+import SoftTextLink from "@/components/shared/SoftTextLink";
+import CozyImageFrame from "@/components/shared/CozyImageFrame";
+import PageShell from "@/components/shared/PageShell";
 import {
   getAreaBySlug,
   DEFAULT_WHATSAPP_NUMBER,
 } from "@/lib/constants/clinicAreas";
+import { AREA_EDITORIAL_IMAGE } from "@/lib/constants/clinicMedia";
 import { PROFESSIONALS_BY_AREA } from "@/lib/constants/professionals";
 
 interface AreaPageContentProps {
@@ -18,20 +21,37 @@ export default function AreaPageContent({ slug }: AreaPageContentProps) {
   if (!area) notFound();
 
   const professionals = PROFESSIONALS_BY_AREA[slug] ?? [];
+  const editorialImage = AREA_EDITORIAL_IMAGE[slug];
+  const editorialFit = editorialImage?.includes("Therapy_ABA") ? "contain" as const : "cover" as const;
 
   return (
-    <div className="min-h-screen overflow-x-clip">
+    <PageShell>
       <AreaHero area={area} />
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto space-y-6 min-w-0">
-        <div>
-          <h2 className="text-xl font-bold text-primary mb-4">Sobre o atendimento</h2>
-          <p className="text-primary/90 leading-relaxed">{area.howItWorks}</p>
+      <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto min-w-0">
+        <div className={`grid gap-10 items-start ${editorialImage ? "lg:grid-cols-2" : ""}`}>
+          <div className="space-y-6 min-w-0">
+            <div>
+              <h2 className="text-xl font-bold text-primary mb-4">Sobre o atendimento</h2>
+              <p className="text-primary/90 leading-relaxed">{area.howItWorks}</p>
+            </div>
+            {area.detailParagraphs?.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)} className="text-primary/85 leading-relaxed">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+          {editorialImage && (
+            <div className="max-w-md mx-auto lg:mx-0 w-full">
+              <CozyImageFrame
+                src={editorialImage}
+                alt={`Ilustração — ${area.shortName} na Clínica DVERSO`}
+                variant={editorialFit === "contain" ? "landscape" : "organic"}
+                index={1}
+                fit={editorialFit}
+              />
+            </div>
+          )}
         </div>
-        {area.detailParagraphs?.map((paragraph) => (
-          <p key={paragraph.slice(0, 40)} className="text-primary/85 leading-relaxed">
-            {paragraph}
-          </p>
-        ))}
       </section>
       <ProfessionalsList
         professionals={professionals}
@@ -41,26 +61,22 @@ export default function AreaPageContent({ slug }: AreaPageContentProps) {
         <p className="text-primary/80 text-sm mb-3">
           Conheça os ambientes terapêuticos da clínica.
         </p>
-        <Link
-          href="/espacos"
-          className="text-sm font-medium text-primary hover:underline underline-offset-2"
-        >
-          Ver nossos espaços →
-        </Link>
+        <SoftTextLink href="/espacos">Ver nossos espaços</SoftTextLink>
       </section>
-      <section className="py-12 px-4 sm:px-6 bg-gradient-to-b from-[#fdfbf9] to-primary-pale/30">
+      <section className="py-12 px-4 sm:px-6 bg-gradient-to-b from-pastel-aqua/25 to-primary-pale/40">
         <div className="max-w-2xl mx-auto text-center">
-          <p className="text-primary font-medium mb-4">
-            Quer agendar ou tirar dúvidas sobre {area.shortName}?
+          <p className="text-primary/85 mb-4">
+            Dúvidas sobre {area.shortName}? Estamos à disposição quando você quiser conversar.
           </p>
           <WhatsAppButton
             phoneNumber={DEFAULT_WHATSAPP_NUMBER}
             message={area.whatsAppMessage}
             label="Falar no WhatsApp"
-            className="w-full sm:w-auto px-4 py-2.5 text-sm"
+            variant="soft"
+            className="w-full sm:w-auto px-4 py-2.5 text-sm rounded-2xl"
           />
         </div>
       </section>
-    </div>
+    </PageShell>
   );
 }

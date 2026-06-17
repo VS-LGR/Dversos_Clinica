@@ -20,7 +20,7 @@ export default function BlogPostCard({ post, formatDate, index = 0 }: BlogPostCa
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className={`group flex h-full flex-col overflow-hidden rounded-2xl border border-primary/[0.08] ${cardBg} shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300`}
+      className={`group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-primary/[0.08] ${cardBg} shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300`}
     >
       <div className="relative aspect-[16/10] overflow-hidden">
         <div

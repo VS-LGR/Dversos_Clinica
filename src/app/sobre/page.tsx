@@ -1,10 +1,11 @@
-import Link from "next/link";
 import InstitutionalPageHero from "@/components/shared/InstitutionalPageHero";
 import CareProcessTimeline from "@/components/shared/CareProcessTimeline";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import CozyImageFrame from "@/components/shared/CozyImageFrame";
+import SoftTextLink from "@/components/shared/SoftTextLink";
 import WaveDivider from "@/components/shared/WaveDivider";
-import { SOBRE_GALLERY } from "@/lib/constants/clinicMedia";
+import PageShell from "@/components/shared/PageShell";
+import { SOBRE_GALLERY, EDITORIAL_THERAPY_ABA } from "@/lib/constants/clinicMedia";
 import { ABOUT_CLINIC, CARE_SESSION_INFO } from "@/lib/constants/siteContent";
 import { DEFAULT_WHATSAPP_NUMBER } from "@/lib/constants/clinicAreas";
 import { buildPageMetadata } from "@/lib/seo/metadata";
@@ -23,7 +24,7 @@ const sobreAlts = [
 
 export default function SobrePage() {
   return (
-    <div className="min-h-screen bg-white overflow-x-clip safe-x">
+    <PageShell>
       <InstitutionalPageHero
         title={ABOUT_CLINIC.title}
         subtitle="Clínica DVERSO"
@@ -65,20 +66,33 @@ export default function SobrePage() {
         </div>
       </section>
 
-      <WaveDivider fill="#fff8f2" />
+      <WaveDivider fill="#fff8f2" variant="soft" />
 
       <section
         id="como-funciona"
-        className="py-12 sm:py-16 px-4 sm:px-6 max-w-4xl mx-auto bg-primary-pale/25 min-w-0"
+        className="py-12 sm:py-16 px-4 sm:px-6 max-w-6xl mx-auto bg-pastel-mint/25 min-w-0"
       >
-        <h2 className="text-2xl font-bold text-primary mb-2">
-          Atendimento ABA com plano individualizado
-        </h2>
-        <p className="text-primary/80 mb-8 max-w-3xl">{CARE_SESSION_INFO.intro}</p>
-        <CareProcessTimeline variant="vertical" />
+        <div className="grid lg:grid-cols-2 gap-10 items-start">
+          <div>
+            <h2 className="text-2xl font-bold text-primary mb-2">
+              Atendimento ABA com plano individualizado
+            </h2>
+            <p className="text-primary/80 mb-8 max-w-3xl">{CARE_SESSION_INFO.intro}</p>
+            <CareProcessTimeline variant="vertical" />
+          </div>
+          <div className="max-w-md mx-auto lg:ml-auto w-full">
+            <CozyImageFrame
+              src={EDITORIAL_THERAPY_ABA}
+              alt="Intervenção baseada em ABA — metodologia da Clínica DVERSO"
+              variant="landscape"
+              index={2}
+              fit="contain"
+            />
+          </div>
+        </div>
       </section>
 
-      <WaveDivider fill="#ffffff" />
+      <WaveDivider fill="#fff8f2" variant="soft" />
 
       <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto min-w-0">
         <h2 className="text-2xl font-bold text-primary mb-4">
@@ -88,29 +102,14 @@ export default function SobrePage() {
           Profissionais comprometidos com evidências, supervisão e respeito à
           neurodiversidade fazem parte da nossa cultura — {ABOUT_CLINIC.missionTagline}.
         </p>
-        <div className="flex flex-wrap gap-4">
-          <Link
-            href="/seja-colaborador"
-            className="text-sm font-medium text-primary hover:underline underline-offset-2"
-          >
-            Seja colaborador →
-          </Link>
-          <Link
-            href="/espacos"
-            className="text-sm font-medium text-primary hover:underline underline-offset-2"
-          >
-            Nossos espaços →
-          </Link>
-          <Link
-            href="/areas"
-            className="text-sm font-medium text-primary hover:underline underline-offset-2"
-          >
-            Áreas de atuação →
-          </Link>
+        <div className="flex flex-wrap gap-6">
+          <SoftTextLink href="/seja-colaborador">Seja colaborador</SoftTextLink>
+          <SoftTextLink href="/espacos">Nossos espaços</SoftTextLink>
+          <SoftTextLink href="/areas">Áreas de atuação</SoftTextLink>
         </div>
       </section>
 
-      <section className="py-12 px-4 sm:px-6 bg-gradient-to-b from-pastel-peach/40 to-white">
+      <section className="py-12 px-4 sm:px-6 bg-gradient-to-b from-pastel-peach/40 to-primary-pale/30">
         <div className="max-w-2xl mx-auto text-center min-w-0">
           <h2 className="text-xl font-bold text-primary mb-4">
             Agende uma conversa com nossa equipe
@@ -119,10 +118,11 @@ export default function SobrePage() {
             phoneNumber={DEFAULT_WHATSAPP_NUMBER}
             message="Olá! Gostaria de saber mais sobre a Clínica DVERSO."
             label="Falar no WhatsApp"
-            className="w-full sm:w-auto"
+            variant="ghost"
+            className="justify-center"
           />
         </div>
       </section>
-    </div>
+    </PageShell>
   );
 }

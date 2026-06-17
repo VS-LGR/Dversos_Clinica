@@ -4,6 +4,7 @@ interface WaveDividerProps {
   fill?: string;
   /** Fixa no topo/rodapé do pai com position:absolute — não usa relative */
   overlay?: boolean;
+  variant?: "default" | "soft";
 }
 
 export default function WaveDivider({
@@ -11,29 +12,39 @@ export default function WaveDivider({
   className = "",
   fill = "#ffffff",
   overlay = false,
+  variant = "default",
 }: WaveDividerProps) {
+  const heightClass =
+    variant === "soft"
+      ? "h-10 sm:h-16 md:h-20"
+      : "h-8 sm:h-12 md:h-14";
+
+  const primaryPath =
+    variant === "soft"
+      ? "M0,60C120,90,240,110,360,100C480,90,600,50,720,60C840,70,960,110,1080,105C1200,100,1320,60,1440,50L1440,120L0,120Z"
+      : "M0,74C60,88,120,102,180,100C240,98,300,80,360,74C420,68,480,74,540,88C600,102,660,120,720,114C780,108,840,78,900,72C960,66,1020,84,1080,96C1140,108,1200,114,1260,106C1320,98,1380,76,1440,64L1440,120L0,120Z";
+
+  const secondaryPath =
+    variant === "soft"
+      ? "M0,90C96,100,192,110,288,108C384,106,480,86,576,78C672,70,768,74,864,82C960,90,1056,102,1152,108C1248,114,1344,114,1440,100L1440,120L0,120Z"
+      : "M0,84C48,94,96,104,144,104C192,104,240,94,288,84C336,74,384,64,432,66C480,68,528,82,576,94C624,106,672,116,720,114C768,112,816,98,864,88C912,78,960,72,1008,76C1056,80,1104,94,1152,102C1200,110,1248,112,1296,106C1344,100,1392,86,1440,74L1440,120L0,120Z";
+
   return (
     <div
-      className={`pointer-events-none w-full h-8 sm:h-12 md:h-14 overflow-hidden ${
+      className={`pointer-events-none w-full ${heightClass} overflow-hidden ${
         overlay ? "" : "relative"
       } ${position === "top" ? "rotate-180" : ""} ${className}`}
       aria-hidden
     >
       <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path
-          d="M0,74C60,88,120,102,180,100C240,98,300,80,360,74C420,68,480,74,540,88C600,102,660,120,720,114C780,108,840,78,900,72C960,66,1020,84,1080,96C1140,108,1200,114,1260,106C1320,98,1380,76,1440,64L1440,120L0,120Z"
-          fill={fill}
-        />
+        <path d={primaryPath} fill={fill} />
       </svg>
       <svg
         className="absolute inset-x-0 bottom-0 h-[72%] w-full"
         viewBox="0 0 1440 120"
         preserveAspectRatio="none"
       >
-        <path
-          d="M0,84C48,94,96,104,144,104C192,104,240,94,288,84C336,74,384,64,432,66C480,68,528,82,576,94C624,106,672,116,720,114C768,112,816,98,864,88C912,78,960,72,1008,76C1056,80,1104,94,1152,102C1200,110,1248,112,1296,106C1344,100,1392,86,1440,74L1440,120L0,120Z"
-          fill={fill}
-        />
+        <path d={secondaryPath} fill={fill} />
       </svg>
     </div>
   );
