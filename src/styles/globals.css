@@ -61,10 +61,6 @@ html {
     border-radius: 2rem;
   }
 
-  .hero-splatter-clip {
-    clip-path: url(#hero-splatter);
-  }
-
   .blob-soft {
     filter: blur(48px);
     opacity: 0.45;

@@ -70,9 +70,17 @@ export default function CozyImageFrame({
           src={src}
           alt={alt}
           fill
-          className={fit === "contain" ? "object-contain p-3 sm:p-4" : "object-cover"}
+          className={
+            fit === "contain"
+              ? fillContainer
+                ? "object-contain p-1 sm:p-2"
+                : "object-contain p-3 sm:p-4"
+              : "object-cover"
+          }
           sizes={
-            variant === "mosaic"
+            fillContainer
+              ? "(max-width: 768px) 92vw, 896px"
+              : variant === "mosaic"
               ? "(max-width: 640px) 50vw, 25vw"
               : variant === "organic"
                 ? "(max-width: 768px) 80vw, 300px"

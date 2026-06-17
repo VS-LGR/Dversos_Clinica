@@ -29,7 +29,7 @@ function ChevronIcon({ direction }: { direction: "left" | "right" }) {
 }
 
 const arrowBtnClass =
-  "flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-full border border-primary/25 bg-white text-primary shadow-sm hover:bg-primary-pale transition-colors";
+  "flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full border border-primary/25 bg-white text-primary shadow-sm hover:bg-primary-pale transition-colors";
 
 export default function ClinicAmbiencesCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -87,7 +87,7 @@ export default function ClinicAmbiencesCarousel() {
   return (
     <div
       ref={regionRef}
-      className="relative max-w-2xl mx-auto mb-10 min-w-0"
+      className="relative max-w-4xl mx-auto mb-10 min-w-0 w-full"
       role="region"
       aria-roledescription="carrossel"
       aria-label="Galeria dos ambientes da clínica"
@@ -102,7 +102,7 @@ export default function ClinicAmbiencesCarousel() {
       onKeyDown={handleKeyDown}
       tabIndex={0}
     >
-      <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+      <div className="flex items-center gap-2 sm:gap-4 min-w-0">
         {total > 1 && (
           <button
             type="button"
@@ -115,7 +115,7 @@ export default function ClinicAmbiencesCarousel() {
         )}
 
         <div
-          className="relative flex-1 min-w-0 h-[200px] min-[400px]:h-[220px] sm:h-[280px] md:h-[320px]"
+          className="relative flex-1 min-w-0 w-full h-[260px] min-[400px]:h-[300px] sm:h-[380px] md:h-[440px] lg:h-[480px]"
           aria-live="polite"
         >
           {HOME_MOSAIC_SLIDES.map((slide, index) => (
