@@ -18,10 +18,10 @@ import PageShell from "@/components/shared/PageShell";
 
 const HOME_SECTIONS = [
   HomeAboutPreviewSection,
+  AreasGrid,
   ClinicPreviewSection,
   HomeValuesSection,
   HomeCareProcessSection,
-  AreasGrid,
   AbaInterventionSection,
   ComplementaryCareSection,
   ClinicTourBand,

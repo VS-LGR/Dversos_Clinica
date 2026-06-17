@@ -1,8 +1,8 @@
 export const AREAS_INTRO_COPY = {
   eyebrow: "Especialidades",
-  title: "Equipe multidisciplinar para um plano terapêutico integrado",
+  title: "Terapia integrada com equipe multidisciplinar",
   description:
-    "Conheça cada especialidade da DVERSO — Psicologia com ABA e ACT, terapias integradas, nutrição, TAA e avaliação — e como atuamos em conjunto no plano individualizado.",
+    "Psicologia com ABA e ACT, fonoaudiologia, terapia ocupacional, nutrição, TAA e demais especialidades atuando de forma conjunta no plano individualizado de cada pessoa.",
   linkLabel: "Ver todas as especialidades",
 };
 
@@ -38,6 +38,8 @@ export const AREAS_BRANCHES = [
     slugs: ["animal-assisted-therapy", "dog-therapy"],
   },
 ] as const;
+
+export const ALL_SPECIALTY_SLUGS = AREAS_BRANCHES.flatMap((branch) => branch.slugs);
 
 export const PROTECTED_CARE_COPY = {
   eyebrow: "Terapia Assistida por Animais",

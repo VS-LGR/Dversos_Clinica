@@ -8,14 +8,6 @@ import {
   formatTelHref,
 } from "@/lib/constants/siteContact";
 
-const footerLinks = [
-  { href: "/areas/psychology", label: "Psicologia" },
-  { href: "/areas/neuropsychological-assessment", label: "Avaliação Neuropsicológica" },
-  { href: "/areas/music-therapy", label: "Musicoterapia" },
-  { href: "/areas/nutrition", label: "Nutrição" },
-  { href: "/areas/animal-assisted-therapy", label: "TAA" },
-];
-
 export default function Footer() {
   const fullAddress = formatFullAddress();
 
@@ -37,14 +29,14 @@ export default function Footer() {
         aria-hidden
       />
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-16 pb-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <div>
             <div className="mb-3 brightness-0 invert opacity-95">
               <BrandLogo variant="primary" size="sm" />
             </div>
             <h3 className="sr-only">{SITE_CONTACT.name}</h3>
             <p className="text-white/90 text-sm max-w-xs">
-              Clínica para neuroatípicos em Sorocaba: ABA, terapias integradas, TAA e cuidado interdisciplinar com evidências.
+              Clínica para neurodivergentes em Sorocaba: ABA, terapias integradas, TAA e cuidado interdisciplinar com evidências.
             </p>
           </div>
           <div>
@@ -68,42 +60,12 @@ export default function Footer() {
                   {SITE_CONTACT.phoneDisplay}
                 </a>
               </p>
-              <p className="flex flex-wrap gap-3 pt-1">
-                <a
-                  href={SITE_CONTACT.social.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors underline-offset-2 hover:underline"
-                >
-                  Instagram
-                </a>
-                <a
-                  href={SITE_CONTACT.social.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors underline-offset-2 hover:underline"
-                >
-                  Facebook
-                </a>
-              </p>
             </address>
           </div>
           <nav aria-label="Institucional">
             <h3 className="text-lg font-semibold mb-2">Institucional</h3>
             <ul className="flex flex-col gap-1">
               {FOOTER_EXTRA_LINKS.map(({ href, label }) => (
-                <li key={href}>
-                  <Link href={href} className="text-white/90 hover:text-white text-sm transition-colors">
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <nav aria-label="Áreas de atuação">
-            <h3 className="text-lg font-semibold mb-2">Áreas</h3>
-            <ul className="flex flex-col gap-1">
-              {footerLinks.map(({ href, label }) => (
                 <li key={href}>
                   <Link href={href} className="text-white/90 hover:text-white text-sm transition-colors">
                     {label}

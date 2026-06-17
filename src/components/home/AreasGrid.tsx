@@ -4,11 +4,10 @@ import AreaLinkCard from "@/components/areas/AreaLinkCard";
 import RevealOnScroll from "@/components/shared/RevealOnScroll";
 import { CLINIC_AREAS } from "@/lib/constants/clinicAreas";
 import { HOME_SPECIALTIES_COLLAGE } from "@/lib/constants/clinicMedia";
-import { AREAS_BRANCHES, AREAS_INTRO_COPY } from "@/lib/constants/homeAreasContent";
+import { ALL_SPECIALTY_SLUGS, AREAS_INTRO_COPY } from "@/lib/constants/homeAreasContent";
 
 export default function AreasGrid() {
   const areaBySlug = new Map(CLINIC_AREAS.map((area) => [area.slug, area]));
-  let revealIndex = 0;
 
   return (
     <section
@@ -45,36 +44,26 @@ export default function AreasGrid() {
           </div>
         </div>
 
-        <div className="space-y-12 sm:space-y-14">
-          {AREAS_BRANCHES.map((branch) => (
-            <section key={branch.title} aria-label={branch.title} className="min-w-0">
-              <h3 className="text-lg sm:text-xl font-bold text-primary tracking-tight mb-5 sm:mb-6 text-center lg:text-left">
-                {branch.title}
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                {branch.slugs.map((slug) => {
-                  const area = areaBySlug.get(slug);
-                  if (!area) return null;
-                  const cardIndex = revealIndex++;
-                  return (
-                    <RevealOnScroll
-                      key={area.slug}
-                      delayMs={Math.min(300, (cardIndex % 6) * 60)}
-                      index={cardIndex}
-                    >
-                      <AreaLinkCard
-                        slug={area.slug}
-                        name={area.name}
-                        description={area.description}
-                        cardIndex={cardIndex}
-                        variant="cozy"
-                      />
-                    </RevealOnScroll>
-                  );
-                })}
-              </div>
-            </section>
-          ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+          {ALL_SPECIALTY_SLUGS.map((slug, cardIndex) => {
+            const area = areaBySlug.get(slug);
+            if (!area) return null;
+            return (
+              <RevealOnScroll
+                key={area.slug}
+                delayMs={Math.min(300, (cardIndex % 6) * 60)}
+                index={cardIndex}
+              >
+                <AreaLinkCard
+                  slug={area.slug}
+                  name={area.name}
+                  description={area.description}
+                  cardIndex={cardIndex}
+                  variant="cozy"
+                />
+              </RevealOnScroll>
+            );
+          })}
         </div>
       </div>
     </section>
