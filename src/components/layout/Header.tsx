@@ -4,8 +4,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import BrandLogo from "@/components/shared/BrandLogo";
-import WhatsAppButton from "@/components/shared/WhatsAppButton";
-import { DEFAULT_WHATSAPP_NUMBER } from "@/lib/constants/clinicAreas";
 import { SITE_NAV_LINKS } from "@/lib/constants/navigation";
 
 export default function Header() {
@@ -46,12 +44,6 @@ export default function Header() {
               {label}
             </Link>
           ))}
-          <WhatsAppButton
-            phoneNumber={DEFAULT_WHATSAPP_NUMBER}
-            label="Falar no WhatsApp"
-            variant="soft"
-            className="ml-1 rounded-full px-4 py-2 text-sm"
-          />
         </nav>
 
         <button
@@ -90,14 +82,6 @@ export default function Header() {
                 {label}
               </Link>
             ))}
-            <div className="pt-2 grid grid-cols-1 gap-2">
-              <WhatsAppButton
-                phoneNumber={DEFAULT_WHATSAPP_NUMBER}
-                label="Falar no WhatsApp"
-                variant="soft"
-                className="w-full text-sm rounded-2xl"
-              />
-            </div>
           </nav>
         </div>
       )}
