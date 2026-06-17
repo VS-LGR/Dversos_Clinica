@@ -1,11 +1,10 @@
-import Link from "next/link";
 import SectionTitle from "@/components/shared/SectionTitle";
 import PageShell from "@/components/shared/PageShell";
 import RevealOnScroll from "@/components/shared/RevealOnScroll";
+import AreaLinkCard from "@/components/areas/AreaLinkCard";
 import { AREAS_PAGE_COPY } from "@/lib/constants/homeAreasContent";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { CLINIC_AREAS } from "@/lib/constants/clinicAreas";
-import { PASTEL_CARD_GRADIENTS, pastelByIndex } from "@/lib/constants/pastelPalette";
 
 export const metadata = buildPageMetadata({
   title: "Áreas de atuação",
@@ -52,42 +51,37 @@ export default function AreasOverviewPage() {
 
   return (
     <PageShell className="py-16 px-4 sm:px-6">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto min-w-0">
         <SectionTitle as="h1" className="mb-4">Nossas áreas de atuação</SectionTitle>
         <p className="text-center text-primary/80 mb-12 max-w-2xl mx-auto">
           {AREAS_PAGE_COPY.description}
         </p>
-        <div className="space-y-10">
+        <div className="space-y-12">
           {GROUPS.map((group) => (
             <section key={group.title} aria-label={group.title}>
-              <h2 className="text-lg sm:text-xl font-semibold text-primary mb-4">
+              <h2 className="text-xl sm:text-2xl font-bold text-primary mb-6 tracking-tight">
                 {group.title}
               </h2>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {group.slugs.map((slug) => {
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                {group.slugs.map((slug, slugIndex) => {
                   const area = areaBySlug.get(slug);
                   if (!area) return null;
                   const cardIndex = revealIndex++;
+                  const featured = slugIndex === 0 && group.slugs.length > 2;
                   return (
-                    <li key={area.slug}>
+                    <li key={area.slug} className={featured ? "sm:col-span-2" : ""}>
                       <RevealOnScroll
                         delayMs={Math.min(300, (cardIndex % 6) * 60)}
                         index={cardIndex}
                       >
-                        <Link
-                          href={`/areas/${area.slug}`}
-                          className={`block p-6 rounded-[1.5rem] border border-primary/10 bg-gradient-to-br ${pastelByIndex(PASTEL_CARD_GRADIENTS, cardIndex)} hover:border-primary/25 hover:shadow-md transition-all`}
-                        >
-                          <h3 className="text-lg font-semibold text-primary mb-2">
-                            {area.name}
-                          </h3>
-                          <p className="text-sm text-primary/80 line-clamp-2">
-                            {area.description}
-                          </p>
-                          <span className="inline-block mt-3 text-primary font-medium text-sm">
-                            Ver detalhes →
-                          </span>
-                        </Link>
+                        <AreaLinkCard
+                          slug={area.slug}
+                          name={area.name}
+                          description={area.description}
+                          cardIndex={cardIndex}
+                          featured={featured}
+                          ctaLabel="Ver detalhes →"
+                        />
                       </RevealOnScroll>
                     </li>
                   );

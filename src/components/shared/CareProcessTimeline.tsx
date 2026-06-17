@@ -18,7 +18,7 @@ interface CareProcessTimelineProps {
 
 export function CareSessionCard() {
   return (
-    <article className="rounded-2xl border border-primary/[0.1] bg-white p-6 shadow-sm">
+    <article className="rounded-[2rem] border border-primary/[0.1] bg-pastel-mint/25 p-6 shadow-sm">
       <p className="text-xs font-semibold uppercase tracking-widest text-primary/60 mb-2">
         Cada sessão
       </p>

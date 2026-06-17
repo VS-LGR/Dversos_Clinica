@@ -1,3 +1,22 @@
+import { SITE_CONTACT, formatTelHref } from "@/lib/constants/siteContact";
+
+/** Onda vertical suave na borda direita da barra — transição orgânica para o conteúdo. */
+function SidebarWaveEdge() {
+  return (
+    <svg
+      className="absolute top-0 right-0 h-full w-3 sm:w-3.5 translate-x-[99%] pointer-events-none"
+      viewBox="0 0 12 400"
+      preserveAspectRatio="none"
+      aria-hidden
+    >
+      <path
+        d="M0,0 C5,40 0,80 5,120 C0,160 5,200 0,240 C5,280 0,320 5,360 C0,380 0,400 12,400 L12,0 Z"
+        fill="#fff8f2"
+      />
+    </svg>
+  );
+}
+
 export default function ScrollBar() {
   return (
     <div
@@ -17,13 +36,10 @@ export default function ScrollBar() {
         }}
       />
       <div
-        className="absolute top-0 right-0 bottom-0 w-4 bg-gradient-to-r from-transparent to-primary/25"
-        aria-hidden
-      />
-      <div
         className="absolute inset-0 opacity-50 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.16)_0%,rgba(255,255,255,0)_35%,rgba(0,0,0,0.08)_100%)]"
         aria-hidden
       />
+      <SidebarWaveEdge />
 
       <div className="absolute inset-0 px-1.5 py-6 flex flex-col items-center justify-between text-white/80">
         {DECOR_ITEMS.map((item, index) => (
@@ -105,8 +121,6 @@ export default function ScrollBar() {
     </div>
   );
 }
-
-import { SITE_CONTACT, formatTelHref } from "@/lib/constants/siteContact";
 
 const DECOR_ITEMS = [
   { type: "psi", opacity: 0.22, size: 14, delay: "0ms" },
