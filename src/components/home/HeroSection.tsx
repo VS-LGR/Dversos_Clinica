@@ -1,8 +1,9 @@
 "use client";
 
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
+import SoftTextLink from "@/components/shared/SoftTextLink";
 import { DEFAULT_WHATSAPP_NUMBER } from "@/lib/constants/clinicAreas";
-import { HOME_HERO, SITE_TAGLINE } from "@/lib/constants/siteContent";
+import { HOME_HERO } from "@/lib/constants/siteContent";
 import RevealOnScroll from "@/components/shared/RevealOnScroll";
 import HeroVideoBackground from "@/components/home/HeroVideoBackground";
 import WaveDivider from "@/components/shared/WaveDivider";
@@ -18,19 +19,30 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-3xl mx-auto w-full min-w-0">
         <RevealOnScroll index={0}>
           <div className="flex flex-col items-center justify-center text-center min-w-0 max-w-full [text-shadow:0_1px_14px_rgba(255,255,255,0.9)]">
+            <p className="text-primary text-[10px] min-[360px]:text-xs font-semibold uppercase tracking-wide sm:tracking-widest mb-2.5 sm:mb-3 leading-snug text-balance">
+              {HOME_HERO.eyebrow}
+            </p>
             <h1
               id="hero-title"
-              className="text-[1.2rem] min-[360px]:text-xl min-[400px]:text-2xl sm:text-3xl md:text-4xl font-bold text-primary tracking-tight leading-[1.25] sm:leading-snug text-balance break-words max-w-3xl mx-auto"
+              className="text-[1.35rem] min-[360px]:text-2xl min-[400px]:text-[1.65rem] sm:text-4xl md:text-5xl font-bold text-primary tracking-tight mb-4 sm:mb-5 leading-[1.2] sm:leading-tight text-balance break-words max-w-3xl mx-auto"
             >
-              {SITE_TAGLINE}
+              {HOME_HERO.title}
             </h1>
-            <WhatsAppButton
-              phoneNumber={DEFAULT_WHATSAPP_NUMBER}
-              message={HOME_HERO.ctaMessage}
-              label="Fale conosco quando quiser"
-              variant="soft"
-              className="mt-6 sm:mt-8 w-full sm:w-auto max-w-[420px] text-sm sm:text-base px-5 py-3 rounded-2xl bg-white/90 shadow-sm"
-            />
+            <p className="text-sm sm:text-lg md:text-xl text-primary mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed font-medium">
+              {HOME_HERO.lead}
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full">
+              <SoftTextLink href="/espacos" className="text-sm sm:text-base font-semibold">
+                Conheça nossos ambientes
+              </SoftTextLink>
+              <WhatsAppButton
+                phoneNumber={DEFAULT_WHATSAPP_NUMBER}
+                message={HOME_HERO.ctaMessage}
+                label="Fale conosco quando quiser"
+                variant="soft"
+                className="w-full sm:w-auto max-w-[420px] text-sm sm:text-base px-5 py-3 rounded-2xl bg-white/90 shadow-sm"
+              />
+            </div>
           </div>
         </RevealOnScroll>
       </div>

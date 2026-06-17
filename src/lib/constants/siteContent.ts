@@ -4,7 +4,9 @@ export const SITE_TAGLINE =
   "Mais do que atender, construímos caminhos que produzem avanços reais, com análise contínua na rotina, na escola e na família.";
 
 export const HOME_HERO = {
-  title: SITE_TAGLINE,
+  eyebrow: "Clínica de saúde integrada · Sorocaba e região",
+  title: "Caminhos que produzem avanços reais na rotina, na escola e na família",
+  lead: SITE_TAGLINE,
   paragraph2:
     "A Análise do Comportamento Aplicada (ABA), de alta qualidade, vai além do programa do aprendiz: visa construir independência e representa um investimento no futuro do indivíduo e da sociedade.",
   ctaMessage:
