@@ -7,8 +7,6 @@ export const HOME_HERO = {
   eyebrow: "Clínica de saúde integrada · Sorocaba e região",
   title: "Caminhos que produzem avanços reais na rotina, na escola e na família",
   lead: SITE_TAGLINE,
-  paragraph:
-    "Oferecemos tratamento especializado e necessário a todos os indivíduos neuroatípicos, independentemente da idade e do nível de suporte, incluindo comportamentos interferentes e de risco. A aprendizagem acontece em todos os ambientes — e trabalhamos em colaboração com aprendizes e toda a rede de apoio.",
   paragraph2:
     "A Análise do Comportamento Aplicada (ABA), de alta qualidade, vai além do programa do aprendiz: visa construir independência e representa um investimento no futuro do indivíduo e da sociedade.",
   ctaMessage:

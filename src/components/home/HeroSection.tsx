@@ -18,8 +18,8 @@ export default function HeroSection() {
 
       <div className="relative z-10 max-w-3xl mx-auto w-full min-w-0">
         <RevealOnScroll index={0}>
-          <div className="text-center rounded-2xl sm:rounded-3xl bg-white backdrop-blur-sm border border-primary/[0.06] shadow-[0_8px_32px_-12px_rgba(26,43,86,0.08)] p-5 sm:p-8 md:p-12 min-w-0 max-w-full">
-            <p className="text-primary/70 text-[10px] min-[360px]:text-xs font-medium uppercase tracking-wide sm:tracking-widest mb-2.5 sm:mb-3 leading-snug text-balance">
+          <div className="text-center min-w-0 max-w-full [text-shadow:0_1px_14px_rgba(255,255,255,0.9)]">
+            <p className="text-primary text-[10px] min-[360px]:text-xs font-semibold uppercase tracking-wide sm:tracking-widest mb-2.5 sm:mb-3 leading-snug text-balance">
               {HOME_HERO.eyebrow}
             </p>
             <h1
@@ -28,14 +28,11 @@ export default function HeroSection() {
             >
               {HOME_HERO.title}
             </h1>
-            <p className="text-sm sm:text-lg md:text-xl text-primary/90 mb-3 sm:mb-5 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-lg md:text-xl text-primary mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed font-medium">
               {HOME_HERO.lead}
             </p>
-            <p className="text-xs sm:text-base text-primary/75 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed">
-              {HOME_HERO.paragraph}
-            </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-              <SoftTextLink href="/espacos" className="text-sm sm:text-base">
+              <SoftTextLink href="/espacos" className="text-sm sm:text-base font-semibold">
                 Conheça nossos ambientes
               </SoftTextLink>
               <WhatsAppButton
@@ -43,7 +40,7 @@ export default function HeroSection() {
                 message={HOME_HERO.ctaMessage}
                 label="Fale conosco quando quiser"
                 variant="soft"
-                className="w-full sm:w-auto max-w-[420px] text-sm sm:text-base px-4 py-3 rounded-2xl"
+                className="w-full sm:w-auto max-w-[420px] text-sm sm:text-base px-4 py-3 rounded-2xl bg-white/90 shadow-sm"
               />
             </div>
           </div>
