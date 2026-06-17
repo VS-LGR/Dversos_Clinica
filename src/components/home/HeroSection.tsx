@@ -6,6 +6,7 @@ import { DEFAULT_WHATSAPP_NUMBER } from "@/lib/constants/clinicAreas";
 import { HOME_HERO } from "@/lib/constants/siteContent";
 import RevealOnScroll from "@/components/shared/RevealOnScroll";
 import HeroVideoBackground from "@/components/home/HeroVideoBackground";
+import HeroSplatterCard from "@/components/home/HeroSplatterCard";
 import WaveDivider from "@/components/shared/WaveDivider";
 
 export default function HeroSection() {
@@ -18,7 +19,7 @@ export default function HeroSection() {
 
       <div className="relative z-10 max-w-3xl mx-auto w-full min-w-0">
         <RevealOnScroll index={0}>
-          <div className="text-center rounded-[2rem] sm:rounded-[2.5rem] bg-white/85 backdrop-blur-sm border border-primary/[0.06] shadow-[0_8px_32px_-12px_rgba(26,43,86,0.08)] p-5 sm:p-8 md:p-12 min-w-0 max-w-full">
+          <HeroSplatterCard>
             <p className="text-primary/70 text-[10px] min-[360px]:text-xs font-medium uppercase tracking-wide sm:tracking-widest mb-2.5 sm:mb-3 leading-snug text-balance">
               {HOME_HERO.eyebrow}
             </p>
@@ -46,7 +47,7 @@ export default function HeroSection() {
                 className="w-full sm:w-auto max-w-[420px] text-sm sm:text-base px-4 py-3 rounded-2xl"
               />
             </div>
-          </div>
+          </HeroSplatterCard>
         </RevealOnScroll>
       </div>
 

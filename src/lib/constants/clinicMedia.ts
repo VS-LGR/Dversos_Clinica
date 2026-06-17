@@ -141,15 +141,17 @@ export const TAA_GALLERY = [
   img("TAA", "DSC09853.jpg"),
 ] as const;
 
-export const HOME_MOSAIC_IMAGES = [
-  img("Brinquedoteca", "DSC00280.jpg"),
-  img("Espaço Conforto", "DSC09453.jpg"),
-  img("Horta", "DSC03335.jpg.jpeg"),
-  img("TAA", "DSC09850.jpg"),
-  img("Consultórios", "Integração Sensorial", "DSC03322.jpg.jpeg"),
-  img("Game", "DSC03312.jpg.jpeg"),
-  img("Extras", "DSC00441.jpg"),
+export const HOME_MOSAIC_SLIDES = [
+  { src: img("Brinquedoteca", "DSC00280.jpg"), alt: "Brinquedoteca da Clínica DVERSO" },
+  { src: img("Espaço Conforto", "DSC09453.jpg"), alt: "Espaço Conforto para famílias" },
+  { src: img("Horta", "DSC03335.jpg.jpeg"), alt: "Horta terapêutica" },
+  { src: img("TAA", "DSC09850.jpg"), alt: "Terapia assistida por animais" },
+  { src: img("Consultórios", "Integração Sensorial", "DSC03322.jpg.jpeg"), alt: "Sala de integração sensorial" },
+  { src: img("Game", "DSC03312.jpg.jpeg"), alt: "Espaço de gameterapia" },
+  { src: img("Extras", "DSC00441.jpg"), alt: "Ambiente acolhedor da clínica" },
 ] as const;
+
+export const HOME_MOSAIC_IMAGES = HOME_MOSAIC_SLIDES.map((slide) => slide.src);
 
 export const SOBRE_GALLERY = [
   img("Extras", "DSC00369.jpg"),
