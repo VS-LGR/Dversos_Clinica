@@ -1,5 +1,5 @@
-import Image from "next/image";
 import SoftTextLink from "@/components/shared/SoftTextLink";
+import EditorialCollage from "@/components/shared/EditorialCollage";
 import { HOME_ABOUT_COLLAGE } from "@/lib/constants/clinicMedia";
 import { HOME_ABOUT_PREVIEW } from "@/lib/constants/siteContent";
 import { PASTEL_CARD_BG, pastelByIndex } from "@/lib/constants/pastelPalette";
@@ -58,34 +58,7 @@ function HighlightIconGlyph({ type }: { type: HighlightIcon }) {
   }
 }
 
-function CollageImage({
-  src,
-  alt,
-  className = "",
-  priority = false,
-}: {
-  src: string;
-  alt: string;
-  className?: string;
-  priority?: boolean;
-}) {
-  return (
-    <div className={`relative overflow-hidden rounded-2xl bg-primary-pale/60 ${className}`}>
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        className="object-cover"
-        sizes="(max-width: 1024px) 90vw, 480px"
-        priority={priority}
-      />
-    </div>
-  );
-}
-
 export default function HomeAboutPreviewSection() {
-  const { hero, aba, dog, family } = HOME_ABOUT_COLLAGE;
-
   return (
     <section
       className="py-20 sm:py-24 px-4 sm:px-6 bg-pastel-aqua/30 overflow-hidden safe-x"
@@ -93,32 +66,16 @@ export default function HomeAboutPreviewSection() {
     >
       <div className="max-w-6xl mx-auto min-w-0">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-          {/* Colagem — inspirada em layout editorial acolhedor */}
           <div className="min-w-0 order-2 lg:order-1">
-            <div className="rounded-[2rem] sm:rounded-[2.5rem] bg-white/90 border border-primary/[0.06] shadow-[0_12px_40px_-16px_rgba(26,43,86,0.12)] p-3 sm:p-4">
-              <div className="grid grid-cols-4 gap-2 sm:gap-3">
-                <CollageImage
-                  src={hero.src}
-                  alt={hero.alt}
-                  className="col-span-4 aspect-[16/10]"
-                  priority
-                />
-                <CollageImage src={aba.src} alt={aba.alt} className="col-span-2 aspect-[4/3]" />
-                <CollageImage src={dog.src} alt={dog.alt} className="col-span-2 aspect-[4/3]" />
-                <div
-                  className="col-span-1 aspect-square rounded-2xl bg-pastel-peach/75 border border-pastel-peach"
-                  aria-hidden
-                />
-                <CollageImage src={family.src} alt={family.alt} className="col-span-2 aspect-[4/3]" />
-                <div
-                  className="col-span-1 aspect-square rounded-2xl bg-pastel-mint/75 border border-pastel-mint"
-                  aria-hidden
-                />
-              </div>
-            </div>
+            <EditorialCollage
+              hero={HOME_ABOUT_COLLAGE.hero}
+              topLeft={HOME_ABOUT_COLLAGE.aba}
+              topRight={HOME_ABOUT_COLLAGE.dog}
+              bottomCenter={HOME_ABOUT_COLLAGE.family}
+              priority
+            />
           </div>
 
-          {/* Texto e cards */}
           <div className="min-w-0 order-1 lg:order-2 text-center lg:text-left">
             <p className="text-primary/65 text-[10px] sm:text-xs font-semibold uppercase tracking-widest mb-2.5">
               {HOME_ABOUT_PREVIEW.eyebrow}
@@ -137,7 +94,7 @@ export default function HomeAboutPreviewSection() {
               {HOME_ABOUT_PREVIEW.highlights.map((item, index) => (
                 <article
                   key={item.title}
-                  className={`rounded-2xl border border-primary/[0.06] bg-white/85 p-4 sm:p-5 text-left shadow-[0_6px_20px_-10px_rgba(26,43,86,0.1)] min-w-0`}
+                  className="rounded-2xl border border-primary/[0.06] bg-white/85 p-4 sm:p-5 text-left shadow-[0_6px_20px_-10px_rgba(26,43,86,0.1)] min-w-0"
                 >
                   <div
                     className={`inline-flex h-10 w-10 items-center justify-center rounded-full border border-accent/50 ${pastelByIndex(PASTEL_CARD_BG, index)} mb-3`}

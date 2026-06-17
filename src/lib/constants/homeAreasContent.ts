@@ -1,14 +1,43 @@
-export const AREAS_FILTER_COPY = {
-  mobileLabel: "Filtrar por especialidade",
-  allOption: "Todas as especialidades",
-  tabAriaLabel: "Filtro de especialidades",
-};
-
 export const AREAS_INTRO_COPY = {
-  subtitle: "Cuidado integrado para neuroatípicos em Sorocaba",
+  eyebrow: "Especialidades",
+  title: "Equipe multidisciplinar para um plano terapêutico integrado",
   description:
     "Conheça cada especialidade da DVERSO — Psicologia com ABA e ACT, terapias integradas, nutrição, TAA e avaliação — e como atuamos em conjunto no plano individualizado.",
+  linkLabel: "Ver todas as especialidades",
 };
+
+export const AREAS_BRANCHES = [
+  {
+    title: "Psicologia e Desenvolvimento",
+    slugs: [
+      "psychology",
+      "neuropsychological-assessment",
+      "psychopedagogy",
+      "therapeutic-companion",
+      "psychomotricity",
+      "neurodiversity",
+    ],
+  },
+  {
+    title: "Terapias Integradas",
+    slugs: [
+      "speech-therapy",
+      "occupational-therapy",
+      "sensory-integration",
+      "music-therapy",
+      "art-therapy",
+      "physiotherapy",
+    ],
+  },
+  {
+    title: "Nutrição e Alimentação",
+    slugs: ["nutrition", "feeding-therapy"],
+  },
+  {
+    title: "Intervenções Assistidas",
+    slugs: ["animal-assisted-therapy", "dog-therapy"],
+  },
+] as const;
 
 export const PROTECTED_CARE_COPY = {
   eyebrow: "Terapia Assistida por Animais",

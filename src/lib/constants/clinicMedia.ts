@@ -165,6 +165,25 @@ export const EDITORIAL_KID_PAINTING = img("Kid_Painting.jpg");
 export const EDITORIAL_THERAPY_ABA = img("Therapy_ABA.png");
 export const ABA_PROCESS_INFOGRAPHIC = img("AtendimentoABA.png");
 
+export const HOME_SPECIALTIES_COLLAGE = {
+  hero: {
+    src: img("Consultórios", "Integração Sensorial", "DSC09476.jpg"),
+    alt: "Sala de integração sensorial na Clínica DVERSO",
+  },
+  topLeft: {
+    src: img("Consultórios", "Fonaudiologia", "DSC09463.jpg"),
+    alt: "Sessão de fonoaudiologia na Clínica DVERSO",
+  },
+  topRight: {
+    src: img("Consultórios", "Pisicologia", "DSC09454.jpg"),
+    alt: "Atendimento psicológico na Clínica DVERSO",
+  },
+  bottomCenter: {
+    src: img("Consultórios", "Arteterapia", "DSC09489.jpg"),
+    alt: "Arteterapia na Clínica DVERSO",
+  },
+} as const;
+
 /** Colagem da mini-seção "Sobre" na home */
 export const HOME_ABOUT_COLLAGE = {
   hero: { src: img("Brinquedoteca", "DSC00280.jpg"), alt: "Brinquedoteca da Clínica DVERSO em Sorocaba" },
