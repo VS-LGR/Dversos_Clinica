@@ -61,10 +61,6 @@ html {
     border-radius: 2rem;
   }
 
-  .ambiences-carousel-clip {
-    clip-path: url(#ambiences-wave-clip);
-  }
-
   .blob-soft {
     filter: blur(48px);
     opacity: 0.45;

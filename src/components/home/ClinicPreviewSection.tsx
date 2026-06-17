@@ -30,25 +30,25 @@ export default function ClinicPreviewSection() {
         variant="soft"
       />
 
-      <div className="relative z-10 max-w-6xl mx-auto min-w-0 px-4 sm:px-6 py-20 sm:py-28 md:py-32">
-        <div className="text-center mb-10 sm:mb-14">
-          <p className="text-white/70 text-[10px] sm:text-xs font-semibold uppercase tracking-widest mb-2.5">
+      <div className="relative z-10 max-w-6xl mx-auto min-w-0 px-4 sm:px-6 py-14 sm:py-20 md:py-28">
+        <div className="text-center mb-8 sm:mb-12 md:mb-14 px-1">
+          <p className="text-white/70 text-[10px] sm:text-xs font-semibold uppercase tracking-wide sm:tracking-widest mb-2.5">
             Um espaço pensado para acolher
           </p>
           <h2
             id="clinic-preview-title"
-            className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-balance mb-4"
+            className="text-xl sm:text-3xl md:text-4xl font-bold tracking-tight text-balance mb-3 sm:mb-4"
           >
             Nossos ambientes
           </h2>
-          <p className="text-white/85 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+          <p className="text-white/85 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed text-balance">
             Conforto sensorial, previsibilidade e ambientes que comunicam segurança — conheça os espaços da clínica.
           </p>
         </div>
 
         <ClinicAmbiencesCarousel />
 
-        <p className="text-center mt-10 sm:mt-12">
+        <p className="text-center mt-8 sm:mt-10 md:mt-12">
           <Link
             href="/espacos"
             className="inline-flex items-center justify-center rounded-2xl border border-white/35 text-white font-semibold px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-colors"
