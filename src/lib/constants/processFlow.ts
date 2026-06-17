@@ -1,3 +1,5 @@
+import { CARE_SESSION_INFO } from "@/lib/constants/siteContent";
+
 export interface CareProcessStep {
   step: number;
   title: string;
@@ -56,3 +58,13 @@ export const CARE_PROCESS_STEPS: CareProcessStep[] = [
       "Devolutiva clara e início do plano de intervenção individualizado (PIC).",
   },
 ];
+
+/** Alt completo da infografia AtendimentoABA.png — VLibras e leitores de tela. */
+export function buildAbaProcessInfographicAlt(): string {
+  const steps = CARE_PROCESS_STEPS.map(
+    (s) => `Etapa ${s.step + 1} — ${s.title}: ${s.description}`,
+  ).join(" ");
+  return `Atendimento ABA com plano individualizado. ${CARE_SESSION_INFO.intro} ${steps}`;
+}
+
+export const ABA_PROCESS_INFOGRAPHIC_ALT = buildAbaProcessInfographicAlt();

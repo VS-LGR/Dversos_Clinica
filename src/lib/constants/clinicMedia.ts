@@ -161,10 +161,12 @@ export const ESPACOS_HERO_IMAGE = img("Extras", "DSC00441.jpg");
 
 export const EDITORIAL_KID_PAINTING = img("Kid_Painting.jpg");
 export const EDITORIAL_THERAPY_ABA = img("Therapy_ABA.png");
+export const ABA_PROCESS_INFOGRAPHIC = img("AtendimentoABA.png");
 
 export const EDITORIAL_IMAGES = {
   kidPainting: EDITORIAL_KID_PAINTING,
   therapyAba: EDITORIAL_THERAPY_ABA,
+  abaProcessInfographic: ABA_PROCESS_INFOGRAPHIC,
 } as const;
 
 /** Slugs de área que exibem imagem editorial de apoio */
