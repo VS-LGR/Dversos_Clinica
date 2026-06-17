@@ -5,8 +5,7 @@ export const SITE_TAGLINE =
 
 export const HOME_HERO = {
   eyebrow: "Clínica de saúde integrada · Sorocaba e região",
-  title: "Caminhos que produzem avanços reais na rotina, na escola e na família",
-  lead: SITE_TAGLINE,
+  title: SITE_TAGLINE,
   paragraph2:
     "A Análise do Comportamento Aplicada (ABA), de alta qualidade, vai além do programa do aprendiz: visa construir independência e representa um investimento no futuro do indivíduo e da sociedade.",
   ctaMessage:

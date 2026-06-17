@@ -24,13 +24,10 @@ export default function HeroSection() {
             </p>
             <h1
               id="hero-title"
-              className="text-[1.35rem] min-[360px]:text-2xl min-[400px]:text-[1.65rem] sm:text-4xl md:text-5xl font-bold text-primary tracking-tight mb-4 sm:mb-5 leading-[1.2] sm:leading-tight text-balance break-words max-w-3xl mx-auto"
+              className="text-[1.2rem] min-[360px]:text-xl min-[400px]:text-2xl sm:text-3xl md:text-4xl font-bold text-primary tracking-tight mb-6 sm:mb-8 leading-[1.25] sm:leading-snug text-balance break-words max-w-3xl mx-auto"
             >
               {HOME_HERO.title}
             </h1>
-            <p className="text-sm sm:text-lg md:text-xl text-primary mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed font-medium">
-              {HOME_HERO.lead}
-            </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full">
               <SoftTextLink href="/espacos" className="text-sm sm:text-base font-semibold">
                 Conheça nossos ambientes
