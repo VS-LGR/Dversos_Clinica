@@ -15,6 +15,8 @@ interface CozyImageFrameProps {
   priority?: boolean;
   className?: string;
   fit?: FitMode;
+  /** Preenche o container pai sem impor aspect-ratio fixo (ex.: carrossel). */
+  fillContainer?: boolean;
 }
 
 const aspect: Record<CozyVariant, string> = {
@@ -33,6 +35,7 @@ export default function CozyImageFrame({
   priority = false,
   className = "",
   fit = "cover",
+  fillContainer = false,
 }: CozyImageFrameProps) {
   const [failed, setFailed] = useState(false);
   const rotate = index % 2 === 0 ? "rotate-[0.5deg]" : "-rotate-[0.5deg]";
@@ -41,10 +44,13 @@ export default function CozyImageFrame({
   const roundedClass = isOrganic ? "rounded-full" : "rounded-[2.25rem]";
   const blobRounded = isOrganic ? "rounded-full" : "rounded-[2.5rem]";
 
+  const frameSize = fillContainer ? "h-full w-full" : aspect[variant];
+  const blobInset = fillContainer ? "-inset-1 sm:-inset-1.5" : "-inset-2 sm:-inset-3";
+
   if (failed) {
     return (
       <div
-        className={`relative ${aspect[variant]} ${roundedClass} ${blob} border border-primary/[0.08] flex items-center justify-center ${className}`}
+        className={`relative ${frameSize} ${roundedClass} ${blob} border border-primary/[0.08] flex items-center justify-center ${className}`}
       >
         <span className="text-primary/40 text-sm px-4 text-center">Imagem em breve</span>
       </div>
@@ -52,13 +58,13 @@ export default function CozyImageFrame({
   }
 
   return (
-    <div className={`relative min-w-0 ${className}`}>
+    <div className={`relative min-w-0 ${fillContainer ? "h-full w-full" : ""} ${className}`}>
       <div
-        className={`absolute -inset-2 sm:-inset-3 ${blobRounded} ${blob} opacity-80 blur-[1px]`}
+        className={`absolute ${blobInset} ${blobRounded} ${blob} opacity-80 blur-[1px]`}
         aria-hidden
       />
       <div
-        className={`relative ${aspect[variant]} ${roundedClass} overflow-hidden border border-primary/[0.08] shadow-[0_12px_40px_-16px_rgba(26,43,86,0.14)] ${rotate} ${fit === "contain" ? "bg-primary-pale/80" : ""}`}
+        className={`relative ${frameSize} ${roundedClass} overflow-hidden border border-primary/[0.08] shadow-[0_12px_40px_-16px_rgba(26,43,86,0.14)] ${rotate} ${fit === "contain" ? "bg-primary-pale/80" : ""}`}
       >
         <Image
           src={src}

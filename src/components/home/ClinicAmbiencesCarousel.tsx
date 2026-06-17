@@ -9,8 +9,8 @@ const AUTOPLAY_MS = 5000;
 function ChevronIcon({ direction }: { direction: "left" | "right" }) {
   return (
     <svg
-      width="20"
-      height="20"
+      width="18"
+      height="18"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -27,6 +27,9 @@ function ChevronIcon({ direction }: { direction: "left" | "right" }) {
     </svg>
   );
 }
+
+const arrowBtnClass =
+  "flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-full border border-primary/25 bg-white text-primary shadow-sm hover:bg-primary-pale transition-colors";
 
 export default function ClinicAmbiencesCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -84,7 +87,7 @@ export default function ClinicAmbiencesCarousel() {
   return (
     <div
       ref={regionRef}
-      className="relative max-w-4xl mx-auto mb-10 min-w-0"
+      className="relative max-w-2xl mx-auto mb-10 min-w-0"
       role="region"
       aria-roledescription="carrossel"
       aria-label="Galeria dos ambientes da clínica"
@@ -99,68 +102,96 @@ export default function ClinicAmbiencesCarousel() {
       onKeyDown={handleKeyDown}
       tabIndex={0}
     >
-      <div className="relative aspect-[4/3] sm:aspect-[16/10] min-w-0" aria-live="polite">
-        {HOME_MOSAIC_SLIDES.map((slide, index) => (
-          <div
-            key={slide.src}
-            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-              index === activeIndex ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
-            }`}
-            aria-hidden={index !== activeIndex}
+      <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+        {total > 1 && (
+          <button
+            type="button"
+            onClick={goPrev}
+            className={`${arrowBtnClass} hidden sm:flex`}
+            aria-label="Imagem anterior"
           >
-            <CozyImageFrame
-              src={slide.src}
-              alt={slide.alt}
-              variant="landscape"
-              index={index}
-              priority={index === 0}
-              className="h-full w-full"
-            />
-          </div>
-        ))}
+            <ChevronIcon direction="left" />
+          </button>
+        )}
+
+        <div
+          className="relative flex-1 min-w-0 h-[200px] min-[400px]:h-[220px] sm:h-[280px] md:h-[320px]"
+          aria-live="polite"
+        >
+          {HOME_MOSAIC_SLIDES.map((slide, index) => (
+            <div
+              key={slide.src}
+              className={`absolute inset-0 flex items-center justify-center transition-opacity duration-700 ease-in-out ${
+                index === activeIndex ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+              }`}
+              aria-hidden={index !== activeIndex}
+            >
+              <CozyImageFrame
+                src={slide.src}
+                alt={slide.alt}
+                variant="landscape"
+                index={index}
+                priority={index === 0}
+                fit="contain"
+                fillContainer
+                className="h-full w-full max-w-full"
+              />
+            </div>
+          ))}
+        </div>
 
         {total > 1 && (
-          <>
-            <button
-              type="button"
-              onClick={goPrev}
-              className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 z-20 flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-primary/25 bg-white/80 text-primary shadow-sm hover:bg-white transition-colors"
-              aria-label="Imagem anterior"
-            >
-              <ChevronIcon direction="left" />
-            </button>
-            <button
-              type="button"
-              onClick={goNext}
-              className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 z-20 flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-primary/25 bg-white/80 text-primary shadow-sm hover:bg-white transition-colors"
-              aria-label="Próxima imagem"
-            >
-              <ChevronIcon direction="right" />
-            </button>
-          </>
+          <button
+            type="button"
+            onClick={goNext}
+            className={`${arrowBtnClass} hidden sm:flex`}
+            aria-label="Próxima imagem"
+          >
+            <ChevronIcon direction="right" />
+          </button>
         )}
       </div>
 
       {total > 1 && (
-        <div className="flex justify-center gap-2 mt-4" role="tablist" aria-label="Selecionar imagem">
-          {HOME_MOSAIC_SLIDES.map((slide, index) => (
-            <button
-              key={slide.src}
-              type="button"
-              role="tab"
-              aria-selected={index === activeIndex}
-              aria-label={`Imagem ${index + 1} de ${total}: ${slide.alt}`}
-              onClick={() => goTo(index)}
-              className="flex h-11 w-11 items-center justify-center rounded-full"
-            >
-              <span
-                className={`block h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full transition-colors ${
-                  index === activeIndex ? "bg-primary" : "bg-primary/25 hover:bg-primary/40"
-                }`}
-                aria-hidden
-              />
-            </button>
-          ))}
+        <div className="flex items-center justify-center gap-3 sm:gap-4 mt-4">
+          <button
+            type="button"
+            onClick={goPrev}
+            className={`${arrowBtnClass} sm:hidden`}
+            aria-label="Imagem anterior"
+          >
+            <ChevronIcon direction="left" />
+          </button>
+
+          <div className="flex justify-center gap-1.5 sm:gap-2" role="tablist" aria-label="Selecionar imagem">
+            {HOME_MOSAIC_SLIDES.map((slide, index) => (
+              <button
+                key={slide.src}
+                type="button"
+                role="tab"
+                aria-selected={index === activeIndex}
+                aria-label={`Imagem ${index + 1} de ${total}: ${slide.alt}`}
+                onClick={() => goTo(index)}
+                className="flex h-11 w-11 items-center justify-center rounded-full"
+              >
+                <span
+                  className={`block h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full transition-colors ${
+                    index === activeIndex ? "bg-primary" : "bg-primary/25 hover:bg-primary/40"
+                  }`}
+                  aria-hidden
+                />
+              </button>
+            ))}
+          </div>
+
+          <button
+            type="button"
+            onClick={goNext}
+            className={`${arrowBtnClass} sm:hidden`}
+            aria-label="Próxima imagem"
+          >
+            <ChevronIcon direction="right" />
+          </button>
         </div>
       )}
     </div>
