@@ -1,11 +1,10 @@
 export const AREAS_INTRO_COPY = {
   eyebrow: "Especialidades",
   title: "Terapia integrada com equipe multidisciplinar",
-  linkLabel: "Ver todas as especialidades",
+  linkLabel: "Ver especialidades",
 };
 
-/** Especialidades em destaque na home (chips horizontais). */
-export const HOME_FEATURED_SPECIALTY_SLUGS = [
+export const PUBLIC_SPECIALTY_SLUGS = [
   "psychology",
   "speech-therapy",
   "occupational-therapy",
@@ -14,23 +13,20 @@ export const HOME_FEATURED_SPECIALTY_SLUGS = [
   "therapeutic-companion",
 ] as const;
 
-/** Lista flat de especialidades (sem agrupamento por tipo). */
-export const ALL_SPECIALTY_SLUGS = [
-  "psychology",
-  "neuropsychological-assessment",
-  "psychopedagogy",
-  "therapeutic-companion",
-  "psychomotricity",
-  "speech-therapy",
-  "occupational-therapy",
-  "sensory-integration",
-  "music-therapy",
-  "art-therapy",
-  "physiotherapy",
-  "nutrition",
-  "feeding-therapy",
-  "animal-assisted-therapy",
-] as const;
+export type PublicSpecialtySlug = (typeof PUBLIC_SPECIALTY_SLUGS)[number];
+
+/** Labels curtos padronizados para chips da home. */
+export const SPECIALTY_CHIP_LABELS: Record<PublicSpecialtySlug, string> = {
+  psychology: "Psicologia",
+  "speech-therapy": "Fonoaudiologia",
+  "occupational-therapy": "Terapia Ocupacional",
+  "neuropsychological-assessment": "Avaliação Neuro",
+  "feeding-therapy": "Terapia Alimentar",
+  "therapeutic-companion": "AT",
+};
+
+export const HOME_FEATURED_SPECIALTY_SLUGS = PUBLIC_SPECIALTY_SLUGS;
+export const ALL_SPECIALTY_SLUGS = PUBLIC_SPECIALTY_SLUGS;
 
 export const AREAS_PAGE_COPY = {
   description:

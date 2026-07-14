@@ -2,7 +2,10 @@ import SectionTitle from "@/components/shared/SectionTitle";
 import PageShell from "@/components/shared/PageShell";
 import RevealOnScroll from "@/components/shared/RevealOnScroll";
 import AreaLinkCard from "@/components/areas/AreaLinkCard";
-import { AREAS_PAGE_COPY } from "@/lib/constants/homeAreasContent";
+import {
+  AREAS_PAGE_COPY,
+  PUBLIC_SPECIALTY_SLUGS,
+} from "@/lib/constants/homeAreasContent";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { CLINIC_AREAS } from "@/lib/constants/clinicAreas";
 
@@ -13,6 +16,9 @@ export const metadata = buildPageMetadata({
 });
 
 export default function AreasOverviewPage() {
+  const publicSet = new Set<string>(PUBLIC_SPECIALTY_SLUGS);
+  const areas = CLINIC_AREAS.filter((area) => publicSet.has(area.slug));
+
   return (
     <PageShell className="py-16 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto min-w-0">
@@ -21,11 +27,12 @@ export default function AreasOverviewPage() {
           {AREAS_PAGE_COPY.description}
         </p>
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
-          {CLINIC_AREAS.map((area, cardIndex) => (
-            <li key={area.slug}>
+          {areas.map((area, cardIndex) => (
+            <li key={area.slug} className="h-full">
               <RevealOnScroll
                 delayMs={Math.min(300, (cardIndex % 6) * 60)}
                 index={cardIndex}
+                className="h-full"
               >
                 <AreaLinkCard
                   slug={area.slug}

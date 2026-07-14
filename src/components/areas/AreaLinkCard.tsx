@@ -32,7 +32,7 @@ export default function AreaLinkCard({
     return (
       <Link
         href={`/areas/${slug}`}
-        className="group flex flex-col min-h-full rounded-2xl border border-primary/[0.06] bg-white/85 p-4 sm:p-5 text-left shadow-[0_6px_20px_-10px_rgba(26,43,86,0.1)] hover:border-primary/15 hover:shadow-[0_12px_32px_-14px_rgba(26,43,86,0.14)] hover:-translate-y-0.5 transition-all duration-300 min-w-0"
+        className="group flex flex-col min-h-full h-full rounded-2xl border border-primary/[0.06] bg-white/85 p-4 sm:p-5 text-left shadow-[0_6px_20px_-10px_rgba(26,43,86,0.1)] hover:border-primary/15 hover:shadow-[0_12px_32px_-14px_rgba(26,43,86,0.14)] hover:-translate-y-0.5 transition-all duration-300 min-w-0"
       >
         <span
           className={`inline-flex h-10 w-10 items-center justify-center rounded-full border border-accent/50 ${chipBg} mb-3 group-hover:scale-105 transition-transform`}
@@ -56,7 +56,7 @@ export default function AreaLinkCard({
   return (
     <Link
       href={`/areas/${slug}`}
-      className={`group flex flex-col min-h-full p-6 sm:p-7 rounded-[2rem] border border-primary/[0.08] bg-gradient-to-br ${gradient} hover:border-primary/20 hover:shadow-[0_12px_40px_-16px_rgba(26,43,86,0.12)] hover:-translate-y-0.5 transition-all duration-300 text-left min-w-0 ${
+      className={`group flex flex-col min-h-full h-full p-6 sm:p-7 rounded-[2rem] border border-primary/[0.08] bg-gradient-to-br ${gradient} hover:border-primary/20 hover:shadow-[0_12px_40px_-16px_rgba(26,43,86,0.12)] hover:-translate-y-0.5 transition-all duration-300 text-left min-w-0 ${
         featured ? "sm:col-span-2" : ""
       }`}
     >

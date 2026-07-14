@@ -5,7 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { CLINIC_SPACES } from "@/lib/constants/spacesContent";
 import { spaceImageAlt, spaceMediaFor } from "@/lib/constants/clinicMedia";
 
-const AUTOPLAY_MS = 7000;
+const AUTOPLAY_MS = 8000;
 
 function ChevronIcon({ direction }: { direction: "left" | "right" }) {
   return (
@@ -30,7 +30,7 @@ function ChevronIcon({ direction }: { direction: "left" | "right" }) {
 }
 
 const arrowBtnClass =
-  "flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-full border border-primary/20 bg-white text-primary shadow-sm hover:bg-pastel-mint/40 transition-colors";
+  "flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-full border border-primary/20 bg-white text-primary shadow-sm hover:bg-pastel-mint/50 transition-colors";
 
 export default function SpacesCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -101,12 +101,12 @@ export default function SpacesCarousel() {
       onKeyDown={handleKeyDown}
       tabIndex={0}
     >
-      <div className="flex items-center gap-2 sm:gap-3 min-w-0 mb-6">
+      <div className="flex items-stretch gap-2 sm:gap-3 min-w-0 mb-5">
         {total > 1 && (
           <button
             type="button"
             onClick={goPrev}
-            className={`${arrowBtnClass} hidden md:flex`}
+            className={`${arrowBtnClass} hidden md:flex self-center`}
             aria-label="Ambiente anterior"
           >
             <ChevronIcon direction="left" />
@@ -117,29 +117,35 @@ export default function SpacesCarousel() {
           {CLINIC_SPACES.map((space, index) => {
             const media = spaceMediaFor(space);
             const isActive = index === activeIndex;
+            const brief = space.paragraphs[0] ?? "";
             return (
               <article
                 key={space.slug}
                 className={isActive ? "block" : "hidden"}
                 aria-hidden={!isActive}
               >
-                <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-2xl sm:rounded-3xl overflow-hidden bg-pastel-mint/30 ring-1 ring-primary/10 shadow-[0_12px_40px_-16px_rgba(26,43,86,0.2)] mb-5">
-                  <Image
-                    src={media.cover}
-                    alt={spaceImageAlt(space, 0)}
-                    fill
-                    className="object-cover object-center"
-                    sizes="(max-width: 640px) 92vw, (max-width: 1024px) 80vw, 960px"
-                    priority={index === 0}
-                  />
-                </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-primary tracking-tight mb-3 text-center sm:text-left">
-                  {space.title}
-                </h3>
-                <div className="space-y-3 text-primary/85 leading-relaxed text-sm sm:text-base text-center sm:text-left max-w-3xl">
-                  {space.paragraphs.map((p) => (
-                    <p key={p.slice(0, 40)}>{p}</p>
-                  ))}
+                <div className="grid md:grid-cols-2 gap-5 md:gap-8 items-center">
+                  <div className="relative w-full aspect-[16/11] sm:aspect-[16/10] rounded-2xl overflow-hidden bg-pastel-mint/30 ring-1 ring-primary/10 shadow-[0_12px_40px_-16px_rgba(26,43,86,0.18)]">
+                    <Image
+                      src={media.cover}
+                      alt={spaceImageAlt(space, 0)}
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 768px) 92vw, 480px"
+                      priority={index === 0}
+                    />
+                  </div>
+                  <div className="min-w-0 text-center md:text-left px-1">
+                    <p className="text-primary/55 text-[10px] sm:text-xs font-semibold uppercase tracking-widest mb-2">
+                      Ambiente {index + 1} de {total}
+                    </p>
+                    <h3 className="text-xl sm:text-2xl font-bold text-primary tracking-tight mb-3 text-balance">
+                      {space.title}
+                    </h3>
+                    <p className="text-primary/90 leading-relaxed text-sm sm:text-[0.95rem] text-pretty">
+                      {brief}
+                    </p>
+                  </div>
                 </div>
               </article>
             );
@@ -150,7 +156,7 @@ export default function SpacesCarousel() {
           <button
             type="button"
             onClick={goNext}
-            className={`${arrowBtnClass} hidden md:flex`}
+            className={`${arrowBtnClass} hidden md:flex self-center`}
             aria-label="Próximo ambiente"
           >
             <ChevronIcon direction="right" />
@@ -159,7 +165,7 @@ export default function SpacesCarousel() {
       </div>
 
       {total > 1 && (
-        <div className="flex items-center justify-center gap-2 sm:gap-3 mt-2 min-w-0">
+        <div className="flex items-center justify-center gap-2 sm:gap-3 mt-1 min-w-0">
           <button
             type="button"
             onClick={goPrev}
