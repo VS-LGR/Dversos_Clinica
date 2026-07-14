@@ -15,21 +15,20 @@ export default function BeDversoSection() {
     >
       <WaveDivider overlay position="top" className="absolute top-0 inset-x-0" fill="#ffffff" />
       <div className="relative z-10 max-w-6xl mx-auto min-w-0 pt-4">
-        <div className="flex justify-center mb-6 sm:mb-8">
-          <div className="relative w-full max-w-3xl sm:max-w-4xl aspect-[16/9] sm:aspect-[2/1]">
+        <div className="flex flex-col items-center gap-5 sm:gap-6 mb-8 sm:mb-10">
+          <BrandLogo variant="primary" size="lg" />
+
+          {/* Gráfico Seja Dverso como destaque compacto (não banner full-bleed) */}
+          <div className="w-full max-w-sm sm:max-w-md rounded-2xl overflow-hidden shadow-[0_12px_36px_-16px_rgba(26,43,86,0.28)] ring-1 ring-primary/10">
             <Image
               src={BE_DVERSO_SUPPORT_IMAGE}
-              alt="Seja DVERSO — cultura de cuidado e pertencimento"
-              fill
-              className="object-contain"
-              sizes="(max-width: 768px) 92vw, 896px"
-              priority={false}
+              alt="Seja Dverso"
+              width={720}
+              height={240}
+              className="w-full h-auto object-cover object-center"
+              sizes="(max-width: 640px) 90vw, 448px"
             />
           </div>
-        </div>
-
-        <div className="flex justify-center mb-4">
-          <BrandLogo variant="primary" size="lg" />
         </div>
 
         <h2
