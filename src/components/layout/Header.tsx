@@ -16,7 +16,7 @@ export default function Header() {
   const pathname = usePathname();
   const menuId = useId();
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const firstLinkRef = useRef<HTMLAnchorElement>(null);
+  const panelRef = useRef<HTMLElement>(null);
 
   const isActiveLink = (href: string) => {
     if (href === "/") return pathname === "/";
@@ -44,7 +44,6 @@ export default function Header() {
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     document.addEventListener("keydown", onKeyDown);
-    window.setTimeout(() => firstLinkRef.current?.focus(), 50);
 
     return () => {
       document.body.style.overflow = previousOverflow;
@@ -84,7 +83,7 @@ export default function Header() {
         <button
           ref={buttonRef}
           type="button"
-          className="md:hidden relative inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-primary bg-primary/[0.06] hover:bg-primary/[0.1] active:bg-primary/[0.14] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2"
+          className="md:hidden relative inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-primary bg-primary/[0.06] hover:bg-primary/[0.1] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2"
           aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
           aria-expanded={menuOpen}
           aria-controls={menuId}
@@ -110,27 +109,36 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Drawer full-screen mobile — padrão distinto do dropdown flutuante */}
-      {menuOpen ? (
-        <div
+      {/* Backdrop + drawer lateral (todas as opções visíveis) */}
+      <div
+        className={`md:hidden fixed inset-0 z-[60] ${menuOpen ? "pointer-events-auto" : "pointer-events-none"}`}
+        aria-hidden={!menuOpen}
+      >
+        <button
+          type="button"
+          tabIndex={menuOpen ? 0 : -1}
+          className={`absolute inset-0 bg-primary/40 transition-opacity duration-300 ${
+            menuOpen ? "opacity-100" : "opacity-0"
+          }`}
+          aria-label="Fechar menu"
+          onClick={() => setMenuOpen(false)}
+        />
+
+        <aside
+          ref={panelRef}
           id={menuId}
-          className="md:hidden fixed inset-0 z-[60] flex flex-col bg-primary text-white"
           role="dialog"
           aria-modal="true"
           aria-label="Menu de navegação"
+          className={`absolute top-0 right-0 h-full w-[min(100%,20rem)] bg-white shadow-[-12px_0_40px_-16px_rgba(26,43,86,0.35)] flex flex-col transition-transform duration-300 ease-out ${
+            menuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
         >
-          <div className="flex items-center justify-between h-14 px-4 border-b border-white/10 shrink-0">
-            <Link
-              href="/"
-              className="brightness-0 invert opacity-95"
-              aria-label="Clínica DVERSO — início"
-              onClick={() => setMenuOpen(false)}
-            >
-              <BrandLogo variant="primary" size="sm" className="!max-h-7" />
-            </Link>
+          <div className="flex items-center justify-between h-14 px-4 border-b border-primary/[0.08] shrink-0">
+            <p className="text-sm font-semibold text-primary tracking-tight">Menu</p>
             <button
               type="button"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full text-primary hover:bg-pastel-mint/50 transition-colors"
               aria-label="Fechar menu"
               onClick={() => {
                 setMenuOpen(false);
@@ -148,39 +156,24 @@ export default function Header() {
             </button>
           </div>
 
-          <nav
-            className="flex-1 overflow-y-auto px-6 py-8"
-            aria-label="Navegação mobile"
-          >
+          <nav className="flex-1 px-3 py-4 overflow-y-auto" aria-label="Navegação mobile">
             <ul className="flex flex-col gap-1">
-              {SITE_NAV_LINKS.map(({ href, label }, index) => {
+              {SITE_NAV_LINKS.map(({ href, label }) => {
                 const active = isActiveLink(href);
                 return (
                   <li key={href}>
                     <Link
-                      ref={index === 0 ? firstLinkRef : undefined}
                       href={href}
                       prefetch={href === "/blog" ? true : undefined}
                       aria-current={active ? "page" : undefined}
                       onClick={() => setMenuOpen(false)}
-                      className={`group flex items-center justify-between gap-4 py-4 border-b border-white/10 text-[1.35rem] font-semibold tracking-tight transition-colors ${
-                        active ? "text-white" : "text-white/75 hover:text-white"
+                      className={`flex w-full items-center min-h-12 px-4 py-3 rounded-xl text-base font-semibold tracking-tight transition-colors ${
+                        active
+                          ? "bg-pastel-mint/70 text-primary"
+                          : "text-primary/85 hover:bg-pastel-aqua/40"
                       }`}
                     >
-                      <span>{label}</span>
-                      {active ? (
-                        <span
-                          className="h-2 w-2 rounded-full bg-pastel-aqua shrink-0"
-                          aria-hidden
-                        />
-                      ) : (
-                        <span
-                          className="text-white/35 text-lg leading-none group-hover:text-white/60 transition-colors"
-                          aria-hidden
-                        >
-                          →
-                        </span>
-                      )}
+                      {label}
                     </Link>
                   </li>
                 );
@@ -188,19 +181,19 @@ export default function Header() {
             </ul>
           </nav>
 
-          <div className="shrink-0 px-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-2 border-t border-white/10">
+          <div className="shrink-0 p-4 border-t border-primary/[0.08] pb-[max(1rem,env(safe-area-inset-bottom))]">
             <a
               href={formatWhatsAppHref(DEFAULT_WHATSAPP_NUMBER, HOME_HERO.ctaMessage)}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex w-full items-center justify-center rounded-2xl bg-white text-primary font-semibold text-sm px-5 py-3.5 hover:bg-white/95 transition-colors"
+              className="flex w-full items-center justify-center rounded-2xl bg-primary text-white font-semibold text-sm px-4 py-3.5 hover:bg-primary-light transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               Falar no WhatsApp
             </a>
           </div>
-        </div>
-      ) : null}
+        </aside>
+      </div>
     </header>
   );
 }
