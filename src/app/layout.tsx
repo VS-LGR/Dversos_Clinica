@@ -3,7 +3,6 @@ import "@/styles/globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ScrollBar from "@/components/layout/ScrollBar";
-import ContactStrip from "@/components/layout/ContactStrip";
 import LocalBusinessJsonLd from "@/components/seo/LocalBusinessJsonLd";
 import GoogleTags from "@/components/analytics/GoogleTags";
 import VlibrasWidget from "@/components/accessibility/VlibrasWidget";
@@ -35,7 +34,6 @@ export default function RootLayout({
           Pular para o conteúdo
         </a>
         <Header />
-        <ContactStrip />
         <main id="main-content" className="flex-1 overflow-x-clip">
           {children}
         </main>
