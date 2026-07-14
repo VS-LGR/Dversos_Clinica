@@ -6,8 +6,7 @@ import BrandLogo from "@/components/shared/BrandLogo";
 
 const INTRO_DURATION_MS = 1600;
 const INTRO_OUT_START_MS = 1150;
-const LOTTIE_SRC =
-  "https://lottie.host/8b7c9249-b443-49ee-98dc-2dd395955e94/7KIj6H4gpL.lottie";
+const LOTTIE_SRC = "/video/_Loader%20DversosClinica_Novo.lottie";
 
 interface OpeningAnimationProps {
   children: React.ReactNode;
