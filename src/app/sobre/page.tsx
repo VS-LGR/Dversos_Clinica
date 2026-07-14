@@ -6,7 +6,8 @@ import SoftTextLink from "@/components/shared/SoftTextLink";
 import WaveDivider from "@/components/shared/WaveDivider";
 import PageShell from "@/components/shared/PageShell";
 import LeadersGroupSection from "@/components/shared/LeadersGroupSection";
-import { SOBRE_GALLERY, EDITORIAL_THERAPY_ABA } from "@/lib/constants/clinicMedia";
+import PicStickyScrollImage from "@/components/sobre/PicStickyScrollImage";
+import { SOBRE_GALLERY } from "@/lib/constants/clinicMedia";
 import { ABOUT_CLINIC, CARE_SESSION_INFO } from "@/lib/constants/siteContent";
 import { CARE_SUPERVISION_INTRO } from "@/lib/constants/processFlow";
 import { DEFAULT_WHATSAPP_NUMBER } from "@/lib/constants/clinicAreas";
@@ -74,8 +75,8 @@ export default function SobrePage() {
         id="como-funciona"
         className="py-12 sm:py-16 px-4 sm:px-6 max-w-6xl mx-auto bg-pastel-aqua/25 min-w-0"
       >
-        <div className="grid lg:grid-cols-2 gap-10 items-start">
-          <div>
+        <div className="grid lg:grid-cols-2 gap-10 items-stretch">
+          <div className="order-2 lg:order-1 min-w-0">
             <h2 className="text-2xl font-bold text-primary mb-2">
               Atendimento com Plano Individualizado Comportamental (PIC)
             </h2>
@@ -83,14 +84,8 @@ export default function SobrePage() {
             <p className="text-primary/80 mb-8 max-w-3xl">{CARE_SESSION_INFO.intro}</p>
             <CareProcessTimeline variant="vertical" />
           </div>
-          <div className="max-w-md mx-auto lg:ml-auto w-full">
-            <CozyImageFrame
-              src={EDITORIAL_THERAPY_ABA}
-              alt="Intervenção baseada em ABA — metodologia da Clínica DVERSO"
-              variant="landscape"
-              index={2}
-              fit="contain"
-            />
+          <div className="order-1 lg:order-2 min-w-0 lg:h-auto">
+            <PicStickyScrollImage />
           </div>
         </div>
       </section>

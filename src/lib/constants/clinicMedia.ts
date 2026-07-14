@@ -166,6 +166,40 @@ export const EDITORIAL_KID_PAINTING = img("Kid_Painting.jpg");
 export const EDITORIAL_THERAPY_ABA = img("Therapy_ABA.png");
 export const ABA_PROCESS_INFOGRAPHIC = img("AtendimentoABA.png");
 
+/** Galeria sticky da seção PIC em Sobre — troca com o scroll. */
+export const PIC_SCROLL_GALLERY = [
+  {
+    src: EDITORIAL_THERAPY_ABA,
+    alt: "Intervenção baseada em ABA — metodologia da Clínica DVERSO",
+    fit: "contain" as const,
+  },
+  {
+    src: img("Extras", "DSC00369.jpg"),
+    alt: "Ambiente acolhedor da Clínica DVERSO",
+    fit: "cover" as const,
+  },
+  {
+    src: img("Brinquedoteca", "DSC00280.jpg"),
+    alt: "Brinquedoteca da Clínica DVERSO",
+    fit: "cover" as const,
+  },
+  {
+    src: img("Consultórios", "Integração Sensorial", "DSC03322.jpg.jpeg"),
+    alt: "Sala de integração sensorial",
+    fit: "cover" as const,
+  },
+  {
+    src: img("Horta", "DSC03335.jpg.jpeg"),
+    alt: "Horta terapêutica da Clínica DVERSO",
+    fit: "cover" as const,
+  },
+  {
+    src: img("Extras", "DSC00441.jpg"),
+    alt: "Recepção e ambientes da clínica",
+    fit: "cover" as const,
+  },
+] as const;
+
 export const HOME_SPECIALTIES_COLLAGE = {
   hero: {
     src: img("Consultórios", "Integração Sensorial", "DSC09476.jpg"),
