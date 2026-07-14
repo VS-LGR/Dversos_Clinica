@@ -166,7 +166,7 @@ export const EDITORIAL_KID_PAINTING = img("Kid_Painting.jpg");
 export const EDITORIAL_THERAPY_ABA = img("Therapy_ABA.png");
 export const ABA_PROCESS_INFOGRAPHIC = img("AtendimentoABA.png");
 
-/** Galeria sticky da seção PIC em Sobre — troca com o scroll. */
+/** Galeria sticky da seção PIC em Sobre — poucas imagens para troca fluida. */
 export const PIC_SCROLL_GALLERY = [
   {
     src: EDITORIAL_THERAPY_ABA,
@@ -181,21 +181,6 @@ export const PIC_SCROLL_GALLERY = [
   {
     src: img("Brinquedoteca", "DSC00280.jpg"),
     alt: "Brinquedoteca da Clínica DVERSO",
-    fit: "cover" as const,
-  },
-  {
-    src: img("Consultórios", "Integração Sensorial", "DSC03322.jpg.jpeg"),
-    alt: "Sala de integração sensorial",
-    fit: "cover" as const,
-  },
-  {
-    src: img("Horta", "DSC03335.jpg.jpeg"),
-    alt: "Horta terapêutica da Clínica DVERSO",
-    fit: "cover" as const,
-  },
-  {
-    src: img("Extras", "DSC00441.jpg"),
-    alt: "Recepção e ambientes da clínica",
     fit: "cover" as const,
   },
 ] as const;
