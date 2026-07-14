@@ -25,6 +25,14 @@ export const DEFAULT_METADATA: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
+      { url: "/icon-48.png", type: "image/png", sizes: "48x48" },
+    ],
+    apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
+    shortcut: "/favicon.png",
+  },
   openGraph: {
     title: "Clínica DVERSO | Saúde Integrada em Sorocaba",
     description:

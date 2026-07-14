@@ -38,10 +38,10 @@ export default function OpeningAnimation({ children, onComplete }: OpeningAnimat
   if (!mounted) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center gap-5 bg-white" aria-hidden>
+        <BrandLogo variant="solo" size="lg" priority />
         <div className="w-[160px] sm:w-[200px] max-w-[220px]">
           <DotLottieReact src={LOTTIE_SRC} loop autoplay />
         </div>
-        <BrandLogo variant="solo" size="lg" priority />
       </div>
     );
   }
@@ -56,14 +56,14 @@ export default function OpeningAnimation({ children, onComplete }: OpeningAnimat
           aria-hidden
         >
           <div className="flex flex-col items-center gap-5 sm:gap-6 text-center px-4">
-            <div className="w-[140px] sm:w-[180px] max-w-[200px]">
-              <DotLottieReact src={LOTTIE_SRC} loop autoplay />
-            </div>
             <div
               className="animate-intro-logo opacity-0 flex justify-center"
               style={{ animationFillMode: "forwards" }}
             >
               <BrandLogo variant="solo" size="lg" priority />
+            </div>
+            <div className="w-[140px] sm:w-[180px] max-w-[200px]">
+              <DotLottieReact src={LOTTIE_SRC} loop autoplay />
             </div>
             <span
               className="mt-1 block h-0.5 w-12 mx-auto rounded-full bg-pastel-mint animate-intro-tagline opacity-0"

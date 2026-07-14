@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
 import { SITE_CONTACT } from "@/lib/constants/siteContact";
-import { BRAND_LOGO_SOLO } from "@/lib/constants/clinicMedia";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
@@ -15,9 +14,14 @@ export default function manifest(): MetadataRoute.Manifest {
     lang: "pt-BR",
     icons: [
       {
-        src: BRAND_LOGO_SOLO,
-        sizes: "any",
-        type: "image/webp",
+        src: "/icon-48.png",
+        sizes: "48x48",
+        type: "image/png",
+      },
+      {
+        src: "/icon.png",
+        sizes: "512x512",
+        type: "image/png",
       },
     ],
   };
