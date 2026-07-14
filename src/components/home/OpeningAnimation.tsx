@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import BrandLogo from "@/components/shared/BrandLogo";
 
 const INTRO_DURATION_MS = 1600;
@@ -36,13 +35,7 @@ export default function OpeningAnimation({ children, onComplete }: OpeningAnimat
   if (!mounted) {
     return (
       <div className="min-h-[60vh] flex items-center justify-center bg-white" aria-hidden>
-        <div className="w-[160px] sm:w-[200px] max-w-[220px]">
-          <DotLottieReact
-            src="https://lottie.host/8b7c9249-b443-49ee-98dc-2dd395955e94/7KIj6H4gpL.lottie"
-            loop
-            autoplay
-          />
-        </div>
+        <BrandLogo variant="solo" size="lg" priority />
       </div>
     );
   }
@@ -57,21 +50,14 @@ export default function OpeningAnimation({ children, onComplete }: OpeningAnimat
           aria-hidden
         >
           <div className="flex flex-col items-center gap-5 sm:gap-6 text-center px-4">
-            <div className="w-[140px] sm:w-[180px] max-w-[200px]">
-              <DotLottieReact
-                src="https://lottie.host/8b7c9249-b443-49ee-98dc-2dd395955e94/7KIj6H4gpL.lottie"
-                loop
-                autoplay
-              />
-            </div>
             <div
               className="animate-intro-logo opacity-0 flex justify-center"
               style={{ animationFillMode: "forwards" }}
             >
-              <BrandLogo variant="alt" size="lg" priority />
+              <BrandLogo variant="solo" size="lg" priority />
             </div>
             <span
-              className="mt-3 block h-0.5 w-12 mx-auto rounded-full bg-accent/70 animate-intro-tagline opacity-0"
+              className="mt-3 block h-0.5 w-12 mx-auto rounded-full bg-pastel-mint animate-intro-tagline opacity-0"
               style={{ animationFillMode: "forwards", animationDelay: "0.15s" }}
             />
             <p

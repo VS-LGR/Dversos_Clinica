@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SITE_CONTACT } from "@/lib/constants/siteContact";
+import { BRAND_LOGO_SOLO } from "@/lib/constants/clinicMedia";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
@@ -14,7 +15,7 @@ export default function manifest(): MetadataRoute.Manifest {
     lang: "pt-BR",
     icons: [
       {
-        src: "/images/Ativo 1LogoDverso.webp",
+        src: BRAND_LOGO_SOLO,
         sizes: "any",
         type: "image/webp",
       },

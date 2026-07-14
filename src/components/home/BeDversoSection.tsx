@@ -1,8 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import BrandLogo from "@/components/shared/BrandLogo";
 import WaveDivider from "@/components/shared/WaveDivider";
+import { BE_DVERSO_SUPPORT_IMAGE } from "@/lib/constants/clinicMedia";
 import { PASTEL_SURFACE_SOFT, pastelByIndex } from "@/lib/constants/pastelPalette";
 
 export default function BeDversoSection() {
@@ -13,12 +15,23 @@ export default function BeDversoSection() {
     >
       <WaveDivider overlay position="top" className="absolute top-0 inset-x-0" fill="#ffffff" />
       <div className="relative z-10 max-w-6xl mx-auto min-w-0 pt-4">
-        <div className="flex justify-center mb-4">
-          <BrandLogo variant="alt" size="lg" />
+        <div className="flex justify-center mb-6 sm:mb-8">
+          <div className="relative w-full max-w-3xl sm:max-w-4xl aspect-[16/9] sm:aspect-[2/1]">
+            <Image
+              src={BE_DVERSO_SUPPORT_IMAGE}
+              alt="Seja DVERSO — cultura de cuidado e pertencimento"
+              fill
+              className="object-contain"
+              sizes="(max-width: 768px) 92vw, 896px"
+              priority={false}
+            />
+          </div>
         </div>
-        <p className="text-primary/60 text-xs font-medium uppercase tracking-widest mb-2 text-center">
-          Seja DVERSO
-        </p>
+
+        <div className="flex justify-center mb-4">
+          <BrandLogo variant="primary" size="lg" />
+        </div>
+
         <h2
           id="be-dverso-title"
           className="text-2xl sm:text-3xl font-bold text-primary tracking-tight mb-4 text-center"
@@ -44,7 +57,7 @@ export default function BeDversoSection() {
             </div>
           </article>
           <article className={`rounded-xl border p-6 ${pastelByIndex(PASTEL_SURFACE_SOFT, 1)}`}>
-            <h3 className="text-lg font-semibold text-primary mb-2">Para profissionais — #SEJADVERSO</h3>
+            <h3 className="text-lg font-semibold text-primary mb-2">Para profissionais</h3>
             <p className="text-sm text-primary/80 mb-4">
               Supervisão clínica contínua, formação baseada em evidências e equipe colaborativa. Faça parte da DVERSO.
             </p>

@@ -34,7 +34,7 @@ export const ABOUT_CLINIC = {
     "Na DVERSO, o cuidado ultrapassa os limites da clínica. Nosso objetivo é promover avanços reais, funcionais e sustentáveis na rotina, ampliando autonomia, participação e qualidade de vida nos diferentes contextos em que cada pessoa está inserida.",
   ],
   missionTitle: "Ser DVERSO também é crescer junto",
-  missionTagline: "#SEJADVERSO",
+  missionTagline: "Ser DVERSO",
 };
 
 export const CAREERS_COPY = {

@@ -23,7 +23,7 @@ export default function SejaColaboradorPage() {
     <PageShell>
       <InstitutionalPageHero
         title={CAREERS_COPY.title}
-        subtitle="#SEJADVERSO"
+        subtitle="Seja DVERSO"
         lead={CAREERS_COPY.subtitle}
       />
 
