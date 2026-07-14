@@ -11,7 +11,6 @@ export default function Header() {
   const pathname = usePathname();
   const menuId = useId();
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const panelRef = useRef<HTMLDivElement>(null);
 
   const isActiveLink = (href: string) => {
     if (href === "/") return pathname === "/";
@@ -63,6 +62,7 @@ export default function Header() {
             <Link
               key={href}
               href={href}
+              prefetch={href === "/blog" ? true : undefined}
               className={`px-3 py-2 rounded-full text-sm font-medium transition-colors border ${
                 isActiveLink(href)
                   ? "text-primary border-primary/25 bg-pastel-mint/50"
@@ -103,57 +103,44 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Overlay + painel mobile */}
-      <div
-        className={`md:hidden fixed inset-x-0 top-14 bottom-0 z-40 transition-[visibility] duration-200 ${
-          menuOpen ? "visible" : "invisible pointer-events-none"
-        }`}
-        aria-hidden={!menuOpen}
-      >
-        <button
-          type="button"
-          tabIndex={menuOpen ? 0 : -1}
-          className={`absolute inset-0 bg-primary/35 backdrop-blur-[2px] transition-opacity duration-200 ${
-            menuOpen ? "opacity-100" : "opacity-0"
-          }`}
-          aria-label="Fechar menu"
-          onClick={() => setMenuOpen(false)}
-        />
+      {/* Só monta overlay quando aberto — evita “primeiro clique morto” */}
+      {menuOpen ? (
+        <div className="md:hidden fixed inset-x-0 top-14 bottom-0 z-40" id={menuId}>
+          <button
+            type="button"
+            className="absolute inset-0 bg-primary/35 backdrop-blur-[2px]"
+            aria-label="Fechar menu"
+            onClick={() => setMenuOpen(false)}
+          />
 
-        <div
-          ref={panelRef}
-          id={menuId}
-          className={`relative z-10 mx-3 mt-2 rounded-2xl border border-primary/10 bg-white shadow-[0_18px_48px_-20px_rgba(26,43,86,0.35)] overflow-hidden transition-all duration-200 origin-top ${
-            menuOpen
-              ? "opacity-100 translate-y-0 scale-100"
-              : "opacity-0 -translate-y-2 scale-[0.98]"
-          }`}
-        >
-          <nav className="px-2 py-2" aria-label="Navegação mobile">
-            <ul className="flex flex-col">
-              {SITE_NAV_LINKS.map(({ href, label }) => {
-                const active = isActiveLink(href);
-                return (
-                  <li key={href}>
-                    <Link
-                      href={href}
-                      className={`flex items-center min-h-12 px-4 py-3 rounded-xl text-[15px] font-semibold tracking-tight transition-colors ${
-                        active
-                          ? "bg-pastel-mint/70 text-primary"
-                          : "text-primary/90 hover:bg-pastel-aqua/35 active:bg-pastel-aqua/50"
-                      }`}
-                      aria-current={active ? "page" : undefined}
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      {label}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
+          <div className="relative z-10 mx-3 mt-2 rounded-2xl border border-primary/10 bg-white shadow-[0_18px_48px_-20px_rgba(26,43,86,0.35)] overflow-hidden animate-fade-in">
+            <nav className="px-2 py-2" aria-label="Navegação mobile">
+              <ul className="flex flex-col">
+                {SITE_NAV_LINKS.map(({ href, label }) => {
+                  const active = isActiveLink(href);
+                  return (
+                    <li key={href}>
+                      <Link
+                        href={href}
+                        prefetch={href === "/blog" ? true : undefined}
+                        className={`flex items-center min-h-12 px-4 py-3 rounded-xl text-[15px] font-semibold tracking-tight transition-colors ${
+                          active
+                            ? "bg-pastel-mint/70 text-primary"
+                            : "text-primary/90 hover:bg-pastel-aqua/35 active:bg-pastel-aqua/50"
+                        }`}
+                        aria-current={active ? "page" : undefined}
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        {label}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </nav>
+          </div>
         </div>
-      </div>
+      ) : null}
     </header>
   );
 }

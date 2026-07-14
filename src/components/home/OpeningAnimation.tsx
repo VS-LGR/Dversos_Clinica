@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import BrandLogo from "@/components/shared/BrandLogo";
 
 const INTRO_DURATION_MS = 1600;
 const INTRO_OUT_START_MS = 1150;
@@ -36,8 +35,7 @@ export default function OpeningAnimation({ children, onComplete }: OpeningAnimat
 
   if (!mounted) {
     return (
-      <div className="min-h-[60vh] flex flex-col items-center justify-center gap-5 bg-white" aria-hidden>
-        <BrandLogo variant="solo" size="lg" priority />
+      <div className="min-h-[60vh] flex items-center justify-center bg-white" aria-hidden>
         <div className="w-[160px] sm:w-[200px] max-w-[220px]">
           <DotLottieReact src={LOTTIE_SRC} loop autoplay />
         </div>
@@ -56,12 +54,9 @@ export default function OpeningAnimation({ children, onComplete }: OpeningAnimat
         >
           <div className="flex flex-col items-center gap-5 sm:gap-6 text-center px-4">
             <div
-              className="animate-intro-logo opacity-0 flex justify-center"
+              className="w-[140px] sm:w-[180px] max-w-[200px] animate-intro-logo opacity-0"
               style={{ animationFillMode: "forwards" }}
             >
-              <BrandLogo variant="solo" size="lg" priority />
-            </div>
-            <div className="w-[140px] sm:w-[180px] max-w-[200px]">
               <DotLottieReact src={LOTTIE_SRC} loop autoplay />
             </div>
             <span
