@@ -1,10 +1,14 @@
+import Link from "next/link";
 import EditorialCollage from "@/components/shared/EditorialCollage";
 import SoftTextLink from "@/components/shared/SoftTextLink";
-import AreaLinkCard from "@/components/areas/AreaLinkCard";
 import RevealOnScroll from "@/components/shared/RevealOnScroll";
+import { AreaSymbol } from "@/lib/constants/areaIcons";
 import { CLINIC_AREAS } from "@/lib/constants/clinicAreas";
 import { HOME_SPECIALTIES_COLLAGE } from "@/lib/constants/clinicMedia";
-import { ALL_SPECIALTY_SLUGS, AREAS_INTRO_COPY } from "@/lib/constants/homeAreasContent";
+import {
+  AREAS_INTRO_COPY,
+  HOME_FEATURED_SPECIALTY_SLUGS,
+} from "@/lib/constants/homeAreasContent";
 
 export default function AreasGrid() {
   const areaBySlug = new Map(CLINIC_AREAS.map((area) => [area.slug, area]));
@@ -15,7 +19,7 @@ export default function AreasGrid() {
       aria-labelledby="areas-title"
     >
       <div className="max-w-6xl mx-auto min-w-0">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center mb-14 sm:mb-16">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           <div className="min-w-0 order-2 lg:order-1">
             <EditorialCollage
               hero={HOME_SPECIALTIES_COLLAGE.hero}
@@ -31,39 +35,46 @@ export default function AreasGrid() {
             </p>
             <h2
               id="areas-title"
-              className="text-2xl sm:text-3xl md:text-[2rem] font-bold text-primary tracking-tight leading-tight text-balance mb-4 sm:mb-5"
+              className="text-2xl sm:text-3xl md:text-[2rem] font-bold text-primary tracking-tight leading-tight text-balance mb-6 sm:mb-8"
             >
               {AREAS_INTRO_COPY.title}
             </h2>
-            <p className="text-sm sm:text-base text-primary/85 leading-relaxed mb-6 max-w-xl mx-auto lg:mx-0">
-              {AREAS_INTRO_COPY.description}
-            </p>
+
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 max-w-xl mx-auto lg:mx-0">
+              {HOME_FEATURED_SPECIALTY_SLUGS.map((slug, cardIndex) => {
+                const area = areaBySlug.get(slug);
+                if (!area) return null;
+                return (
+                  <RevealOnScroll
+                    key={area.slug}
+                    delayMs={Math.min(240, cardIndex * 50)}
+                    index={cardIndex}
+                  >
+                    <li>
+                      <Link
+                        href={`/areas/${area.slug}`}
+                        className="group flex items-center gap-3 rounded-2xl border border-primary/[0.06] bg-white/85 px-3.5 py-3 text-left shadow-[0_6px_20px_-10px_rgba(26,43,86,0.1)] hover:border-primary/15 hover:shadow-[0_12px_32px_-14px_rgba(26,43,86,0.14)] transition-all duration-300 min-w-0"
+                      >
+                        <span
+                          className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-pastel-mint/50 group-hover:scale-105 transition-transform"
+                          aria-hidden
+                        >
+                          <AreaSymbol slug={area.slug} />
+                        </span>
+                        <span className="font-semibold text-primary text-sm sm:text-base text-balance group-hover:text-primary-light transition-colors">
+                          {area.shortName}
+                        </span>
+                      </Link>
+                    </li>
+                  </RevealOnScroll>
+                );
+              })}
+            </ul>
+
             <SoftTextLink href="/areas" className="text-sm sm:text-base">
               {AREAS_INTRO_COPY.linkLabel}
             </SoftTextLink>
           </div>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-          {ALL_SPECIALTY_SLUGS.map((slug, cardIndex) => {
-            const area = areaBySlug.get(slug);
-            if (!area) return null;
-            return (
-              <RevealOnScroll
-                key={area.slug}
-                delayMs={Math.min(300, (cardIndex % 6) * 60)}
-                index={cardIndex}
-              >
-                <AreaLinkCard
-                  slug={area.slug}
-                  name={area.name}
-                  description={area.description}
-                  cardIndex={cardIndex}
-                  variant="cozy"
-                />
-              </RevealOnScroll>
-            );
-          })}
         </div>
       </div>
     </section>

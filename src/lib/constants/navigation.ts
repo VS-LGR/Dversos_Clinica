@@ -1,7 +1,7 @@
 /** Links de navegação compartilhados (header / footer). */
 export const SITE_NAV_LINKS = [
   { href: "/", label: "Início" },
-  { href: "/sobre", label: "Sobre" },
+  { href: "/sobre", label: "Sobre nós" },
   { href: "/areas", label: "Especialidades" },
   { href: "/espacos", label: "Espaços" },
   { href: "/blog", label: "Blog" },

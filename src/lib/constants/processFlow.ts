@@ -8,15 +8,11 @@ export interface CareProcessStep {
   shortDescription: string;
 }
 
+/** Texto da supervisão pré-atendimento — agora no intro da seção PIC. */
+export const CARE_SUPERVISION_INTRO =
+  "Antes do primeiro atendimento, a DVERSO disponibiliza aos responsáveis uma conversa com a Supervisora Clínica, que ouve as principais preocupações da família, entende as dificuldades do dia a dia, identifica as demandas iniciais do aprendiz e define quais terapias e profissionais serão mais indicados.";
+
 export const CARE_PROCESS_STEPS: CareProcessStep[] = [
-  {
-    step: 0,
-    title: "Supervisão (antes do 1º atendimento)",
-    description:
-      "Antes do primeiro atendimento, a DVERSO disponibiliza aos responsáveis uma conversa com a Supervisora Clínica, que ouve as principais preocupações da família, entende as dificuldades do dia a dia, identifica as demandas iniciais do aprendiz e define quais terapias e profissionais serão mais indicados.",
-    shortDescription:
-      "Conversa com a Supervisora Clínica para mapear demandas e definir terapias indicadas.",
-  },
   {
     step: 1,
     title: "Anamnese",
@@ -62,9 +58,9 @@ export const CARE_PROCESS_STEPS: CareProcessStep[] = [
 /** Alt completo da infografia AtendimentoABA.png — VLibras e leitores de tela. */
 export function buildAbaProcessInfographicAlt(): string {
   const steps = CARE_PROCESS_STEPS.map(
-    (s) => `Etapa ${s.step + 1} — ${s.title}: ${s.description}`,
+    (s) => `Etapa ${s.step} — ${s.title}: ${s.description}`,
   ).join(" ");
-  return `Atendimento ABA com plano individualizado. ${CARE_SESSION_INFO.intro} ${steps}`;
+  return `Atendimento com Plano Individualizado Comportamental (PIC). ${CARE_SUPERVISION_INTRO} ${CARE_SESSION_INFO.intro} ${steps}`;
 }
 
 export const ABA_PROCESS_INFOGRAPHIC_ALT = buildAbaProcessInfographicAlt();

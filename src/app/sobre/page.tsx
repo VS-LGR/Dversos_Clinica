@@ -5,8 +5,10 @@ import CozyImageFrame from "@/components/shared/CozyImageFrame";
 import SoftTextLink from "@/components/shared/SoftTextLink";
 import WaveDivider from "@/components/shared/WaveDivider";
 import PageShell from "@/components/shared/PageShell";
+import LeadersGroupSection from "@/components/shared/LeadersGroupSection";
 import { SOBRE_GALLERY, EDITORIAL_THERAPY_ABA } from "@/lib/constants/clinicMedia";
 import { ABOUT_CLINIC, CARE_SESSION_INFO } from "@/lib/constants/siteContent";
+import { CARE_SUPERVISION_INTRO } from "@/lib/constants/processFlow";
 import { DEFAULT_WHATSAPP_NUMBER } from "@/lib/constants/clinicAreas";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
@@ -32,8 +34,8 @@ export default function SobrePage() {
         showBrandLogo
       />
 
-      <section className="py-12 sm:py-16 px-4 sm:px-6 max-w-6xl mx-auto min-w-0">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 bg-pastel-mint/30 min-w-0">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 lg:gap-14 items-end">
           <div className="min-w-0">
             <h2 className="text-2xl font-bold text-primary mb-6">
               {ABOUT_CLINIC.originTitle}
@@ -66,17 +68,18 @@ export default function SobrePage() {
         </div>
       </section>
 
-      <WaveDivider fill="#fff8f2" variant="soft" />
+      <WaveDivider fill="#f4f7fb" variant="soft" />
 
       <section
         id="como-funciona"
-        className="py-12 sm:py-16 px-4 sm:px-6 max-w-6xl mx-auto bg-pastel-mint/25 min-w-0"
+        className="py-12 sm:py-16 px-4 sm:px-6 max-w-6xl mx-auto bg-pastel-aqua/25 min-w-0"
       >
         <div className="grid lg:grid-cols-2 gap-10 items-start">
           <div>
             <h2 className="text-2xl font-bold text-primary mb-2">
-              Atendimento ABA com plano individualizado
+              Atendimento com Plano Individualizado Comportamental (PIC)
             </h2>
+            <p className="text-primary/80 mb-4 max-w-3xl">{CARE_SUPERVISION_INTRO}</p>
             <p className="text-primary/80 mb-8 max-w-3xl">{CARE_SESSION_INFO.intro}</p>
             <CareProcessTimeline variant="vertical" />
           </div>
@@ -92,7 +95,7 @@ export default function SobrePage() {
         </div>
       </section>
 
-      <WaveDivider fill="#fff8f2" variant="soft" />
+      <WaveDivider fill="#f4f7fb" variant="soft" />
 
       <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto min-w-0">
         <h2 className="text-2xl font-bold text-primary mb-4">
@@ -106,6 +109,18 @@ export default function SobrePage() {
           <SoftTextLink href="/seja-colaborador">Seja colaborador</SoftTextLink>
           <SoftTextLink href="/espacos">Nossos espaços</SoftTextLink>
           <SoftTextLink href="/areas">Áreas de atuação</SoftTextLink>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-pastel-mint/25 min-w-0">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold text-primary text-center tracking-tight mb-10">
+            Lideranças DVERSO
+          </h2>
+          <LeadersGroupSection showLogo expandedCards />
+          <p className="text-center mt-8">
+            <SoftTextLink href="/liderancas">Ver página de lideranças</SoftTextLink>
+          </p>
         </div>
       </section>
 

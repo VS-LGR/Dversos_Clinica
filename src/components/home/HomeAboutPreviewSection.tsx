@@ -82,13 +82,10 @@ export default function HomeAboutPreviewSection() {
             </p>
             <h2
               id="home-about-title"
-              className="text-2xl sm:text-3xl md:text-[2rem] font-bold text-primary tracking-tight leading-tight text-balance mb-4 sm:mb-5"
+              className="text-2xl sm:text-3xl md:text-[2rem] font-bold text-primary tracking-tight leading-tight text-balance mb-6 sm:mb-8"
             >
               {HOME_ABOUT_PREVIEW.title}
             </h2>
-            <p className="text-sm sm:text-base text-primary/85 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
-              {HOME_ABOUT_PREVIEW.intro}
-            </p>
 
             <div className="grid sm:grid-cols-2 gap-3 sm:gap-4 mb-8">
               {HOME_ABOUT_PREVIEW.highlights.map((item, index) => (

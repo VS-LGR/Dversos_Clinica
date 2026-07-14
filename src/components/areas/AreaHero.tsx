@@ -22,7 +22,7 @@ export default function AreaHero({ area }: AreaHeroProps) {
         <p className="text-base sm:text-lg text-primary/90 mb-6 leading-relaxed break-words">{area.description}</p>
         <SoftTextLink href="/espacos">Conheça nossos ambientes</SoftTextLink>
       </div>
-      <WaveDivider overlay className="absolute bottom-0 inset-x-0" fill="#fff8f2" variant="soft" />
+      <WaveDivider overlay className="absolute bottom-0 inset-x-0" fill="#f4f7fb" variant="soft" />
     </section>
   );
 }

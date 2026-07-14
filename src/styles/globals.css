@@ -5,19 +5,19 @@
 :root {
   --color-primary: #1a2b56;
   --color-primary-light: #24386f;
-  --color-primary-pale: #fff8f2;
+  --color-primary-pale: #f4f7fb;
   --color-surface: #f9fafb;
   --color-accent: #f2b8c6;
-  --color-pastel-mint: #cff5d2;
-  --color-pastel-aqua: #c9f0f0;
-  --color-pastel-peach: #ffe1c2;
-  --color-pastel-lime: #e5f9c9;
-  --color-pastel-coral: #ffd5c8;
-  --color-accent-warm: #ffe1c2;
-  --color-accent-mint: #cff5d2;
-  --color-accent-lavender: #c9f0f0;
-  --color-accent-lime: #e5f9c9;
-  --color-accent-coral: #ffd5c8;
+  --color-pastel-mint: #d4e4f7;
+  --color-pastel-aqua: #c9e4f0;
+  --color-pastel-peach: #dce6f2;
+  --color-pastel-lime: #c8daf0;
+  --color-pastel-coral: #d0dfee;
+  --color-accent-warm: #dce6f2;
+  --color-accent-mint: #d4e4f7;
+  --color-accent-lavender: #c9e4f0;
+  --color-accent-lime: #c8daf0;
+  --color-accent-coral: #d0dfee;
 }
 
 body {

@@ -64,8 +64,6 @@ export const NEURODIVERSITY_PAGE = {
 export const HOME_ABOUT_PREVIEW = {
   eyebrow: "Sobre a clínica",
   title: "Cuidado integrado que respeita a neurodiversidade e produz avanços reais",
-  intro:
-    "A Clínica DVERSO em Sorocaba acolhe crianças, adolescentes e adultos neuroatípicos — com olhar neuroafirmativo, ABA de alta qualidade, equipe multidisciplinar, espaços pensados para o conforto sensorial e participação ativa da família e da escola.",
   linkLabel: "Conheça nossa história",
   linkHref: "/sobre",
   highlights: [

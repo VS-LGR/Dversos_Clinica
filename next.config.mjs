@@ -7,6 +7,20 @@ const nextConfig = {
       { protocol: "https", hostname: "*.supabase.co", pathname: "/storage/v1/object/public/**" },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/areas/dog-therapy",
+        destination: "/areas",
+        permanent: true,
+      },
+      {
+        source: "/areas/neurodiversity",
+        destination: "/areas",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

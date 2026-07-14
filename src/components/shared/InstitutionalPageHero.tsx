@@ -43,7 +43,7 @@ export default function InstitutionalPageHero({
       <WaveDivider
         overlay
         className="absolute bottom-0 inset-x-0"
-        fill="#fff8f2"
+        fill="#f4f7fb"
         variant="soft"
       />
     </header>

@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import AreaHero from "@/components/areas/AreaHero";
-import ProfessionalsList from "@/components/areas/ProfessionalsList";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import SoftTextLink from "@/components/shared/SoftTextLink";
 import CozyImageFrame from "@/components/shared/CozyImageFrame";
@@ -10,7 +9,6 @@ import {
   DEFAULT_WHATSAPP_NUMBER,
 } from "@/lib/constants/clinicAreas";
 import { AREA_EDITORIAL_IMAGE } from "@/lib/constants/clinicMedia";
-import { PROFESSIONALS_BY_AREA } from "@/lib/constants/professionals";
 
 interface AreaPageContentProps {
   slug: string;
@@ -20,7 +18,6 @@ export default function AreaPageContent({ slug }: AreaPageContentProps) {
   const area = getAreaBySlug(slug);
   if (!area) notFound();
 
-  const professionals = PROFESSIONALS_BY_AREA[slug] ?? [];
   const editorialImage = AREA_EDITORIAL_IMAGE[slug];
   const editorialFit = editorialImage?.includes("Therapy_ABA") ? "contain" as const : "cover" as const;
 
@@ -53,10 +50,6 @@ export default function AreaPageContent({ slug }: AreaPageContentProps) {
           )}
         </div>
       </section>
-      <ProfessionalsList
-        professionals={professionals}
-        title="Profissionais desta área"
-      />
       <section className="py-8 px-4 sm:px-6 max-w-4xl mx-auto text-center">
         <p className="text-primary/80 text-sm mb-3">
           Conheça os ambientes terapêuticos da clínica.

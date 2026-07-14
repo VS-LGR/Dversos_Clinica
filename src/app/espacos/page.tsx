@@ -1,18 +1,14 @@
 import SoftTextLink from "@/components/shared/SoftTextLink";
-import Image from "next/image";
+import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import InstitutionalPageHero from "@/components/shared/InstitutionalPageHero";
-import SpaceShowcaseBlock from "@/components/espacos/SpaceShowcaseBlock";
 import ClinicTourPlayer from "@/components/shared/ClinicTourPlayer";
 import CozyImageFrame from "@/components/shared/CozyImageFrame";
 import WaveDivider from "@/components/shared/WaveDivider";
 import PageShell from "@/components/shared/PageShell";
+import SpacesCarousel from "@/components/espacos/SpacesCarousel";
 import { CLINIC_SPACES, SPACES_PAGE } from "@/lib/constants/spacesContent";
-import {
-  CONSULTORIO_GALLERIES,
-  ESPACOS_HERO_IMAGE,
-  TAA_GALLERY,
-} from "@/lib/constants/clinicMedia";
-import { PASTEL_SURFACE_SOFT, pastelByIndex } from "@/lib/constants/pastelPalette";
+import { ESPACOS_HERO_IMAGE } from "@/lib/constants/clinicMedia";
+import { DEFAULT_WHATSAPP_NUMBER } from "@/lib/constants/clinicAreas";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
 export const metadata = buildPageMetadata({
@@ -31,7 +27,7 @@ export default function EspacosPage() {
       />
 
       <section className="relative py-10 sm:py-14 px-4 sm:px-6 max-w-6xl mx-auto min-w-0">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-10">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-4">
           <CozyImageFrame
             src={ESPACOS_HERO_IMAGE}
             alt="Recepção e ambiente acolhedor da Clínica DVERSO"
@@ -44,8 +40,28 @@ export default function EspacosPage() {
         </div>
       </section>
 
-      <section className="relative py-16 sm:py-20 px-4 sm:px-6 bg-pastel-aqua/25 overflow-hidden">
-        <WaveDivider overlay position="top" className="absolute top-0 inset-x-0" fill="#fff8f2" variant="soft" />
+      <section
+        className="relative py-16 sm:py-20 px-4 sm:px-6 bg-pastel-aqua/25 overflow-hidden"
+        aria-labelledby="spaces-carousel-title"
+      >
+        <WaveDivider overlay position="top" className="absolute top-0 inset-x-0" fill="#f4f7fb" variant="soft" />
+        <div className="relative z-10 max-w-6xl mx-auto min-w-0 pt-4">
+          <h2
+            id="spaces-carousel-title"
+            className="text-2xl sm:text-3xl font-bold text-primary text-center mb-3"
+          >
+            Ambientes da clínica
+          </h2>
+          <p className="text-primary/80 text-center mb-10 max-w-2xl mx-auto">
+            Conheça cada espaço — {CLINIC_SPACES.length} ambientes pensados para conforto sensorial, previsibilidade e acolhimento.
+          </p>
+          <SpacesCarousel />
+        </div>
+        <WaveDivider overlay className="absolute bottom-0 inset-x-0" fill="#f4f7fb" variant="soft" />
+      </section>
+
+      <section className="relative py-16 sm:py-20 px-4 sm:px-6 bg-pastel-mint/25 overflow-hidden">
+        <WaveDivider overlay position="top" className="absolute top-0 inset-x-0" fill="#f4f7fb" variant="soft" />
         <div className="relative z-10 max-w-4xl mx-auto min-w-0 pt-4">
           <h2 className="text-2xl sm:text-3xl font-bold text-primary text-center mb-3">
             Tour pela clínica
@@ -55,79 +71,30 @@ export default function EspacosPage() {
           </p>
           <ClinicTourPlayer />
         </div>
-        <WaveDivider overlay className="absolute bottom-0 inset-x-0" fill="#fff8f2" variant="soft" />
+        <WaveDivider overlay className="absolute bottom-0 inset-x-0" fill="#f4f7fb" variant="soft" />
       </section>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20 space-y-12 min-w-0">
-        {CLINIC_SPACES.map((space, index) => (
-          <div key={space.slug}>
-            <SpaceShowcaseBlock space={space} index={index} />
-            {index < CLINIC_SPACES.length - 1 && (
-              <WaveDivider className="mt-12" fill="#fff8f2" variant="soft" />
-            )}
-          </div>
-        ))}
-      </div>
-
-      <section className="relative py-16 sm:py-20 px-4 sm:px-6 bg-pastel-peach/25 overflow-hidden">
-        <WaveDivider overlay position="top" className="absolute top-0 inset-x-0" fill="#fff8f2" variant="soft" />
-        <div className="relative z-10 max-w-6xl mx-auto min-w-0 pt-4">
-          <h2 className="text-2xl font-bold text-primary mb-2 text-center">Consultórios</h2>
-          <p className="text-primary/75 text-center mb-10 max-w-2xl mx-auto text-sm sm:text-base">
-            Salas individualizadas para cada especialidade — organizadas para segurança, engajamento e aprendizagem.
+      <section className="py-14 sm:py-16 px-4 sm:px-6 border-t border-primary/[0.06]">
+        <div className="max-w-2xl mx-auto text-center rounded-[2rem] border border-primary/10 bg-pastel-mint/30 px-6 py-10 sm:px-10 shadow-[0_12px_40px_-20px_rgba(26,43,86,0.12)]">
+          <h2 className="text-xl sm:text-2xl font-bold text-primary mb-3">
+            Quer conhecer a clínica pessoalmente?
+          </h2>
+          <p className="text-primary/80 text-sm sm:text-base mb-6 leading-relaxed">
+            Agende uma visita ou converse com nossa equipe — estamos prontos para acolher sua família.
           </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {CONSULTORIO_GALLERIES.map((room, index) => (
-              <article
-                key={room.label}
-                className={`rounded-[1.5rem] border border-primary/[0.08] p-4 min-w-0 ${pastelByIndex(PASTEL_SURFACE_SOFT, index)}`}
-              >
-                <h3 className="font-semibold text-primary mb-3">{room.label}</h3>
-                <ul className="grid grid-cols-2 gap-2">
-                  {room.images.slice(0, 4).map((src) => (
-                    <li key={src} className="rounded-xl overflow-hidden border border-primary/[0.06]">
-                      <div className="relative aspect-[4/3]">
-                        <Image
-                          src={src}
-                          alt={`Consultório de ${room.label} — Clínica DVERSO`}
-                          fill
-                          className="object-cover"
-                          sizes="(max-width: 640px) 50vw, 200px"
-                        />
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            ))}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+            <WhatsAppButton
+              phoneNumber={DEFAULT_WHATSAPP_NUMBER}
+              message="Olá! Gostaria de agendar uma visita à Clínica DVERSO."
+              label="Agendar visita no WhatsApp"
+              variant="soft"
+              className="w-full sm:w-auto rounded-2xl"
+            />
+            <SoftTextLink href="/sobre#como-funciona" className="text-sm sm:text-base">
+              Como funciona o atendimento
+            </SoftTextLink>
           </div>
         </div>
-      </section>
-
-      <section className="py-16 sm:py-20 px-4 sm:px-6 max-w-6xl mx-auto min-w-0">
-        <h2 className="text-2xl font-bold text-primary mb-2 text-center">
-          Terapia assistida por animais
-        </h2>
-        <p className="text-primary/75 text-center mb-8 max-w-2xl mx-auto">
-          Momentos de vínculo, regulação e participação em ambiente supervisionado.
-        </p>
-        <ul className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-          {TAA_GALLERY.slice(0, 8).map((src, i) => (
-            <li key={src} className={i === 0 ? "col-span-2 row-span-2" : ""}>
-              <CozyImageFrame
-                src={src}
-                alt="Terapia assistida por animais na Clínica DVERSO"
-                variant="mosaic"
-                index={i}
-              />
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="py-10 px-4 sm:px-6 border-t border-primary/[0.06] text-center">
-        <p className="text-primary/80 mb-4">Quer conhecer a clínica pessoalmente?</p>
-        <SoftTextLink href="/sobre">Saiba como funciona o atendimento</SoftTextLink>
       </section>
     </PageShell>
   );

@@ -222,22 +222,6 @@ export const CLINIC_AREAS: ClinicArea[] = [
     accentClass: "text-primary",
   },
   {
-    slug: "neurodiversity",
-    name: "Neurodiversidade e acolhimento",
-    shortName: "Neurodiversidade",
-    description:
-      "Cuidado neuroafirmativo para crianças, adolescentes e famílias, com regulação emocional, desenvolvimento funcional e rede de apoio integrada.",
-    howItWorks:
-      "Atuamos com abordagem interdisciplinar, ambiente previsível e participação ativa da família e da escola no planejamento terapêutico.",
-    detailParagraphs: [
-      "Respeitamos singularidades e construímos intervenções baseadas em evidências, com foco em autonomia, comunicação e qualidade de vida.",
-      "A clínica oferece estrutura para diferentes níveis de suporte, incluindo manejo de comportamentos interferentes e de risco.",
-    ],
-    whatsAppMessage:
-      "Olá! Gostaria de saber mais sobre atendimento neuroafirmativo na Clínica DVERSO.",
-    accentClass: "text-primary",
-  },
-  {
     slug: "art-therapy",
     name: "Arteterapia",
     shortName: "Arteterapia",
@@ -251,22 +235,6 @@ export const CLINIC_AREAS: ClinicArea[] = [
     ],
     whatsAppMessage:
       "Olá! Gostaria de informações sobre Arteterapia na Clínica DVERSO.",
-    accentClass: "text-primary",
-  },
-  {
-    slug: "dog-therapy",
-    name: "Cão de Terapia — Anakin",
-    shortName: "Cão de Terapia",
-    description:
-      "O Anakin integra sessões quando indicado clinicamente, favorecendo vínculo, motivação e regulação em Terapia Assistida por Animais.",
-    howItWorks:
-      "O cão de terapia participa de atendimentos planejados, com objetivos terapêuticos claros, ética profissional e supervisão contínua.",
-    detailParagraphs: [
-      "A presença do animal pode ampliar engajamento, comunicação e experiências de regulação emocional em ambiente seguro.",
-      "Conheça também nossa página de Terapia Assistida por Animais para o contexto completo da TAA na DVERSO.",
-    ],
-    whatsAppMessage:
-      "Olá! Gostaria de saber mais sobre o cão de terapia e a TAA na Clínica DVERSO.",
     accentClass: "text-primary",
   },
 ];

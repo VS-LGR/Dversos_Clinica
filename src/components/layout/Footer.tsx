@@ -17,7 +17,7 @@ export default function Footer() {
         overlay
         position="top"
         className="absolute top-0 inset-x-0 z-20"
-        fill="#fff8f2"
+        fill="#f4f7fb"
         variant="soft"
       />
       <div
@@ -29,8 +29,8 @@ export default function Footer() {
         aria-hidden
       />
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-16 pb-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center justify-items-center">
+          <div className="flex flex-col items-center">
             <div className="mb-3 brightness-0 invert opacity-95">
               <BrandLogo variant="primary" size="sm" />
             </div>
@@ -39,7 +39,7 @@ export default function Footer() {
               Clínica para neurodivergentes em Sorocaba: ABA, terapias integradas, TAA e cuidado interdisciplinar com evidências.
             </p>
           </div>
-          <div>
+          <div className="flex flex-col items-center">
             <h3 className="text-lg font-semibold mb-2">Contato</h3>
             <address className="not-italic text-sm text-white/90 space-y-2">
               <p>
@@ -62,9 +62,9 @@ export default function Footer() {
               </p>
             </address>
           </div>
-          <nav aria-label="Institucional">
+          <nav aria-label="Institucional" className="flex flex-col items-center sm:col-span-2 lg:col-span-1">
             <h3 className="text-lg font-semibold mb-2">Institucional</h3>
-            <ul className="flex flex-col gap-1">
+            <ul className="flex flex-col gap-1 items-center">
               {FOOTER_EXTRA_LINKS.map(({ href, label }) => (
                 <li key={href}>
                   <Link href={href} className="text-white/90 hover:text-white text-sm transition-colors">
@@ -75,7 +75,7 @@ export default function Footer() {
             </ul>
           </nav>
         </div>
-        <div className="mt-8 pt-6 border-t border-white/20 text-center text-white/80 text-sm">
+        <div className="mt-8 pt-6 border-t border-white/20 text-center text-white/80 text-sm max-w-6xl mx-auto">
           © {new Date().getFullYear()} {SITE_CONTACT.name}. Todos os direitos reservados.
         </div>
       </div>

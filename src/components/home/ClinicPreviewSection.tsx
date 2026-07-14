@@ -26,7 +26,7 @@ export default function ClinicPreviewSection() {
         overlay
         position="top"
         className="absolute top-0 inset-x-0 z-[2]"
-        fill="#c9f0f0"
+        fill="#c9e4f0"
         variant="soft"
       />
 
@@ -62,7 +62,7 @@ export default function ClinicPreviewSection() {
         overlay
         position="bottom"
         className="absolute bottom-0 inset-x-0 z-[2]"
-        fill="#cff5d2"
+        fill="#d4e4f7"
         variant="soft"
       />
     </section>

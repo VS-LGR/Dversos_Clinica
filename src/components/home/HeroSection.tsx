@@ -1,7 +1,6 @@
 "use client";
 
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
-import SoftTextLink from "@/components/shared/SoftTextLink";
 import { DEFAULT_WHATSAPP_NUMBER } from "@/lib/constants/clinicAreas";
 import { HOME_HERO } from "@/lib/constants/siteContent";
 import RevealOnScroll from "@/components/shared/RevealOnScroll";
@@ -28,26 +27,20 @@ export default function HeroSection() {
             >
               {HOME_HERO.title}
             </h1>
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 w-full max-w-md sm:max-w-none mx-auto">
-              <SoftTextLink
-                href="/espacos"
-                className="text-sm sm:text-base font-semibold justify-center py-1"
-              >
-                Conheça nossos ambientes
-              </SoftTextLink>
+            <div className="flex justify-center w-full">
               <WhatsAppButton
                 phoneNumber={DEFAULT_WHATSAPP_NUMBER}
                 message={HOME_HERO.ctaMessage}
                 label="Fale conosco quando quiser"
                 variant="soft"
-                className="w-full sm:w-auto sm:max-w-[420px] text-sm sm:text-base px-5 py-3 rounded-2xl bg-white/90 shadow-sm mx-auto sm:mx-0"
+                className="w-full max-w-[280px] sm:max-w-[320px] text-sm px-4 py-2.5 rounded-2xl bg-white/90 shadow-sm mx-auto"
               />
             </div>
           </div>
         </RevealOnScroll>
       </div>
 
-      <WaveDivider overlay className="absolute bottom-0 inset-x-0 z-[5]" fill="#fff8f2" variant="soft" />
+      <WaveDivider overlay className="absolute bottom-0 inset-x-0 z-[5]" fill="#f4f7fb" variant="soft" />
     </section>
   );
 }

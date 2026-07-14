@@ -29,7 +29,7 @@ export default function LiderancasPage() {
         </p>
       </section>
 
-      <WaveDivider fill="#fff8f2" variant="soft" />
+      <WaveDivider fill="#f4f7fb" variant="soft" />
     </PageShell>
   );
 }

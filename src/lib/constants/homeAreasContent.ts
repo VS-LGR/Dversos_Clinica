@@ -1,61 +1,47 @@
 export const AREAS_INTRO_COPY = {
   eyebrow: "Especialidades",
   title: "Terapia integrada com equipe multidisciplinar",
-  description:
-    "Psicologia com ABA e ACT, fonoaudiologia, terapia ocupacional, nutrição, TAA e demais especialidades atuando de forma conjunta no plano individualizado de cada pessoa.",
   linkLabel: "Ver todas as especialidades",
 };
 
-export const AREAS_BRANCHES = [
-  {
-    title: "Psicologia e Desenvolvimento",
-    slugs: [
-      "psychology",
-      "neuropsychological-assessment",
-      "psychopedagogy",
-      "therapeutic-companion",
-      "psychomotricity",
-      "neurodiversity",
-    ],
-  },
-  {
-    title: "Terapias Integradas",
-    slugs: [
-      "speech-therapy",
-      "occupational-therapy",
-      "sensory-integration",
-      "music-therapy",
-      "art-therapy",
-      "physiotherapy",
-    ],
-  },
-  {
-    title: "Nutrição e Alimentação",
-    slugs: ["nutrition", "feeding-therapy"],
-  },
-  {
-    title: "Intervenções Assistidas",
-    slugs: ["animal-assisted-therapy", "dog-therapy"],
-  },
+/** Especialidades em destaque na home (chips horizontais). */
+export const HOME_FEATURED_SPECIALTY_SLUGS = [
+  "psychology",
+  "speech-therapy",
+  "occupational-therapy",
+  "neuropsychological-assessment",
+  "feeding-therapy",
+  "therapeutic-companion",
 ] as const;
 
-export const ALL_SPECIALTY_SLUGS = AREAS_BRANCHES.flatMap((branch) => branch.slugs);
+/** Lista flat de especialidades (sem agrupamento por tipo). */
+export const ALL_SPECIALTY_SLUGS = [
+  "psychology",
+  "neuropsychological-assessment",
+  "psychopedagogy",
+  "therapeutic-companion",
+  "psychomotricity",
+  "speech-therapy",
+  "occupational-therapy",
+  "sensory-integration",
+  "music-therapy",
+  "art-therapy",
+  "physiotherapy",
+  "nutrition",
+  "feeding-therapy",
+  "animal-assisted-therapy",
+] as const;
+
+export const AREAS_PAGE_COPY = {
+  description:
+    "Conheça as especialidades da Clínica DVERSO — atuação integrada, individualizada e baseada em evidências.",
+};
 
 export const PROTECTED_CARE_COPY = {
   eyebrow: "Terapia Assistida por Animais",
-  title: "TAA e cão de terapia na rotina de atendimento",
+  title: "TAA e cão de terapia",
   description:
-    "Quando indicado clinicamente, nosso cão de terapia participa das sessões de 1 hora, favorecendo vínculo, engajamento e regulação. A Terapia Assistida por Animais é conduzida com ética, supervisão e integração ao plano ABA.",
-  bullets: [
-    "Ambiente protegido e atividades planejadas conforme objetivos clínicos.",
-    "Integração com Psicologia, AT e demais especialidades da clínica.",
-    "Sala de regulação emocional para manejo seguro de comportamentos interferentes.",
-    "Estrutura pensada para conforto sensorial, previsibilidade e acolhimento familiar.",
-  ],
-  highlightEyebrow: "Nossos espaços",
-  highlightTitle: "Ambiente que também ensina",
-  highlightDescription:
-    "Salas individualizadas, brinquedoteca, cozinha terapêutica, horta e espaços de convivência — pensados para neurodiversidade. Conheça em Nossos espaços.",
+    "A Terapia Assistida por Animais é conduzida com ética, supervisão e integração ao plano terapêutico individualizado.",
 };
 
 export const COMPLEMENTARY_CARE_COPY = {
@@ -80,9 +66,4 @@ export const COMPLEMENTARY_CARE_COPY = {
         "Avanços reais em autonomia, comunicação, participação social e qualidade de vida nos diferentes contextos de vida.",
     },
   ],
-};
-
-export const AREAS_PAGE_COPY = {
-  description:
-    "Escolha uma especialidade para entender como cada área contribui para o plano individualizado da DVERSO — com ABA, evidências e cuidado integrado em Sorocaba.",
 };
