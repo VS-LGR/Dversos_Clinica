@@ -34,12 +34,14 @@ export default function DogTherapyBand() {
             alt="Terapia assistida por animais na Clínica DVERSO"
             variant="landscape"
             index={3}
+            fit="contain"
           />
           <CozyImageFrame
             src={TAA_GALLERY[1] ?? TAA_GALLERY[0]}
             alt="Cão de terapia em sessão na Clínica DVERSO"
             variant="landscape"
             index={4}
+            fit="contain"
           />
         </div>
 
