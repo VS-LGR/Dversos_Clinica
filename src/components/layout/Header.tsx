@@ -5,12 +5,18 @@ import { useEffect, useId, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import BrandLogo from "@/components/shared/BrandLogo";
 import { SITE_NAV_LINKS } from "@/lib/constants/navigation";
+import {
+  DEFAULT_WHATSAPP_NUMBER,
+  formatWhatsAppHref,
+} from "@/lib/constants/siteContact";
+import { HOME_HERO } from "@/lib/constants/siteContent";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   const menuId = useId();
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const firstLinkRef = useRef<HTMLAnchorElement>(null);
 
   const isActiveLink = (href: string) => {
     if (href === "/") return pathname === "/";
@@ -38,6 +44,7 @@ export default function Header() {
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     document.addEventListener("keydown", onKeyDown);
+    window.setTimeout(() => firstLinkRef.current?.focus(), 50);
 
     return () => {
       document.body.style.overflow = previousOverflow;
@@ -77,67 +84,120 @@ export default function Header() {
         <button
           ref={buttonRef}
           type="button"
-          className="md:hidden relative inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-primary border border-primary/10 bg-pastel-mint/30 hover:bg-pastel-mint/55 active:bg-pastel-mint/70 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2"
+          className="md:hidden relative inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-primary bg-primary/[0.06] hover:bg-primary/[0.1] active:bg-primary/[0.14] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2"
           aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
           aria-expanded={menuOpen}
           aria-controls={menuId}
           onClick={() => setMenuOpen((open) => !open)}
         >
-          <span className="relative block h-3.5 w-5" aria-hidden>
+          <span className="relative block h-3.5 w-[18px]" aria-hidden>
             <span
-              className={`absolute left-0 top-0 h-0.5 w-5 rounded-full bg-primary transition-transform duration-200 ${
-                menuOpen ? "translate-y-[6px] rotate-45" : ""
+              className={`absolute left-0 top-0 h-[1.5px] w-full rounded-full bg-primary transition-transform duration-300 ease-out ${
+                menuOpen ? "translate-y-[6.5px] rotate-45" : ""
               }`}
             />
             <span
-              className={`absolute left-0 top-[6px] h-0.5 w-5 rounded-full bg-primary transition-opacity duration-200 ${
+              className={`absolute left-0 top-[6.5px] h-[1.5px] w-full rounded-full bg-primary transition-opacity duration-200 ${
                 menuOpen ? "opacity-0" : "opacity-100"
               }`}
             />
             <span
-              className={`absolute left-0 top-[12px] h-0.5 w-5 rounded-full bg-primary transition-transform duration-200 ${
-                menuOpen ? "-translate-y-[6px] -rotate-45" : ""
+              className={`absolute left-0 top-[13px] h-[1.5px] w-full rounded-full bg-primary transition-transform duration-300 ease-out ${
+                menuOpen ? "-translate-y-[6.5px] -rotate-45" : ""
               }`}
             />
           </span>
         </button>
       </div>
 
-      {/* Só monta overlay quando aberto — evita “primeiro clique morto” */}
+      {/* Drawer full-screen mobile — padrão distinto do dropdown flutuante */}
       {menuOpen ? (
-        <div className="md:hidden fixed inset-x-0 top-14 bottom-0 z-40" id={menuId}>
-          <button
-            type="button"
-            className="absolute inset-0 bg-primary/35 backdrop-blur-[2px]"
-            aria-label="Fechar menu"
-            onClick={() => setMenuOpen(false)}
-          />
+        <div
+          id={menuId}
+          className="md:hidden fixed inset-0 z-[60] flex flex-col bg-primary text-white"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menu de navegação"
+        >
+          <div className="flex items-center justify-between h-14 px-4 border-b border-white/10 shrink-0">
+            <Link
+              href="/"
+              className="brightness-0 invert opacity-95"
+              aria-label="Clínica DVERSO — início"
+              onClick={() => setMenuOpen(false)}
+            >
+              <BrandLogo variant="primary" size="sm" className="!max-h-7" />
+            </Link>
+            <button
+              type="button"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+              aria-label="Fechar menu"
+              onClick={() => {
+                setMenuOpen(false);
+                buttonRef.current?.focus();
+              }}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+                <path
+                  d="M6 6l12 12M18 6L6 18"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </button>
+          </div>
 
-          <div className="relative z-10 mx-3 mt-2 rounded-2xl border border-primary/10 bg-white shadow-[0_18px_48px_-20px_rgba(26,43,86,0.35)] overflow-hidden animate-fade-in">
-            <nav className="px-2 py-2" aria-label="Navegação mobile">
-              <ul className="flex flex-col">
-                {SITE_NAV_LINKS.map(({ href, label }) => {
-                  const active = isActiveLink(href);
-                  return (
-                    <li key={href}>
-                      <Link
-                        href={href}
-                        prefetch={href === "/blog" ? true : undefined}
-                        className={`flex items-center min-h-12 px-4 py-3 rounded-xl text-[15px] font-semibold tracking-tight transition-colors ${
-                          active
-                            ? "bg-pastel-mint/70 text-primary"
-                            : "text-primary/90 hover:bg-pastel-aqua/35 active:bg-pastel-aqua/50"
-                        }`}
-                        aria-current={active ? "page" : undefined}
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        {label}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </nav>
+          <nav
+            className="flex-1 overflow-y-auto px-6 py-8"
+            aria-label="Navegação mobile"
+          >
+            <ul className="flex flex-col gap-1">
+              {SITE_NAV_LINKS.map(({ href, label }, index) => {
+                const active = isActiveLink(href);
+                return (
+                  <li key={href}>
+                    <Link
+                      ref={index === 0 ? firstLinkRef : undefined}
+                      href={href}
+                      prefetch={href === "/blog" ? true : undefined}
+                      aria-current={active ? "page" : undefined}
+                      onClick={() => setMenuOpen(false)}
+                      className={`group flex items-center justify-between gap-4 py-4 border-b border-white/10 text-[1.35rem] font-semibold tracking-tight transition-colors ${
+                        active ? "text-white" : "text-white/75 hover:text-white"
+                      }`}
+                    >
+                      <span>{label}</span>
+                      {active ? (
+                        <span
+                          className="h-2 w-2 rounded-full bg-pastel-aqua shrink-0"
+                          aria-hidden
+                        />
+                      ) : (
+                        <span
+                          className="text-white/35 text-lg leading-none group-hover:text-white/60 transition-colors"
+                          aria-hidden
+                        >
+                          →
+                        </span>
+                      )}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+
+          <div className="shrink-0 px-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-2 border-t border-white/10">
+            <a
+              href={formatWhatsAppHref(DEFAULT_WHATSAPP_NUMBER, HOME_HERO.ctaMessage)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-full items-center justify-center rounded-2xl bg-white text-primary font-semibold text-sm px-5 py-3.5 hover:bg-white/95 transition-colors"
+              onClick={() => setMenuOpen(false)}
+            >
+              Falar no WhatsApp
+            </a>
           </div>
         </div>
       ) : null}
