@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import BrandLogo from "@/components/shared/BrandLogo";
 import WaveDivider from "@/components/shared/WaveDivider";
 import { BE_DVERSO_SUPPORT_IMAGE } from "@/lib/constants/clinicMedia";
 import { PASTEL_SURFACE_SOFT, pastelByIndex } from "@/lib/constants/pastelPalette";
@@ -15,18 +14,16 @@ export default function BeDversoSection() {
     >
       <WaveDivider overlay position="top" className="absolute top-0 inset-x-0" fill="#ffffff" />
       <div className="relative z-10 max-w-6xl mx-auto min-w-0 pt-4">
-        <div className="flex flex-col items-center gap-5 sm:gap-6 mb-8 sm:mb-10">
-          <BrandLogo variant="primary" size="lg" />
-
-          {/* Gráfico Seja Dverso como destaque compacto (não banner full-bleed) */}
-          <div className="w-full max-w-sm sm:max-w-md rounded-2xl overflow-hidden shadow-[0_12px_36px_-16px_rgba(26,43,86,0.28)] ring-1 ring-primary/10">
+        <div className="flex justify-center mb-6 sm:mb-8">
+          <div className="w-full max-w-lg sm:max-w-xl rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_14px_40px_-18px_rgba(26,43,86,0.32)] ring-1 ring-primary/10">
             <Image
               src={BE_DVERSO_SUPPORT_IMAGE}
               alt="Seja Dverso"
-              width={720}
-              height={240}
+              width={800}
+              height={260}
               className="w-full h-auto object-cover object-center"
-              sizes="(max-width: 640px) 90vw, 448px"
+              sizes="(max-width: 640px) 92vw, 576px"
+              priority={false}
             />
           </div>
         </div>
