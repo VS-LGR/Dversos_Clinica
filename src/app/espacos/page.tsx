@@ -1,4 +1,3 @@
-import SoftTextLink from "@/components/shared/SoftTextLink";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import InstitutionalPageHero from "@/components/shared/InstitutionalPageHero";
 import ClinicTourPlayer from "@/components/shared/ClinicTourPlayer";
@@ -82,7 +81,7 @@ export default function EspacosPage() {
           <p className="text-primary/80 text-sm sm:text-base mb-6 leading-relaxed">
             Agende uma visita ou converse com nossa equipe — estamos prontos para acolher sua família.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+          <div className="flex justify-center">
             <WhatsAppButton
               phoneNumber={DEFAULT_WHATSAPP_NUMBER}
               message="Olá! Gostaria de agendar uma visita à Clínica DVERSO."
@@ -90,9 +89,6 @@ export default function EspacosPage() {
               variant="soft"
               className="w-full sm:w-auto rounded-2xl"
             />
-            <SoftTextLink href="/sobre#como-funciona" className="text-sm sm:text-base">
-              Como funciona o atendimento
-            </SoftTextLink>
           </div>
         </div>
       </section>
