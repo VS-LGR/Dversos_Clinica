@@ -7,15 +7,16 @@ import { PASTEL_SURFACE_SOFT, pastelByIndex } from "@/lib/constants/pastelPalett
 
 const SECTION_ID = "como-funciona";
 const HEADER_OFFSET_PX = 112;
-/** Suavização do progresso (0–1). Quanto menor, mais “pesado” e fluido. */
-const LERP = 0.085;
+/** Suavização do progresso — valor baixo = transição mais lenta e fluida. */
+const LERP = 0.05;
 
 function clamp(value: number, min: number, max: number) {
   return Math.min(max, Math.max(min, value));
 }
 
-function easeInOutCubic(t: number) {
-  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+/** Ease suave (quase linear no meio) para o blend não “pular”. */
+function easeInOutSine(t: number) {
+  return -(Math.cos(Math.PI * t) - 1) / 2;
 }
 
 function readTargetProgress() {
@@ -25,7 +26,7 @@ function readTargetProgress() {
   const rect = section.getBoundingClientRect();
   const scrollable = Math.max(
     1,
-    section.offsetHeight - window.innerHeight * 0.55,
+    section.offsetHeight - window.innerHeight * 0.45,
   );
   const traveled = HEADER_OFFSET_PX - rect.top;
   return clamp(traveled / scrollable, 0, 1);
@@ -63,7 +64,7 @@ export default function PicStickyScrollImage() {
     const tick = () => {
       if (!reduceMotion) {
         const diff = targetRef.current - currentRef.current;
-        if (Math.abs(diff) > 0.0008) {
+        if (Math.abs(diff) > 0.0005) {
           currentRef.current += diff * LERP;
           setProgress(currentRef.current);
         } else if (currentRef.current !== targetRef.current) {
@@ -83,13 +84,9 @@ export default function PicStickyScrollImage() {
     };
   }, [reduceMotion]);
 
-  const eased = easeInOutCubic(clamp(progress, 0, 1));
-  const continuous = eased * Math.max(0, total - 1);
-  const baseIndex = Math.min(total - 1, Math.floor(continuous));
-  const nextIndex = Math.min(total - 1, baseIndex + 1);
-  const blend = continuous - baseIndex;
-  const activeIndex = blend < 0.5 ? baseIndex : nextIndex;
-
+  // Com 2 imagens: blend contínuo 0→1 ao longo de quase toda a seção
+  const blend = easeInOutSine(clamp(progress, 0, 1));
+  const activeIndex = blend < 0.5 ? 0 : Math.min(1, total - 1);
   const active = PIC_SCROLL_GALLERY[activeIndex] ?? PIC_SCROLL_GALLERY[0];
   const blob = pastelByIndex(PASTEL_SURFACE_SOFT, activeIndex);
 
@@ -98,7 +95,7 @@ export default function PicStickyScrollImage() {
       <div className="lg:sticky lg:top-24 lg:self-start">
         <div className="relative min-w-0">
           <div
-            className={`absolute -inset-2 sm:-inset-3 rounded-[2.5rem] ${blob} opacity-70 blur-[1px] transition-colors duration-700`}
+            className={`absolute -inset-2 sm:-inset-3 rounded-[2.5rem] ${blob} opacity-70 blur-[1px] transition-colors duration-1000`}
             aria-hidden
           />
           <div
@@ -106,27 +103,23 @@ export default function PicStickyScrollImage() {
             aria-live="polite"
           >
             {PIC_SCROLL_GALLERY.map((slide, index) => {
-              let opacity = 0;
-              if (reduceMotion) {
-                opacity = index === activeIndex ? 1 : 0;
-              } else if (index === baseIndex && index === nextIndex) {
-                opacity = 1;
-              } else if (index === baseIndex) {
-                opacity = 1 - blend;
-              } else if (index === nextIndex) {
-                opacity = blend;
-              }
+              const opacity = reduceMotion
+                ? index === activeIndex
+                  ? 1
+                  : 0
+                : index === 0
+                  ? 1 - blend
+                  : blend;
 
               return (
                 <div
                   key={slide.src}
-                  className="absolute inset-0"
+                  className="absolute inset-0 will-change-[opacity]"
                   style={{
                     opacity,
-                    zIndex: index === nextIndex ? 2 : 1,
-                    transition: reduceMotion ? "none" : undefined,
+                    zIndex: index === 1 ? 2 : 1,
                   }}
-                  aria-hidden={opacity < 0.2}
+                  aria-hidden={opacity < 0.15}
                 >
                   <Image
                     src={slide.src}
@@ -157,7 +150,7 @@ export default function PicStickyScrollImage() {
                   role="tab"
                   aria-selected={index === activeIndex}
                   aria-label={`Imagem ${index + 1} de ${total}`}
-                  className={`block h-1.5 rounded-full transition-all duration-500 ease-out ${
+                  className={`block h-1.5 rounded-full transition-all duration-700 ease-out ${
                     index === activeIndex
                       ? "w-5 bg-primary"
                       : "w-1.5 bg-primary/25"

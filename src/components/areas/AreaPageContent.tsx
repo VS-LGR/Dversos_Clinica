@@ -8,7 +8,7 @@ import {
   getAreaBySlug,
   DEFAULT_WHATSAPP_NUMBER,
 } from "@/lib/constants/clinicAreas";
-import { AREA_EDITORIAL_IMAGE } from "@/lib/constants/clinicMedia";
+import { AREA_CARD_IMAGE, AREA_EDITORIAL_IMAGE } from "@/lib/constants/clinicMedia";
 
 interface AreaPageContentProps {
   slug: string;
@@ -18,7 +18,10 @@ export default function AreaPageContent({ slug }: AreaPageContentProps) {
   const area = getAreaBySlug(slug);
   if (!area) notFound();
 
-  const editorialImage = AREA_EDITORIAL_IMAGE[slug];
+  const cardMedia = AREA_CARD_IMAGE[slug];
+  const editorialImage = cardMedia?.src ?? AREA_EDITORIAL_IMAGE[slug];
+  const editorialAlt =
+    cardMedia?.alt ?? `Ilustração — ${area.shortName} na Clínica DVERSO`;
   const editorialFit = editorialImage?.includes("Therapy_ABA") ? "contain" as const : "cover" as const;
 
   return (
@@ -41,7 +44,7 @@ export default function AreaPageContent({ slug }: AreaPageContentProps) {
             <div className="max-w-md mx-auto lg:mx-0 w-full">
               <CozyImageFrame
                 src={editorialImage}
-                alt={`Ilustração — ${area.shortName} na Clínica DVERSO`}
+                alt={editorialAlt}
                 variant={editorialFit === "contain" ? "landscape" : "organic"}
                 index={1}
                 fit={editorialFit}

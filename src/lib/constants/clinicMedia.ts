@@ -166,7 +166,7 @@ export const EDITORIAL_KID_PAINTING = img("Kid_Painting.jpg");
 export const EDITORIAL_THERAPY_ABA = img("Therapy_ABA.png");
 export const ABA_PROCESS_INFOGRAPHIC = img("AtendimentoABA.png");
 
-/** Galeria sticky da seção PIC em Sobre — poucas imagens para troca fluida. */
+/** Galeria sticky da seção PIC em Sobre — 2 imagens para crossfade fluido. */
 export const PIC_SCROLL_GALLERY = [
   {
     src: EDITORIAL_THERAPY_ABA,
@@ -176,11 +176,6 @@ export const PIC_SCROLL_GALLERY = [
   {
     src: img("Extras", "DSC00369.jpg"),
     alt: "Ambiente acolhedor da Clínica DVERSO",
-    fit: "cover" as const,
-  },
-  {
-    src: img("Brinquedoteca", "DSC00280.jpg"),
-    alt: "Brinquedoteca da Clínica DVERSO",
     fit: "cover" as const,
   },
 ] as const;
@@ -218,14 +213,53 @@ export const EDITORIAL_IMAGES = {
   abaProcessInfographic: ABA_PROCESS_INFOGRAPHIC,
 } as const;
 
-/** Slugs de área que exibem imagem editorial de apoio */
-export const AREA_EDITORIAL_IMAGE: Record<string, string> = {
-  psychology: EDITORIAL_THERAPY_ABA,
-  "neuropsychological-assessment": EDITORIAL_THERAPY_ABA,
-  psychopedagogy: EDITORIAL_THERAPY_ABA,
-  "art-therapy": EDITORIAL_KID_PAINTING,
-  neurodiversity: EDITORIAL_KID_PAINTING,
+/** Imagem de capa por especialidade (listagem /areas e páginas de área). */
+export const AREA_CARD_IMAGE: Record<
+  string,
+  { src: string; alt: string }
+> = {
+  psychology: {
+    src: img("Consultórios", "Pisicologia", "DSC09454.jpg"),
+    alt: "Consultório de Psicologia da Clínica DVERSO",
+  },
+  "speech-therapy": {
+    src: img("Consultórios", "Fonaudiologia", "DSC09463.jpg"),
+    alt: "Consultório de Fonoaudiologia da Clínica DVERSO",
+  },
+  "occupational-therapy": {
+    src: img("Consultórios", "Integração Sensorial", "DSC09476.jpg"),
+    alt: "Sala de Terapia Ocupacional e integração sensorial",
+  },
+  "neuropsychological-assessment": {
+    src: img("Consultórios", "Pisicologia", "DSC09458.jpg"),
+    alt: "Ambiente para Avaliação Neuropsicológica na Clínica DVERSO",
+  },
+  "feeding-therapy": {
+    src: img("Extras", "DSC03343.jpg.jpeg"),
+    alt: "Cozinha terapêutica — Terapia Alimentar na Clínica DVERSO",
+  },
+  "therapeutic-companion": {
+    src: img("Espaço Conforto", "DSC09448.jpg"),
+    alt: "Espaço de acompanhamento terapêutico na Clínica DVERSO",
+  },
+  "art-therapy": {
+    src: img("Consultórios", "Arteterapia", "DSC09489.jpg"),
+    alt: "Sala de Arteterapia da Clínica DVERSO",
+  },
+  psychopedagogy: {
+    src: EDITORIAL_THERAPY_ABA,
+    alt: "Intervenção terapêutica na Clínica DVERSO",
+  },
+  neurodiversity: {
+    src: EDITORIAL_KID_PAINTING,
+    alt: "Atendimento neuroafirmativo na Clínica DVERSO",
+  },
 };
+
+/** Slugs de área que exibem imagem editorial de apoio */
+export const AREA_EDITORIAL_IMAGE: Record<string, string> = Object.fromEntries(
+  Object.entries(AREA_CARD_IMAGE).map(([slug, media]) => [slug, media.src]),
+);
 
 export function spaceMediaFor(space: ClinicSpace): SpaceMedia {
   return SPACE_MEDIA[space.slug as SpaceSlug];
