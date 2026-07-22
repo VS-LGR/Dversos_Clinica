@@ -1,39 +1,28 @@
-import BrandLogo from "@/components/shared/BrandLogo";
 import WaveDivider from "@/components/shared/WaveDivider";
 
 interface InstitutionalPageHeroProps {
   title: string;
   subtitle?: string;
   lead?: string;
-  showBrandLogo?: boolean;
   className?: string;
 }
 
+/** Hero institucional — sem logo (logo fica só no header/footer). */
 export default function InstitutionalPageHero({
   title,
   subtitle,
   lead,
-  showBrandLogo = false,
   className = "",
 }: InstitutionalPageHeroProps) {
-  const useLogoForSubtitle =
-    showBrandLogo || subtitle === "Clínica DVERSO";
-
   return (
     <header
       className={`relative py-16 sm:py-20 px-4 sm:px-6 bg-primary-pale/50 overflow-hidden ${className}`}
     >
       <div className="max-w-4xl mx-auto text-center min-w-0 relative z-10">
         {subtitle ? (
-          useLogoForSubtitle ? (
-            <div className="flex justify-center mb-4">
-              <BrandLogo variant="primary" size="md" />
-            </div>
-          ) : (
-            <p className="text-primary/60 text-xs font-medium uppercase tracking-widest mb-3">
-              {subtitle}
-            </p>
-          )
+          <p className="text-primary/60 text-xs font-medium uppercase tracking-widest mb-3">
+            {subtitle}
+          </p>
         ) : null}
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary tracking-tight mb-4 text-balance break-words px-2">
           {title}

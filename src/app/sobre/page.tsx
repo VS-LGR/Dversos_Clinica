@@ -7,7 +7,6 @@ import WaveDivider from "@/components/shared/WaveDivider";
 import PageShell from "@/components/shared/PageShell";
 import LeadersGroupSection from "@/components/shared/LeadersGroupSection";
 import PicStickyScrollImage from "@/components/sobre/PicStickyScrollImage";
-import Image from "next/image";
 import { BE_DVERSO_SUPPORT_IMAGE, SOBRE_GALLERY } from "@/lib/constants/clinicMedia";
 import { ABOUT_CLINIC, CARE_SESSION_INFO } from "@/lib/constants/siteContent";
 import { CARE_SUPERVISION_INTRO } from "@/lib/constants/processFlow";
@@ -127,14 +126,15 @@ export default function SobrePage() {
           <p className="text-primary/55 text-xs font-semibold uppercase tracking-[0.2em] mb-4">
             Cultura DVERSO
           </p>
-          <div className="mx-auto mb-8 sm:mb-10 w-full max-w-2xl sm:max-w-3xl rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_18px_50px_-20px_rgba(26,43,86,0.28)] ring-1 ring-primary/10">
-            <Image
+          <div className="mx-auto mb-8 sm:mb-10 w-full max-w-2xl sm:max-w-3xl rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_18px_50px_-20px_rgba(26,43,86,0.28)] ring-1 ring-primary/10 bg-white">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src={BE_DVERSO_SUPPORT_IMAGE}
               alt="#SejaDverso — Clínica DVERSO"
               width={960}
               height={320}
-              className="w-full h-auto object-contain object-center bg-white"
-              sizes="(max-width: 768px) 92vw, 768px"
+              className="w-full h-auto object-contain object-center"
+              decoding="async"
             />
           </div>
           <h2

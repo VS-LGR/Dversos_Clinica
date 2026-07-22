@@ -33,6 +33,10 @@ const maxWidths: Record<LogoVariant, Record<LogoSize, string>> = {
   },
 };
 
+function isSvgSrc(src: string) {
+  return /\.svg($|\?)/i.test(src);
+}
+
 export default function BrandLogo({
   variant = "primary",
   size = "sm",
@@ -42,14 +46,33 @@ export default function BrandLogo({
   const src = variant === "solo" ? BRAND_LOGO_SOLO : BRAND_LOGO_PRIMARY;
   const maxH = heights[size];
   const aspectPad = variant === "solo" ? 1.2 : 4.2;
+  const width = Math.round(maxH * aspectPad);
+  const sharedClass = `w-auto object-contain ${maxWidths[variant][size]} ${className}`;
+
+  // SVG complexo (Illustrator) quebra no optimizer do next/image — servir direto.
+  if (isSvgSrc(src)) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src={src}
+        alt="Clínica DVERSO"
+        width={width}
+        height={maxH}
+        className={sharedClass}
+        style={{ maxHeight: maxH, height: "auto", width: "auto" }}
+        decoding="async"
+        {...(priority ? { fetchPriority: "high" as const } : {})}
+      />
+    );
+  }
 
   return (
     <Image
       src={src}
       alt="Clínica DVERSO"
-      width={Math.round(maxH * aspectPad)}
+      width={width}
       height={maxH}
-      className={`w-auto object-contain ${maxWidths[variant][size]} ${className}`}
+      className={sharedClass}
       style={{ maxHeight: maxH, height: "auto" }}
       priority={priority}
     />

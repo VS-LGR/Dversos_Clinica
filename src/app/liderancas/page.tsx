@@ -17,9 +17,8 @@ export default function LiderancasPage() {
     <PageShell>
       <InstitutionalPageHero
         title={LEADERS_PAGE.title}
-        subtitle="Clínica DVERSO"
+        subtitle="Liderança"
         lead={LEADERS_PAGE.subtitle}
-        showBrandLogo
       />
 
       <section className="relative py-12 sm:py-16 px-4 sm:px-6 max-w-5xl mx-auto min-w-0 bg-pastel-mint/20">

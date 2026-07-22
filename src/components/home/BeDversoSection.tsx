@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import WaveDivider from "@/components/shared/WaveDivider";
 import { BE_DVERSO_SUPPORT_IMAGE } from "@/lib/constants/clinicMedia";
@@ -15,15 +14,16 @@ export default function BeDversoSection() {
       <WaveDivider overlay position="top" className="absolute top-0 inset-x-0" fill="#ffffff" />
       <div className="relative z-10 max-w-6xl mx-auto min-w-0 pt-4">
         <div className="flex justify-center mb-6 sm:mb-8">
-          <div className="w-full max-w-lg sm:max-w-xl rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_14px_40px_-18px_rgba(26,43,86,0.32)] ring-1 ring-primary/10">
-            <Image
+          <div className="w-full max-w-lg sm:max-w-xl rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_14px_40px_-18px_rgba(26,43,86,0.32)] ring-1 ring-primary/10 bg-white">
+            {/* SVG via img — evita falha do optimizer do next/image */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src={BE_DVERSO_SUPPORT_IMAGE}
               alt="Seja Dverso"
               width={800}
               height={260}
-              className="w-full h-auto object-contain object-center bg-white"
-              sizes="(max-width: 640px) 92vw, 576px"
-              priority={false}
+              className="w-full h-auto object-contain object-center"
+              decoding="async"
             />
           </div>
         </div>
