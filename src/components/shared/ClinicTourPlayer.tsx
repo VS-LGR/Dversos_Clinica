@@ -32,8 +32,8 @@ export default function ClinicTourPlayer({
         aria-hidden
       />
 
-      <figure className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.25rem] border border-primary/[0.08] bg-white shadow-[0_14px_44px_-18px_rgba(26,43,86,0.2)] ring-1 ring-white/80">
-        <div className="relative w-full aspect-[9/16] bg-primary-pale/40">
+      <figure className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.25rem] border border-primary/15 bg-gradient-to-b from-pastel-mint/80 via-pastel-aqua/50 to-primary-pale shadow-[0_14px_44px_-18px_rgba(26,43,86,0.2)] ring-1 ring-primary/10 p-2 sm:p-2.5">
+        <div className="relative w-full aspect-[9/16] overflow-hidden rounded-[1.5rem] sm:rounded-[1.75rem] bg-primary-pale/40 ring-1 ring-primary/10">
           <iframe
             className="absolute inset-0 h-full w-full border-0"
             src={`${CLINIC_TOUR_EMBED_URL}?playsinline=1`}
@@ -44,9 +44,9 @@ export default function ClinicTourPlayer({
             loading="lazy"
           />
         </div>
-        <figcaption className="flex items-center justify-center gap-2 border-t border-primary/[0.06] bg-gradient-to-b from-white to-primary-pale/35 px-4 py-3.5">
+        <figcaption className="flex items-center justify-center gap-2 pt-3 pb-1 px-2">
           <span
-            className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-pastel-mint/70 text-primary"
+            className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/90 text-primary shadow-sm"
             aria-hidden
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
