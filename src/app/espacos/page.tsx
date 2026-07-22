@@ -23,10 +23,11 @@ export default function EspacosPage() {
         title={SPACES_PAGE.title}
         subtitle="Ambiente terapêutico para neurodiversidade"
         lead={SPACES_PAGE.introParagraphs[0]}
+        className="!pb-8 sm:!pb-10"
       />
 
-      <section className="relative py-10 sm:py-14 px-4 sm:px-6 max-w-6xl mx-auto min-w-0">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-4">
+      <section className="relative pt-4 sm:pt-6 pb-8 sm:pb-10 px-4 sm:px-6 max-w-6xl mx-auto min-w-0">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-2">
           <CozyImageFrame
             src={ESPACOS_HERO_IMAGE}
             alt="Recepção e ambiente acolhedor da Clínica DVERSO"
@@ -40,18 +41,18 @@ export default function EspacosPage() {
       </section>
 
       <section
-        className="relative py-16 sm:py-20 px-4 sm:px-6 bg-pastel-aqua/25 overflow-hidden"
+        className="relative py-12 sm:py-16 px-4 sm:px-6 bg-pastel-aqua/25 overflow-hidden"
         aria-labelledby="spaces-carousel-title"
       >
         <WaveDivider overlay position="top" className="absolute top-0 inset-x-0" fill="#f4f7fb" variant="soft" />
-        <div className="relative z-10 max-w-6xl mx-auto min-w-0 pt-4">
+        <div className="relative z-10 max-w-7xl mx-auto min-w-0 pt-2">
           <h2
             id="spaces-carousel-title"
             className="text-2xl sm:text-3xl font-bold text-primary text-center mb-3"
           >
             Ambientes da clínica
           </h2>
-          <p className="text-primary/80 text-center mb-10 max-w-2xl mx-auto">
+          <p className="text-primary/80 text-center mb-8 max-w-2xl mx-auto">
             Conheça cada espaço — {CLINIC_SPACES.length} ambientes pensados para conforto sensorial, previsibilidade e acolhimento.
           </p>
           <SpacesCarousel />

@@ -23,7 +23,7 @@ export default function LiderancasPage() {
       />
 
       <section className="relative py-12 sm:py-16 px-4 sm:px-6 max-w-5xl mx-auto min-w-0 bg-pastel-mint/20">
-        <LeadersGroupSection showLogo expandedCards />
+          <LeadersGroupSection expandedCards />
         <p className="text-center mt-10">
           <SoftTextLink href="/sobre">Conheça a clínica</SoftTextLink>
         </p>

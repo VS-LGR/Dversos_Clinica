@@ -4,9 +4,9 @@ export function publicMediaPath(...segments: string[]): string {
   return `/${segments.map((s) => encodeURIComponent(s)).join("/")}`;
 }
 
-export const BRAND_LOGO_PRIMARY = publicMediaPath("images", "Logo NomeDversos_Logo.webp");
+export const BRAND_LOGO_PRIMARY = publicMediaPath("images", "logo svg.svg");
 export const BRAND_LOGO_SOLO = publicMediaPath("images", "Logo SoloDversos_Logo.webp");
-export const BE_DVERSO_SUPPORT_IMAGE = publicMediaPath("images", "SejaDversoDversos_Logo.webp");
+export const BE_DVERSO_SUPPORT_IMAGE = publicMediaPath("images", "SejaDverso svg.svg");
 export const TEAM_GROUP_PHOTO = publicMediaPath("images", "Socios", "DSC09904.jpg");
 export const TEAM_GROUP_PHOTO_ALT =
   "Sócios da Clínica DVERSO — equipe de liderança em ambiente acolhedor";
@@ -185,26 +185,46 @@ export const HOME_SPECIALTIES_COLLAGE = {
     src: img("Consultórios", "Integração Sensorial", "DSC09476.jpg"),
     alt: "Sala de integração sensorial na Clínica DVERSO",
   },
-  topLeft: {
+  midLeft: {
     src: img("Consultórios", "Fonaudiologia", "DSC09463.jpg"),
     alt: "Sessão de fonoaudiologia na Clínica DVERSO",
   },
-  topRight: {
+  midRight: {
     src: img("Consultórios", "Pisicologia", "DSC09454.jpg"),
     alt: "Atendimento psicológico na Clínica DVERSO",
   },
-  bottomCenter: {
+  botLeft: {
     src: img("Consultórios", "Arteterapia", "DSC09489.jpg"),
     alt: "Arteterapia na Clínica DVERSO",
   },
+  botRight: {
+    src: img("Consultórios", "Musicoterapia", "DSC09482.jpg"),
+    alt: "Sala de musicoterapia na Clínica DVERSO",
+  },
 } as const;
 
-/** Colagem da mini-seção "Sobre" na home */
+/** Colagem da mini-seção "Sobre" na home — 1 grande | 2 médias | 2 médias */
 export const HOME_ABOUT_COLLAGE = {
-  hero: { src: img("Brinquedoteca", "DSC00280.jpg"), alt: "Brinquedoteca da Clínica DVERSO em Sorocaba" },
-  aba: { src: EDITORIAL_THERAPY_ABA, alt: "Sessão de terapia ABA na Clínica DVERSO" },
-  dog: { src: img("TAA", "DSC09850.jpg"), alt: "Terapia assistida por animais na Clínica DVERSO" },
-  family: { src: img("Espaço Conforto", "DSC09453.jpg"), alt: "Espaço de acolhimento para famílias" },
+  hero: {
+    src: img("Brinquedoteca", "DSC00280.jpg"),
+    alt: "Brinquedoteca da Clínica DVERSO em Sorocaba",
+  },
+  midLeft: {
+    src: EDITORIAL_THERAPY_ABA,
+    alt: "Sessão de terapia ABA na Clínica DVERSO",
+  },
+  midRight: {
+    src: img("TAA", "DSC09850.jpg"),
+    alt: "Terapia assistida por animais na Clínica DVERSO",
+  },
+  botLeft: {
+    src: img("Espaço Conforto", "DSC09453.jpg"),
+    alt: "Espaço de acolhimento para famílias",
+  },
+  botRight: {
+    src: img("Extras", "DSC00441.jpg"),
+    alt: "Ambiente acolhedor da Clínica DVERSO",
+  },
 } as const;
 
 export const EDITORIAL_IMAGES = {
@@ -230,13 +250,41 @@ export const AREA_CARD_IMAGE: Record<
     src: img("Consultórios", "Integração Sensorial", "DSC09476.jpg"),
     alt: "Sala de Terapia Ocupacional e integração sensorial",
   },
-  "neuropsychological-assessment": {
-    src: img("Consultórios", "Pisicologia", "DSC09458.jpg"),
-    alt: "Ambiente para Avaliação Neuropsicológica na Clínica DVERSO",
+  "sensory-integration": {
+    src: img("Consultórios", "Integração Sensorial", "DSC03287.jpg.jpeg"),
+    alt: "Sala de Integração Sensorial da Clínica DVERSO",
+  },
+  "music-therapy": {
+    src: img("Consultórios", "Musicoterapia", "DSC09482.jpg"),
+    alt: "Sala de Musicoterapia da Clínica DVERSO",
+  },
+  physiotherapy: {
+    src: img("Consultórios", "Fisioterapia Psicomotricidade", "DSC09466.jpg"),
+    alt: "Sala de Fisioterapia da Clínica DVERSO",
+  },
+  psychomotricity: {
+    src: img("Consultórios", "Fisioterapia Psicomotricidade", "DSC09472.jpg"),
+    alt: "Sala de Psicomotricidade da Clínica DVERSO",
+  },
+  nutrition: {
+    src: img("Extras", "DSC03345.jpg.jpeg"),
+    alt: "Ambiente de Nutrição e cozinha terapêutica",
   },
   "feeding-therapy": {
     src: img("Extras", "DSC03343.jpg.jpeg"),
     alt: "Cozinha terapêutica — Terapia Alimentar na Clínica DVERSO",
+  },
+  psychopedagogy: {
+    src: img("Consultórios", "Pisicologia", "DSC09457.jpg"),
+    alt: "Ambiente de Psicopedagogia na Clínica DVERSO",
+  },
+  "neuropsychological-assessment": {
+    src: img("Consultórios", "Pisicologia", "DSC09458.jpg"),
+    alt: "Ambiente para Avaliação Neuropsicológica na Clínica DVERSO",
+  },
+  "animal-assisted-therapy": {
+    src: img("TAA", "DSC09850.jpg"),
+    alt: "Terapia Assistida por Animais na Clínica DVERSO",
   },
   "therapeutic-companion": {
     src: img("Espaço Conforto", "DSC09448.jpg"),
@@ -245,10 +293,6 @@ export const AREA_CARD_IMAGE: Record<
   "art-therapy": {
     src: img("Consultórios", "Arteterapia", "DSC09489.jpg"),
     alt: "Sala de Arteterapia da Clínica DVERSO",
-  },
-  psychopedagogy: {
-    src: EDITORIAL_THERAPY_ABA,
-    alt: "Intervenção terapêutica na Clínica DVERSO",
   },
   neurodiversity: {
     src: EDITORIAL_KID_PAINTING,

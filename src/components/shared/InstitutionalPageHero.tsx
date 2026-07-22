@@ -6,6 +6,7 @@ interface InstitutionalPageHeroProps {
   subtitle?: string;
   lead?: string;
   showBrandLogo?: boolean;
+  className?: string;
 }
 
 export default function InstitutionalPageHero({
@@ -13,12 +14,15 @@ export default function InstitutionalPageHero({
   subtitle,
   lead,
   showBrandLogo = false,
+  className = "",
 }: InstitutionalPageHeroProps) {
   const useLogoForSubtitle =
     showBrandLogo || subtitle === "Clínica DVERSO";
 
   return (
-    <header className="relative py-16 sm:py-20 px-4 sm:px-6 bg-primary-pale/50 overflow-hidden">
+    <header
+      className={`relative py-16 sm:py-20 px-4 sm:px-6 bg-primary-pale/50 overflow-hidden ${className}`}
+    >
       <div className="max-w-4xl mx-auto text-center min-w-0 relative z-10">
         {subtitle ? (
           useLogoForSubtitle ? (

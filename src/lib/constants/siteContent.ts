@@ -15,7 +15,7 @@ export const HOME_HERO = {
 export const CARE_SESSION_INFO = {
   title: "Como funciona o seu atendimento na DVERSO",
   intro:
-    "Cada consulta particular tem duração de 1 hora e, quando indicado clinicamente, pode contar com o acompanhamento do nosso Cão de Terapia (TAA) e do Acompanhante Terapêutico (AT). Esse tempo permite que o aprendiz se adapte, se engaje e responda de forma mais natural, e nos dá condições de observar com cuidado como ela se comunica, brinca, aprende, reage a desafios e lida com mudanças — essencial para decisões clínicas seguras, individualizadas e realmente úteis.",
+    "Cada consulta particular tem duração de 1 hora e, quando indicado clinicamente, pode contar com o acompanhamento do nosso Cão de Terapia (TAA) e do AT - Acompanhamento Terapêutico. Esse tempo permite que o aprendiz se adapte, se engaje e responda de forma mais natural, e nos dá condições de observar com cuidado como ela se comunica, brinca, aprende, reage a desafios e lida com mudanças — essencial para decisões clínicas seguras, individualizadas e realmente úteis.",
   linkLabel: "Ver etapas completas do atendimento",
   linkHref: "/sobre#como-funciona",
 };
@@ -24,7 +24,7 @@ export const ABOUT_CLINIC = {
   metaTitle: "Sobre a Clínica DVERSO | Atendimento neuroatípico em Sorocaba",
   metaDescription:
     "Conheça a Clínica DVERSO: ABA de alta qualidade, intervenção individualizada, participação da família e da escola, e cuidado para neuroatípicos em Sorocaba.",
-  title: "Saiba mais sobre a Clínica DVERSO",
+  title: "Saiba mais sobre a DVERSO",
   originTitle: "Por que a DVERSO existe",
   originParagraphs: [
     "A DVERSO nasceu do encontro entre profissionais movidos pela mesma inquietação: oferecer um cuidado que realmente faça sentido e produza impacto real na vida de pessoas neuroatípicas.",

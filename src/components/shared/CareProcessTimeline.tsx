@@ -35,7 +35,7 @@ export function CareSessionCard() {
         </li>
         <li className="flex items-start gap-2">
           <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-pastel-mint" aria-hidden />
-          Acompanhante Terapêutico (AT) integrado ao plano
+          AT - Acompanhamento Terapêutico integrado ao plano
         </li>
       </ul>
     </article>

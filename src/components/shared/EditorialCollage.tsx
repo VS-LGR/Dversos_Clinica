@@ -7,9 +7,10 @@ export interface CollageImageItem {
 
 interface EditorialCollageProps {
   hero: CollageImageItem;
-  topLeft: CollageImageItem;
-  topRight: CollageImageItem;
-  bottomCenter: CollageImageItem;
+  midLeft: CollageImageItem;
+  midRight: CollageImageItem;
+  botLeft: CollageImageItem;
+  botRight: CollageImageItem;
   priority?: boolean;
 }
 
@@ -35,35 +36,25 @@ function CollageImage({
 
 export default function EditorialCollage({
   hero,
-  topLeft,
-  topRight,
-  bottomCenter,
+  midLeft,
+  midRight,
+  botLeft,
+  botRight,
   priority = false,
 }: EditorialCollageProps) {
   return (
-    <div className="rounded-[2rem] sm:rounded-[2.5rem] bg-white/90 border border-primary/[0.06] shadow-[0_12px_40px_-16px_rgba(26,43,86,0.12)] p-3 sm:p-4">
-      <div className="grid grid-cols-4 gap-2 sm:gap-3">
+    <div className="h-full rounded-[2rem] sm:rounded-[2.5rem] bg-white/90 border border-primary/[0.06] shadow-[0_12px_40px_-16px_rgba(26,43,86,0.12)] p-3 sm:p-4">
+      <div className="grid grid-cols-2 gap-2 sm:gap-3 h-full">
         <CollageImage
           src={hero.src}
           alt={hero.alt}
-          className="col-span-4 aspect-[16/10]"
+          className="col-span-2 aspect-[16/10]"
           priority={priority}
         />
-        <CollageImage src={topLeft.src} alt={topLeft.alt} className="col-span-2 aspect-[4/3]" />
-        <CollageImage src={topRight.src} alt={topRight.alt} className="col-span-2 aspect-[4/3]" />
-        <div
-          className="col-span-1 aspect-square rounded-2xl bg-pastel-peach/75 border border-pastel-peach"
-          aria-hidden
-        />
-        <CollageImage
-          src={bottomCenter.src}
-          alt={bottomCenter.alt}
-          className="col-span-2 aspect-[4/3]"
-        />
-        <div
-          className="col-span-1 aspect-square rounded-2xl bg-pastel-mint/75 border border-pastel-mint"
-          aria-hidden
-        />
+        <CollageImage src={midLeft.src} alt={midLeft.alt} className="aspect-[4/3]" />
+        <CollageImage src={midRight.src} alt={midRight.alt} className="aspect-[4/3]" />
+        <CollageImage src={botLeft.src} alt={botLeft.alt} className="aspect-[4/3]" />
+        <CollageImage src={botRight.src} alt={botRight.alt} className="aspect-[4/3]" />
       </div>
     </div>
   );

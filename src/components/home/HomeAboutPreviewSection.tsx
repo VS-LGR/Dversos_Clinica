@@ -61,22 +61,23 @@ function HighlightIconGlyph({ type }: { type: HighlightIcon }) {
 export default function HomeAboutPreviewSection() {
   return (
     <section
-      className="py-20 sm:py-24 px-4 sm:px-6 bg-pastel-aqua/30 overflow-hidden safe-x"
+      className="pt-0 pb-20 sm:pb-24 px-4 sm:px-6 bg-pastel-aqua/30 overflow-hidden safe-x"
       aria-labelledby="home-about-title"
     >
       <div className="max-w-6xl mx-auto min-w-0">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-          <div className="min-w-0 order-2 lg:order-1">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
+          <div className="min-w-0 order-2 lg:order-1 flex">
             <EditorialCollage
               hero={HOME_ABOUT_COLLAGE.hero}
-              topLeft={HOME_ABOUT_COLLAGE.aba}
-              topRight={HOME_ABOUT_COLLAGE.dog}
-              bottomCenter={HOME_ABOUT_COLLAGE.family}
+              midLeft={HOME_ABOUT_COLLAGE.midLeft}
+              midRight={HOME_ABOUT_COLLAGE.midRight}
+              botLeft={HOME_ABOUT_COLLAGE.botLeft}
+              botRight={HOME_ABOUT_COLLAGE.botRight}
               priority
             />
           </div>
 
-          <div className="min-w-0 order-1 lg:order-2 text-center lg:text-left">
+          <div className="min-w-0 order-1 lg:order-2 text-center lg:text-left flex flex-col">
             <p className="text-primary/65 text-[10px] sm:text-xs font-semibold uppercase tracking-widest mb-2.5">
               {HOME_ABOUT_PREVIEW.eyebrow}
             </p>
@@ -87,7 +88,7 @@ export default function HomeAboutPreviewSection() {
               {HOME_ABOUT_PREVIEW.title}
             </h2>
 
-            <div className="grid sm:grid-cols-2 gap-3 sm:gap-4 mb-8">
+            <div className="grid sm:grid-cols-2 gap-3 sm:gap-4 mb-8 flex-1">
               {HOME_ABOUT_PREVIEW.highlights.map((item, index) => (
                 <article
                   key={item.title}
@@ -108,7 +109,7 @@ export default function HomeAboutPreviewSection() {
               ))}
             </div>
 
-            <SoftTextLink href={HOME_ABOUT_PREVIEW.linkHref} className="text-sm sm:text-base">
+            <SoftTextLink href={HOME_ABOUT_PREVIEW.linkHref} className="text-sm sm:text-base mt-auto">
               {HOME_ABOUT_PREVIEW.linkLabel}
             </SoftTextLink>
           </div>

@@ -7,7 +7,8 @@ import WaveDivider from "@/components/shared/WaveDivider";
 import PageShell from "@/components/shared/PageShell";
 import LeadersGroupSection from "@/components/shared/LeadersGroupSection";
 import PicStickyScrollImage from "@/components/sobre/PicStickyScrollImage";
-import { SOBRE_GALLERY } from "@/lib/constants/clinicMedia";
+import Image from "next/image";
+import { BE_DVERSO_SUPPORT_IMAGE, SOBRE_GALLERY } from "@/lib/constants/clinicMedia";
 import { ABOUT_CLINIC, CARE_SESSION_INFO } from "@/lib/constants/siteContent";
 import { CARE_SUPERVISION_INTRO } from "@/lib/constants/processFlow";
 import { DEFAULT_WHATSAPP_NUMBER } from "@/lib/constants/clinicAreas";
@@ -30,9 +31,8 @@ export default function SobrePage() {
     <PageShell>
       <InstitutionalPageHero
         title={ABOUT_CLINIC.title}
-        subtitle="Clínica DVERSO"
+        subtitle="Sobre nós"
         lead={ABOUT_CLINIC.originParagraphs[0]}
-        showBrandLogo
       />
 
       <section className="py-12 sm:py-16 px-4 sm:px-6 bg-pastel-mint/30 min-w-0">
@@ -92,27 +92,12 @@ export default function SobrePage() {
 
       <WaveDivider fill="#f4f7fb" variant="soft" />
 
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto min-w-0">
-        <h2 className="text-2xl font-bold text-primary mb-4">
-          {ABOUT_CLINIC.missionTitle}
-        </h2>
-        <p className="text-primary/85 leading-relaxed mb-6">
-          Profissionais comprometidos com evidências, supervisão e respeito à
-          neurodiversidade fazem parte da nossa cultura — {ABOUT_CLINIC.missionTagline}.
-        </p>
-        <div className="flex flex-wrap gap-6">
-          <SoftTextLink href="/seja-colaborador">Seja colaborador</SoftTextLink>
-          <SoftTextLink href="/espacos">Nossos espaços</SoftTextLink>
-          <SoftTextLink href="/areas">Áreas de atuação</SoftTextLink>
-        </div>
-      </section>
-
       <section className="py-16 sm:py-20 px-4 sm:px-6 bg-pastel-mint/25 min-w-0">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-bold text-primary text-center tracking-tight mb-10">
             Lideranças DVERSO
           </h2>
-          <LeadersGroupSection showLogo expandedCards />
+          <LeadersGroupSection expandedCards />
           <p className="text-center mt-8">
             <SoftTextLink href="/liderancas">Ver página de lideranças</SoftTextLink>
           </p>
@@ -131,6 +116,42 @@ export default function SobrePage() {
             variant="ghost"
             className="justify-center"
           />
+        </div>
+      </section>
+
+      <section
+        className="relative py-16 sm:py-24 px-4 sm:px-6 bg-white border-t border-primary/[0.06] overflow-hidden"
+        aria-labelledby="ser-dverso-title"
+      >
+        <div className="max-w-4xl mx-auto text-center min-w-0">
+          <p className="text-primary/55 text-xs font-semibold uppercase tracking-[0.2em] mb-4">
+            Cultura DVERSO
+          </p>
+          <div className="mx-auto mb-8 sm:mb-10 w-full max-w-2xl sm:max-w-3xl rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_18px_50px_-20px_rgba(26,43,86,0.28)] ring-1 ring-primary/10">
+            <Image
+              src={BE_DVERSO_SUPPORT_IMAGE}
+              alt="#SejaDverso — Clínica DVERSO"
+              width={960}
+              height={320}
+              className="w-full h-auto object-contain object-center bg-white"
+              sizes="(max-width: 768px) 92vw, 768px"
+            />
+          </div>
+          <h2
+            id="ser-dverso-title"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary tracking-tight mb-5 text-balance"
+          >
+            {ABOUT_CLINIC.missionTagline}
+          </h2>
+          <p className="text-primary/85 leading-relaxed text-base sm:text-lg max-w-2xl mx-auto mb-8">
+            {ABOUT_CLINIC.missionTitle}. Profissionais comprometidos com evidências,
+            supervisão e respeito à neurodiversidade fazem parte da nossa cultura.
+          </p>
+          <div className="flex flex-wrap justify-center gap-6">
+            <SoftTextLink href="/seja-colaborador">Seja colaborador</SoftTextLink>
+            <SoftTextLink href="/espacos">Nossos espaços</SoftTextLink>
+            <SoftTextLink href="/areas">Especialidades</SoftTextLink>
+          </div>
         </div>
       </section>
     </PageShell>

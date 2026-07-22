@@ -31,18 +31,18 @@ export const CLINIC_AREAS: ClinicArea[] = [
   },
   {
     slug: "therapeutic-companion",
-    name: "Acompanhante Terapêutico (AT)",
-    shortName: "Acompanhante Terapêutico",
+    name: "AT - Acompanhamento Terapêutico",
+    shortName: "AT - Acompanhamento Terapêutico",
     description:
       "Suporte terapêutico em ambientes naturais — casa, escola e comunidade — para generalizar habilidades, ampliar autonomia e fortalecer a rede de apoio.",
     howItWorks:
-      "O Acompanhante Terapêutico atua nos contextos em que o aprendiz vive, aplicando estratégias alinhadas ao plano clínico, com supervisão e comunicação contínua com a equipe DVERSO.",
+      "O Acompanhamento Terapêutico (AT) atua nos contextos em que o aprendiz vive, aplicando estratégias alinhadas ao plano clínico, com supervisão e comunicação contínua com a equipe DVERSO.",
     detailParagraphs: [
       "Quando indicado, o AT participa das sessões de 1 hora e acompanha o aprendiz em situações reais de rotina, favorecendo generalização de habilidades sociais, comunicativas, regulatórias e funcionais.",
       "O trabalho é planejado em conjunto com supervisão ABA, família e, quando necessário, escola — sempre com foco em segurança, previsibilidade e avanços sustentáveis.",
     ],
     whatsAppMessage:
-      "Olá! Gostaria de informações sobre Acompanhante Terapêutico na Clínica DVERSO.",
+      "Olá! Gostaria de informações sobre AT - Acompanhamento Terapêutico na Clínica DVERSO.",
     accentClass: "text-primary",
   },
   {

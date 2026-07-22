@@ -22,7 +22,7 @@ export const SPECIALTY_CHIP_LABELS: Record<PublicSpecialtySlug, string> = {
   "occupational-therapy": "Terapia Ocupacional",
   "neuropsychological-assessment": "Avaliação Neuro",
   "feeding-therapy": "Terapia Alimentar",
-  "therapeutic-companion": "AT",
+  "therapeutic-companion": "AT - Acompanhamento Terapêutico",
 };
 
 export const HOME_FEATURED_SPECIALTY_SLUGS = PUBLIC_SPECIALTY_SLUGS;

@@ -86,7 +86,7 @@ export default function SpacesCarousel() {
   return (
     <div
       ref={regionRef}
-      className="relative w-full min-w-0 max-w-5xl mx-auto"
+      className="relative w-full min-w-0 max-w-6xl lg:max-w-7xl mx-auto"
       role="region"
       aria-roledescription="carrossel"
       aria-label="Ambientes da clínica"
@@ -124,14 +124,14 @@ export default function SpacesCarousel() {
                 className={isActive ? "block" : "hidden"}
                 aria-hidden={!isActive}
               >
-                <div className="grid md:grid-cols-2 gap-5 md:gap-8 items-center">
-                  <div className="relative w-full aspect-[16/11] sm:aspect-[16/10] rounded-2xl overflow-hidden bg-pastel-mint/30 ring-1 ring-primary/10 shadow-[0_12px_40px_-16px_rgba(26,43,86,0.18)]">
+                <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-center">
+                  <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] rounded-2xl sm:rounded-3xl overflow-hidden bg-pastel-mint/30 ring-1 ring-primary/10 shadow-[0_12px_40px_-16px_rgba(26,43,86,0.18)]">
                     <Image
                       src={media.cover}
                       alt={spaceImageAlt(space, 0)}
                       fill
                       className="object-cover object-center"
-                      sizes="(max-width: 768px) 92vw, 480px"
+                      sizes="(max-width: 768px) 94vw, 640px"
                       priority={index === 0}
                     />
                   </div>
@@ -139,10 +139,10 @@ export default function SpacesCarousel() {
                     <p className="text-primary/55 text-[10px] sm:text-xs font-semibold uppercase tracking-widest mb-2">
                       Ambiente {index + 1} de {total}
                     </p>
-                    <h3 className="text-xl sm:text-2xl font-bold text-primary tracking-tight mb-3 text-balance">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary tracking-tight mb-3 text-balance">
                       {space.title}
                     </h3>
-                    <p className="text-primary/90 leading-relaxed text-sm sm:text-[0.95rem] text-pretty">
+                    <p className="text-primary/90 leading-relaxed text-sm sm:text-base text-pretty">
                       {brief}
                     </p>
                   </div>
