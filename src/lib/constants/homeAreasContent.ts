@@ -37,7 +37,7 @@ export const PROTECTED_CARE_COPY = {
   eyebrow: "Terapia Assistida por Animais",
   title: "TAA e cão de terapia",
   description:
-    "A Terapia Assistida por Animais é conduzida com ética, supervisão e integração ao plano terapêutico individualizado.",
+    "A Terapia Assistida por Animais é conduzida com ética, supervisão profissional e integração ao plano terapêutico individualizado. Quando indicado clinicamente, o Anakin — nosso cão de terapia — participa das sessões para favorecer vínculo, engajamento e regulação emocional em um ambiente protegido e acolhedor, sempre alinhado aos objetivos de cada aprendiz e família.",
 };
 
 export const COMPLEMENTARY_CARE_COPY = {

@@ -7,6 +7,9 @@ export function publicMediaPath(...segments: string[]): string {
 export const BRAND_LOGO_PRIMARY = publicMediaPath("images", "LogoDversos_Logo.png");
 export const BRAND_LOGO_SOLO = publicMediaPath("images", "Logo SoloDversos_Logo.webp");
 export const BE_DVERSO_SUPPORT_IMAGE = publicMediaPath("images", "SejaDversoDversos_Logo.svg");
+export const ANAKIN_THERAPY_DOG_IMAGE = publicMediaPath("images", "Foto Anakin.jpg.png");
+export const ANAKIN_THERAPY_DOG_ALT =
+  "Anakin — cão de terapia da Clínica DVERSO com bandana da marca";
 export const TEAM_GROUP_PHOTO = publicMediaPath("images", "Socios", "DSC09904.jpg");
 export const TEAM_GROUP_PHOTO_ALT =
   "Sócios da Clínica DVERSO — equipe de liderança em ambiente acolhedor";
