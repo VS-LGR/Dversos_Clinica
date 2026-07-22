@@ -185,45 +185,40 @@ export const HOME_SPECIALTIES_COLLAGE = {
     src: img("Consultórios", "Integração Sensorial", "DSC09476.jpg"),
     alt: "Sala de integração sensorial na Clínica DVERSO",
   },
-  midLeft: {
+  topLeft: {
     src: img("Consultórios", "Fonaudiologia", "DSC09463.jpg"),
     alt: "Sessão de fonoaudiologia na Clínica DVERSO",
   },
-  midRight: {
+  topRight: {
     src: img("Consultórios", "Pisicologia", "DSC09454.jpg"),
     alt: "Atendimento psicológico na Clínica DVERSO",
   },
-  botLeft: {
+  bottomCenter: {
     src: img("Consultórios", "Arteterapia", "DSC09489.jpg"),
     alt: "Arteterapia na Clínica DVERSO",
   },
-  botRight: {
-    src: img("Consultórios", "Musicoterapia", "DSC09482.jpg"),
-    alt: "Sala de musicoterapia na Clínica DVERSO",
-  },
 } as const;
 
-/** Colagem da mini-seção "Sobre" na home — 1 grande | 2 médias | 2 médias */
+/**
+ * Colagem "Sobre a clínica":
+ * 1 grande | abaixo: 2 quadrados à esquerda + 1 média vertical à direita
+ */
 export const HOME_ABOUT_COLLAGE = {
   hero: {
     src: img("Brinquedoteca", "DSC00280.jpg"),
     alt: "Brinquedoteca da Clínica DVERSO em Sorocaba",
   },
-  midLeft: {
+  squareTop: {
     src: EDITORIAL_THERAPY_ABA,
     alt: "Sessão de terapia ABA na Clínica DVERSO",
   },
-  midRight: {
-    src: img("TAA", "DSC09850.jpg"),
-    alt: "Terapia assistida por animais na Clínica DVERSO",
-  },
-  botLeft: {
+  squareBot: {
     src: img("Espaço Conforto", "DSC09453.jpg"),
     alt: "Espaço de acolhimento para famílias",
   },
-  botRight: {
-    src: img("Extras", "DSC00441.jpg"),
-    alt: "Ambiente acolhedor da Clínica DVERSO",
+  vertical: {
+    src: img("TAA", "DSC09850.jpg"),
+    alt: "Terapia assistida por animais na Clínica DVERSO",
   },
 } as const;
 

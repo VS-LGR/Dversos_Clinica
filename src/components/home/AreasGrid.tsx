@@ -17,12 +17,13 @@ export default function AreasGrid() {
 
   return (
     <section
-      className="pt-0 pb-20 sm:pb-24 px-4 sm:px-6 bg-pastel-aqua/30 overflow-hidden safe-x"
+      className="py-20 sm:py-24 px-4 sm:px-6 bg-pastel-aqua/30 overflow-hidden safe-x"
       aria-labelledby="areas-title"
     >
       <div className="max-w-6xl mx-auto min-w-0">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
-          <div className="min-w-0 order-1 text-center lg:text-left flex flex-col">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+          {/* Texto à esquerda / collage à direita — tamanho original restaurado */}
+          <div className="min-w-0 order-1 text-center lg:text-left">
             <p className="text-primary/65 text-[10px] sm:text-xs font-semibold uppercase tracking-widest mb-2.5">
               {AREAS_INTRO_COPY.eyebrow}
             </p>
@@ -33,7 +34,7 @@ export default function AreasGrid() {
               {AREAS_INTRO_COPY.title}
             </h2>
 
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 max-w-xl mx-auto lg:mx-0 auto-rows-fr flex-1">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 max-w-xl mx-auto lg:mx-0 auto-rows-fr">
               {PUBLIC_SPECIALTY_SLUGS.map((slug, cardIndex) => {
                 const area = areaBySlug.get(slug);
                 if (!area) return null;
@@ -66,18 +67,18 @@ export default function AreasGrid() {
               })}
             </ul>
 
-            <SoftTextLink href="/areas" className="text-sm sm:text-base mt-auto">
+            <SoftTextLink href="/areas" className="text-sm sm:text-base">
               {AREAS_INTRO_COPY.linkLabel}
             </SoftTextLink>
           </div>
 
-          <div className="min-w-0 order-2 flex">
+          <div className="min-w-0 order-2">
             <EditorialCollage
+              variant="classic"
               hero={HOME_SPECIALTIES_COLLAGE.hero}
-              midLeft={HOME_SPECIALTIES_COLLAGE.midLeft}
-              midRight={HOME_SPECIALTIES_COLLAGE.midRight}
-              botLeft={HOME_SPECIALTIES_COLLAGE.botLeft}
-              botRight={HOME_SPECIALTIES_COLLAGE.botRight}
+              topLeft={HOME_SPECIALTIES_COLLAGE.topLeft}
+              topRight={HOME_SPECIALTIES_COLLAGE.topRight}
+              bottomCenter={HOME_SPECIALTIES_COLLAGE.bottomCenter}
             />
           </div>
         </div>
