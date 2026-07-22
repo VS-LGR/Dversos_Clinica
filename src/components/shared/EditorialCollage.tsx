@@ -65,32 +65,32 @@ function AboutCollage({
   priority = false,
 }: Omit<AboutCollageProps, "variant">) {
   return (
-    <div className="rounded-[2rem] sm:rounded-[2.5rem] bg-white/90 border border-primary/[0.06] shadow-[0_12px_40px_-16px_rgba(26,43,86,0.12)] p-3 sm:p-4 w-full">
-      <div className="flex flex-col gap-2 sm:gap-3">
+    <div className="h-full flex flex-col rounded-[2rem] sm:rounded-[2.5rem] bg-white/90 border border-primary/[0.06] shadow-[0_12px_40px_-16px_rgba(26,43,86,0.12)] p-3 sm:p-4 w-full">
+      <div className="flex flex-col gap-2 sm:gap-3 flex-1 min-h-0">
         <CollageImage
           src={hero.src}
           alt={hero.alt}
-          className="aspect-[16/10] w-full"
+          className="aspect-[16/10] w-full shrink-0"
           priority={priority}
         />
-        {/* Esquerda: 2 quadrados | Direita: 1 média vertical */}
-        <div className="grid grid-cols-2 grid-rows-2 gap-2 sm:gap-3">
+        {/* Esquerda: 2 quadrados | Direita: 1 média vertical — preenche a altura restante */}
+        <div className="grid grid-cols-2 grid-rows-2 gap-2 sm:gap-3 flex-1 min-h-[12rem] sm:min-h-[14rem]">
           <CollageImage
             src={squareTop.src}
             alt={squareTop.alt}
-            className="aspect-square"
+            className="min-h-0"
             fit={isAbaGraphic(squareTop.src) ? "contain" : "cover"}
           />
           <CollageImage
             src={vertical.src}
             alt={vertical.alt}
-            className="row-span-2"
+            className="row-span-2 min-h-0"
             fit={isAbaGraphic(vertical.src) ? "contain" : "cover"}
           />
           <CollageImage
             src={squareBot.src}
             alt={squareBot.alt}
-            className="aspect-square"
+            className="min-h-0"
             fit={isAbaGraphic(squareBot.src) ? "contain" : "cover"}
           />
         </div>

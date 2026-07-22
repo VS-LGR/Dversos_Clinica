@@ -65,8 +65,9 @@ export default function HomeAboutPreviewSection() {
       aria-labelledby="home-about-title"
     >
       <div className="max-w-6xl mx-auto min-w-0">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-end">
-          <div className="min-w-0 order-2 lg:order-1">
+        {/* Mesma altura nas colunas; bases do card e do CTA alinhadas */}
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
+          <div className="min-w-0 order-2 lg:order-1 flex h-full">
             <EditorialCollage
               hero={HOME_ABOUT_COLLAGE.hero}
               vertical={HOME_ABOUT_COLLAGE.vertical}
@@ -76,7 +77,7 @@ export default function HomeAboutPreviewSection() {
             />
           </div>
 
-          <div className="min-w-0 order-1 lg:order-2 text-center lg:text-left">
+          <div className="min-w-0 order-1 lg:order-2 text-center lg:text-left flex flex-col h-full">
             <p className="text-primary/65 text-[10px] sm:text-xs font-semibold uppercase tracking-widest mb-2.5">
               {HOME_ABOUT_PREVIEW.eyebrow}
             </p>
@@ -87,7 +88,7 @@ export default function HomeAboutPreviewSection() {
               {HOME_ABOUT_PREVIEW.title}
             </h2>
 
-            <div className="grid sm:grid-cols-2 gap-3 sm:gap-4 mb-8">
+            <div className="grid sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8 flex-1 content-start">
               {HOME_ABOUT_PREVIEW.highlights.map((item, index) => (
                 <article
                   key={item.title}
@@ -108,7 +109,10 @@ export default function HomeAboutPreviewSection() {
               ))}
             </div>
 
-            <SoftTextLink href={HOME_ABOUT_PREVIEW.linkHref} className="text-sm sm:text-base">
+            <SoftTextLink
+              href={HOME_ABOUT_PREVIEW.linkHref}
+              className="text-sm sm:text-base mt-auto self-center lg:self-start"
+            >
               {HOME_ABOUT_PREVIEW.linkLabel}
             </SoftTextLink>
           </div>

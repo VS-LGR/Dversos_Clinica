@@ -4,9 +4,9 @@ export function publicMediaPath(...segments: string[]): string {
   return `/${segments.map((s) => encodeURIComponent(s)).join("/")}`;
 }
 
-export const BRAND_LOGO_PRIMARY = publicMediaPath("images", "logo svg.svg");
+export const BRAND_LOGO_PRIMARY = publicMediaPath("images", "LogoDversos_Logo.svg");
 export const BRAND_LOGO_SOLO = publicMediaPath("images", "Logo SoloDversos_Logo.webp");
-export const BE_DVERSO_SUPPORT_IMAGE = publicMediaPath("images", "SejaDverso svg.svg");
+export const BE_DVERSO_SUPPORT_IMAGE = publicMediaPath("images", "SejaDversoDversos_Logo.svg");
 export const TEAM_GROUP_PHOTO = publicMediaPath("images", "Socios", "DSC09904.jpg");
 export const TEAM_GROUP_PHOTO_ALT =
   "Sócios da Clínica DVERSO — equipe de liderança em ambiente acolhedor";
