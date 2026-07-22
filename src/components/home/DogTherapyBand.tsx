@@ -18,28 +18,15 @@ export default function DogTherapyBand() {
       aria-labelledby="differentials-title"
     >
       <div
-        className="absolute inset-0 bg-gradient-to-br from-pastel-mint/50 via-pastel-aqua/40 to-primary-pale/80"
+        className="absolute inset-0 bg-gradient-to-br from-pastel-mint/55 via-pastel-aqua/45 to-primary-pale"
         aria-hidden
       />
       <WaveDivider overlay position="top" className="absolute top-0 inset-x-0" fill="#f4f7fb" variant="soft" />
 
       <div className="relative z-10 max-w-6xl mx-auto min-w-0 pt-4 sm:pt-6">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-end lg:items-center">
-          <div className="relative min-w-0 flex justify-center lg:justify-start order-1">
-            <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-none">
-              <Image
-                src={ANAKIN_THERAPY_DOG_IMAGE}
-                alt={ANAKIN_THERAPY_DOG_ALT}
-                width={720}
-                height={900}
-                className="w-full h-auto object-contain object-bottom drop-shadow-[0_18px_40px_rgba(26,43,86,0.22)]"
-                sizes="(max-width: 1024px) 90vw, 48vw"
-                priority={false}
-              />
-            </div>
-          </div>
-
-          <div className="min-w-0 order-2 text-center lg:text-left pb-2 lg:pb-8">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-4 xl:gap-8 items-center">
+          {/* Texto à esquerda */}
+          <div className="min-w-0 order-1 text-center lg:text-left pb-2 lg:pb-6 lg:pr-4">
             <p className="text-primary/60 text-xs font-medium uppercase tracking-widest mb-2">
               {PROTECTED_CARE_COPY.eyebrow}
             </p>
@@ -66,6 +53,45 @@ export default function DogTherapyBand() {
                 label="Falar no WhatsApp"
                 variant="soft"
                 className="w-full sm:w-auto rounded-2xl"
+              />
+            </div>
+          </div>
+
+          {/* Anakin à direita — fade nas bordas para integrar ao fundo */}
+          <div className="relative min-w-0 order-2 flex justify-center lg:justify-end lg:-mr-4 xl:-mr-8">
+            <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-none lg:scale-[1.06] lg:origin-bottom-right">
+              <div
+                className="relative"
+                style={{
+                  WebkitMaskImage:
+                    "linear-gradient(90deg, transparent 0%, #000 12%, #000 100%), linear-gradient(0deg, transparent 0%, #000 8%, #000 92%, transparent 100%)",
+                  maskImage:
+                    "linear-gradient(90deg, transparent 0%, #000 12%, #000 100%), linear-gradient(0deg, transparent 0%, #000 8%, #000 92%, transparent 100%)",
+                  WebkitMaskComposite: "source-in",
+                  maskComposite: "intersect",
+                }}
+              >
+                <Image
+                  src={ANAKIN_THERAPY_DOG_IMAGE}
+                  alt={ANAKIN_THERAPY_DOG_ALT}
+                  width={720}
+                  height={900}
+                  className="w-full h-auto object-contain object-bottom"
+                  sizes="(max-width: 1024px) 90vw, 48vw"
+                  priority={false}
+                />
+              </div>
+              <div
+                className="pointer-events-none absolute inset-y-0 left-0 z-[1] w-[32%] bg-gradient-to-r from-[#dceaf4] via-[#dceaf4]/55 to-transparent"
+                aria-hidden
+              />
+              <div
+                className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[22%] bg-gradient-to-t from-primary-pale via-[#e8f2f8]/80 to-transparent"
+                aria-hidden
+              />
+              <div
+                className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-[12%] bg-gradient-to-b from-pastel-mint/80 to-transparent"
+                aria-hidden
               />
             </div>
           </div>
