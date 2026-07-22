@@ -22,7 +22,6 @@ export default function Header() {
   const isActiveLink = (href: string) => {
     if (href === "/") return pathname === "/";
     if (href === "/areas") return pathname.startsWith("/areas");
-    if (href === "/blog") return pathname.startsWith("/blog");
     if (href === "/sobre") return pathname.startsWith("/sobre");
     if (href === "/espacos") return pathname.startsWith("/espacos");
     return pathname === href;
@@ -114,7 +113,6 @@ export default function Header() {
                   <li key={href}>
                     <Link
                       href={href}
-                      prefetch={href === "/blog" ? true : undefined}
                       aria-current={active ? "page" : undefined}
                       onClick={() => setMenuOpen(false)}
                       className={`flex min-h-12 w-full items-center rounded-xl px-4 py-3 text-base font-semibold tracking-tight transition-colors ${
@@ -165,7 +163,6 @@ export default function Header() {
               <Link
                 key={href}
                 href={href}
-                prefetch={href === "/blog" ? true : undefined}
                 className={`rounded-full border px-3 py-2 text-sm font-medium transition-colors ${
                   isActiveLink(href)
                     ? "border-primary/25 bg-pastel-mint/50 text-primary"
