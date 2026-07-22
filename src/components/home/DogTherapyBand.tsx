@@ -11,22 +11,28 @@ import {
 } from "@/lib/constants/clinicMedia";
 import { PROTECTED_CARE_COPY } from "@/lib/constants/homeAreasContent";
 
+/** Cor média do fundo da foto do Anakin — seção sólida para não haver diferença de tom. */
+const TAA_SECTION_BG = "#D6D8D8";
+
 export default function DogTherapyBand() {
   return (
     <section
-      className="py-16 sm:py-24 px-4 sm:px-6 relative overflow-hidden safe-x"
+      className="relative overflow-hidden safe-x"
+      style={{ backgroundColor: TAA_SECTION_BG }}
       aria-labelledby="differentials-title"
     >
-      <div
-        className="absolute inset-0 bg-gradient-to-br from-pastel-mint/55 via-pastel-aqua/45 to-primary-pale"
-        aria-hidden
+      <WaveDivider
+        overlay
+        position="top"
+        className="absolute top-0 inset-x-0 z-20"
+        fill={TAA_SECTION_BG}
+        variant="soft"
       />
-      <WaveDivider overlay position="top" className="absolute top-0 inset-x-0" fill="#f4f7fb" variant="soft" />
 
-      <div className="relative z-10 max-w-6xl mx-auto min-w-0 pt-4 sm:pt-6">
-        <div className="grid lg:grid-cols-2 gap-6 lg:gap-4 xl:gap-8 items-center">
-          {/* Texto à esquerda */}
-          <div className="min-w-0 order-1 text-center lg:text-left pb-2 lg:pb-6 lg:pr-4">
+      <div className="relative z-10 grid lg:grid-cols-2 items-center min-h-[28rem] sm:min-h-[32rem] lg:min-h-[36rem]">
+        {/* Texto — coluna esquerda com padding interno */}
+        <div className="min-w-0 order-1 px-4 sm:px-6 lg:pl-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))] lg:pr-8 py-14 sm:py-20 text-center lg:text-left">
+          <div className="max-w-xl mx-auto lg:mx-0 lg:ml-auto lg:mr-0 lg:max-w-lg">
             <p className="text-primary/60 text-xs font-medium uppercase tracking-widest mb-2">
               {PROTECTED_CARE_COPY.eyebrow}
             </p>
@@ -36,14 +42,14 @@ export default function DogTherapyBand() {
             >
               {PROTECTED_CARE_COPY.title}
             </h2>
-            <p className="text-primary/85 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0 text-sm sm:text-base">
+            <p className="text-primary/85 leading-relaxed mb-8 text-sm sm:text-base">
               {PROTECTED_CARE_COPY.description}
             </p>
 
             <div className="flex w-full flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start">
               <Link
                 href="/areas/animal-assisted-therapy"
-                className="inline-flex items-center justify-center rounded-2xl font-semibold border border-primary/25 text-primary bg-white/85 px-5 py-3 hover:bg-white transition-all duration-200 w-full sm:w-auto"
+                className="inline-flex items-center justify-center rounded-2xl font-semibold border border-primary/25 text-primary bg-white/90 px-5 py-3 hover:bg-white transition-all duration-200 w-full sm:w-auto"
               >
                 Conhecer TAA
               </Link>
@@ -56,44 +62,19 @@ export default function DogTherapyBand() {
               />
             </div>
           </div>
+        </div>
 
-          {/* Anakin à direita — fade nas bordas para integrar ao fundo */}
-          <div className="relative min-w-0 order-2 flex justify-center lg:justify-end lg:-mr-4 xl:-mr-8">
-            <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-none lg:scale-[1.06] lg:origin-bottom-right">
-              <div
-                className="relative"
-                style={{
-                  WebkitMaskImage:
-                    "linear-gradient(90deg, transparent 0%, #000 12%, #000 100%), linear-gradient(0deg, transparent 0%, #000 8%, #000 92%, transparent 100%)",
-                  maskImage:
-                    "linear-gradient(90deg, transparent 0%, #000 12%, #000 100%), linear-gradient(0deg, transparent 0%, #000 8%, #000 92%, transparent 100%)",
-                  WebkitMaskComposite: "source-in",
-                  maskComposite: "intersect",
-                }}
-              >
-                <Image
-                  src={ANAKIN_THERAPY_DOG_IMAGE}
-                  alt={ANAKIN_THERAPY_DOG_ALT}
-                  width={720}
-                  height={900}
-                  className="w-full h-auto object-contain object-bottom"
-                  sizes="(max-width: 1024px) 90vw, 48vw"
-                  priority={false}
-                />
-              </div>
-              <div
-                className="pointer-events-none absolute inset-y-0 left-0 z-[1] w-[32%] bg-gradient-to-r from-[#dceaf4] via-[#dceaf4]/55 to-transparent"
-                aria-hidden
-              />
-              <div
-                className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[22%] bg-gradient-to-t from-primary-pale via-[#e8f2f8]/80 to-transparent"
-                aria-hidden
-              />
-              <div
-                className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-[12%] bg-gradient-to-b from-pastel-mint/80 to-transparent"
-                aria-hidden
-              />
-            </div>
+        {/* Anakin colado na extremidade direita da viewport — sem overlays de cor */}
+        <div className="relative order-2 min-h-[22rem] sm:min-h-[26rem] lg:min-h-full lg:h-full">
+          <div className="relative mx-auto w-full max-w-md sm:max-w-lg h-full min-h-[22rem] sm:min-h-[26rem] lg:absolute lg:inset-y-0 lg:left-0 lg:right-0 lg:max-w-none lg:mx-0">
+            <Image
+              src={ANAKIN_THERAPY_DOG_IMAGE}
+              alt={ANAKIN_THERAPY_DOG_ALT}
+              fill
+              className="object-contain object-bottom lg:object-right-bottom"
+              sizes="(max-width: 1024px) 90vw, 50vw"
+              priority={false}
+            />
           </div>
         </div>
       </div>
