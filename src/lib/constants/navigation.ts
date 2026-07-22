@@ -4,7 +4,6 @@ export const SITE_NAV_LINKS = [
   { href: "/sobre", label: "Sobre nós" },
   { href: "/areas", label: "Especialidades" },
   { href: "/espacos", label: "Espaços" },
-  { href: "/blog", label: "Blog" },
 ] as const;
 
 export const FOOTER_INSTITUTIONAL_LINKS = [
@@ -12,7 +11,6 @@ export const FOOTER_INSTITUTIONAL_LINKS = [
   { href: "/espacos", label: "Nossos espaços" },
   { href: "/liderancas", label: "Lideranças" },
   { href: "/seja-colaborador", label: "Seja colaborador" },
-  { href: "/blog", label: "Blog" },
 ] as const;
 
 export const FOOTER_EXTRA_LINKS = FOOTER_INSTITUTIONAL_LINKS;

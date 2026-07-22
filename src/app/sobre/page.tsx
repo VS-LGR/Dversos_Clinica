@@ -119,24 +119,26 @@ export default function SobrePage() {
       </section>
 
       <section
-        className="relative py-16 sm:py-24 px-4 sm:px-6 bg-white border-t border-primary/[0.06] overflow-hidden"
+        className="relative py-20 sm:py-28 px-4 sm:px-6 overflow-hidden bg-gradient-to-b from-pastel-mint/35 via-primary-pale/45 to-white"
         aria-labelledby="ser-dverso-title"
       >
-        <div className="max-w-4xl mx-auto text-center min-w-0">
-          <p className="text-primary/55 text-xs font-semibold uppercase tracking-[0.2em] mb-4">
+        <div
+          className="pointer-events-none absolute inset-x-0 top-1/4 mx-auto h-72 w-[min(92%,48rem)] rounded-full bg-pastel-aqua/40 blur-3xl"
+          aria-hidden
+        />
+        <div className="relative z-10 max-w-4xl mx-auto text-center min-w-0">
+          <p className="text-primary/55 text-xs font-semibold uppercase tracking-[0.2em] mb-6">
             Cultura DVERSO
           </p>
-          <div className="mx-auto mb-8 sm:mb-10 w-full max-w-2xl sm:max-w-3xl rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_18px_50px_-20px_rgba(26,43,86,0.28)] ring-1 ring-primary/10 bg-white">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={BE_DVERSO_SUPPORT_IMAGE}
-              alt="#SejaDverso — Clínica DVERSO"
-              width={960}
-              height={320}
-              className="w-full h-auto object-contain object-center"
-              decoding="async"
-            />
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={BE_DVERSO_SUPPORT_IMAGE}
+            alt="#SejaDverso — Clínica DVERSO"
+            width={960}
+            height={320}
+            className="mx-auto mb-8 sm:mb-10 w-full max-w-2xl sm:max-w-3xl h-auto object-contain object-center drop-shadow-[0_14px_32px_rgba(26,43,86,0.2)]"
+            decoding="async"
+          />
           <h2
             id="ser-dverso-title"
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary tracking-tight mb-5 text-balance"
