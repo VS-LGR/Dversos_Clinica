@@ -49,7 +49,6 @@ export default function BrandLogo({
   const width = Math.round(maxH * aspectPad);
   const sharedClass = `w-auto object-contain ${maxWidths[variant][size]} ${className}`;
 
-  // SVG complexo (Illustrator) quebra no optimizer do next/image — servir direto.
   if (isSvgSrc(src)) {
     return (
       // eslint-disable-next-line @next/next/no-img-element

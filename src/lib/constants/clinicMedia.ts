@@ -4,7 +4,7 @@ export function publicMediaPath(...segments: string[]): string {
   return `/${segments.map((s) => encodeURIComponent(s)).join("/")}`;
 }
 
-export const BRAND_LOGO_PRIMARY = publicMediaPath("images", "LogoDversos_Logo.svg");
+export const BRAND_LOGO_PRIMARY = publicMediaPath("images", "LogoDversos_Logo.png");
 export const BRAND_LOGO_SOLO = publicMediaPath("images", "Logo SoloDversos_Logo.webp");
 export const BE_DVERSO_SUPPORT_IMAGE = publicMediaPath("images", "SejaDversoDversos_Logo.svg");
 export const TEAM_GROUP_PHOTO = publicMediaPath("images", "Socios", "DSC09904.jpg");
