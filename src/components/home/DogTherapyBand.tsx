@@ -14,7 +14,7 @@ import { PROTECTED_CARE_COPY } from "@/lib/constants/homeAreasContent";
 export default function DogTherapyBand() {
   return (
     <section
-      className="relative overflow-hidden safe-x pt-16 sm:pt-24 pb-0 lg:pb-0"
+      className="relative overflow-hidden pt-16 sm:pt-24 pb-36 sm:pb-44 lg:pb-0"
       aria-labelledby="differentials-title"
     >
       <div
@@ -25,7 +25,7 @@ export default function DogTherapyBand() {
 
       <div className="relative z-10 max-w-6xl mx-auto min-w-0 px-4 sm:px-6 pt-4 sm:pt-6">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-center">
-          <div className="min-w-0 order-1 text-center lg:text-left pb-6 sm:pb-8 lg:pb-16 relative z-20">
+          <div className="min-w-0 order-1 text-center lg:text-left pb-4 lg:pb-16 relative z-20">
             <p className="text-primary/60 text-xs font-medium uppercase tracking-widest mb-2">
               {PROTECTED_CARE_COPY.eyebrow}
             </p>
@@ -56,28 +56,34 @@ export default function DogTherapyBand() {
             </div>
           </div>
 
-          {/* Reserva espaço no desktop para o Anakin absoluto */}
           <div className="hidden lg:block order-2 min-h-[32rem]" aria-hidden />
         </div>
       </div>
 
-      {/*
-        Anakin ancorado à direita da viewport em todos os breakpoints.
-        Mobile: base da seção / Desktop: altura total da seção.
-      */}
-      <div className="pointer-events-none absolute z-10 right-0 bottom-0 w-[min(92vw,26rem)] h-[18.5rem] sm:w-[min(70vw,30rem)] sm:h-[22rem] lg:inset-y-0 lg:w-[min(48vw,34rem)] lg:h-auto">
+      {/* Mobile: cover + âncora direita/base — overflow da section corta a borda reta da foto */}
+      <div className="pointer-events-none absolute z-[5] right-0 bottom-0 lg:hidden w-[88vw] h-[min(72vw,22rem)] translate-y-[22%] translate-x-[6%]">
         <Image
           src={ANAKIN_THERAPY_DOG_IMAGE}
           alt={ANAKIN_THERAPY_DOG_ALT}
           fill
-          className="object-contain object-right-bottom scale-[1.08] origin-bottom-right sm:scale-100"
-          sizes="(max-width: 1024px) 92vw, 48vw"
+          className="object-cover object-right-bottom"
+          sizes="90vw"
           priority={false}
         />
       </div>
 
-      {/* Altura inferior no mobile para a imagem “encostar” sem flutuar */}
-      <div className="h-44 sm:h-52 lg:hidden" aria-hidden />
+      {/* Desktop: colado à direita da viewport */}
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 hidden lg:block w-[min(48vw,34rem)]">
+        <Image
+          src={ANAKIN_THERAPY_DOG_IMAGE}
+          alt=""
+          fill
+          className="object-contain object-right-bottom"
+          sizes="48vw"
+          aria-hidden
+          priority={false}
+        />
+      </div>
     </section>
   );
 }
