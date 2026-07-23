@@ -13,9 +13,9 @@ import PageShell from "@/components/shared/PageShell";
 const HOME_SECTIONS = [
   HomeAboutPreviewSection,
   AreasGrid,
+  DogTherapyBand,
   ClinicPreviewSection,
   HomeValuesSection,
-  DogTherapyBand,
   BeDversoSection,
   VisitCtaBand,
 ] as const;

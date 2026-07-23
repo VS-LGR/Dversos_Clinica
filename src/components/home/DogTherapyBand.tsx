@@ -14,7 +14,7 @@ import { PROTECTED_CARE_COPY } from "@/lib/constants/homeAreasContent";
 export default function DogTherapyBand() {
   return (
     <section
-      className="py-16 sm:py-24 px-4 sm:px-6 relative overflow-hidden safe-x"
+      className="relative overflow-hidden safe-x pt-16 sm:pt-24 pb-0 lg:pb-0"
       aria-labelledby="differentials-title"
     >
       <div
@@ -23,9 +23,9 @@ export default function DogTherapyBand() {
       />
       <WaveDivider overlay position="top" className="absolute top-0 inset-x-0" fill="#f4f7fb" variant="soft" />
 
-      <div className="relative z-10 max-w-6xl mx-auto min-w-0 pt-4 sm:pt-6">
+      <div className="relative z-10 max-w-6xl mx-auto min-w-0 px-4 sm:px-6 pt-4 sm:pt-6">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-center">
-          <div className="min-w-0 order-1 text-center lg:text-left pb-2 lg:pb-6">
+          <div className="min-w-0 order-1 text-center lg:text-left pb-6 sm:pb-8 lg:pb-16 relative z-20">
             <p className="text-primary/60 text-xs font-medium uppercase tracking-widest mb-2">
               {PROTECTED_CARE_COPY.eyebrow}
             </p>
@@ -56,34 +56,28 @@ export default function DogTherapyBand() {
             </div>
           </div>
 
-          {/* Reserva altura no desktop; no mobile exibe o Anakin no fluxo */}
-          <div className="relative order-2 min-h-[24rem] sm:min-h-[28rem] lg:min-h-[32rem]">
-            <div className="relative mx-auto w-full max-w-md sm:max-w-lg h-full min-h-[24rem] sm:min-h-[28rem] lg:hidden">
-              <Image
-                src={ANAKIN_THERAPY_DOG_IMAGE}
-                alt={ANAKIN_THERAPY_DOG_ALT}
-                fill
-                className="object-contain object-bottom"
-                sizes="90vw"
-                priority={false}
-              />
-            </div>
-          </div>
+          {/* Reserva espaço no desktop para o Anakin absoluto */}
+          <div className="hidden lg:block order-2 min-h-[32rem]" aria-hidden />
         </div>
       </div>
 
-      {/* Desktop: Anakin colado à extremidade direita da viewport */}
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 hidden lg:block w-[min(48vw,34rem)]">
+      {/*
+        Anakin ancorado à direita da viewport em todos os breakpoints.
+        Mobile: base da seção / Desktop: altura total da seção.
+      */}
+      <div className="pointer-events-none absolute z-10 right-0 bottom-0 w-[min(92vw,26rem)] h-[18.5rem] sm:w-[min(70vw,30rem)] sm:h-[22rem] lg:inset-y-0 lg:w-[min(48vw,34rem)] lg:h-auto">
         <Image
           src={ANAKIN_THERAPY_DOG_IMAGE}
-          alt=""
+          alt={ANAKIN_THERAPY_DOG_ALT}
           fill
-          className="object-contain object-right-bottom"
-          sizes="48vw"
-          aria-hidden
+          className="object-contain object-right-bottom scale-[1.08] origin-bottom-right sm:scale-100"
+          sizes="(max-width: 1024px) 92vw, 48vw"
           priority={false}
         />
       </div>
+
+      {/* Altura inferior no mobile para a imagem “encostar” sem flutuar */}
+      <div className="h-44 sm:h-52 lg:hidden" aria-hidden />
     </section>
   );
 }
