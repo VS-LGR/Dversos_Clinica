@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import WaveDivider from "@/components/shared/WaveDivider";
+import CozyImageFrame from "@/components/shared/CozyImageFrame";
 import { DEFAULT_WHATSAPP_NUMBER } from "@/lib/constants/clinicAreas";
 import {
   ANAKIN_THERAPY_DOG_ALT,
@@ -14,7 +15,7 @@ import { PROTECTED_CARE_COPY } from "@/lib/constants/homeAreasContent";
 export default function DogTherapyBand() {
   return (
     <section
-      className="relative overflow-hidden pt-16 sm:pt-24 pb-36 sm:pb-44 lg:pb-0"
+      className="relative overflow-hidden safe-x py-16 sm:py-24 lg:pb-0"
       aria-labelledby="differentials-title"
     >
       <div
@@ -25,7 +26,7 @@ export default function DogTherapyBand() {
 
       <div className="relative z-10 max-w-6xl mx-auto min-w-0 px-4 sm:px-6 pt-4 sm:pt-6">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-center">
-          <div className="min-w-0 order-1 text-center lg:text-left pb-4 lg:pb-16 relative z-20">
+          <div className="min-w-0 order-1 text-center lg:text-left pb-2 lg:pb-16">
             <p className="text-primary/60 text-xs font-medium uppercase tracking-widest mb-2">
               {PROTECTED_CARE_COPY.eyebrow}
             </p>
@@ -56,23 +57,23 @@ export default function DogTherapyBand() {
             </div>
           </div>
 
+          {/* Mobile: moldura Cozy — cantos arredondados mascaram o corte da foto */}
+          <div className="order-2 w-full max-w-sm mx-auto lg:hidden">
+            <CozyImageFrame
+              src={ANAKIN_THERAPY_DOG_IMAGE}
+              alt={ANAKIN_THERAPY_DOG_ALT}
+              variant="portrait"
+              index={3}
+              fit="cover"
+            />
+          </div>
+
+          {/* Desktop: reserva de coluna */}
           <div className="hidden lg:block order-2 min-h-[32rem]" aria-hidden />
         </div>
       </div>
 
-      {/* Mobile: cover + âncora direita/base — overflow da section corta a borda reta da foto */}
-      <div className="pointer-events-none absolute z-[5] right-0 bottom-0 lg:hidden w-[88vw] h-[min(72vw,22rem)] translate-y-[22%] translate-x-[6%]">
-        <Image
-          src={ANAKIN_THERAPY_DOG_IMAGE}
-          alt={ANAKIN_THERAPY_DOG_ALT}
-          fill
-          className="object-cover object-right-bottom"
-          sizes="90vw"
-          priority={false}
-        />
-      </div>
-
-      {/* Desktop: colado à direita da viewport */}
+      {/* Desktop: Anakin na extremidade direita */}
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 hidden lg:block w-[min(48vw,34rem)]">
         <Image
           src={ANAKIN_THERAPY_DOG_IMAGE}
