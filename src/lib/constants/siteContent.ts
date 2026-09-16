@@ -70,7 +70,7 @@ export const HOME_ABOUT_PREVIEW = {
     {
       title: "Quem atendemos",
       description:
-        "Crianças, adolescentes e adultos neuroatípicos, em diferentes níveis de suporte — sempre com plano individualizado.",
+        "Crianças, adolescentes e adultos neuroatípicos, em diferentes níveis de suporte.",
       icon: "people" as const,
     },
     {
@@ -88,19 +88,19 @@ export const HOME_ABOUT_PREVIEW = {
     {
       title: "Terapia com o cão",
       description:
-        "Terapia Assistida por Animais (TAA) integrada ao cuidado, quando indicado, para engajamento, vínculo e regulação.",
+        "Utilizamos a conexão com nosso cão como recurso para promover maior participação, regulação e experiências positivas de aprendizagem.",
       icon: "dog" as const,
     },
     {
-      title: "Espaços acolhedores",
+      title: "Atenção a necessidades complexas",
       description:
-        "Ambientes amplos e previsíveis — brinquedoteca, integração sensorial, horta e salas pensadas para aprender com segurança.",
-      icon: "space" as const,
+        "Especialidade no atendimento de pessoas com altas necessidades de apoio, por meio de intervenções contemporâneas e alinhadas aos avanços da ciência do comportamento.",
+      icon: "complex" as const,
     },
     {
-      title: "Família e escola",
+      title: "Família, escola e comunidade",
       description:
-        "A rede de apoio participa do processo para que os avanços cheguem à rotina, à escola e à comunidade.",
+        "A rede de apoio participa do processo terapêutico, favorecendo que as habilidades desenvolvidas façam sentido e sejam vivenciadas nos diferentes ambientes da vida.",
       icon: "network" as const,
     },
   ],

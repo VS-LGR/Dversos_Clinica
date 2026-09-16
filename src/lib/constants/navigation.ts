@@ -3,12 +3,12 @@ export const SITE_NAV_LINKS = [
   { href: "/", label: "Início" },
   { href: "/sobre", label: "Sobre nós" },
   { href: "/areas", label: "Especialidades" },
-  { href: "/espacos", label: "Espaços" },
+  { href: "/espacos", label: "Ambientes" },
 ] as const;
 
 export const FOOTER_INSTITUTIONAL_LINKS = [
   { href: "/sobre", label: "Sobre a clínica" },
-  { href: "/espacos", label: "Nossos espaços" },
+  { href: "/espacos", label: "Nossos ambientes" },
   { href: "/liderancas", label: "Lideranças" },
   { href: "/seja-colaborador", label: "Seja colaborador" },
 ] as const;

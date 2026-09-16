@@ -43,14 +43,14 @@ export default function BeDversoSection() {
           <article className={`rounded-xl border p-6 ${pastelByIndex(PASTEL_SURFACE_SOFT, 0)}`}>
             <h3 className="text-lg font-semibold text-primary mb-2">Para famílias e aprendizes</h3>
             <p className="text-sm text-primary/80 mb-4">
-              Conheça nossa história, metodologia de atendimento, espaços terapêuticos e áreas de atuação integradas.
+              Conheça nossa história, metodologia de atendimento, ambientes terapêuticos e áreas de atuação integradas.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/sobre" className="text-sm font-medium text-primary hover:underline underline-offset-2">
                 Sobre a clínica
               </Link>
               <Link href="/espacos" className="text-sm font-medium text-primary hover:underline underline-offset-2">
-                Nossos espaços
+                Nossos ambientes
               </Link>
             </div>
           </article>

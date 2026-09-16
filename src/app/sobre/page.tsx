@@ -21,7 +21,7 @@ export const metadata = buildPageMetadata({
 
 const sobreAlts = [
   "Ambiente acolhedor da Clínica DVERSO",
-  "Espaços pensados para neurodiversidade",
+  "Ambientes pensados para neurodiversidade",
   "Detalhe do cuidado integrado em Sorocaba",
 ];
 
@@ -151,7 +151,7 @@ export default function SobrePage() {
           </p>
           <div className="flex flex-wrap justify-center gap-6">
             <SoftTextLink href="/seja-colaborador">Seja colaborador</SoftTextLink>
-            <SoftTextLink href="/espacos">Nossos espaços</SoftTextLink>
+            <SoftTextLink href="/espacos">Nossos ambientes</SoftTextLink>
             <SoftTextLink href="/areas">Especialidades</SoftTextLink>
           </div>
         </div>

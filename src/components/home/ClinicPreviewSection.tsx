@@ -42,7 +42,7 @@ export default function ClinicPreviewSection() {
             Nossos ambientes
           </h2>
           <p className="text-white/85 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed text-balance">
-            Conforto sensorial, previsibilidade e ambientes que comunicam segurança — conheça os espaços da clínica.
+            Conforto sensorial, previsibilidade e ambientes planejados para segurança — conheça os ambientes da clínica.
           </p>
         </div>
 
@@ -53,7 +53,7 @@ export default function ClinicPreviewSection() {
             href="/espacos"
             className="inline-flex items-center justify-center rounded-2xl border border-white/35 text-white font-semibold px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-colors"
           >
-            Ver todos os espaços
+            Ver todos os ambientes
           </Link>
         </p>
       </div>

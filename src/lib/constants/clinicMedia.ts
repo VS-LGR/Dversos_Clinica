@@ -26,10 +26,24 @@ export interface SpaceMedia {
 
 const img = (...parts: string[]) => publicMediaPath("images", ...parts);
 
+const SESSION_AT_SCHOOL = img("Acompanhamento_Terapeutico_escola.jpeg");
+const SESSION_AT_TABLE = img("AcompanhamentoTerapeituco.jpeg");
+const SESSION_ART_THERAPY = img("ArteTerapia_2.jpeg");
+const SESSION_ART_ACTIVITY = img("Arteterapia.jpeg");
+const SESSION_NEURO_ASSESSMENT = img("AvaliaçãoNeuro.jpeg");
+const SESSION_PHYSIO_WALKER = img("Fisioterapia_Andador.jpeg");
+const SESSION_SENSORY_ROOM = img("Fisioterapia.jpeg");
+const SESSION_MUSIC_THERAPY = img("MusicoTerapia.jpeg");
+const SESSION_NUTRITION = img("Nutricao.jpeg");
+const SESSION_PSYCHOMOTRICITY = img("Psicomotricidade.jpeg");
+const SESSION_PSYCHOPEDAGOGY = img("Psicopedagogia.jpeg");
+const SESSION_TAA_PLAYROOM = img("TAA+Brinquedoteca.jpeg");
+const SESSION_FEEDING_THERAPY = img("TerapiaAlimentar.jpeg");
+
 export const SPACE_MEDIA: Record<SpaceSlug, SpaceMedia> = {
   brinquedoteca: {
-    cover: img("Brinquedoteca", "DSC00279.jpg"),
-    gallery: [img("Brinquedoteca", "DSC00280.jpg")],
+    cover: SESSION_TAA_PLAYROOM,
+    gallery: [img("Brinquedoteca", "DSC00280.jpg"), img("Brinquedoteca", "DSC00279.jpg")],
   },
   "espaco-conforto": {
     cover: img("Espaço Conforto", "DSC09448.jpg"),
@@ -41,10 +55,10 @@ export const SPACE_MEDIA: Record<SpaceSlug, SpaceMedia> = {
   "salas-individualizadas": {
     cover: img("Consultórios", "Pisicologia", "DSC09454.jpg"),
     gallery: [
-      img("Consultórios", "Arteterapia", "DSC09489.jpg"),
+      SESSION_ART_THERAPY,
       img("Consultórios", "Fonaudiologia", "DSC09463.jpg"),
-      img("Consultórios", "Musicoterapia", "DSC09482.jpg"),
-      img("Consultórios", "Integração Sensorial", "DSC09476.jpg"),
+      SESSION_MUSIC_THERAPY,
+      SESSION_SENSORY_ROOM,
     ],
   },
   "sala-regulacao": {
@@ -73,7 +87,11 @@ export const SPACE_MEDIA: Record<SpaceSlug, SpaceMedia> = {
   },
   "cozinha-terapeutica": {
     cover: img("Extras", "DSC03343.jpg.jpeg"),
-    gallery: [img("Extras", "DSC03345.jpg.jpeg"), img("Extras", "DSC03350.jpg.jpeg")],
+    gallery: [
+      SESSION_FEEDING_THERAPY,
+      img("Extras", "DSC03345.jpg.jpeg"),
+      img("Extras", "DSC03350.jpg.jpeg"),
+    ],
   },
 };
 
@@ -81,8 +99,9 @@ export const CONSULTORIO_GALLERIES = [
   {
     label: "Arteterapia",
     images: [
+      SESSION_ART_THERAPY,
+      SESSION_ART_ACTIVITY,
       img("Consultórios", "Arteterapia", "DSC09489.jpg"),
-      img("Consultórios", "Arteterapia", "DSC09492.jpg"),
     ],
   },
   {
@@ -149,8 +168,8 @@ export const HOME_MOSAIC_SLIDES = [
   { src: img("Brinquedoteca", "DSC00280.jpg"), alt: "Brinquedoteca da Clínica DVERSO" },
   { src: img("Espaço Conforto", "DSC09453.jpg"), alt: "Espaço Conforto para famílias" },
   { src: img("Horta", "DSC03335.jpg.jpeg"), alt: "Horta terapêutica" },
-  { src: img("TAA", "DSC09850.jpg"), alt: "Terapia assistida por animais" },
-  { src: img("Consultórios", "Integração Sensorial", "DSC03322.jpg.jpeg"), alt: "Sala de integração sensorial" },
+  { src: SESSION_TAA_PLAYROOM, alt: "Terapia assistida por animais na brinquedoteca" },
+  { src: SESSION_SENSORY_ROOM, alt: "Sala de integração sensorial" },
   { src: img("Game", "DSC03312.jpg.jpeg"), alt: "Espaço de gameterapia" },
   { src: img("Extras", "DSC00441.jpg"), alt: "Ambiente acolhedor da clínica" },
 ] as const;
@@ -185,7 +204,7 @@ export const PIC_SCROLL_GALLERY = [
 
 export const HOME_SPECIALTIES_COLLAGE = {
   hero: {
-    src: img("Consultórios", "Integração Sensorial", "DSC09476.jpg"),
+    src: SESSION_SENSORY_ROOM,
     alt: "Sala de integração sensorial na Clínica DVERSO",
   },
   topLeft: {
@@ -197,7 +216,7 @@ export const HOME_SPECIALTIES_COLLAGE = {
     alt: "Atendimento psicológico na Clínica DVERSO",
   },
   bottomCenter: {
-    src: img("Consultórios", "Arteterapia", "DSC09489.jpg"),
+    src: SESSION_ART_THERAPY,
     alt: "Arteterapia na Clínica DVERSO",
   },
 } as const;
@@ -208,8 +227,8 @@ export const HOME_SPECIALTIES_COLLAGE = {
  */
 export const HOME_ABOUT_COLLAGE = {
   hero: {
-    src: img("Brinquedoteca", "DSC00280.jpg"),
-    alt: "Brinquedoteca da Clínica DVERSO em Sorocaba",
+    src: SESSION_TAA_PLAYROOM,
+    alt: "Brinquedoteca e Terapia Assistida por Animais na Clínica DVERSO em Sorocaba",
   },
   squareTop: {
     src: EDITORIAL_THERAPY_ABA,
@@ -220,8 +239,8 @@ export const HOME_ABOUT_COLLAGE = {
     alt: "Espaço de acolhimento para famílias",
   },
   vertical: {
-    src: img("TAA", "DSC09850.jpg"),
-    alt: "Terapia assistida por animais na Clínica DVERSO",
+    src: SESSION_AT_TABLE,
+    alt: "Atendimento terapêutico integrado na Clínica DVERSO",
   },
 } as const;
 
@@ -249,47 +268,47 @@ export const AREA_CARD_IMAGE: Record<
     alt: "Sala de Terapia Ocupacional e integração sensorial",
   },
   "sensory-integration": {
-    src: img("Consultórios", "Integração Sensorial", "DSC03287.jpg.jpeg"),
+    src: SESSION_SENSORY_ROOM,
     alt: "Sala de Integração Sensorial da Clínica DVERSO",
   },
   "music-therapy": {
-    src: img("Consultórios", "Musicoterapia", "DSC09482.jpg"),
+    src: SESSION_MUSIC_THERAPY,
     alt: "Sala de Musicoterapia da Clínica DVERSO",
   },
   physiotherapy: {
-    src: img("Consultórios", "Fisioterapia Psicomotricidade", "DSC09466.jpg"),
+    src: SESSION_PHYSIO_WALKER,
     alt: "Sala de Fisioterapia da Clínica DVERSO",
   },
   psychomotricity: {
-    src: img("Consultórios", "Fisioterapia Psicomotricidade", "DSC09472.jpg"),
+    src: SESSION_PSYCHOMOTRICITY,
     alt: "Sala de Psicomotricidade da Clínica DVERSO",
   },
   nutrition: {
-    src: img("Extras", "DSC03345.jpg.jpeg"),
+    src: SESSION_NUTRITION,
     alt: "Ambiente de Nutrição e cozinha terapêutica",
   },
   "feeding-therapy": {
-    src: img("Extras", "DSC03343.jpg.jpeg"),
+    src: SESSION_FEEDING_THERAPY,
     alt: "Cozinha terapêutica — Terapia Alimentar na Clínica DVERSO",
   },
   psychopedagogy: {
-    src: img("Consultórios", "Pisicologia", "DSC09457.jpg"),
+    src: SESSION_PSYCHOPEDAGOGY,
     alt: "Ambiente de Psicopedagogia na Clínica DVERSO",
   },
   "neuropsychological-assessment": {
-    src: img("Consultórios", "Pisicologia", "DSC09458.jpg"),
+    src: SESSION_NEURO_ASSESSMENT,
     alt: "Ambiente para Avaliação Neuropsicológica na Clínica DVERSO",
   },
   "animal-assisted-therapy": {
-    src: img("TAA", "DSC09850.jpg"),
+    src: SESSION_TAA_PLAYROOM,
     alt: "Terapia Assistida por Animais na Clínica DVERSO",
   },
   "therapeutic-companion": {
-    src: img("Espaço Conforto", "DSC09448.jpg"),
-    alt: "Espaço de acompanhamento terapêutico na Clínica DVERSO",
+    src: SESSION_AT_SCHOOL,
+    alt: "Acompanhamento terapêutico em ambiente escolar na Clínica DVERSO",
   },
   "art-therapy": {
-    src: img("Consultórios", "Arteterapia", "DSC09489.jpg"),
+    src: SESSION_ART_THERAPY,
     alt: "Sala de Arteterapia da Clínica DVERSO",
   },
   neurodiversity: {

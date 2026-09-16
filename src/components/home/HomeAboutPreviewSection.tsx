@@ -33,15 +33,47 @@ function HighlightIconGlyph({ type }: { type: HighlightIcon }) {
     case "dog":
       return (
         <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
-          <path d="M8 10V7a2 2 0 1 1 4 0v3M6 12a6 6 0 1 0 12 0 6 6 0 0 0-12 0Z" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
-          <circle cx="9" cy="11" r="1" fill="currentColor" />
-          <circle cx="15" cy="11" r="1" fill="currentColor" />
+          <path
+            d="M8 9.2 5.2 4.8c-.3-.5.2-1.1.8-.9L10 6.2"
+            stroke="currentColor"
+            strokeWidth="1.75"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M16 9.2 18.8 4.8c.3-.5-.2-1.1-.8-.9L14 6.2"
+            stroke="currentColor"
+            strokeWidth="1.75"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <ellipse cx="12" cy="13.2" rx="6.2" ry="6.4" stroke="currentColor" strokeWidth="1.75" />
+          <circle cx="9.8" cy="12.2" r="0.85" fill="currentColor" />
+          <circle cx="14.2" cy="12.2" r="0.85" fill="currentColor" />
+          <path
+            d="M12 13.4c.7 0 1.2.5 1.2 1.1 0 .4-.5.7-1.2.7s-1.2-.3-1.2-.7c0-.6.5-1.1 1.2-1.1Z"
+            fill="currentColor"
+          />
+          <path
+            d="M9.8 16.4c.7.9 1.5 1.3 2.2 1.3s1.5-.4 2.2-1.3"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+          />
         </svg>
       );
-    case "space":
+    case "complex":
       return (
         <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
-          <path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1v-9.5Z" stroke="currentColor" strokeWidth="1.75" strokeLinejoin="round" />
+          <circle cx="9" cy="8" r="2.4" stroke="currentColor" strokeWidth="1.75" />
+          <circle cx="16" cy="9" r="2" stroke="currentColor" strokeWidth="1.75" />
+          <path
+            d="M4.5 18.5c.4-2.6 2.5-4.5 5-4.5 1.4 0 2.7.6 3.6 1.6M13.5 15.2c.7-.4 1.5-.6 2.4-.6 2.2 0 4 1.6 4.4 3.7"
+            stroke="currentColor"
+            strokeWidth="1.75"
+            strokeLinecap="round"
+          />
+          <path d="M12 4.5v3M10.5 6h3" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
         </svg>
       );
     case "network":

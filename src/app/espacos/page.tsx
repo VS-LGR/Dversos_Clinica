@@ -53,7 +53,7 @@ export default function EspacosPage() {
             Ambientes da clínica
           </h2>
           <p className="text-primary/80 text-center mb-8 max-w-2xl mx-auto">
-            Conheça cada espaço — {CLINIC_SPACES.length} ambientes pensados para conforto sensorial, previsibilidade e acolhimento.
+            Conheça cada ambiente — {CLINIC_SPACES.length} ambientes pensados para conforto sensorial, previsibilidade e acolhimento.
           </p>
           <SpacesCarousel />
         </div>

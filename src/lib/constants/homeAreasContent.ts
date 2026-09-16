@@ -34,10 +34,10 @@ export const AREAS_PAGE_COPY = {
 };
 
 export const PROTECTED_CARE_COPY = {
-  eyebrow: "Terapia Assistida por Animais",
-  title: "TAA e cão de terapia",
+  eyebrow: "Cão de terapia",
+  title: "Terapia Assistida por Animais (TAA)",
   description:
-    "A Terapia Assistida por Animais é conduzida com ética, supervisão profissional e integração ao plano terapêutico individualizado. Quando indicado clinicamente, o Anakin — nosso cão de terapia — participa das sessões para favorecer vínculo, engajamento e regulação emocional em um ambiente protegido e acolhedor, sempre alinhado aos objetivos de cada aprendiz e família.",
+    "Já imaginou uma terapia em que o vínculo, a confiança e a conexão com um animal pudessem abrir novos caminhos para o desenvolvimento? Na DVERSO ela existe: é a Terapia Assistida por Animais (TAA).",
 };
 
 export const COMPLEMENTARY_CARE_COPY = {

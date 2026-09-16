@@ -210,12 +210,11 @@ export const CLINIC_AREAS: ClinicArea[] = [
     name: "Terapia Assistida por Animais (TAA)",
     shortName: "Terapia Assistida por Animais",
     description:
-      "Intervenções mediadas por animais — incluindo nosso cão de terapia — para vínculo, engajamento, regulação e desenvolvimento socioemocional.",
+      "Intervenções mediadas pelo nosso cão de terapia, Anakin, visando vínculo, engajamento, regulação e desenvolvimento socioemocional.",
     howItWorks:
-      "A TAA é conduzida por profissionais capacitados, com atividades planejadas conforme objetivos clínicos e ambiente protegido e supervisionado.",
+      "Na DVERSO, essa prática é conduzida com ética, supervisionada por profissional qualificado e integrada ao Plano Individualizado Comportamental (PIC). Quando indicada clinicamente, o Anakin participa das sessões como um mediador terapêutico, favorecendo o atendimento e evolução clínica.",
     detailParagraphs: [
-      "Quando indicado clinicamente, o cão de terapia participa das sessões de 1 hora, favorecendo motivação, comunicação e regulação emocional.",
-      "A intervenção integra-se ao plano ABA e à equipe multiprofissional, sempre priorizando segurança, ética e bem-estar do aprendiz e do animal.",
+      "A TAA é uma área que vem sendo estudada e apresenta evidências sobre os benefícios da interação humano-animal em contextos terapêuticos. Cada interação é planejada de acordo com os objetivos de cada aprendiz e família, transformando a relação com o animal em uma oportunidade de conexão, participação e desenvolvimento.",
     ],
     whatsAppMessage:
       "Olá! Gostaria de informações sobre Terapia Assistida por Animais na Clínica DVERSO.",

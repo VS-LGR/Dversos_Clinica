@@ -57,7 +57,7 @@ export default function AreaPageContent({ slug }: AreaPageContentProps) {
         <p className="text-primary/80 text-sm mb-3">
           Conheça os ambientes terapêuticos da clínica.
         </p>
-        <SoftTextLink href="/espacos">Ver nossos espaços</SoftTextLink>
+        <SoftTextLink href="/espacos">Ver nossos ambientes</SoftTextLink>
       </section>
       <section className="py-12 px-4 sm:px-6 bg-gradient-to-b from-pastel-aqua/25 to-primary-pale/40">
         <div className="max-w-2xl mx-auto text-center">
