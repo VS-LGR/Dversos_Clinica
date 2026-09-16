@@ -3,6 +3,8 @@ import Image from "next/image";
 export interface CollageImageItem {
   src: string;
   alt: string;
+  /** Tailwind object-position when object-cover corta o assunto. */
+  objectPosition?: string;
 }
 
 type AboutCollageProps = {
@@ -33,6 +35,7 @@ function CollageImage({
   alt,
   className = "",
   fit = "cover",
+  objectPosition,
   priority = false,
 }: CollageImageItem & {
   className?: string;
@@ -45,7 +48,7 @@ function CollageImage({
         src={src}
         alt={alt}
         fill
-        className={fit === "contain" ? "object-contain p-2" : "object-cover"}
+        className={fit === "contain" ? "object-contain p-2" : `object-cover ${objectPosition ?? ""}`}
         sizes="(max-width: 1024px) 90vw, 480px"
         priority={priority}
       />
@@ -86,6 +89,7 @@ function AboutCollage({
             alt={vertical.alt}
             className="row-span-2 min-h-0"
             fit={isAbaGraphic(vertical.src) ? "contain" : "cover"}
+            objectPosition={vertical.objectPosition}
           />
           <CollageImage
             src={squareBot.src}

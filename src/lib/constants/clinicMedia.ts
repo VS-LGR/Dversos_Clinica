@@ -191,20 +191,21 @@ export const HOME_SPECIALTIES_COLLAGE = {
  */
 export const HOME_ABOUT_COLLAGE = {
   hero: {
-    src: img("Extras", "DSC00526.jpg"),
-    alt: "Equipe e Terapia Assistida por Animais na Clínica DVERSO em Sorocaba",
+    src: SESSION_TAA_PLAYROOM,
+    alt: "Brinquedoteca e Terapia Assistida por Animais na Clínica DVERSO em Sorocaba",
   },
   squareTop: {
-    src: img("Extras", "DSC09707.jpg"),
-    alt: "Atendimento individualizado na Clínica DVERSO",
+    src: SESSION_AT_TABLE,
+    alt: "Atendimento terapêutico integrado na Clínica DVERSO",
   },
   squareBot: {
     src: img("Extras", "DSC00369.jpg"),
     alt: "Galeria de produções das crianças na Clínica DVERSO",
   },
   vertical: {
-    src: SESSION_AT_TABLE,
-    alt: "Atendimento terapêutico integrado na Clínica DVERSO",
+    src: img("Extras", "DSC00526.jpg"),
+    alt: "Equipe e Terapia Assistida por Animais na Clínica DVERSO em Sorocaba",
+    objectPosition: "object-[center_72%]",
   },
 } as const;
 
