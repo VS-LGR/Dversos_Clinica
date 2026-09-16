@@ -42,56 +42,36 @@ const SESSION_FEEDING_THERAPY = img("TerapiaAlimentar.jpeg");
 
 export const SPACE_MEDIA: Record<SpaceSlug, SpaceMedia> = {
   brinquedoteca: {
-    cover: SESSION_TAA_PLAYROOM,
-    gallery: [img("Brinquedoteca", "DSC00280.jpg"), img("Brinquedoteca", "DSC00279.jpg")],
+    cover: img("Brinquedoteca", "DSC00279.jpg"),
+    gallery: [],
   },
   "espaco-conforto": {
     cover: img("Espaço Conforto", "DSC09448.jpg"),
-    gallery: [
-      img("Espaço Conforto", "DSC09450.jpg"),
-      img("Espaço Conforto", "DSC09453.jpg"),
-    ],
+    gallery: [],
   },
   "salas-individualizadas": {
-    cover: img("Consultórios", "Pisicologia", "DSC09454.jpg"),
-    gallery: [
-      SESSION_ART_THERAPY,
-      img("Consultórios", "Fonaudiologia", "DSC09463.jpg"),
-      SESSION_MUSIC_THERAPY,
-      SESSION_SENSORY_ROOM,
-    ],
+    cover: img("Consultórios", "Musicoterapia", "DSC09482.jpg"),
+    gallery: [],
   },
   "sala-regulacao": {
     cover: img("Sala de Regulação Emocional Sensorial", "DSC03234.jpg.jpeg"),
-    gallery: [
-      img("Sala de Regulação Emocional Sensorial", "DSC03240.jpg.jpeg"),
-      img("Sala de Regulação Emocional Sensorial", "DSC03248.jpg.jpeg"),
-    ],
+    gallery: [],
   },
   horta: {
     cover: img("Horta", "DSC03332.jpg.jpeg"),
-    gallery: [
-      img("Horta", "DSC03333.jpg.jpeg"),
-      img("Horta", "DSC03335.jpg.jpeg"),
-      img("Horta", "DSC03338.jpg.jpeg"),
-      img("Horta", "DSC03340.jpg.jpeg"),
-    ],
+    gallery: [],
   },
   "sala-convivencia": {
-    cover: img("Extras", "DSC09942.jpg"),
-    gallery: [img("Extras", "DSC09944.jpg"), img("Extras", "DSC09700.jpg")],
+    cover: img("Extras", "DSC09722.jpg"),
+    gallery: [],
   },
   gameterapia: {
     cover: img("Game", "DSC03309.jpg.jpeg"),
-    gallery: [img("Game", "DSC03312.jpg.jpeg")],
+    gallery: [],
   },
   "cozinha-terapeutica": {
-    cover: img("Extras", "DSC03343.jpg.jpeg"),
-    gallery: [
-      SESSION_FEEDING_THERAPY,
-      img("Extras", "DSC03345.jpg.jpeg"),
-      img("Extras", "DSC03350.jpg.jpeg"),
-    ],
+    cover: img("Consultórios", "Fisioterapia Psicomotricidade", "DSC09468.jpg"),
+    gallery: [],
   },
 };
 
@@ -99,33 +79,22 @@ export const CONSULTORIO_GALLERIES = [
   {
     label: "Arteterapia",
     images: [
-      SESSION_ART_THERAPY,
-      SESSION_ART_ACTIVITY,
-      img("Consultórios", "Arteterapia", "DSC09489.jpg"),
+      img("Consultórios", "Arteterapia", "DSC09492.jpg"),
     ],
   },
   {
     label: "Fonoaudiologia",
     images: [
-      img("Consultórios", "Fonaudiologia", "DSC09462.jpg"),
-      img("Consultórios", "Fonaudiologia", "DSC09463.jpg"),
-      img("Consultórios", "Fonaudiologia", "DSC09464.jpg"),
       img("Consultórios", "Fonaudiologia", "DSC09465.jpg"),
     ],
   },
   {
     label: "Musicoterapia",
-    images: [
-      img("Consultórios", "Musicoterapia", "DSC09482.jpg"),
-      img("Consultórios", "Musicoterapia", "DSC09484.jpg"),
-    ],
+    images: [],
   },
   {
     label: "Psicologia",
     images: [
-      img("Consultórios", "Pisicologia", "DSC09454.jpg"),
-      img("Consultórios", "Pisicologia", "DSC09457.jpg"),
-      img("Consultórios", "Pisicologia", "DSC09458.jpg"),
       img("Consultórios", "Pisicologia", "DSC09459.jpg"),
       img("Consultórios", "Pisicologia", "DSC09460.jpg"),
     ],
@@ -134,7 +103,6 @@ export const CONSULTORIO_GALLERIES = [
     label: "Fisioterapia e psicomotricidade",
     images: [
       img("Consultórios", "Fisioterapia Psicomotricidade", "DSC09466.jpg"),
-      img("Consultórios", "Fisioterapia Psicomotricidade", "DSC09468.jpg"),
       img("Consultórios", "Fisioterapia Psicomotricidade", "DSC09469.jpg"),
       img("Consultórios", "Fisioterapia Psicomotricidade", "DSC09470.jpg"),
       img("Consultórios", "Fisioterapia Psicomotricidade", "DSC09472.jpg"),
@@ -143,7 +111,6 @@ export const CONSULTORIO_GALLERIES = [
   {
     label: "Integração sensorial",
     images: [
-      img("Consultórios", "Integração Sensorial", "DSC03287.jpg.jpeg"),
       img("Consultórios", "Integração Sensorial", "DSC03292.jpg.jpeg"),
       img("Consultórios", "Integração Sensorial", "DSC03294.jpg.jpeg"),
       img("Consultórios", "Integração Sensorial", "DSC03297.jpg.jpeg"),
@@ -154,7 +121,6 @@ export const CONSULTORIO_GALLERIES = [
 ] as const;
 
 export const TAA_GALLERY = [
-  img("TAA", "DSC09749.jpg"),
   img("TAA", "DSC09754.jpg"),
   img("TAA", "DSC09764.jpg"),
   img("TAA", "DSC09817.jpg"),
@@ -165,21 +131,19 @@ export const TAA_GALLERY = [
 ] as const;
 
 export const HOME_MOSAIC_SLIDES = [
-  { src: img("Brinquedoteca", "DSC00280.jpg"), alt: "Brinquedoteca da Clínica DVERSO" },
-  { src: img("Espaço Conforto", "DSC09453.jpg"), alt: "Espaço Conforto para famílias" },
-  { src: img("Horta", "DSC03335.jpg.jpeg"), alt: "Horta terapêutica" },
-  { src: SESSION_TAA_PLAYROOM, alt: "Terapia assistida por animais na brinquedoteca" },
-  { src: SESSION_SENSORY_ROOM, alt: "Sala de integração sensorial" },
-  { src: img("Game", "DSC03312.jpg.jpeg"), alt: "Espaço de gameterapia" },
-  { src: img("Extras", "DSC00441.jpg"), alt: "Ambiente acolhedor da clínica" },
+  { src: img("Consultórios", "Integração Sensorial", "DSC03322.jpg.jpeg"), alt: "Sala de integração sensorial da Clínica DVERSO" },
+  { src: img("Consultórios", "Fonaudiologia", "DSC09462.jpg"), alt: "Sala terapêutica individualizada da Clínica DVERSO" },
+  { src: img("Consultórios", "Arteterapia", "DSC09489.jpg"), alt: "Consultório de arteterapia da Clínica DVERSO" },
+  { src: img("Consultórios", "Musicoterapia", "DSC09484.jpg"), alt: "Sala de musicoterapia da Clínica DVERSO" },
+  { src: img("Extras", "DSC09697.jpg"), alt: "Atendimento individualizado na Clínica DVERSO" },
 ] as const;
 
 export const HOME_MOSAIC_IMAGES = HOME_MOSAIC_SLIDES.map((slide) => slide.src);
 
 export const SOBRE_GALLERY = [
-  img("Extras", "DSC00369.jpg"),
-  img("Extras", "DSC00526.jpg"),
   img("Extras", "DSC09705.jpg"),
+  img("TAA", "DSC09749.jpg"),
+  img("Extras", "DSC09700.jpg"),
 ] as const;
 
 export const ESPACOS_HERO_IMAGE = img("Extras", "DSC00441.jpg");
@@ -196,28 +160,28 @@ export const PIC_SCROLL_GALLERY = [
     fit: "contain" as const,
   },
   {
-    src: img("Extras", "DSC00369.jpg"),
-    alt: "Ambiente acolhedor da Clínica DVERSO",
+    src: img("Extras", "DSC03350.jpg.jpeg"),
+    alt: "Produções das crianças na Clínica DVERSO",
     fit: "cover" as const,
   },
 ] as const;
 
 export const HOME_SPECIALTIES_COLLAGE = {
   hero: {
-    src: SESSION_SENSORY_ROOM,
-    alt: "Sala de integração sensorial na Clínica DVERSO",
+    src: SESSION_ART_ACTIVITY,
+    alt: "Atendimento terapêutico na Clínica DVERSO",
   },
   topLeft: {
-    src: img("Consultórios", "Fonaudiologia", "DSC09463.jpg"),
+    src: img("Consultórios", "Fonaudiologia", "DSC09464.jpg"),
     alt: "Sessão de fonoaudiologia na Clínica DVERSO",
   },
   topRight: {
-    src: img("Consultórios", "Pisicologia", "DSC09454.jpg"),
+    src: img("Consultórios", "Pisicologia", "DSC09457.jpg"),
     alt: "Atendimento psicológico na Clínica DVERSO",
   },
   bottomCenter: {
-    src: SESSION_ART_THERAPY,
-    alt: "Arteterapia na Clínica DVERSO",
+    src: img("Consultórios", "Pisicologia", "DSC09458.jpg"),
+    alt: "Consultório terapêutico da Clínica DVERSO",
   },
 } as const;
 
@@ -227,16 +191,16 @@ export const HOME_SPECIALTIES_COLLAGE = {
  */
 export const HOME_ABOUT_COLLAGE = {
   hero: {
-    src: SESSION_TAA_PLAYROOM,
-    alt: "Brinquedoteca e Terapia Assistida por Animais na Clínica DVERSO em Sorocaba",
+    src: img("Extras", "DSC00526.jpg"),
+    alt: "Equipe e Terapia Assistida por Animais na Clínica DVERSO em Sorocaba",
   },
   squareTop: {
-    src: EDITORIAL_THERAPY_ABA,
-    alt: "Sessão de terapia ABA na Clínica DVERSO",
+    src: img("Extras", "DSC09707.jpg"),
+    alt: "Atendimento individualizado na Clínica DVERSO",
   },
   squareBot: {
-    src: img("Espaço Conforto", "DSC09453.jpg"),
-    alt: "Espaço de acolhimento para famílias",
+    src: img("Extras", "DSC00369.jpg"),
+    alt: "Galeria de produções das crianças na Clínica DVERSO",
   },
   vertical: {
     src: SESSION_AT_TABLE,
