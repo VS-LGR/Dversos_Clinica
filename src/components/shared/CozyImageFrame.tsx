@@ -17,6 +17,8 @@ interface CozyImageFrameProps {
   fit?: FitMode;
   /** Preenche o container pai sem impor aspect-ratio fixo (ex.: carrossel). */
   fillContainer?: boolean;
+  /** Tailwind object-position quando object-cover corta o assunto. */
+  objectPosition?: string;
 }
 
 const aspect: Record<CozyVariant, string> = {
@@ -36,6 +38,7 @@ export default function CozyImageFrame({
   className = "",
   fit = "cover",
   fillContainer = false,
+  objectPosition,
 }: CozyImageFrameProps) {
   const [failed, setFailed] = useState(false);
   const rotate = index % 2 === 0 ? "rotate-[0.5deg]" : "-rotate-[0.5deg]";
@@ -75,7 +78,7 @@ export default function CozyImageFrame({
               ? fillContainer
                 ? "object-contain p-1 sm:p-2"
                 : "object-contain p-3 sm:p-4"
-              : "object-cover"
+              : `object-cover ${objectPosition ?? ""}`
           }
           sizes={
             fillContainer

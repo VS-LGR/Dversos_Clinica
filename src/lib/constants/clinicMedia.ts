@@ -84,9 +84,7 @@ export const CONSULTORIO_GALLERIES = [
   },
   {
     label: "Fonoaudiologia",
-    images: [
-      img("Consultórios", "Fonaudiologia", "DSC09465.jpg"),
-    ],
+    images: [],
   },
   {
     label: "Musicoterapia",
@@ -146,7 +144,7 @@ export const SOBRE_GALLERY = [
   img("Extras", "DSC09700.jpg"),
 ] as const;
 
-export const ESPACOS_HERO_IMAGE = img("Extras", "DSC00441.jpg");
+export const ESPACOS_HERO_IMAGE = img("Consultórios", "Fonaudiologia", "DSC09465.jpg");
 
 export const EDITORIAL_KID_PAINTING = img("Kid_Painting.jpg");
 export const EDITORIAL_THERAPY_ABA = img("Therapy_ABA.png");

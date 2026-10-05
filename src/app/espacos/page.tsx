@@ -30,9 +30,10 @@ export default function EspacosPage() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-2">
           <CozyImageFrame
             src={ESPACOS_HERO_IMAGE}
-            alt="Recepção e ambiente acolhedor da Clínica DVERSO"
+            alt="Ambiente terapêutico com mobiliário acolhedor e paleta visual calma da Clínica DVERSO"
             index={0}
             priority
+            objectPosition="object-[center_70%]"
           />
           <p className="text-primary/85 leading-relaxed text-base sm:text-lg">
             {SPACES_PAGE.introParagraphs[1]}
