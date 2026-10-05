@@ -10,9 +10,9 @@ export const BE_DVERSO_SUPPORT_IMAGE = publicMediaPath("images", "SejaDversoDver
 export const ANAKIN_THERAPY_DOG_IMAGE = publicMediaPath("images", "Foto Anakin.jpg.png");
 export const ANAKIN_THERAPY_DOG_ALT =
   "Anakin — cão de terapia da Clínica DVERSO com bandana da marca";
-export const TEAM_GROUP_PHOTO = publicMediaPath("images", "Socios", "DSC09904.jpg");
+export const TEAM_GROUP_PHOTO = publicMediaPath("images", "Liderancas", "equipe.jpg");
 export const TEAM_GROUP_PHOTO_ALT =
-  "Sócios da Clínica DVERSO — equipe de liderança em ambiente acolhedor";
+  "Equipe de liderança da Clínica DVERSO na entrada da clínica em Sorocaba";
 export const CLINIC_TOUR_YOUTUBE_ID = "FKTPL8IMRQ4";
 export const CLINIC_TOUR_YOUTUBE_URL = "https://youtu.be/FKTPL8IMRQ4";
 export const CLINIC_TOUR_EMBED_URL = `https://www.youtube-nocookie.com/embed/${CLINIC_TOUR_YOUTUBE_ID}`;

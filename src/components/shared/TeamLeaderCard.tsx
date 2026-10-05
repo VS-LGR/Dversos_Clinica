@@ -35,7 +35,7 @@ export default function TeamLeaderCard({
               src={leader.imageUrl}
               alt={`Foto de ${leader.name}`}
               fill
-              className="object-cover object-center"
+              className="object-cover object-[center_18%]"
               sizes="128px"
             />
           </div>
